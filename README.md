@@ -15,11 +15,11 @@ Create an account at http://openshift.redhat.com/
 
 Create a php-5.3 application (you can call your application whatever you want)
 
-    rhc-create-app -a ci -t php-5.3
+    rhc app create -a ci -t php-5.3
 
 Add MySQL support to your application
 
-    rhc-ctl-app -a ci -e add-mysql-5.1
+    rhc app cartridge add -a ci -c mysql-5.1
 
 Add this upstream CI repo
 
@@ -47,4 +47,4 @@ GIT_ROOT/.openshift/action_hooks/deploy:
     If you need to modify the schema, you could create a file 
     GIT_ROOT/.openshift/action_hooks/alter.sql and then use
     GIT_ROOT/.openshift/action_hooks/deploy to execute that script (make sure to
-    back up your application + database w/ rhc-snapshot first :) )
+    back up your application + database w/ 'rhc app snapshot save' first :) )

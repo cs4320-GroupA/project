@@ -1,8 +1,8 @@
-CodeIgniter on OpenShift Express
-============================
+CodeIgniter on OpenShift
+========================
 
 This git repository helps you get up and running quickly w/ a CodeIgniter installation
-on OpenShift Express.  The backend database is MySQL and the database name is the
+on OpenShift.  The backend database is MySQL and the database name is the
 same as your application name (using $_ENV['OPENSHIFT_APP_NAME']).  You can call
 your application by whatever name you want (the name of the database will always
 match the application).

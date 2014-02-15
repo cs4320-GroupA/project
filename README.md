@@ -13,13 +13,9 @@ Running on OpenShift
 
 Create an account at http://openshift.redhat.com/
 
-Create a php-5.3 application (you can call your application whatever you want)
+Create a php application with mysql (you can call your application whatever you want)
 
-    rhc app create -a ci -t php-5.3
-
-Add MySQL support to your application
-
-    rhc cartridge add -a ci -c mysql-5.1
+    rhc app create ci php-5.3 mysql-5.1
 
 Add this upstream CI repo
 

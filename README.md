@@ -11,7 +11,7 @@ match the application).
 Running on OpenShift
 ----------------------------
 
-Create an account at http://openshift.redhat.com/
+Create an account at https://www.openshift.com
 
 Create a php application with mysql (you can call your application whatever you want)
 

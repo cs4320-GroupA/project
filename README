@@ -6,7 +6,7 @@ php/ - Externally exposed php code goes here
 libs/ - Additional libraries
 misc/ - For not-externally exposed php code
 ../data - For persistent data (full path in environment var: OPENSHIFT_DATA_DIR)
-deplist.txt - list of pears to install
+.openshift/pear.txt - list of pears to install
 .openshift/action_hooks/pre_build - Script that gets run every git push before the build
 .openshift/action_hooks/build - Script that gets run every git push as part of the build process (on the CI system if available)
 .openshift/action_hooks/deploy - Script that gets run every git push after build but before the app is restarted
@@ -44,7 +44,7 @@ variables for username, host and password:
 To get a full list of environment variables, simply add a line in your
 .openshift/action_hooks/build script that says "export" and push.
 
-deplist.txt
+pear.txt
 ===========
 
 A list of pears to install, line by line on the server.  This will happen when

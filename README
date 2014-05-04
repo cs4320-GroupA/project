@@ -49,9 +49,3 @@ pear.txt
 
 A list of pears to install, line by line on the server.  This will happen when
 the user git pushes.
-
-
-Additional information
-======================
-
-Link to additional information will be here, when we have it :)

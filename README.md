@@ -15,7 +15,7 @@ Create an account at https://www.openshift.com
 
 Create a php application with mysql (you can call your application whatever you want)
 
-    rhc app create ci php-5.3 mysql-5.1
+    rhc app create ci php-5.4 mysql-5.5
 
 Add this upstream CI repo
 

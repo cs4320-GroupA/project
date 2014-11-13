@@ -1,46 +1,103 @@
-CodeIgniter on OpenShift
-========================
+# CodeIgniter on OpenShift #
 
-This git repository helps you get up and running quickly w/ a CodeIgniter installation
-on OpenShift.  The backend database is MySQL and the database name is the
-same as your application name (using $_ENV['OPENSHIFT_APP_NAME']).  You can call
-your application by whatever name you want (the name of the database will always
-match the application).
+The easiest way to install this application is to use the [OpenShift Instant Application](https://openshift.redhat.com/app/console/application_type/quickstart!14232). 
+If you'd like to install it manually, follow [these directions](#manual-installation).
 
+## OpenShift Considerations ##
+These are some special considerations you may need to keep in mind when
+running your application on OpenShift.
 
-Running on OpenShift
-----------------------------
+### Database ###
+By default, your application is configured to use a MySQL database on OpenShift.
 
-Create an account at https://www.openshift.com
+### Handling Multiple Environments ###
+By default, CodeIgniter on OpenShift comes with the `ENVIRONMENT` constant set to
+'production'. At the top of php/index.php, you will see: 
 
-Create a php application with mysql (you can call your application whatever you want)
+```
+define('ENVIRONMENT', 'production');
+```
 
-    rhc app create ci php-5.4 mysql-5.5
+In production mode, your application will:
 
-Add this upstream CI repo
+* Disable all error output (for security reasons)
 
-    cd ci
-    git remote add upstream -m master git://github.com/openshift/CodeIgniterQuickStart.git
-    git pull -s recursive -X theirs upstream master
-    # note that the git pull above can be used later to pull updates to CI
-    
-Then push the repo upstream
+When you develop your CodeIgniter application locally, you can change the
+environment by setting the `ENVIRONMENT` variable in php/index.php to 
+'development':
 
-    git push
+```
+define('ENVIRONMENT', 'development');
+```
 
-That's it, you can now checkout your application at:
+If you do so, CodeIgniter will run your application under 'development' mode.
+In development mode, your application will:
 
-    http://ci-$yournamespace.rhcloud.com
+* Show more detailed errors in browser
+* Load development-specific configuration files
 
+We strong advise you to not run your application in this mode in production.
 
-NOTES:
+Visit the [CodeIgniter User Guide](http://www.codeigniter.com/user_guide/index.html) 
+for more details on using [multiple CodeIgniter development environments](http://www.codeigniter.com/user_guide/general/environments.html).
 
-GIT_ROOT/.openshift/action_hooks/deploy:
-    This script is executed with every 'git push'.  Feel free to modify this script
-    to learn how to use it to your advantage.  By default, this script will create
-    the database tables that this example uses.
+##### Modified Configuration Settings #####
 
-    If you need to modify the schema, you could create a file 
-    GIT_ROOT/.openshift/action_hooks/alter.sql and then use
-    GIT_ROOT/.openshift/action_hooks/deploy to execute that script (make sure to
-    back up your application + database w/ 'rhc app snapshot save' first :) )
+<table>
+  <tr>
+    <th>File</th>
+    <th>Config Setting</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>php/index.php</td>
+    <td>ENVIRONMENT</td>
+    <td>production</td>
+  </tr>
+  <tr>
+    <td>php/application/config/config.php</td> 
+    <td>
+        log_path<br>
+        cache_path<br>
+        encryption_key<br>
+        proxy_ips
+    </td>
+    <td>
+        $_ENV['OPENSHIFT_LOG_DIR']<br>
+        $_ENV['OPENSHIFT_TMP_DIR']<br>
+        $_ENV['OPENSHIFT_SECRET_TOKEN']<br>
+        $_ENV['OPENSHIFT_HAPROXY_IP']
+    </td>
+  </tr>
+  <tr>
+    <td>php/application/config/database.php</td>
+    <td>
+        hostname<br>
+        port<br>
+        username<br>
+        password<br>
+        database
+    </td>
+    <td>
+        $_ENV['OPENSHIFT_MYSQL_DB_HOST']<br>
+        $_ENV['OPENSHIFT_MYSQL_DB_PORT']<br>
+        $_ENV['OPENSHIFT_MYSQL_DB_USERNAME']<br>
+        $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD']<br>
+        $_ENV['OPENSHIFT_APP_NAME']
+    </td>
+  </tr>
+</table>
+
+## Manual Installation ##
+
+1. Create an account at https://www.openshift.com/
+
+1. Create a PHP/MySQL application
+
+    ```
+    rhc app create codeigniter_app php-5.4 mysql-5.5 --from-code=https://github.com/openshift/CodeIgniterQuickStart.git
+    ```
+
+    **Note:** This QuickStart was configured for MySQL
+
+1. That's it! Enjoy your new CodeIgniter application!

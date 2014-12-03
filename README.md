@@ -95,7 +95,7 @@ for more details on using [multiple CodeIgniter development environments](http:/
 1. Create a PHP/MySQL application
 
     ```
-    rhc app create codeigniter_app php-5.4 mysql-5.5 --from-code=https://github.com/openshift/CodeIgniterQuickStart.git
+    rhc app create codeigniterapp php-5.4 mysql-5.5 --from-code=https://github.com/openshift/CodeIgniterQuickStart.git
     ```
 
     **Note:** This QuickStart was configured for MySQL

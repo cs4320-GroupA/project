@@ -207,7 +207,7 @@ require_once BASEPATH.'core/CodeIgniter.php';
 		<title></title>
 	</head>
 	<body>
-		<p>Hello World!</p>
+		<h1>Hello World!</h1>
 	</body>
 </html>
 

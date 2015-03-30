@@ -199,7 +199,6 @@ if (defined('ENVIRONMENT'))
  * And away we go...
  *
  */
-require_once BASEPATH.'core/CodeIgniter.php';
 
 <!DOCTYPE html>
 	<head>
@@ -209,6 +208,10 @@ require_once BASEPATH.'core/CodeIgniter.php';
 		<h1>Hello World!</h1>
 	</body>
 </html>
+
+require_once BASEPATH.'core/CodeIgniter.php';
+
+
 
 /* End of file index.php */
 /* Location: ./index.php */

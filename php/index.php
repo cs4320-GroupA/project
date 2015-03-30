@@ -202,7 +202,6 @@ if (defined('ENVIRONMENT'))
 require_once BASEPATH.'core/CodeIgniter.php';
 
 <!DOCTYPE html>
-<html>
 	<head>
 		<title></title>
 	</head>

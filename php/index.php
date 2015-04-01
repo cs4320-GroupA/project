@@ -199,7 +199,19 @@ if (defined('ENVIRONMENT'))
  * And away we go...
  *
  */
+
+<!DOCTYPE html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>Hello World!</h1>
+	</body>
+</html>
+
 require_once BASEPATH.'core/CodeIgniter.php';
+
+
 
 /* End of file index.php */
 /* Location: ./index.php */

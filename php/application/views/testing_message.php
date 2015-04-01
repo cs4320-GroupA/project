@@ -2,6 +2,9 @@
 <html lang="en">
 <head>Testing</head>
 <body>
-<img src="ostrich.jpg" alt="Smiley face">
+<?php
+$env_var = getenv('OPENSHIFT_HOMEDIR')."/app-root/repo/php/application/views/ostrich.jpg";
+echo '<img src="'.$env_var.'" alt="Ostrich">';
+?>
 </body>
 </html>

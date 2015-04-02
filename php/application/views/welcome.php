@@ -8,8 +8,8 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <title>Welcome</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="application/css/bootstrap.min.css" rel="stylesheet">
+    <link href="application/css/jumbotron.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   </head>
@@ -68,6 +68,6 @@
       </div>
     </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="/tabsub/js/bootstrap.min.js"></script>
+  <script src="application/js/bootstrap.min.js"></script>
   </body>
 </html>

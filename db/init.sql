@@ -4,6 +4,8 @@
  *  March 17, 2015
  */
 
+use tasub;
+
 /*
  * user - base table for all users (TAs, Admins, Instructors)
  */
@@ -152,17 +154,4 @@ create table course_preference(
 	preference_number int,
 	primary key( preference_id, course_id, course_name, form_id, semester_id )
 ) character set 'utf8';
-
-
-
-
-
-
-
-
-
-
-
-
-
 

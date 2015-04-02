@@ -39,7 +39,7 @@
           </div>
           <div class="modal-body">
             <div class="tab-pane fade active in" id="signin">
-                <form class="form-horizontal" action="#" method="POST">
+                <form class="form-horizontal" action="../controllers/login.php" method="POST">
         <input type = "hidden" name = "action" value = "signin">
                 <fieldset>
                 <div class="control-group">

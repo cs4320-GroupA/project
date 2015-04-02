@@ -102,6 +102,10 @@
                       <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "instructor">Instructor</label>
                     </div>
                 </div>
+                <div class="controls">
+                      <label class="control-label" for="instructorAccessCode">Instructor Access Code:</label>
+                      <input required="" id="instructorAccessCode" name="instructorAccessCode" type="text" class="form-control" placeholder="f9hd34ks" class="input-medium" required="">
+                  </div>
                 <!-- Button -->
                 <div class="control-group">
                   <label class="control-label" for="signin"></label>

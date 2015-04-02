@@ -21,7 +21,7 @@
       <br>
       <center>
       <h1><b>Welcome to the Mizzou CS/IT TA & PLA Application Website</b></h1>
-      <h3>Please sign in or register</h3>
+      <h3>Please log in or register</h3>
       <br>
     <button class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#login">Log In</button>
     <button class="btn btn-danger btn-lg" href="#" data-toggle="modal" data-target="#register">Register</button>
@@ -35,7 +35,7 @@
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
-            <h3>Log In</h3>
+            <h3>Log In with an Existing Account</h3>
           </div>
           <div class="modal-body">
             <div class="tab-pane fade active in" id="signin">
@@ -58,7 +58,7 @@
                 <div class="control-group">
                   <label class="control-label" for="signin"></label>
                   <div class="controls">
-                    <button id="signin" name="signin" class="btn btn-success">Sign In</button>
+                    <button id="signin" name="signin" class="btn btn-success">Log In</button>
                   </div>
                 </div>
                 </fieldset>
@@ -68,12 +68,13 @@
         </div>
       </div>
     </div>
-
-    <div class="modal fade bs-modal-lg" id="register" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
+    
+    <!-- Modal -->
+    <div class="modal fade bs-modal-sm" id="register" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
-            <h3>Register</h3>
+            <h3>Register a New Account</h3>
           </div>
           <div class="modal-body">
             <div class="tab-pane fade active in" id="signin">
@@ -105,7 +106,7 @@
                 <div class="control-group">
                   <label class="control-label" for="signin"></label>
                   <div class="controls">
-                    <button id="signin" name="signin" class="btn btn-success">Create Account</button>
+                    <button id="signin" name="signin" class="btn btn-success">Register</button>
                   </div>
                 </div>
                 </fieldset>

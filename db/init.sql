@@ -35,11 +35,10 @@ create table account_type(
  */
 create table form(
     form_id int not null auto_increment,
-    semester_id references semester(semester_id),
-    user_id int,
+    semester_id int references semester(semester_id),
     submission_date date not null,
-    form_data references form_data( form_data_id ),
-    user_id references user(user_id),
+    form_data int references form_data( form_data_id ),
+    user_id int references user(user_id),
     primary key( form_id, semester_id )
 )character set 'utf8';
 
@@ -50,11 +49,11 @@ create table form_data(
     form_data_id int auto_increment,
     student_id varchar(10) not null,
     expected_graduation varchar(50) not null,
-    SPEAK-OPT_score float,
-    last_date_of_test date,
+    SPEAK_OPT_score float not null,
     advisor varchar(50) not null,
     gpa float not null,
     phone_number int,
+    last_date_of_test date not null,
     primary key( form_data_id )
 )character set 'utf8';
 
@@ -64,7 +63,7 @@ create table form_data(
 create table semester(
     semester_id int auto_increment,
     semester_title varchar(20),
-    status references status(status_id),
+    status int references status(status_id),
     primary key( semester_id )
 )character set 'utf8';
 
@@ -91,10 +90,10 @@ create table course(
 /*
  * comments - instructor comments on previous preformance of TAs
  */
-create table previous_taken(
+create table comments(
     comment_id int auto_increment,
-    posted_by references user( user_id ),
-    posted_about references user( user_id ),
+    posted_by int references user( user_id ),
+    posted_about int references user( user_id ),
     score float,
     description text,
     primary key( comment_id, posted_by, posted_about )
@@ -110,26 +109,26 @@ create table previous_taken(
  
 create table previous_taken(
 	previous_taken_id int auto_increment,
-	course_id references course( course_id ),
-	course_name references course( course_name ),
-	form_data_id references form_data( form_data_id ),
+	course_id int references course( course_id ),
+	course_name varchar(50) references course( course_name ),
+	form_data_id int references form_data( form_data_id ),
 	grade float not null,
 	primary key( previous_taken_id, course_id, course_name, form_data_id )
 )character set 'utf8'; 
 
 create table previous_taught(
 	previous_taught_id int auto_increment,
-	course_id references course( course_id ),
-	course_name references course( course_name ),
-	form_data_id references form_data(form_data_id),
+	course_id int references course( course_id ),
+	course_name varchar(50) references course( course_name ),
+	form_data_id int references form_data(form_data_id),
 	primary key( previous_taught_id, course_id, course_name, form_data_id )
 )character set 'utf8';
 
 create table desired_courses(
 	desired_course_id int auto_increment,
-	course_id references course( course_id ),
-	course_name references course( course_name ),
-	form_data_id references form_data( form_data_id ),
+	course_id int references course( course_id ),
+	course_name varchar(50) references course( course_name ),
+	form_data_id int references form_data( form_data_id ),
 	primary key( desired_course_id, course_id, course_name, form_data_id )
 )character set 'utf8'; 
  
@@ -138,19 +137,19 @@ create table desired_courses(
  */
 create table assigned_courses(
 	assigned_id int auto_increment,
-	course_id references course( course_id ),
-	course_name references course( course_name ),
-	form_id references form( form_id ),
-	semester_id references semester( semester_id ),
+	course_id int references course( course_id ),
+	course_name varchar(50) references course( course_name ),
+	form_id int references form( form_id ),
+	semester_id int references semester( semester_id ),
 	primary key( assigned_id, course_id, course_name, form_id, semester_id )
 ) character set 'utf8'; 
 
 create table course_preference(
 	preference_id int auto_increment,
-	course_id references course( course_id ),
-	course_name references course( course_name ),
-	form_id references form( form_id ),
-	semester_id references semester( semester_id ),
+	course_id int references course( course_id ),
+	course_name varchar(50) references course( course_name ),
+	form_id int references form( form_id ),
+	semester_id int references semester( semester_id ),
 	preference_number int,
 	primary key( preference_id, course_id, course_name, form_id, semester_id )
 ) character set 'utf8';

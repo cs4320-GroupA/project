@@ -9,6 +9,7 @@ use tasub;
 /*
  * user - base table for all users (TAs, Admins, Instructors)
  */
+DROP TABLE IF EXISTS user;
 create table user(
     user_id int not null auto_increment,
     first_name varchar(50) not null,

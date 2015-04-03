@@ -90,7 +90,7 @@ DROP TABLE IF EXISTS course;
 create table course(
     course_id int auto_increment,
     course_name varchar(50),
-    instructor_id varchar(20),
+    instructor_id int references user(user_id),
     primary key( course_id, course_name )
 )character set 'utf8';
 

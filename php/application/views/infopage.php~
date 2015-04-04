@@ -6,7 +6,6 @@
 
 <body>
 	<?php
-		include 'nav.php';
 		session_start();
 		echo "<h1>Welcome!</h1>";	
 		//If statemanets that change the given message depending onwho 

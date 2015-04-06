@@ -2,7 +2,7 @@ INSERT INTO account_type (account_type_name) VALUES ('TA'), ('PLA'), ('INSTRUCTO
 
 INSERT INTO status (status_title) VALUES ('APPLICATION'), ('SELECTION'), ('NOTIFICATION'), ('CLOSED');
 
-INSERT INTO semester (semester_title, status) VALUES ('FALL 2015', (SELECT id FROM tasub.status WHERE status_title = 'APPLICATION'));
+INSERT INTO semester (semester_title, status) VALUES ('FALL 2015', (SELECT status_id FROM tasub.status WHERE status_title = 'APPLICATION'));
 
 INSERT INTO user (first_name, last_name, mizzou_email, username, password, salt, account_type) 
 VALUES  ('test', 'test', 'test', 'ta', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'TA')),
@@ -40,6 +40,18 @@ INSERT INTO course (course_name) VALUES ('CS 1000: Introduction to Computer Scie
 										('CS 4740: Interdisc. Intro. to Natural Language Processing'),
 										('CS 4750: Artificial Intelligence 1'),
 										('CS 4770: Intro to Computational Intelligence'),
-										('CS 4830: Science and Engineering of the World Wide Web');
-
-														
+										('CS 4830: Science and Engineering of the World Wide Web'),
+										('InfoTc 2610: Audio/Video 1'),
+										('InfoTc 2810: Fundamentals of Network Technology'),
+										('InfoTc 2910: Cyber Security'),
+										('InfoTc 1610: Introduction to Entertainment Media'),
+										('InfoTc 2600: Digital Multimedia'),
+										('InfoTc 2620: Computer Modeling & Animation 1'),
+										('InfoTc 3610: Audio/Video 2'),
+										('InfoTc 3620: Computer Modeling & Animation 2'),
+										('InfoTc 3630: Intro to Game Design'),
+										('InfoTc 3640: Digital Effects'),
+										('InfoTc 3850: Computer System Administration'),
+										('InfoTc 4440: C#/.NET Development'),
+										('InfoTc 4500: Team-based Mobile Application Development'),
+										('InfoTc 4440: Digital Effects 2');

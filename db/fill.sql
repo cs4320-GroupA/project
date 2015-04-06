@@ -2,7 +2,7 @@ INSERT INTO account_type (account_type_name) VALUES ('TA'), ('PLA'), ('INSTRUCTO
 
 INSERT INTO status (status_title) VALUES ('APPLICATION'), ('SELECTION'), ('NOTIFICATION'), ('CLOSED');
 
-INSERT INTO semester (semester_title, status) VALUES ('FALL 2015', (SELECT id FROM tasub.status WHERE status_title = 'APPLICATION'));
+INSERT INTO semester (semester_title, status) VALUES ('FALL 2015', (SELECT status_id FROM tasub.status WHERE status_title = 'APPLICATION'));
 
 INSERT INTO user (first_name, last_name, mizzou_email, username, password, salt, account_type) 
 VALUES  ('test', 'test', 'test', 'ta', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'TA')),

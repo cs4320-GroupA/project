@@ -47,8 +47,7 @@
 					);
 				$this->session->set_userdata($newSession);
 
-				echo '<h1>'.hash("sha1", $_POST['passwordinput'].$result->salt).'    '.$result->password.'</h1>';
-				echo '<h1>'.$result->salt.'</h1>';
+				redirect('login', 'refresh');
 			}
 		}
 

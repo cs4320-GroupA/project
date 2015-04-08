@@ -52,6 +52,7 @@ DROP TABLE IF EXISTS form_data;
 create table form_data(
     form_data_id int auto_increment,
     student_id varchar(10) not null,
+    account_type varchar(3) not null,
     expected_graduation varchar(50) not null,
     SPEAK_OPT_score float not null,
     advisor varchar(50) not null,

@@ -24,7 +24,7 @@
 				$newSession = array(
 					'user_id' => $result->user_id,
 					'pawprint' => $result->username,
-					'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type_id)),
+					'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
 					'logged_in' => TRUE,
 					'failed_login' => FALSE
 					);

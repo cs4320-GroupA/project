@@ -7,6 +7,7 @@
 
 		public function validate() {
 			$this->load->model('user_model');
+			$this->load->model('account_type_model');
 
 			$result = $this->user_model->login();
 
@@ -23,21 +24,12 @@
 				$newSession = array(
 					'user_id' => $result->user_id,
 					'pawprint' => $result->username,
+					'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type_id)),
 					'logged_in' => TRUE,
 					'failed_login' => FALSE
 					);
 
 				$this->session->set_userdata($newSession);
-
-				if($result->account_type == 'APPLICANT') {
-					$this->session->set_userdata('user_type', 'applicant');
-				} 
-				else if($result->account_type == 'INSTRUCTOR') {
-					$this->session->set_userdata('user_type', 'instructor');	
-				}
-				else if($result->account_type == 'ADMIN') {
-					$this->session->set_userdata('user_type', 'admin');	
-				}
 
 				redirect('home', 'refresh');
 			} else {
@@ -67,21 +59,12 @@
 				$newSession = array(
 					'user_id' => $result->user_id,
 					'pawprint' => $result->username,
+					'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type_id)),
 					'logged_in' => TRUE,
 					'failed_login' => FALSE
 					);
 
 				$this->session->set_userdata($newSession);
-
-				if($result->account_type == 'APPLICANT') {
-					$this->session->set_userdata('applicant', TRUE);
-				} 
-				else if($result->account_type == 'INSTRUCTOR') {
-					$this->session->set_userdata('instructor', TRUE);	
-				}
-				else if($result->account_type == 'ADMIN') {
-					$this->session->set_userdata('admin', TRUE);	
-				}
 
 				redirect('home', 'refresh');
 			}

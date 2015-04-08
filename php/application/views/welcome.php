@@ -84,7 +84,7 @@
           </div>
           <div class="modal-body">
             <div class="tab-pane fade active in" id="signin">
-                <form class="form-horizontal" action="#" method="POST">
+                <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/login/register" method="POST">
                 <input type = "hidden" name = "action" value = "register">
                 <fieldset>
                 <div class="control-group">

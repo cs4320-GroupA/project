@@ -30,13 +30,13 @@
 				$this->session->set_userdata($newSession);
 
 				if($result->account_type == 'APPLICANT') {
-					$this->session->set_userdata('applicant', TRUE);
+					$this->session->set_userdata('user_type', 'applicant');
 				} 
 				else if($result->account_type == 'INSTRUCTOR') {
-					$this->session->set_userdata('instructor', TRUE);	
+					$this->session->set_userdata('user_type', 'instructor');	
 				}
 				else if($result->account_type == 'ADMIN') {
-					$this->session->set_userdata('admin', TRUE);	
+					$this->session->set_userdata('user_type', 'admin');	
 				}
 
 				redirect('home', 'refresh');

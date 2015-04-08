@@ -29,7 +29,7 @@ class User_model extends CI_Model {
 		
 		$query = $this->db->query($type_sql, array($account_type));
 		$type_id = $query->row()->account_type_id;
-		$result = $this->db->query($sql, array($username, $password, $salt, $type_id);
+		$result = $this->db->query($sql, array($username, $password, $salt, $type_id));
 
 		return $result;
 	}

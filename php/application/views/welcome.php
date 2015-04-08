@@ -8,8 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <title>Welcome</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   </head>
@@ -39,7 +38,7 @@
           </div>
           <div class="modal-body">
             <div class="tab-pane fade active in" id="signin">
-                <form class="form-horizontal" action="index.php/login/validate" method="POST">
+                <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/login/validate" method="POST">
         <input type = "hidden" name = "action" value = "signin">
                 <fieldset>
                 <div class="control-group">
@@ -121,7 +120,7 @@
       </div>
     </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
   </body>
 </html>
 

@@ -29,10 +29,6 @@
 							echo "<li><a href='#'>Admin profile</a></li>";
 						} 
 					}
-					else {
-							redirect('login', 'refresh');
-						}
-						
 			?>
           </ul>
         </div>

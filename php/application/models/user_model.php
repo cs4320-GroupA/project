@@ -1,35 +1,31 @@
 <?php
 
 class User_model extends CI_Model {
-	var user_id;
-	var first_name = '';
-	var last_name = '';
-	var mizzou_email = '';
-	var type = '';
-	var username = '';
-	var password = '';
-	var salt = '';
-	var account_type = '';
+	var $user_id;
+	var $first_name = '';
+	var $last_name = '';
+	var $mizzou_email = '';
+	var $type = '';
+	var $username = '';
+	var $password = '';
+	var $salt = '';
+	var $account_type = '';
 
 	function __construct() {
 		parent::__construct();
 	}
 
-	function login() {
-		$this->username = $_POST['username'];
-		$this->password = $_POST['password'];
+	public function login() {
+		$this->username = $_POST['pawprint'];
 
-		$sql = 'SELECT * FROM tasub.user WHERE username = "'.$this->username.'"';
-		$login_query = $this->db->query($sql);
+		$sql = 'SELECT * FROM tasub.user WHERE username = ?';
+		$query = $this->db->query($sql, array($this->username));
 
-		//This implementation needs to add the salt and hash before testing, but for testing all passwords are pass
-		$row = $query->row();
-		if(strcmp($row['password'], $this->password) == 0) {
-			return TRUE; 
+		if($query->row_count() == 1) {
+			return $query->row(); 
 		} else {
 			return FALSE;
 		}
 	}
-
 }
 ??

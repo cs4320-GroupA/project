@@ -21,6 +21,7 @@
       <center>
       <h1><b>Welcome to the Mizzou CS/IT TA & PLA Application Website</b></h1>
       <h3>Please log in or register</h3>
+      <?php if($this->session->all_userdata()->failed_login == TRUE) {echo '<font color=red>Invalid username and/or password.</font><br />';} ?>
       <br>
     <button class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#login">Log In</button>
     <button class="btn btn-danger btn-lg" href="#" data-toggle="modal" data-target="#register">Register</button>

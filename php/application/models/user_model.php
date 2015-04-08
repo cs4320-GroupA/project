@@ -24,7 +24,7 @@ class User_model extends CI_Model {
 	}
 
 	public function register($username, $password, $salt, $account_type) {
-		$sql = 'INSERT INTO user (username, password, salt, account_type) VALUES (?, ?, ?, SELECT account_type_id FROM tasub.account_type WHERE account_type_name = ?)';
+		$sql = 'INSERT INTO user (username, password, salt, account_type) VALUES (?, ?, ?, (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = ?))';
 		return($this->db->query($sql, array($username, $password, $salt, $account_type));
 	}
 ?>

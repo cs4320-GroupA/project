@@ -21,7 +21,7 @@ class User_model extends CI_Model {
 		$sql = 'SELECT * FROM tasub.user WHERE username = ?';
 		$query = $this->db->query($sql, array($this->username));
 
-		if($query->row_count() == 1) {
+		if($query->num_rows() == 1) {
 			return $query->row(); 
 		} else {
 			return FALSE;

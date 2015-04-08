@@ -12,9 +12,6 @@ use tasub;
 DROP TABLE IF EXISTS user;
 create table user(
     user_id int not null auto_increment,
-    first_name varchar(50) not null,
-    last_name varchar(50) not null,
-    mizzou_email varchar(50) not null,
     username varchar(20) not null,
     password varchar(30) not null,
     salt varchar(30) not null,
@@ -51,8 +48,11 @@ create table form(
 DROP TABLE IF EXISTS form_data;
 create table form_data(
     form_data_id int auto_increment,
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    mizzou_email varchar(50) not null,
     student_id varchar(10) not null,
-    account_type varchar(3) not null,
+    assistant_type varchar(3) not null,
     expected_graduation varchar(50) not null,
     SPEAK_OPT_score float not null,
     advisor varchar(50) not null,

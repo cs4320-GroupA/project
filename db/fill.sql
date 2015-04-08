@@ -4,11 +4,11 @@ INSERT INTO status (status_title) VALUES ('APPLICATION'), ('SELECTION'), ('NOTIF
 
 INSERT INTO semester (semester_title, status) VALUES ('FALL 2015', (SELECT status_id FROM tasub.status WHERE status_title = 'APPLICATION'));
 
-INSERT INTO user (first_name, last_name, mizzou_email, username, password, salt, account_type) 
-VALUES  ('test', 'test', 'test', 'ta', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'APPLICANT')),
-		('test', 'test', 'test', 'pla', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'APPLICANT')),
-		('test', 'test', 'test', 'instructor', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'INSTRUCTOR')),
-		('test', 'test', 'test', 'admin', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'ADMIN'));
+INSERT INTO user (username, password, salt, account_type) 
+VALUES  ('ta', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'APPLICANT')),
+		('pla', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'APPLICANT')),
+		('instructor', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'INSTRUCTOR')),
+		('admin', 'pass', 'test_salt', (SELECT account_type_id FROM tasub.account_type WHERE account_type_name = 'ADMIN'));
 
 INSERT INTO course (course_name) VALUES ('CS 1000: Introduction to Computer Science'),
 										('CS 1050: Algorithm Design and Programming 1'),

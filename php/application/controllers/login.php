@@ -12,8 +12,6 @@
 
 			if($result == FALSE) {
 				$newSession = array(
-					'user_id' => $result->user_id,
-					'pawprint' => $result->username,
 					'logged_in' => FALSE,
 					'failed_login' => TRUE
 					);
@@ -25,6 +23,7 @@
 				$newSession = array(
 					'user_id' => $result->user_id,
 					'pawprint' => $result->username,
+					'applicant' => TRUE,
 					'logged_in' => TRUE,
 					'failed_login' => FALSE
 					);
@@ -33,8 +32,6 @@
 				redirect('home', 'refresh');
 			} else {
 				$newSession = array(
-					'user_id' => $result->user_id,
-					'pawprint' => $result->username,
 					'logged_in' => FALSE,
 					'failed_login' => TRUE
 					);

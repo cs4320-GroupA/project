@@ -102,10 +102,10 @@
                 <div class="container">
                   <label class="control-label" for="accountRadio">Account Type:</label>
                     <div class="radio">
-                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "applicant">Applicant</label>
+                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "APPLICANT">Applicant</label>
                     </div>
                     <div class="radio">
-                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "instructor">Instructor</label>
+                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "INSTRUCTOR">Instructor</label>
                     </div>
                 </div>
                 <div class="controls">

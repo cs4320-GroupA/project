@@ -1,11 +1,6 @@
 <?php
 
 class User_model extends CI_Model {
-	var $user_id;
-	var $first_name = '';
-	var $last_name = '';
-	var $mizzou_email = '';
-	var $type = '';
 	var $username = '';
 	var $password = '';
 	var $salt = '';
@@ -27,5 +22,9 @@ class User_model extends CI_Model {
 			return FALSE;
 		}
 	}
-}
+
+	public function register($username, $password, $salt, $account_type) {
+		$sql = 'INSERT INTO user (username, password, salt, account_type) VALUES (?, ?, ?, SELECT account_type_id FROM tasub.account_type WHERE account_type_name = ?)';
+		return($this->db->query($sql, array($username, $password, $salt, $account_type));
+	}
 ?>

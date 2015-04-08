@@ -47,7 +47,8 @@
 					);
 				$this->session->set_userdata($newSession);
 
-				redirect('login', 'refresh');
+				echo '<h1>'.hash("sha1", $_POST['passwordinput'].$result->salt).'    '.$result->password.'</h1>';
+				echo '<h1>'.$result->salt.'</h1>';
 			}
 		}
 
@@ -63,7 +64,7 @@
 
 			$result = $this->user_model->register($username, $saltedPass, $salt, $account_type);
 
-			if($result != FALSE) {
+			if($result == TRUE) {
 				$newSession = array(
 					'user_id' => $result->user_id,
 					'pawprint' => $result->username,

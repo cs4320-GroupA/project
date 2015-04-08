@@ -63,7 +63,7 @@
 
 			$result = $this->user_model->register($username, $saltedPass, $salt, $account_type);
 
-			if($result == TRUE) {
+			if($result != FALSE) {
 				$newSession = array(
 					'user_id' => $result->user_id,
 					'pawprint' => $result->username,

@@ -90,7 +90,7 @@
                 <div class="control-group">
                   <label class="control-label" for="pawprint">Pawprint:</label>
                   <div class="controls">
-                    <input required="" id="pawprint" name="pawprint" type="text" placeholder="abc123" class="input-small" required="">
+                    <input id="pawprint" name="pawprint" type="text" placeholder="abc123" class="input-small" required>
                   </div>
                 </div>
                 <div class="control-group">
@@ -102,16 +102,16 @@
                 <div class="container">
                   <label class="control-label" for="accountRadio">Account Type:</label>
                     <div class="radio">
-                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "APPLICANT">Applicant</label>
+                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "APPLICANT" required checked>Applicant</label>
                     </div>
                     <div class="radio">
-                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "INSTRUCTOR">Instructor</label>
+                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "INSTRUCTOR" required>Instructor</label>
                     </div>
                 </div>
                 <div class="controls">
-                      <label class="control-label" for="instructorAccessCode">Instructor Access Code:</label><br>
-                      <input required="" id="instructorAccessCode" name="instructorAccessCode" type="text" placeholder="f9hd34ks" class="input-small" required="">
-                  </div>
+                      <label class="control-label" for="accessCode">Access Code:</label><br>
+                      <input id="accessCode" name="accessCode" type="text" placeholder="f9hd34ks" class="input-small">
+                </div>
                 <!-- Button -->
                 <div class="control-group">
                   <label class="control-label" for="signin"></label>

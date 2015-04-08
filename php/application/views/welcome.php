@@ -16,7 +16,7 @@
 
   <body>
 
-  <div class="container"> 
+  <div class="container">
       <hr>
       <br>
       <center>
@@ -29,7 +29,7 @@
     <br>
       <hr>
    </div>
-    
+
   <!-- Modal -->
     <div class="modal fade bs-modal-sm" id="login" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
@@ -68,7 +68,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Modal -->
     <div class="modal fade bs-modal-sm" id="register" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
@@ -79,18 +79,18 @@
           <div class="modal-body">
             <div class="tab-pane fade active in" id="signin">
                 <form class="form-horizontal" action="#" method="POST">
-        <input type = "hidden" name = "action" value = "register">
+                <input type = "hidden" name = "action" value = "register">
                 <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="pawprint">Pawprint:</label>
                   <div class="controls">
-                    <input required="" id="pawprint" name="pawprint" type="text" class="form-control" placeholder="abc123" class="input-medium" required="">
+                    <input required="" id="pawprint" name="pawprint" type="text" placeholder="abc123" class="input-small" required="">
                   </div>
                 </div>
                 <div class="control-group">
                   <label class="control-label" for="passwordinput">Password:</label>
                   <div class="controls">
-                    <input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="****" class="input-medium">
+                    <input required="" id="passwordinput" name="passwordinput" type="password" placeholder="****" class="input-small">
                   </div>
                 </div>
                 <div class="container">
@@ -103,8 +103,8 @@
                     </div>
                 </div>
                 <div class="controls">
-                      <label class="control-label" for="instructorAccessCode">Instructor Access Code:</label>
-                      <input required="" id="instructorAccessCode" name="instructorAccessCode" type="text" class="form-control" placeholder="f9hd34ks" class="input-medium" required="">
+                      <label class="control-label" for="instructorAccessCode">Instructor Access Code:</label><br>
+                      <input required="" id="instructorAccessCode" name="instructorAccessCode" type="text" placeholder="f9hd34ks" class="input-small" required="">
                   </div>
                 <!-- Button -->
                 <div class="control-group">
@@ -124,4 +124,3 @@
   <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
-

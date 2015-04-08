@@ -8,8 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <title>Welcome</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   </head>
@@ -22,6 +21,7 @@
       <center>
       <h1><b>Welcome to the Mizzou CS/IT TA & PLA Application Website</b></h1>
       <h3>Please log in or register</h3>
+      <?php if($this->session->all_userdata()->failed_login == TRUE) {echo '<font color=red>Invalid username and/or password.</font><br />';} ?>
       <br>
     <button class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#login">Log In</button>
     <button class="btn btn-danger btn-lg" href="#" data-toggle="modal" data-target="#register">Register</button>
@@ -39,7 +39,7 @@
           </div>
           <div class="modal-body">
             <div class="tab-pane fade active in" id="signin">
-                <form class="form-horizontal" action="../controllers/login.php" method="POST">
+                <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/login/validate" method="POST">
         <input type = "hidden" name = "action" value = "signin">
                 <fieldset>
                 <div class="control-group">
@@ -121,7 +121,7 @@
       </div>
     </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
   </body>
 </html>
 

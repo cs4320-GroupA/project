@@ -19,7 +19,7 @@
 
 				redirect('login', 'refresh');
 			}
-			else if(strcmp((hash("sha1", $result->password. $result->salt)), $_POST['passwordinput']) == 0) {
+			else if(strcmp((hash("sha1", $_POST['passwordinput'].$result->salt)), $result->password) == 0) {
 				$newSession = array(
 					'user_id' => $result->user_id,
 					'pawprint' => $result->username,

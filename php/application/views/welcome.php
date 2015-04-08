@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="controls">
-                      <label class="control-label" for="accessCode">Access Code:</label><br>
+                      <label class="control-label" for="accessCode">Access Code For Instructors Only:</label><br>
                       <input id="accessCode" name="accessCode" type="text" placeholder="f9hd34ks" class="input-small">
                 </div>
                 <!-- Button -->

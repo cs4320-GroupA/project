@@ -62,7 +62,7 @@
 						'logged_in' => FALSE,
 						'failed_register' => TRUE
 						);
-					
+					$this->session->set_userdata($newSession);
 					redirect('login', 'refresh');
 				}
 			}
@@ -88,7 +88,7 @@
 					'logged_in' => FALSE,
 					'failed_register' => TRUE
 					);
-
+				$this->session->set_userdata($newSession);					
 				redirect('login', 'refresh');
 			}
 		}

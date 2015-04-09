@@ -20,7 +20,7 @@
 		} else {
 			echo "<p>YOU'RE NOT LOGGED IN. PLEASE LOG IN.</p>";
 		};
-		<"/center">
+		echo "</center>";
 			
 	?>
 </body>

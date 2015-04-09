@@ -31,7 +31,7 @@
 					redirect('login', 'refresh');
 				}			
 			?>
-		<li><a href='logout'>Logout</a></li>
+		<li><a href='login/logout'>Logout</a></li>
           </ul>
         </div>
       </div>

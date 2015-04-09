@@ -54,6 +54,19 @@
 			$account_type = htmlspecialchars($_POST['accountRadio']);
 			$salt = uniqid(mt_rand(), false);
 			$saltedPass = hash("sha1", $password . $salt);
+			
+			//Checking if the instructor has the correct registration access code
+			if($account_type=="INSTRUCTOR"){
+				if($accessCode!="12345"){
+					$newSession = array(
+						'logged_in' => FALSE,
+						'failed_register' => TRUE
+						);
+					
+					redirect('login', 'refresh');
+				}
+			}
+					
 
 			$result = $this->user_model->register($username, $saltedPass, $salt, $account_type);
 

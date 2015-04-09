@@ -24,7 +24,7 @@
       <?php 
           if($this->session->userdata('failed_login')) {
             if($this->session->userdata('failed_login') == TRUE) {
-              echo '<font color=red>Invalid username and/or password.</font><br />';
+              echo '<font color=red>Invalid username, access code, and/or password.</font><br />';
             }
           }
       ?>

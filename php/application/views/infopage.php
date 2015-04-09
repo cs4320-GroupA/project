@@ -8,7 +8,7 @@
 <body>
 	<?php
 		include 'nav.php';
-
+		echo "<center>";
 		echo "<h1>Welcome!</h1>";	
 		//If statemanets that change the given message depending onwho 
 		if($this->session->userdata('user_type') == 'applicant') {			
@@ -20,6 +20,7 @@
 		} else {
 			echo "<p>YOU'RE NOT LOGGED IN. PLEASE LOG IN.</p>";
 		};
+		<"/center">
 			
 	?>
 </body>

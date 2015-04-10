@@ -55,9 +55,15 @@
 			$salt = uniqid(mt_rand(), false);
 			$saltedPass = hash("sha1", $password . $salt);
 			
+			if(isset($_POST['accessCode'])) {
+				$accessCode = $_POST['accessCode'];
+			} else {
+				$accessCode = '';
+			}
+			
 			//Checking if the instructor has the correct registration access code
-			if($account_type=="INSTRUCTOR"){
-				if($accessCode!="12345"){
+			if($account_type == "INSTRUCTOR"){
+				if($accessCode !="12345"){
 					$newSession = array(
 						'logged_in' => FALSE,
 						'failed_register' => TRUE

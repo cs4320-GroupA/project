@@ -13,6 +13,9 @@
 		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+		<?php
+			include 'nav.php';
+		?>
 		<div class="container">
 	      <div class="page-header">
 	        <h2>Application</h2>

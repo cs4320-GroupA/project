@@ -31,7 +31,7 @@ class User_model extends CI_Model {
 		$type_id = $query->row()->account_type_id;
 		$result = $this->db->query($sql, array($username, $password, $salt, $type_id));
 
-		return $result;
+		return $result->row();
 	}
 }
 ?>

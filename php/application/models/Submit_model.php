@@ -19,7 +19,7 @@ class Submit_model extends CI_Model{
                 gpa, 
                 phone_number, 
                 last_date_of_test 
-            ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+            ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         
     	$result = $this->db->query($sql, array( $fname, $lname, $email, $studentID, $asstType, $expected_grad, $speakOPTscore, $lastTestDate, $advisor, $gpa, $phone, $lastTestDate ));    
         

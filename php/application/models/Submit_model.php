@@ -15,13 +15,13 @@ class Submit_model extends CI_Model{
                 assistant_type, 
                 expected_graduation,        
                 SPEAK_OPT_score, 
+                last_date_of_test,
                 advisor, 
                 gpa, 
-                phone_number, 
-                last_date_of_test 
+                phone_number
             ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         
-    	$result = $this->db->query($sql, array( $fname, $lname, $email, $studentID, $asstType, $expected_grad, $speakOPTscore, $lastTestDate, $advisor, $gpa, $phone, $lastTestDate ));    
+    	$result = $this->db->query($sql, array( $fname, $lname, $email, $studentID, $asstType, $expected_grad, $speakOPTscore, $lastTestDate, $advisor, $gpa, $phone ));    
         
     }
     

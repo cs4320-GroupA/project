@@ -22,7 +22,7 @@
 	      </div>
 		</div>
 		<div class = "container">
-			<form class="form-inline">
+			<form class="form-inline" id="form_data" role="form" action="formhandler.php" method="POST">>
 				<div class = "row">
 					<div class = "col-md-6">
 						<label class="radio-inline">
@@ -40,15 +40,19 @@
 				<br>
 				<hr>
 			  <div class="row">
-					<div class = "col-md-3">
-				    <label for="name">Name: </label>
-				    <input type="text" class="form-control" id="name" placeholder="John Doe">
+					<div class = "col-md-2">
+				    <label for="name">First Name: </label>
+				    <input type="text" class="form-control" id="fname" placeholder="John ">
+					</div>
+					<div class = "col-md-2">
+				    <label for="name">Last Name: </label>
+				    <input type="text" class="form-control" id="lname" placeholder="Doe ">
 					</div>
 					<div class = "col-md-3">
 				    <label for="idNumber">ID: </label>
 				    <input type="text" class="form-control" id="idNumber" placeholder="14359687">
 					</div>
-					<div class = "col-md-3">
+					<div class = "col-md-2">
 				    <label for="gpa">GPA: </label>
 				    <input type="text" class="form-control" id="gpa" placeholder="3.487">
 					</div>
@@ -292,7 +296,7 @@
 				<div class = "row">
 					<div class = "col-md-4">
 						<label for="name">Signature: </label>
-						<input type="text" class="form-control" id="name" placeholder="John Doe">
+						<input type="text" class="form-control" id="signature" placeholder="John Doe">
 					</div>
 					<div class = "col-md-4">
 						<label for="name">Date: </label>

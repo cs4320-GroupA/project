@@ -25,15 +25,12 @@
 			<form class="form-inline" name="form_data" role="form" action="formhandler.php" method="POST">>
 				<div class = "row">
 					<div class = "col-md-6">
-						<label class="radio-inline">PLA (Undergraduate Student) </label>
 			      		<input type="radio" name="radioTAPLA" value = "PLA">
+			      		<label class="radio-inline">PLA (Undergraduate Student)</label>
 					</div>
 					<div class = "col-md-6">
-						<div class = "radio">
-							<label class="radio-inline">TA (Graduate Student)</label>
-				     		<input type="radio" name="radioTAPLA" value = "TA">
-					    </label>
-						</div>
+				     	<input type="radio" name="radioTAPLA" value = "TA">
+				     	<label class="radio-inline">TA (Graduate Student)</label>
 					</div>
 				</div>
 				<br>

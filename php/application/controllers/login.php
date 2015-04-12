@@ -12,8 +12,10 @@
 		public function validate() {
 			$this->load->model('user_model');
 			$this->load->model('account_type_model');
-
-			$result = $this->user_model->login();
+			
+			$username = htmlspecialchars($_POST['pawprint']); 
+			
+			$result = $this->user_model->login($username);
 
 			if($result == FALSE) {
 				$newSession = array(

@@ -22,7 +22,7 @@
 	      </div>
 		</div>
 		<div class = "container">
-			<form class="form-inline" name="form_data" role="form" action="formhandler.php" method="POST">>
+			<form class="form-inline" name="form_data" role="form" action="formhandler.php" method="POST">
 				<div class = "row">
 					<div class = "col-md-6">
 			      		<input type="radio" name="radioTAPLA" value = "PLA">

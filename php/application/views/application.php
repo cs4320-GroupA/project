@@ -44,7 +44,7 @@
 				    <label for="lname">Last Name: </label>
 				    <input type="text" class="form-control" name="lname" placeholder="Doe ">
 					</div>
-					<div class = "col-md-3">
+					<div class = "col-md-2">
 				    <label for="idNumber">ID: </label>
 				    <input type="text" class="form-control" name="idNumber" placeholder="14359687">
 					</div>
@@ -52,7 +52,7 @@
 				    <label for="gpa">GPA: </label>
 				    <input type="text" class="form-control" name="gpa" placeholder="3.487">
 					</div>
-					<div class = "col-md-3">
+					<div class = "col-md-2">
 						<label for="gradYear">Grad Year: </label>
 						<select class="form-control" name = "gradYear">
 							<option>2016</option>

@@ -19,8 +19,9 @@
 				if($this->session->userdata('user_type')) {
 					if($this->session->userdata('user_type') == 'applicant'){ 
 						echo "<li><a href='#'>Applicant Profile</a></li>";
+						echo "<li><a href='".base_url()."index.php/form'>Application</a></li>";
 					//Nav options for instructor
-					} else if($this->session->userdata('user_type') == 'instructor'){
+					} else if($this->session->userdata('user_type') == 'instructor'){ 
 						echo "<li><a href='#'>Instructor Profile</a></li>";
 					//Nav options for admin
 					} else if($this->session->userdata('user_type') == 'admin'){

@@ -22,17 +22,16 @@
 	      </div>
 		</div>
 		<div class = "container">
-			<form class="form-inline" id="form_data" role="form" action="formhandler.php" method="POST">>
+			<form class="form-inline" name="form_data" role="form" action="formhandler.php" method="POST">>
 				<div class = "row">
 					<div class = "col-md-6">
-						<label class="radio-inline">
-			      <input type="radio" name="radioTAPLA" value = "PLA">PLA (Undergraduate Student)
-				    </label>
+						<label class="radio-inline">PLA (Undergraduate Student) </label>
+			      		<input type="radio" name="radioTAPLA" value = "PLA">
 					</div>
 					<div class = "col-md-6">
 						<div class = "radio">
-							<label class="radio-inline">
-				      <input type="radio" name="radioTAPLA" value = "TA"> TA (Graduate Student)
+							<label class="radio-inline">TA (Graduate Student)</label>
+				     		<input type="radio" name="radioTAPLA" value = "TA">
 					    </label>
 						</div>
 					</div>
@@ -41,20 +40,20 @@
 				<hr>
 			  <div class="row">
 					<div class = "col-md-2">
-				    <label for="name">First Name: </label>
-				    <input type="text" class="form-control" id="fname" placeholder="John ">
+				    <label for="fname">First Name: </label>
+				    <input type="text" class="form-control" name="fname" placeholder="John ">
 					</div>
 					<div class = "col-md-2">
-				    <label for="name">Last Name: </label>
-				    <input type="text" class="form-control" id="lname" placeholder="Doe ">
+				    <label for="lname">Last Name: </label>
+				    <input type="text" class="form-control" name="lname" placeholder="Doe ">
 					</div>
 					<div class = "col-md-3">
 				    <label for="idNumber">ID: </label>
-				    <input type="text" class="form-control" id="idNumber" placeholder="14359687">
+				    <input type="text" class="form-control" name="idNumber" placeholder="14359687">
 					</div>
 					<div class = "col-md-2">
 				    <label for="gpa">GPA: </label>
-				    <input type="text" class="form-control" id="gpa" placeholder="3.487">
+				    <input type="text" class="form-control" name="gpa" placeholder="3.487">
 					</div>
 					<div class = "col-md-3">
 						<label for="gradYear">Grad Year: </label>
@@ -110,7 +109,7 @@
 						<br>
 						<br>
 				    <label for="advisorName">Advisor's Name: </label>
-				    <input type="text" class="form-control" id="advisorName" placeholder="John Doe">
+				    <input type="text" class="form-control" name="advisorName" placeholder="John Doe">
 					</div>
 				</div>
 				<br>
@@ -118,11 +117,11 @@
 				<div class = "row">
 					<div class = "col-md-6">
 				    <label for="phoneNumber">Phone Number: </label>
-				    <input type="text" class="form-control" id="phoneNumber" placeholder="5738675309">
+				    <input type="text" class="form-control" name="phoneNumber" placeholder="5738675309">
 					</div>
 					<div class = "col-md-6">
 				    <label for="mizzouEmail">Email: </label>
-				    <input type="text" class="form-control" id="mizzouEmail" placeholder="abc123@mail.missouri.edu">
+				    <input type="text" class="form-control" name="mizzouEmail" placeholder="abc123@mail.missouri.edu">
 					</div>
 				</div>
 				<hr>
@@ -172,13 +171,13 @@
 				<hr>
 				<div class = "row">
 					<label for="otherWork">Other Work:  </label>
-					<input type="text" class="form-control" id="otherWork" placeholder="Tiger Tech">
+					<input type="text" class="form-control" name="otherWork" placeholder="Tiger Tech">
 				</div>
 				<hr>
 				<div class = "row">
 					<div class = "col-md-6">
 						<label for="speakOPT">SPEAK/OPT Score, if applicable):  </label>
-						<input type="text" class="form-control" id="speakOPT" placeholder="15">
+						<input type="text" class="form-control" name="speakOPT" placeholder="15">
 					</div>
 					<div class = "col-md-6">
 						<label for="semester">Semester of Last Test:  </label>
@@ -296,17 +295,17 @@
 				<div class = "row">
 					<div class = "col-md-4">
 						<label for="name">Signature: </label>
-						<input type="text" class="form-control" id="signature" placeholder="John Doe">
+						<input type="text" class="form-control" name="signature" placeholder="John Doe">
 					</div>
 					<div class = "col-md-4">
 						<label for="name">Date: </label>
-						<input type="text" class="form-control" id="date" placeholder="1/1/2015">
+						<input type="text" class="form-control" name="date" placeholder="1/1/2015">
 					</div>
 					<div class = "col-md-12">
 						<br>
 						<label class="control-label" for="formSubmission"></label>
 						<div class="controls">
-							<button id="formSubmission" name="formSubmission" class="btn btn-success">Submit Application</button>
+							<button name="formSubmission" class="btn btn-success">Submit Application</button>
 						</div>
 					</div>
 					<br>

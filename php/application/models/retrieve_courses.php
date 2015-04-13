@@ -21,9 +21,13 @@
 			
 			$verifyUser = 'SELECT * FROM tasub.user where username = ?';
 			$query = $this->db->query($verifyUser, array($username));
-			$type_id = $query->row()->account_type_id; 
+			$type_id = $query->row()->account_type; 
 			
-			if($type_id == 'INSTRUCTOR'){
+			$type = 'SELECT account_type_name FROM tasub.account_type where account_type_id = ?';
+			$typeQuery = $this->db->query($type, array($type_id));
+			$type_name = $typeQuery->row()->account_type_name; 
+			
+			if($type_name == 'INSTRUCTOR'){
 				//get courses here
 				$courseSQL = 'SELECT * FROM tasub.course where username = ?';
 				$courseQuery = $this->db->query(courseSQL, array($username));

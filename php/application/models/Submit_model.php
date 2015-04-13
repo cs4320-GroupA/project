@@ -23,6 +23,11 @@ class Submit_model extends CI_Model{
         
     	$form_data_result = $this->db->query($form_data_sql, array( $fname, $lname, $email, $studentID, $asstType, $expected_grad, $speakOPTscore, $lastTestDate, $advisor, $gpa, $phone ));
         
+        if( !$form_data_result ){
+            // query not sucessful
+            return -1;
+        }
+        
         $form_sql = 'insert into form(
             semester_id,
             submission_date,

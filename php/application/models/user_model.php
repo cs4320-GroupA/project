@@ -1,20 +1,14 @@
 <?php
 
 class User_model extends CI_Model {
-	var $username = '';
-	var $password = '';
-	var $salt = '';
-	var $account_type = '';
 
 	function __construct() {
 		parent::__construct();
 	}
 
-	public function login() {
-		$this->username = $_POST['pawprint'];
-
+	public function login($username) {
 		$sql = 'SELECT * FROM tasub.user WHERE username = ?';
-		$query = $this->db->query($sql, array($this->username));
+		$query = $this->db->query($sql, array($username));
 
 		if($query->num_rows() == 1) {
 			return $query->row(); 
@@ -29,9 +23,9 @@ class User_model extends CI_Model {
 		
 		$query = $this->db->query($type_sql, array($account_type));
 		$type_id = $query->row()->account_type_id;
-		$result = $this->db->query($sql, array($username, $password, $salt, $type_id));
+		$query = $this->db->query($sql, array($username, $password, $salt, $type_id));
 
-		return $result;
+		return $this->db->affected_rows();
 	}
 }
 ?>

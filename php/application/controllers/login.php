@@ -1,6 +1,10 @@
 <?php
 	class Login extends CI_Controller {
 
+		public function __construct() {
+           parent::__construct();
+        }
+        
 		public function index() {
 			$this->load->view('welcome');
 		}
@@ -8,8 +12,10 @@
 		public function validate() {
 			$this->load->model('user_model');
 			$this->load->model('account_type_model');
-
-			$result = $this->user_model->login();
+			
+			$username = htmlspecialchars($_POST['pawprint']); 
+			
+			$result = $this->user_model->login($username);
 
 			if($result == FALSE) {
 				$newSession = array(
@@ -55,9 +61,15 @@
 			$salt = uniqid(mt_rand(), false);
 			$saltedPass = hash("sha1", $password . $salt);
 			
+			if(isset($_POST['accessCode'])) {
+				$accessCode = $_POST['accessCode'];
+			} else {
+				$accessCode = '';
+			}
+			
 			//Checking if the instructor has the correct registration access code
-			if($account_type=="INSTRUCTOR"){
-				if($accessCode!="12345"){
+			if($account_type == "INSTRUCTOR"){
+				if($accessCode !="12345"){
 					$newSession = array(
 						'logged_in' => FALSE,
 						'failed_register' => TRUE
@@ -70,11 +82,11 @@
 
 			$result = $this->user_model->register($username, $saltedPass, $salt, $account_type);
 
-			if($result == TRUE) {
+			if($result == 1) {
 				$newSession = array(
 					'user_id' => $result->user_id,
 					'pawprint' => $result->username,
-					'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type_id)),
+					'user_type' => strtolower($account_type),
 					'logged_in' => TRUE,
 					'failed_login' => FALSE
 					);

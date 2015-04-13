@@ -10,7 +10,8 @@
 			$query = $this->db->query($sql, NULL);
 			
 			if($query){
-				return $this->db->affected_rows(); 
+				$courses = $query->result_array();
+				return $courses; 
 			}else{
 				return false; //generate error and store it in session
 			}
@@ -22,11 +23,12 @@
 			$query = $this->db->query($verifyUser, array($username));
 			$type_id = $query->row()->account_type_id; 
 			
-			if($type_id){
+			if($type_id == 'INSTRUCTOR'){
 				//get courses here
 				$courseSQL = 'SELECT * FROM tasub.course where username = ?';
 				$courseQuery = $this->db->query(courseSQL, array($username));
-				$courses = $this->db->affected_rows();
+				$courses = $courseQuery->result_array();
+				return $courses; 
 			}else{
 				return false; 
 				//user entered was not a professor, generate error and store in session

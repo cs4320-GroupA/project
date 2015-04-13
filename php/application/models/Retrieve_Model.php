@@ -6,6 +6,9 @@ class Retrieve_Model extends CI_Model{
         parent::__construct();
     }
     
+    /*
+     * get form data from supplied formID...
+     */
     public function getFormByID( $formID ){
         $sql = 'select form.form_id, 
                 form.semester_id, 
@@ -30,6 +33,7 @@ class Retrieve_Model extends CI_Model{
         
         if( !$result ){
             // query not sucessful
+            exit;
         }
         
         $return_array = array();
@@ -52,6 +56,9 @@ class Retrieve_Model extends CI_Model{
         $return_array["gpa"] = $row["gpa"];
         $return_array["phone_number"] = $row["phone_number"];
         $return_array["last_date_of_test"] = $row["last_date_of_test"];
+        
+        // free memory
+        mysql_free_result($result);
         
         return $return_array;
         
@@ -107,6 +114,9 @@ class Retrieve_Model extends CI_Model{
         $return_array["gpa"] = $row["gpa"];
         $return_array["phone_number"] = $row["phone_number"];
         $return_array["last_date_of_test"] = $row["last_date_of_test"];
+        
+        // free memory
+        mysql_free_result($result);
         
         return $return_array;
         

@@ -27,6 +27,18 @@
                 return FALSE; //No courses found
             }
         }
+
+        public function createCourse($course_name) {
+            $sql = 'INSERT into course (course_name) VALUES (?)';
+
+            $query = $this->db->query($sql, array($course_name));
+
+            if($query->affected_rows() == 1) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
     }
 
 ?>

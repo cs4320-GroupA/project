@@ -12,6 +12,7 @@
 		public function validate() {
 			$this->load->model('user_model');
 			$this->load->model('account_type_model');
+			$this->load->model('semester_model');
 			
 			$username = htmlspecialchars($_POST['pawprint']); 
 			
@@ -27,13 +28,27 @@
 				redirect('login', 'refresh');
 			}
 			else if(strcmp((hash("sha1", $_POST['passwordinput'].$result->salt)), $result->password) == 0) {
-				$newSession = array(
-					'user_id' => $result->user_id,
-					'pawprint' => $result->username,
-					'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-					'logged_in' => TRUE,
-					'failed_login' => FALSE
+				$semester_result = $this->semester_model->getCurrentSemester();
+
+				if($semester_result == FALSE) { //No current semester
+					$newSession = array(
+						'user_id' => $result->user_id,
+						'pawprint' => $result->username,
+						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
+						'logged_in' => TRUE,
+						'failed_login' => FALSE
 					);
+				} else {
+					$newSession = array(
+						'user_id' => $result->user_id,
+						'pawprint' => $result->username,
+						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
+						'semester_id' => $semester_result->row()->semester_id;
+						'status_id' => $semester_result->row()->status_id;
+						'logged_in' => TRUE,
+						'failed_login' => FALSE
+					);
+				}
 
 				$this->session->set_userdata($newSession);
 

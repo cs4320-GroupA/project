@@ -43,8 +43,8 @@
 						'user_id' => $result->user_id,
 						'pawprint' => $result->username,
 						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-						'semester_id' => $semester_result->row()->semester_id;
-						'status_id' => $semester_result->row()->status_id;
+						'semester_id' => $semester_result->row()->semester_id,
+						'status_id' => $semester_result->row()->status_id,
 						'logged_in' => TRUE,
 						'failed_login' => FALSE
 					);

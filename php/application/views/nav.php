@@ -26,7 +26,10 @@
 					//Nav options for admin
 					} else if($this->session->userdata('user_type') == 'admin'){
 						echo "<li><a href='#'>Admin profile</a></li>";
-					} 
+					}
+
+					$this->load->model('semester_model');
+					echo '<p class="navbar-text navbar-right">Current Semester: '.$this->semester_model->getSemesterTitle($this->session->userdata('semester_id')).'</p>'; 
 				}
 				else {
 					redirect('login', 'refresh');

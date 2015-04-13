@@ -4,7 +4,7 @@
             parent::__construct();
         }
         
-        public function getCourses(){
+        public function getCourses() {
             $sql = 'SELECT * FROM tasub.course';
 
             $query = $this->db->query($sql);
@@ -16,7 +16,7 @@
             }
         }
         
-        public function getCoursesByInstructor($user_id){
+        public function getCoursesByInstructor($user_id) {
             $sql = 'SELECT * FROM tasub.course WHERE instructor_id = ?';
             
             $query = $this->db->query($sql, array($user_id));

@@ -1,6 +1,6 @@
 <?php 
 
-	class Retrieve_instructors extends CI_Model{
+	class Retrieve_Courses extends CI_Model{
 		function __construct(){
 			parent::__construct();
 		}

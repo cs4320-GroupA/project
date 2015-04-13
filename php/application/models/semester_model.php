@@ -29,6 +29,7 @@
             } else { //Should theoretically never be reached, since but better safe than sorry
                 return FALSE;
             }
+        }
 
         public function getSemesterTitle($semester_id) {
             $sql = 'SELECT * FROM tasub.semester WHERE semester_id = ?';
@@ -40,7 +41,6 @@
             } else {
                 return FALSE;
             }
-        }
         }
     }
 ?>

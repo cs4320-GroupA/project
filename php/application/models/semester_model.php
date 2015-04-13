@@ -6,9 +6,9 @@
 
         public function getCurrentSemester() {
             //There should only be one semester open at a time
-            $sql = 'SELECT * FROM tasub.semester WHERE status_id = ?
-                                                    OR status_id = ?
-                                                    OR status_id = ?';
+            $sql = 'SELECT * FROM tasub.semester WHERE status = ?
+                                                    OR status = ?
+                                                    OR status = ?';
 
             //Since this query is constant we can do it here
             $status_sql = 'SELECT * FROM tasub.status WHERE status_title = "APPLICATION" 

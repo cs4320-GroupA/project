@@ -29,6 +29,18 @@
             } else { //Should theoretically never be reached, since but better safe than sorry
                 return FALSE;
             }
+
+        public function getSemesterTitle($semester_id) {
+            $sql = 'SELECT * FROM tasub.semester WHERE semester_id = ?';
+
+            $query = $this->db->query($sql, array($semester_id));
+
+            if($query->num_rows() > 0) {
+                return $query->row()->semester_title;
+            } else {
+                return FALSE;
+            }
+        }
         }
     }
 ?>

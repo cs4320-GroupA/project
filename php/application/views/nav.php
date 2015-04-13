@@ -28,8 +28,7 @@
 						echo "<li><a href='#'>Admin profile</a></li>";
 					}
 
-					$this->load->model('semester_model');
-					echo '<p class="navbar-text navbar-right">Current Semester: '.$this->semester_model->getSemesterTitle($this->session->userdata('semester_id')).'</p>'; 
+					echo '<p class="navbar-text navbar-right">Current Semester: '.$this->session->userdata('semester_title')).'</p>'; 
 				}
 				else {
 					redirect('login', 'refresh');

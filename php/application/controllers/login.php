@@ -35,6 +35,9 @@
 						'user_id' => $result->user_id,
 						'pawprint' => $result->username,
 						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
+						'semester_id' => NULL,
+						'semester_title' => 'NONE',
+						'status_id' => NULL,
 						'logged_in' => TRUE,
 						'failed_login' => FALSE
 					);
@@ -44,6 +47,7 @@
 						'pawprint' => $result->username,
 						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
 						'semester_id' => $semester_result->row()->semester_id,
+						'semester_title' => $semester_result->row()->semester_title,
 						'status_id' => $semester_result->row()->status_id,
 						'logged_in' => TRUE,
 						'failed_login' => FALSE

@@ -28,7 +28,7 @@
 						echo "<li><a href='#'>Admin profile</a></li>";
 					}
 
-					echo '<p class="navbar-text navbar-right">Current Semester: '.$this->session->userdata('semester_title')).'</p>'; 
+					echo '<p class="navbar-text navbar-right">Current Semester: '.$this->session->userdata('semester_title').'</p>'; 
 				}
 				else {
 					redirect('login', 'refresh');

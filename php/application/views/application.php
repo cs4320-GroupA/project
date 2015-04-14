@@ -177,8 +177,8 @@
 						<input type="text" class="form-control" name="speakOPT" placeholder="15">
 					</div>
 					<div class = "col-md-6">
-						<label for="semester">Semester of Last Test:  </label>
-						<select class="form-control" name = "semester">
+						<label for="lastTestDate">Semester of Last Test:  </label>
+						<select class="form-control" name = "lastTestDate">
 							<option>Fall 2015</option>
 							<option>Spring 2014</option>
 							<option>Fall 2014</option>

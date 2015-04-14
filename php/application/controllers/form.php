@@ -15,11 +15,10 @@
 
 			$asstType = htmlspecialchars($_POST['radioTAPLA']); 
 			$fname = htmlspecialchars($_POST['fname']);
-			$fname = htmlspecialchars($_POST['lname']);
+			$lname = htmlspecialchars($_POST['lname']);
 			$studentID = htmlspecialchars($_POST['idNumber']);
 			$gpa = htmlspecialchars($_POST['gpa']);
 			$expected_grad = htmlspecialchars($_POST['gradYear']);
-			$gradType = htmlspecialchars($_POST['gradRadio']);
 			$advisor = htmlspecialchars($_POST['advisorName']);
 			$phone = htmlspecialchars($_POST['phoneNumber']);
 			$email = htmlspecialchars($_POST['mizzouEmail']);

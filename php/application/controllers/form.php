@@ -14,19 +14,19 @@
 			$this->load->model('form_model');
 
 			$asstType = htmlspecialchars($_POST['radioTAPLA']); 
-			$fname = htmlspecialchars($POST['fname']);
-			$fname = htmlspecialchars($POST['lname']);
-			$studentID = htmlspecialchars($POST['idNumber']);
-			$gpa = htmlspecialchars($POST['gpa']);
-			$expected_grad = htmlspecialchars($POST['gradYear']);
-			$gradType = htmlspecialchars($POST['gradRadio']);
-			$advisor = htmlspecialchars($POST['advisorName']);
-			$phone = htmlspecialchars($POST['phoneNumber']);
-			$email = htmlspecialchars($POST['mizzouEmail']);
-			$speakOPTscore = htmlspecialchars($POST['speakOPT']);
-			$lastTestDate = htmlspecialchars($POST['lastTestDate']);
-			$signature = htmlspecialchars($POST['signature']); 
-			$signDate = htmlspecialchars($POST['date']);
+			$fname = htmlspecialchars($_POST['fname']);
+			$fname = htmlspecialchars($_POST['lname']);
+			$studentID = htmlspecialchars($_POST['idNumber']);
+			$gpa = htmlspecialchars($_POST['gpa']);
+			$expected_grad = htmlspecialchars($_POST['gradYear']);
+			$gradType = htmlspecialchars($_POST['gradRadio']);
+			$advisor = htmlspecialchars($_POST['advisorName']);
+			$phone = htmlspecialchars($_POST['phoneNumber']);
+			$email = htmlspecialchars($_POST['mizzouEmail']);
+			$speakOPTscore = htmlspecialchars($_POST['speakOPT']);
+			$lastTestDate = htmlspecialchars($_POST['lastTestDate']);
+			$signature = htmlspecialchars($_POST['signature']); 
+			$signDate = htmlspecialchars($_POST['date']);
 
 			$result = $this->form_data_model->submitFormData( $fname, $lname, $email, $studentID, $asstType, $expected_grad, $speakOPTscore, $lastTestDate, $advisor, $gpa, $phone);
 

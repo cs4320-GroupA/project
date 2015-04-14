@@ -123,7 +123,7 @@ create table currently_teaching(
 	course_id int references course( course_id ),
 	course_name varchar(50) references course( course_name ),
 	form_data_id int references form_data( form_data_id ),
-	primary key( previous_taken_id, course_id, course_name, form_data_id )
+	primary key( currently_teaching, course_id, course_name, form_data_id )
 )character set 'utf8'; 
 
 DROP TABLE IF EXISTS previous_taught; 

@@ -91,6 +91,7 @@ DROP TABLE IF EXISTS course;
 create table course(
     course_id int auto_increment,
     course_name varchar(50),
+    semester varchar(10),
     instructor_id int references user(user_id),
     primary key( course_id, course_name )
 )character set 'utf8';
@@ -115,13 +116,13 @@ create table comments(
 /*
  * Form-data & course tables...
  */
-DROP TABLE IF EXISTS previous_taken; 
-create table previous_taken(
-	previous_taken_id int auto_increment,
+DROP TABLE IF EXISTS previous_taken;
+DROP TABLE IF EXISTS currently_teaching; 
+create table currently_teaching(
+	currently_teaching_id int auto_increment,
 	course_id int references course( course_id ),
 	course_name varchar(50) references course( course_name ),
 	form_data_id int references form_data( form_data_id ),
-	grade float not null,
 	primary key( previous_taken_id, course_id, course_name, form_data_id )
 )character set 'utf8'; 
 
@@ -140,6 +141,7 @@ create table desired_courses(
 	course_id int references course( course_id ),
 	course_name varchar(50) references course( course_name ),
 	form_data_id int references form_data( form_data_id ),
+    grade float not null,
 	primary key( desired_course_id, course_id, course_name, form_data_id )
 )character set 'utf8'; 
  

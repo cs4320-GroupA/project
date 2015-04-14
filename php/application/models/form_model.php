@@ -10,7 +10,7 @@
             $mysqldate = date('Y-m-d H:i:s', $date);
             $date = strtotime($mysqldate);
             
-            $this->db->query($sql, array($semester_id, $date, $form_data, $user_id);
+            $this->db->query($sql, array($semester_id, $date, $form_data, $user_id));
 
             //Return TRUE on success, FALSE on failure
             if($this->db->affected_rows() == 1) {

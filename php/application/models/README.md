@@ -42,6 +42,8 @@
 - *gpa* - from form_data table (float)
 - *phone_number* - from form_data table (int)
 - *last_date_of_test* - most recent SPEAK/OPT test date, from form_data table (date, ex "2014-12-20")   
+**OR**
+- -1 if query failure
 
 ---
 

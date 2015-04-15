@@ -1,7 +1,7 @@
 !DOCTYPE html
 <html>
 <head>
-	<title>Application - infoPage</title>
+	<title>Home</title>
         <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 </head>
 

@@ -11,13 +11,30 @@
 		echo "<center>";
 		echo "<h1>Welcome!</h1>";	
 		//If statemanets that change the given message depending onwho 
-		if($this->session->userdata('user_type') == 'applicant') {			
+		
+		if($this->session->userdata('user_type') == 'applicant') 
+		{			
 			echo "<p>APPLICANT FILLER UNTIL WE KNOW WHAT'S HAPPENING</p>"; 
-		} else if($this->session->userdata('user_type') == 'instructor') {
+
+			<div class="container">
+		      <div class="jumbotron text-center">
+		        <h2>Welcome!</h2>
+		        <hr>
+		        <p>Take a moment to learn a little more about me</p>
+		      </div>
+		      </div>
+		    </div>
+		} 
+		else if($this->session->userdata('user_type') == 'instructor') 
+		{
 			echo "<p>INSTRUCTOR FILLER UNTIL WE KNOW WHAT'S HAPPENING</p>";
-		} else if($this->session->userdata('user_type') == 'admin') {
+		} 
+		else if($this->session->userdata('user_type') == 'admin') 
+		{
 			echo "<p>ADMIN FILLER UNTIL WE KNOW WHAT'S HAPPENING</p>";
-		} else {
+		} 
+		else 
+		{
 			echo "<p>YOU'RE NOT LOGGED IN. PLEASE LOG IN.</p>";
 		};
 		echo "</center>";

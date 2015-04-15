@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
           </button>
 	  <!--Sets the Infopage button to revert to the Infopage -->
-          <a class="navbar-brand active" href="home">Infopage</a>
+          <a class="navbar-brand active" href="home">Home</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

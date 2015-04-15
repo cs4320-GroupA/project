@@ -52,7 +52,7 @@
 				    <label for="gpa">GPA: </label>
 				    <input type="text" class="form-control" name="gpa" placeholder="3.487">
 					</div>
-					<div class = "col-md-2">
+					<div class = "col-md-1">
 						<label for="gradYear">Grad Year: </label>
 						<select class="form-control" name = "gradYear">
 							<option>2016</option>

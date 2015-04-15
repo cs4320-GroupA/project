@@ -14,16 +14,7 @@
 		
 		if($this->session->userdata('user_type') == 'applicant') 
 		{			
-			echo "<p>APPLICANT FILLER UNTIL WE KNOW WHAT'S HAPPENING</p>"; 
-
-			<div class="container">
-		      <div class="jumbotron text-center">
-		        <h2>Welcome!</h2>
-		        <hr>
-		        <p>Take a moment to learn a little more about me</p>
-		      </div>
-		      </div>
-		    </div>
+			echo "<p>APPLICANT FILLER UNTIL WE KNOW WHAT'S HAPPENING</p>";
 		} 
 		else if($this->session->userdata('user_type') == 'instructor') 
 		{

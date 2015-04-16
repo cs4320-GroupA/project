@@ -206,11 +206,23 @@
 				<div class = "row">
 					<div class = "col-md-6">
 						<label for="phoneNumber">Phone Number: </label>
-						<input type="text" class="form-control" name="phoneNumber" placeholder="5738675309">
+						<?php
+							if(isset($phone_number)) {
+								echo '<input type="text" class="form-control" name="phoneNumber" value="'.$phone_number.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="phoneNumber" placeholder="5738675309">';
+							}
+						?>
 					</div>
 					<div class = "col-md-6">
 						<label for="mizzouEmail">Email: </label>
-						<input type="text" class="form-control" name="mizzouEmail" placeholder="abc123@mail.missouri.edu">
+						<?php
+							if(isset($mizzou_email)) {
+								echo '<input type="text" class="form-control" name="mizzouEmail" value="'.$mizzou_email.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="mizzouEmail" placeholder="abc123@mail.missouri.edu">';
+							}
+						?>
 					</div>
 				</div>
 				<hr>

@@ -10,16 +10,18 @@
 		?>
 		<div class="container">
 			<div class="jumbotron">
+				<center>
 				<h1>Welcome!</h1>
 				<hr>
 				<p>The timeline is currently in the following window: </p>
 				<p>The applications are for *insert semester query* semester</p>
+				</center>
 			</div>
 		</div>
 		<?php
 			//If statemanets that change the given message depending on who
 			if($this->session->userdata('user_type') == 'applicant')
-						{
+			{
 				echo "<p>APPLICANT FILLER UNTIL WE KNOW WHAT'S HAPPENING</p>";
 			}
 			else if($this->session->userdata('user_type') == 'instructor')

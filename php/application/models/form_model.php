@@ -18,7 +18,7 @@
         }
 
         public function getForm($user_id, $semester_id) {
-            $sql = 'SELECT * from tasub.form_data WHERE semester_id = ? AND user_id = ?';
+            $sql = 'SELECT * from tasub.form WHERE semester_id = ? AND user_id = ?';
 
             $query = $this->db->query($sql, array($semester_id, $user_id));
 

@@ -60,7 +60,7 @@
             $query = $this->db->query($sql, array($studentID, $semester));
 
             if($query->num_rows() > 0) {
-                return $query->result()->form_data_id;
+                return $query->row()->form_data_id;
             } else {
                 return FALSE;
             }

@@ -102,12 +102,10 @@
 			}
 					
 
-			$result = $this->user_model->register($username, $saltedPass, $salt, $account_type);
+			$query = $this->user_model->register($username, $saltedPass, $salt, $account_type);
 
-			if($result == 1) {
-				$query = $this->user_model->login($username);
-				$semester_result = $this->semester_model->getCurrentSemester();
-
+			if($query == 1) {
+				$result = $this->user_model->login($username);
 				$semester_result = $this->semester_model->getCurrentSemester();
 
 				if($semester_result == FALSE) { //No current semester

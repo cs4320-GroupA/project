@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html lang="en">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,40 +17,40 @@
 			include 'nav.php';
 		?>
 		<div class="container">
-	      <div class="page-header">
-	        <h2>Application</h2>
-	      </div>
+			<div class="page-header">
+				<h2>Application</h2>
+			</div>
 		</div>
 		<div class = "container">
 			<form class="form-inline" name="form_data" role="form" action="<?php echo base_url(); ?>index.php/form/submitForm" method="POST">
 				<div class = "row">
 					<div class = "col-md-6">
-			      		<input type="radio" name="radioTAPLA" value = "PLA">
-			      		<label class="radio-inline">PLA (Undergraduate Student)</label>
+						<input type="radio" name="radioTAPLA" value = "PLA">
+						<label class="radio-inline">PLA (Undergraduate Student)</label>
 					</div>
 					<div class = "col-md-6">
-				     	<input type="radio" name="radioTAPLA" value = "TA">
-				     	<label class="radio-inline">TA (Graduate Student)</label>
+						<input type="radio" name="radioTAPLA" value = "TA">
+						<label class="radio-inline">TA (Graduate Student)</label>
 					</div>
 				</div>
 				<br>
 				<hr>
-			  <div class="row">
+				<div class="row">
 					<div class = "col-md-2">
-				    <label for="fname">First Name: </label>
-				    <input type="text" class="form-control" name="fname" placeholder="John ">
+						<label for="fname">First Name: </label>
+						<input type="text" class="form-control" name="fname" placeholder="John ">
 					</div>
 					<div class = "col-md-2">
-				    <label for="lname">Last Name: </label>
-				    <input type="text" class="form-control" name="lname" placeholder="Doe ">
+						<label for="lname">Last Name: </label>
+						<input type="text" class="form-control" name="lname" placeholder="Doe ">
 					</div>
 					<div class = "col-md-2">
-				    <label for="idNumber">ID: </label>
-				    <input type="text" class="form-control" name="idNumber" placeholder="14359687">
+						<label for="idNumber">ID: </label>
+						<input type="text" class="form-control" name="idNumber" placeholder="14359687">
 					</div>
 					<div class = "col-md-2">
-				    <label for="gpa">GPA: </label>
-				    <input type="text" class="form-control" name="gpa" placeholder="3.487">
+						<label for="gpa">GPA: </label>
+						<input type="text" class="form-control" name="gpa" placeholder="3.487">
 					</div>
 					<div class = "col-md-2">
 						<label for="gradYear">Grad Year: </label>
@@ -67,12 +67,12 @@
 							<option>2025</option>
 						</select>
 					</div>
-			  </div>
+				</div>
 				<br>
 				<hr>
 				<div class = "row">
 					<div class = "col-md-6">
-				    <label>If undergraduate applying for PLA, indicate department and grade </label>
+						<label>If undergraduate applying for PLA, indicate department and grade </label>
 						<br>
 						<br>
 						<label for="dept">Department: </label>
@@ -94,31 +94,31 @@
 						<p><b>If gradute: </b></p>
 						<div class = "radio">
 							<label class="radio-inline">
-				      <input type="radio" name="gradRadio" value = "MS"> MS (Master's)
-					    </label>
+								<input type="radio" name="gradRadio" value = "MS"> MS (Master's)
+							</label>
 						</div>
 						<br>
 						<div class = "radio">
 							<label class="radio-inline">
-				      <input type="radio" name="gradRadio" value = "PhD"> PhD (Doctorate)
-					    </label>
+								<input type="radio" name="gradRadio" value = "PhD"> PhD (Doctorate)
+							</label>
 						</div>
 						<br>
 						<br>
-				    <label for="advisorName">Advisor's Name: </label>
-				    <input type="text" class="form-control" name="advisorName" placeholder="John Doe">
+						<label for="advisorName">Advisor's Name: </label>
+						<input type="text" class="form-control" name="advisorName" placeholder="John Doe">
 					</div>
 				</div>
 				<br>
 				<hr>
 				<div class = "row">
 					<div class = "col-md-6">
-				    <label for="phoneNumber">Phone Number: </label>
-				    <input type="text" class="form-control" name="phoneNumber" placeholder="5738675309">
+						<label for="phoneNumber">Phone Number: </label>
+						<input type="text" class="form-control" name="phoneNumber" placeholder="5738675309">
 					</div>
 					<div class = "col-md-6">
-				    <label for="mizzouEmail">Email: </label>
-				    <input type="text" class="form-control" name="mizzouEmail" placeholder="abc123@mail.missouri.edu">
+						<label for="mizzouEmail">Email: </label>
+						<input type="text" class="form-control" name="mizzouEmail" placeholder="abc123@mail.missouri.edu">
 					</div>
 				</div>
 				<hr>
@@ -203,13 +203,13 @@
 						<div class = "col-md-3">
 							<div class = "radio">
 								<label class="radio-inline">
-								<input type="radio" name="gatoRadio" value = "Met"> Requirement Met
+									<input type="radio" name="gatoRadio" value = "Met"> Requirement Met
 								</label>
 							</div>
 							<br>
 							<div class = "radio">
 								<label class="radio-inline">
-								<input type="radio" name="gatoRadio" value = "notMet"> Will Attend August/January Session
+									<input type="radio" name="gatoRadio" value = "notMet"> Will Attend August/January Session
 								</label>
 							</div>
 						</div>
@@ -236,13 +236,13 @@
 					<div class = "col-md-3">
 						<div class = "radio">
 							<label class="radio-inline">
-							<input type="radio" name="speakRadio" value = "Met"> Requirement Met
+								<input type="radio" name="speakRadio" value = "Met"> Requirement Met
 							</label>
 						</div>
 						<br>
 						<div class = "radio">
 							<label class="radio-inline">
-							<input type="radio" name="speakRadio" value = "notMet"> Will Attend August/January Session
+								<input type="radio" name="speakRadio" value = "notMet"> Will Attend August/January Session
 							</label>
 						</div>
 					</div>
@@ -254,13 +254,13 @@
 					<div class = "col-md-3">
 						<div class = "radio">
 							<label class="radio-inline">
-							<input type="radio" name="onitaRadio" value = "Met"> Requirement Met
+								<input type="radio" name="onitaRadio" value = "Met"> Requirement Met
 							</label>
 						</div>
 						<br>
 						<div class = "radio">
 							<label class="radio-inline">
-							<input type="radio" name="onitaRadio" value = "notMet"> Will Attend August/January Session
+								<input type="radio" name="onitaRadio" value = "notMet"> Will Attend August/January Session
 							</label>
 						</div>
 					</div>
@@ -290,9 +290,9 @@
 					<br>
 				</div>
 				<hr>
-		 </form>
-	 </div>
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  	 <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+			</form>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 	</body>
 </html>

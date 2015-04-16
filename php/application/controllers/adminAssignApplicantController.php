@@ -1,5 +1,5 @@
 <?php
-	class adminCreateCourseController extends CI_Controller 
+	class adminAssignApplicantController extends CI_Controller 
 	{
 		public function __construct() 
 		{

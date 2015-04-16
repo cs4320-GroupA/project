@@ -102,7 +102,7 @@
 						<select class="form-control" name = "gradYear">
 							<?php
 								if(isset($expected_graduation)) {
-									echo '<option selected hidden value="'.$expected_graduation.'"></option>';
+									echo '<option selected hidden value="'.$expected_graduation.'">'.$expected_graduation.'</option>';
 								} else {
 									echo '<option selected disabled hidden value=""></option>';
 								}
@@ -131,7 +131,7 @@
 						<select class="form-control" name = "dept">
 							<?php
 								if(isset($department)) {
-									echo '<option selected hidden value="'.$department.'"></option>';
+									echo '<option selected hidden value="'.$department.'">'.$department.'</option>';
 								} else {
 									echo '<option selected disabled hidden value=""></option>';
 								}
@@ -145,9 +145,9 @@
 						<select class="form-control" name = "grade">
 							<?php
 								if(isset($grade)) {
-									echo '<option selected hidden value="'.$grade.'"></option>';
+									echo '<option selected hidden value="'.$grade.'">'.$grade.'</option>';
 								} else {
-									echo '<option selected disabled hidden value=""></option>';
+									echo '<option selected disabled hidden></option>';
 								}
 							?>
 							<option>Freshman</option>
@@ -285,7 +285,7 @@
 						<select class="form-control" name = "lastTestDate">
 							<?php
 								if(isset($last_date_of_test)) {
-									echo '<option selected hidden value="'.$last_date_of_test.'"></option>';
+									echo '<option selected hidden value="'.$last_date_of_test.'">'.$last_date_of_test.'</option>';
 								} else {
 									echo '<option selected disabled hidden value=""></option>';
 								}
@@ -423,7 +423,7 @@
 							<label class="radio-inline">
 								<?php
 									if(isset($onita)) {
-										if($onita == 'Met') {
+										if($onita == 'notMet') {
 											echo '<input type="radio" name="onitaRadio" value = "notMet" checked> Will Attend August/January Session';
 										} else {
 											echo '<input type="radio" name="onitaRadio" value = "notMet"> Will Attend August/January Session';

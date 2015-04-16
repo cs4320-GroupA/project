@@ -7,18 +7,15 @@
 	<body>
 		<?php
 			include 'nav.php';
-		?>
-		<div class="container">
-			<div class="jumbotron">
-				<center>
-				<h1>Welcome!</h1>
-				<hr>
-				<p>The timeline is currently in the following window: </p>
-				<p>The applications are for *insert semester query* semester</p>
-				</center>
-			</div>
-		</div>
-		<?php
+			echo '<div class="container">';
+				echo '<div class="jumbotron">';
+					echo '<center>';
+					echo '<h1>Welcome!</h1>';
+					echo '<p>The timeline is currently in the following window: '.$this->session->userdata("status_id").'</p>';
+					echo '<p>Current Semester: '.$this->session->userdata("semester_title").'</p>';
+					echo '</center>';
+				echo '</div>';
+			echo'</div>';
 			//If statemanets that change the given message depending on who
 			if($this->session->userdata('user_type') == 'applicant')
 			{
@@ -36,7 +33,6 @@
 			{
 				echo "<p>YOU'RE NOT LOGGED IN. PLEASE LOG IN.</p>";
 			};
-				
 		?>
 	</body>
 </html>

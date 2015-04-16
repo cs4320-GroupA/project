@@ -27,7 +27,7 @@
 						//Nav options for admin
 						} else if($this->session->userdata('user_type') == 'admin'){
 							echo "<li><a href='".base_url()."index.php/adminCreateCourseController'>Create Course</a></li>";
-							echo "<li><a href='".base_url()."index.php/adminAssignApplicant'>Assign Applicants</a></li>";
+							echo "<li><a href='".base_url()."index.php/adminAssignApplicantController'>Assign Applicants</a></li>";
 						}
 					}
 				else {

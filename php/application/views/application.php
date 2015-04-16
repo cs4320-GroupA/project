@@ -249,24 +249,6 @@
 				</div>
 				<div class = "row">
 					<div class = "col-md-9">
-						<li>New TAs, ITAs, and PLAs who have received an appointment, are required to participate in the GATO	(Graduate Assistant Teaching Orientation), which is offered just prior to the start of fall and winter terms.	(You do not need to attend more than once.)</li><br>
-					</div>
-					<div class = "col-md-3">
-						<div class = "radio">
-							<label class="radio-inline">
-							<input type="radio" name="internationalGATORadio" value = "Met"> Requirement Met
-							</label>
-						</div>
-						<br>
-						<div class = "radio">
-							<label class="radio-inline">
-							<input type="radio" name="internationalGATORadio" value = "notMet"> Will Attend August/January Session
-							</label>
-						</div>
-					</div>
-				</div>
-				<div class = "row">
-					<div class = "col-md-9">
 						<li>ONITA, is a requirement for all international TAs and PLAs who have not previously attended this orientation. You cannot have a TA/PLA appointment until this requirement has been met. (You do not need to attend more than once.) </li><br>
 					</div>
 					<div class = "col-md-3">

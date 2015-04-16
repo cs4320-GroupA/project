@@ -19,15 +19,46 @@
 			$studentID = htmlspecialchars($_POST['idNumber']);
 			$gpa = htmlspecialchars($_POST['gpa']);
 			$expected_grad = htmlspecialchars($_POST['gradYear']);
-			$advisor = htmlspecialchars($_POST['advisorName']);
 			$phone = htmlspecialchars($_POST['phoneNumber']);
 			$email = htmlspecialchars($_POST['mizzouEmail']);
-			$speakOPTscore = htmlspecialchars($_POST['speakOPT']);
-			$lastTestDate = htmlspecialchars($_POST['lastTestDate']);
-			$signature = htmlspecialchars($_POST['signature']); 
-			$signDate = htmlspecialchars($_POST['date']);
+			$signature = htmlspecialchars($_POST['signature']);
+			$gato = htmlspecialchars($_POST['gatoRadio']);
+			$semester = $this->session->userdata('semester_title');
+			$department = NULL;
+			$grade = NULL;
+			$advisor = NULL;
+			$speakOPTscore = NULL;
+			$lastTestDate = NULL;
+			$onita = NULL;
+			$other_work = NULL;
 
-			$result = $this->form_data_model->submitFormData( $fname, $lname, $email, $studentID, $asstType, $expected_grad, $speakOPTscore, $lastTestDate, $advisor, $gpa, $phone);
+			if(isset($_POST['otherWork'])) {
+				$other_work = htmlspecialchars($_POST['dept']);
+			}
+
+			if($asstType == 'PLA') {
+				$department = htmlspecialchars($_POST['dept']);
+				$grade = htmlspecialchars($_POST['grade']);
+			} else if($asstType == 'TA') {
+				$advisor = htmlspecialchars($_POST['advisorName']);
+				$graduate_type = htmlspecialchars($_POST['gradRadio']);	
+			}
+
+			if(isset($_POST['speakOPT'])) {
+				$speakOPTscore = htmlspecialchars($_POST['speakRadio']);
+				$lastTestDate = htmlspecialchars($_POST['lastTestDate']);
+				$onita = htmlspecialchars($_POST['onitaRadio']);
+			}
+
+
+			$result = $this->form_data_model->submitFormData($asstType, $fname, $lname, $email, $studentID, $gpa, 
+															 $expected_grad, $phone, $email, $signature, $gato, 
+															 $department, $grade, $advisor, $speakOPTscore, 
+															 $lastTestDate, $onita, $other_work);
+
+			$fdata_id = $this->form_data_model->getFormDataID($studentID, $semester);
+
+			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature);
 
 			if($result == TRUE) {
 				redirect('home', 'refresh');

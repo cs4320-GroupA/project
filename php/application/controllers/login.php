@@ -13,7 +13,8 @@
 			$this->load->model('user_model');
 			$this->load->model('account_type_model');
 			$this->load->model('semester_model');
-			
+			$this->load->model('status_model');
+
 			$username = htmlspecialchars($_POST['pawprint']); 
 			
 			$result = $this->user_model->login($username);
@@ -37,18 +38,20 @@
 						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
 						'semester_id' => NULL,
 						'semester_title' => 'NONE',
-						'status_id' => NULL,
+						'status_title' => 'NONE',
 						'logged_in' => TRUE,
 						'failed_login' => FALSE
 					);
 				} else {
+					$status_title = $this->status_model->getStatusTitle($semester_result->row()->status_id);
+					
 					$newSession = array(
 						'user_id' => $result->user_id,
 						'pawprint' => $result->username,
 						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
 						'semester_id' => $semester_result->row()->semester_id,
 						'semester_title' => $semester_result->row()->semester_title,
-						'status_id' => $semester_result->row()->status_id,
+						'status_title' => $status_title,
 						'logged_in' => TRUE,
 						'failed_login' => FALSE
 					);

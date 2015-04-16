@@ -16,28 +16,35 @@
 				<!-- The buttons on the navbar change depending on who the user is logged in as-->
 				<?php
 					//check if 'user_type' is set
-					if($this->session->userdata('user_type')) {
-						if($this->session->userdata('user_type') == 'applicant'){
+					if($this->session->userdata('user_type'))
+					{
+						if($this->session->userdata('user_type') == 'applicant')
+						{
 							echo "<li><a href='".base_url()."index.php/form'>Application</a></li>";
 						//Nav options for instructor
-						} else if($this->session->userdata('user_type') == 'instructor'){
+						}
+						else if($this->session->userdata('user_type') == 'instructor')
+						{
 							echo "<li><a href='".base_url()."index.php/instructorAddCourseController'>Add Courses</a></li>";
 							echo "<li><a href='".base_url()."index.php/instructorViewCoursesController'>Your Courses</a></li>";
 							echo "<li><a href='".base_url()."index.php/instructorViewApplicantPoolController'>Applicant Pool</a></li>";
-						//Nav options for admin
-						} else if($this->session->userdata('user_type') == 'admin'){
+							//Nav options for admin
+						}
+						else if($this->session->userdata('user_type') == 'admin')
+						{
 							echo "<li><a href='".base_url()."index.php/adminCreateCourseController'>Create Course</a></li>";
 							echo "<li><a href='".base_url()."index.php/adminAssignApplicantController'>Assign Applicants</a></li>";
 						}
 					}
-				else {
-					redirect('login', 'refresh');
-				}			
-			?>
-			<li><a href='<?php echo base_url(); ?>index.php/login/logout'>Logout</a></li>
-          </ul>
-        </div>
-      </div>
+					else
+					{
+						redirect('login', 'refresh');
+					}
+				?>
+				<li><a href='<?php echo base_url(); ?>index.php/login/logout'>Logout</a></li>
+			</ul>
+		</div>
+	</div>
 </nav>
 <br>
 <br>

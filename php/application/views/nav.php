@@ -27,13 +27,14 @@
 						{
 							echo "<li><a href='".base_url()."index.php/instructorAddCourseController'>Add Courses</a></li>";
 							echo "<li><a href='".base_url()."index.php/instructorViewCoursesController'>Your Courses</a></li>";
-							echo "<li><a href='".base_url()."index.php/instructorViewApplicantPoolController'>Applicant Pool</a></li>";
+							echo "<li><a href='".base_url()."index.php/applicantPoolController'>Applicant Pool</a></li>";
 							//Nav options for admin
 						}
 						else if($this->session->userdata('user_type') == 'admin')
 						{
 							echo "<li><a href='".base_url()."index.php/adminCreateCourseController'>Create Course</a></li>";
 							echo "<li><a href='".base_url()."index.php/adminAssignApplicantController'>Assign Applicants</a></li>";
+							echo "<li><a href='".base_url()."index.php/adminAccountCreationController'>Account Creation</a></li>";
 						}
 					}
 					else

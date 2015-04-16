@@ -29,8 +29,11 @@
 			$advisor = NULL;
 			$speakOPTscore = NULL;
 			$lastTestDate = NULL;
-			$onita = NULL;
+			$speak_assessment = htmlspecialchars($_POST['speakRadio']);
+			$onita = htmlspecialchars($_POST['onitaRadio']);
 			$other_work = NULL;
+			$graduate_type = NULL;
+
 
 			if(isset($_POST['otherWork'])) {
 				$other_work = htmlspecialchars($_POST['dept']);
@@ -39,6 +42,7 @@
 			if($asstType == 'PLA') {
 				$department = htmlspecialchars($_POST['dept']);
 				$grade = htmlspecialchars($_POST['grade']);
+
 			} else if($asstType == 'TA') {
 				$advisor = htmlspecialchars($_POST['advisorName']);
 				$graduate_type = htmlspecialchars($_POST['gradRadio']);	
@@ -47,14 +51,12 @@
 			if(isset($_POST['speakOPT'])) {
 				$speakOPTscore = htmlspecialchars($_POST['speakRadio']);
 				$lastTestDate = htmlspecialchars($_POST['lastTestDate']);
-				$onita = htmlspecialchars($_POST['onitaRadio']);
-			}
+			} 
 
 
-			$result = $this->form_data_model->submitFormData($asstType, $fname, $lname, $email, $studentID, $gpa, 
-															 $expected_grad, $phone, $email, $signature, $gato, 
-															 $department, $grade, $advisor, $speakOPTscore, 
-															 $lastTestDate, $onita, $other_work, $semester);
+			$result = $this->form_data_model->submitFormData($asstType, $fname, $lname, $email, $studentID, $gpa, $expected_grad, $phone, 
+                                       						 $gato, $department, $grade, $advisor, $speakOPTscore, $lastTestDate, $onita, 
+                                       						 $other_work, $semester, $graduate_type, $speak_assessment)
 
 			$fdata_id = $this->form_data_model->getFormDataID($studentID, $semester);
 

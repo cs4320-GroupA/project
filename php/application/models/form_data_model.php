@@ -5,8 +5,8 @@
         }
 
         public function submitFormData($asstType, $fname, $lname, $email, $studentID, $gpa, $expected_grad, $phone, 
-                                       $email, $signature, $gato, $department, $grade, $advisor, $speakOPTscore, 
-                                       $lastTestDate, $onita, $other_work, $semester) {
+                                       $gato, $department, $grade, $advisor, $speakOPTscore, $lastTestDate, $onita, 
+                                       $other_work, $semester, $graduate_type, $speak_assessment) {
 
             $form_data_sql = 'insert into form_data(
                 first_name, 
@@ -32,7 +32,7 @@
         
             $form_data_result = $this->db->query($form_data_sql, array($fname, $lname, $email, $studentID, $asstType, $semester, $expected_grad, $grade,
                                                                        $speakOPTscore, $department, $advisor, $gpa, $phone, $lastTestDate, $graduate_type, 
-                                                                       $other_work, $speak_assessment, $onita));
+                                                                       $other_work, $gato, $speak_assessment, $onita));
         
             //Return TRUE on success, FALSE on failure
             if($this->db->affected_rows() == 1) {

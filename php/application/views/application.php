@@ -104,7 +104,7 @@
 								if(isset($expected_graduation)) {
 									echo '<option selected hidden value="'.$expected_graduation.'"></option>';
 								} else {
-									echo '<option selected disabled hidden value=''></option>';
+									echo '<option selected disabled hidden value=""></option>';
 								}
 							?>
 							<option>2016</option>
@@ -133,7 +133,7 @@
 								if(isset($department)) {
 									echo '<option selected hidden value="'.$department.'"></option>';
 								} else {
-									echo '<option selected disabled hidden value=''></option>';
+									echo '<option selected disabled hidden value=""></option>';
 								}
 							?>
 							<option>CS</option>
@@ -147,7 +147,7 @@
 								if(isset($grade)) {
 									echo '<option selected hidden value="'.$grade.'"></option>';
 								} else {
-									echo '<option selected disabled hidden value=''></option>';
+									echo '<option selected disabled hidden value=""></option>';
 								}
 							?>
 							<option>Freshman</option>
@@ -287,7 +287,7 @@
 								if(isset($last_date_of_test)) {
 									echo '<option selected hidden value="'.$last_date_of_test.'"></option>';
 								} else {
-									echo '<option selected disabled hidden value=''></option>';
+									echo '<option selected disabled hidden value=""></option>';
 								}
 							?>
 							<option>Fall 2015</option>

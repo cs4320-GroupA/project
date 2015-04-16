@@ -21,22 +21,7 @@
 	        <h2>Application</h2>
 	        <?php 
 	        	if(isset($message)) 
-        		{
-        			echo'<div class="modal fade bs-modal-sm" id="success" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
-					  echo'<div class="modal-dialog modal-sm">';
-					    echo '<div class="modal-content">'; 
-					      echo '<div class="modal-header">';
-					        echo'<h3><center>Submission Successful!</center></h3>';
-					      echo '</div>';
-					      echo '<div class="modal-body">';
-					        echo '<div class="tab-pane fade active in" id="success">';
-					          echo'<p>'.$message.'</p>';
-					        echo '</div>';
-					      echo '</div>';
-					    echo '</div>';
-					  echo '</div>';
-					echo '</div>';
-        		} 
+        		{echo $message} 
 	        ?>
 	      </div>
 		</div>

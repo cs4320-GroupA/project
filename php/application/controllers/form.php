@@ -68,7 +68,7 @@
 			$graduate_type = NULL;
 
 
-			if("" == trim($_POST['otherWork'])) {
+			if("" != trim($_POST['otherWork'])) {
 				$other_work = htmlspecialchars($_POST['otherWork']);
 			}
 
@@ -81,7 +81,7 @@
 				$graduate_type = htmlspecialchars($_POST['gradRadio']);	
 			}
 
-			if("" == trim($_POST['speakOPT'])) {
+			if("" != trim($_POST['speakOPT'])) {
 				$speakOPTscore = htmlspecialchars($_POST['speakRadio']);
 				$lastTestDate = htmlspecialchars($_POST['lastTestDate']);
 			} 

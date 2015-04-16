@@ -30,9 +30,11 @@
 							if(isset($assistant_type)) {
 								if($assistant_type == 'PLA') {
 									echo '<input type="radio" name="radioTAPLA" value = "PLA" checked>';
+								} else {
+									echo '<input type="radio" name="radioTAPLA" value = "PLA">';
 								}
 							} else {
-								echo '<input type="radio" name="radioTAPLA" value = "PLA">';
+									echo '<input type="radio" name="radioTAPLA" value = "PLA">';
 							}
 						?>
 						<label class="radio-inline">PLA (Undergraduate Student)</label>
@@ -42,6 +44,8 @@
 							if(isset($assistant_type)) {
 								if($assistant_type == 'TA') {
 									echo '<input type="radio" name="radioTAPLA" value = "TA" checked>';
+								} else {
+									echo '<input type="radio" name="radioTAPLA" value = "TA">';
 								}
 							} else {
 								echo '<input type="radio" name="radioTAPLA" value = "TA">';
@@ -75,16 +79,34 @@
 					</div>
 					<div class = "col-md-2">
 						<label for="idNumber">ID: </label>
-						<input type="text" class="form-control" name="idNumber" placeholder="14359687">
+						<?php
+							if(isset($student_id)) {
+								echo '<input type="text" class="form-control" name="idNumber" value="'.$student_id.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="idNumber" placeholder="14359687">';
+							}
+						?>
 					</div>
 					<div class = "col-md-2">
 						<label for="gpa">GPA: </label>
-						<input type="text" class="form-control" name="gpa" placeholder="3.487">
+						<?php
+							if(isset($gpa)) {
+								echo '<input type="text" class="form-control" name="gpa" value="'.$gpa.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="gpa" placeholder="3.487">';
+							}
+						?>						
 					</div>
 					<div class = "col-md-2">
 						<label for="gradYear">Grad Year: </label>
 						<select class="form-control" name = "gradYear">
-							<option selected disabled hidden value=''></option>
+							<?php
+								if(isset($expected_graduation)) {
+									echo '<option selected hidden value="'.$expected_graduation.'"></option>';
+								} else {
+									echo '<option selected disabled hidden value=''></option>';
+								}
+							?>
 							<option>2016</option>
 							<option>2017</option>
 							<option>2018</option>
@@ -107,6 +129,13 @@
 						<br>
 						<label for="dept">Department: </label>
 						<select class="form-control" name = "dept">
+							<?php
+								if(isset($department)) {
+									echo '<option selected hidden value="'.$department.'"></option>';
+								} else {
+									echo '<option selected disabled hidden value=''></option>';
+								}
+							?>
 							<option>CS</option>
 							<option>IT</option>
 						</select>
@@ -114,6 +143,13 @@
 						<br>
 						<label for="grade">Grade: </label>
 						<select class="form-control" name = "grade">
+							<?php
+								if(isset($grade)) {
+									echo '<option selected hidden value="'.$grade.'"></option>';
+								} else {
+									echo '<option selected disabled hidden value=''></option>';
+								}
+							?>
 							<option>Freshman</option>
 							<option>Sophomore</option>
 							<option>Junior</option>
@@ -124,19 +160,45 @@
 						<p><b>If gradute: </b></p>
 						<div class = "radio">
 							<label class="radio-inline">
-								<input type="radio" name="gradRadio" value = "MS"> MS (Master's)
+								<?php
+									if(isset($grad_type)) {
+										if($grad_type == 'MS') {
+											echo '<input type="radio" name="gradRadio" value="MS" checked> MS (Master\'s)';
+										} else {
+											echo '<input type="radio" name="gradRadio" value = "MS"> MS (Master\'s)';
+										}
+									} else {
+										echo '<input type="radio" name="gradRadio" value = "MS"> MS (Master\'s)';
+									}
+								?>
 							</label>
 						</div>
 						<br>
 						<div class = "radio">
 							<label class="radio-inline">
-								<input type="radio" name="gradRadio" value = "PhD"> PhD (Doctorate)
+								<?php
+									if(isset($grad_type)) {
+										if($grad_type == 'PhD') {
+											echo '<input type="radio" name="gradRadio" value = "PhD" checked> PhD (Doctorate)';
+										} else {
+											echo '<input type="radio" name="gradRadio" value = "PhD"> PhD (Doctorate)';
+										}
+									} else {
+										echo '<input type="radio" name="gradRadio" value = "PhD"> PhD (Doctorate)';
+									}
+								?>
 							</label>
 						</div>
 						<br>
 						<br>
 						<label for="advisorName">Advisor's Name: </label>
-						<input type="text" class="form-control" name="advisorName" placeholder="John Doe">
+						<?php
+							if(isset($advisor)) {
+								echo '<input type="text" class="form-control" name="advisorName" value="'.$advisor.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="advisorName" placeholder="John Doe">';
+							}
+						?>
 					</div>
 				</div>
 				<br>
@@ -198,17 +260,36 @@
 				<hr>
 				<div class = "row">
 					<label for="otherWork">Other Work:  </label>
-					<input type="text" class="form-control" name="otherWork" placeholder="Tiger Tech">
+					<?php
+						if(isset($other_work)) {
+							echo '<input type="text" class="form-control" name="otherWork" value="'.$other_work.'">';
+						} else {
+							echo '<input type="text" class="form-control" name="otherWork" placeholder="Tiger Tech">';
+						}
+					?>
 				</div>
 				<hr>
 				<div class = "row">
 					<div class = "col-md-6">
 						<label for="speakOPT">SPEAK/OPT Score, if applicable):  </label>
-						<input type="text" class="form-control" name="speakOPT" placeholder="15">
+						<?php 
+							if(isset($SPEAK_OPT_score)) {
+								echo '<input type="text" class="form-control" name="speakOPT" value="'.$SPEAK_OPT_score.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="speakOPT" placeholder="15">';
+							}
+						?>
 					</div>
 					<div class = "col-md-6">
 						<label for="lastTestDate">Semester of Last Test:  </label>
 						<select class="form-control" name = "lastTestDate">
+							<?php
+								if(isset($last_date_of_test)) {
+									echo '<option selected hidden value="'.$last_date_of_test.'"></option>';
+								} else {
+									echo '<option selected disabled hidden value=''></option>';
+								}
+							?>
 							<option>Fall 2015</option>
 							<option>Spring 2014</option>
 							<option>Fall 2014</option>
@@ -233,13 +314,33 @@
 						<div class = "col-md-3">
 							<div class = "radio">
 								<label class="radio-inline">
-									<input type="radio" name="gatoRadio" value = "Met"> Requirement Met
+								<?php
+									if(isset($gato)) {
+										if($gato == 'Met') {
+											echo '<input type="radio" name="gatoRadio" value = "Met" checked> Requirement Met';
+										} else {
+											echo '<input type="radio" name="gatoRadio" value = "Met"> Requirement Met';
+										}
+									} else {
+										echo '<input type="radio" name="gatoRadio" value = "Met"> Requirement Met';
+									}
+								?>
 								</label>
 							</div>
 							<br>
 							<div class = "radio">
 								<label class="radio-inline">
-									<input type="radio" name="gatoRadio" value = "notMet"> Will Attend August/January Session
+								<?php
+									if(isset($gato)) {
+										if($gato == 'notMet') {
+											echo '<input type="radio" name="gatoRadio" value = "notMet" checked> Will Attend August/January Session';
+										} else {
+											echo '<input type="radio" name="gatoRadio" value = "notMet"> Will Attend August/January Session';
+										}
+									} else {
+										echo '<input type="radio" name="gatoRadio" value = "notMet"> Will Attend August/January Session';
+									}
+								?>
 								</label>
 							</div>
 						</div>
@@ -266,13 +367,33 @@
 					<div class = "col-md-3">
 						<div class = "radio">
 							<label class="radio-inline">
-								<input type="radio" name="speakRadio" value = "Met"> Requirement Met
+								<?php
+									if(isset($speak_assessment)) {
+										if($speak_assessment == 'Met') {
+											echo '<input type="radio" name="speakRadio" value = "Met" checked> Requirement Met';
+										} else {
+											echo '<input type="radio" name="speakRadio" value = "Met"> Requirement Met';
+										}
+									} else {
+										echo '<input type="radio" name="speakRadio" value = "Met"> Requirement Met';
+									}
+								?>
 							</label>
 						</div>
 						<br>
 						<div class = "radio">
 							<label class="radio-inline">
-								<input type="radio" name="speakRadio" value = "notMet"> Will Attend August/January Session
+								<?php
+									if(isset($speak_assessment)) {
+										if($speak_assessment == 'notMet') {
+											echo '<input type="radio" name="speakRadio" value = "notMet" checked> Will Attend August/January Session';
+										} else {
+											echo '<input type="radio" name="speakRadio" value = "notMet"> Will Attend August/January Session';
+										}
+									} else {
+										echo '<input type="radio" name="speakRadio" value = "notMet"> Will Attend August/January Session';
+									}
+								?>
 							</label>
 						</div>
 					</div>
@@ -284,13 +405,33 @@
 					<div class = "col-md-3">
 						<div class = "radio">
 							<label class="radio-inline">
-								<input type="radio" name="onitaRadio" value = "Met"> Requirement Met
+								<?php
+									if(isset($onita)) {
+										if($onita == 'Met') {
+											echo '<input type="radio" name="onitaRadio" value = "Met" checked> Requirement Met';
+										} else {
+											echo '<input type="radio" name="onitaRadio" value = "Met"> Requirement Met';
+										}
+									} else {
+										echo '<input type="radio" name="onitaRadio" value = "Met"> Requirement Met';
+									}
+								?>
 							</label>
 						</div>
 						<br>
 						<div class = "radio">
 							<label class="radio-inline">
-								<input type="radio" name="onitaRadio" value = "notMet"> Will Attend August/January Session
+								<?php
+									if(isset($onita)) {
+										if($onita == 'Met') {
+											echo '<input type="radio" name="onitaRadio" value = "notMet" checked> Will Attend August/January Session';
+										} else {
+											echo '<input type="radio" name="onitaRadio" value = "notMet"> Will Attend August/January Session';
+										}
+									} else {
+										echo '<input type="radio" name="onitaRadio" value = "notMet"> Will Attend August/January Session';
+									}
+								?>
 							</label>
 						</div>
 					</div>

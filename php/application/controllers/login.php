@@ -101,11 +101,12 @@
 			$result = $this->user_model->register($username, $saltedPass, $salt, $account_type);
 
 			if($result == 1) {
+				$query = $this->user_model->login($username);
 				$semester_result = $this->semester_model->getCurrentSemester();
 
 				$newSession = array(
-					'user_id' => $result->user_id,
-					'pawprint' => $result->username,
+					'user_id' => $query->user_id,
+					'pawprint' => $query->username,
 					'user_type' => strtolower($account_type),
 					'semester_id' => $semester_result->row()->semester_id,
 					'semester_title' => $semester_result->row()->semester_title,

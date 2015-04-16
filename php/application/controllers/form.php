@@ -60,14 +60,16 @@
                                        						 $other_work, $semester, $graduate_type, $speak_assessment);
 
 			$fdata_id = $this->form_data_model->getFormDataID($studentID, $semester);
+			echo $fdata_id;
 
 			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature, $date);
-
+			/*
 			if($result == TRUE) {
 				redirect('home', 'refresh');
 			} else {
 				redirect('form', 'refresh');
 			}
+			*/
 		}
 	}
 ?>

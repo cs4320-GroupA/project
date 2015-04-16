@@ -55,7 +55,7 @@
         }
 
         public function getFormDataID($studentID, $semester) {
-            $sql = 'SELECT form_data_id FROM tasub.form_data WHERE student_id = ? AND semester = ?';
+            $sql = 'SELECT form_data_id FROM tasub.form_data WHERE (student_id = ? AND semester = ?)';
 
             $query = $this->db->query($sql, array($studentID, $semester));
 

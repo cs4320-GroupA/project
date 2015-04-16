@@ -96,8 +96,7 @@
 			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature, $date);
 			
 			if($result == TRUE) {
-				$data = array('message' => '<p>Submission Success</p>');
-				$this->load->view('application', $data);
+				redirect('form', 'refresh');
 			} else {
 				redirect('form', 'refresh');
 			}

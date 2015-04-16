@@ -28,7 +28,7 @@
                 gato,
                 speak_assessment,
                 onita
-            ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+            ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         
             $form_data_result = $this->db->query($form_data_sql, array($fname, $lname, $email, $studentID, $asstType, $semester, $expected_grad, $grade,
                                                                        $speakOPTscore, $department, $advisor, $gpa, $phone, $lastTestDate, $graduate_type, 

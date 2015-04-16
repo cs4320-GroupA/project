@@ -26,11 +26,27 @@
 			<form class="form-inline" name="form_data" role="form" action="<?php echo base_url(); ?>index.php/form/submitForm" method="POST">
 				<div class = "row">
 					<div class = "col-md-6">
-						<input type="radio" name="radioTAPLA" value = "PLA">
+						<?php 
+							if(isset($assistant_type)) {
+								if($assistant_type == 'PLA') {
+									echo '<input type="radio" name="radioTAPLA" value = "PLA" checked>'
+								}
+							} else {
+								echo '<input type="radio" name="radioTAPLA" value = "PLA">'
+							}
+						?>
 						<label class="radio-inline">PLA (Undergraduate Student)</label>
 					</div>
 					<div class = "col-md-6">
-						<input type="radio" name="radioTAPLA" value = "TA">
+						<?php 
+							if(isset($assistant_type)) {
+								if($assistant_type == 'TA') {
+									echo '<input type="radio" name="radioTAPLA" value = "TA" checked>'
+								}
+							} else {
+								echo '<input type="radio" name="radioTAPLA" value = "TA">'
+							}
+						?>
 						<label class="radio-inline">TA (Graduate Student)</label>
 					</div>
 				</div>
@@ -39,11 +55,23 @@
 				<div class="row">
 					<div class = "col-md-2">
 						<label for="fname">First Name: </label>
-						<input type="text" class="form-control" name="fname" placeholder="John ">
+						<?php 
+							if(isset($first_name)) {
+								echo '<input type="text" class="form-control" name="fname" value="'.$first_name.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="fname" placeholder="John ">';
+							}
+						?>
 					</div>
 					<div class = "col-md-2">
 						<label for="lname">Last Name: </label>
-						<input type="text" class="form-control" name="lname" placeholder="Doe ">
+						<?php 
+							if(isset($last_name)) {
+								echo '<input type="text" class="form-control" name="lname" value="'.$last_name.' ">';
+							} else {
+								echo '<input type="text" class="form-control" name="lname" placeholder="Doe ">';
+							}
+						?>
 					</div>
 					<div class = "col-md-2">
 						<label for="idNumber">ID: </label>
@@ -56,6 +84,7 @@
 					<div class = "col-md-2">
 						<label for="gradYear">Grad Year: </label>
 						<select class="form-control" name = "gradYear">
+							<option selected disabled hidden value=''></option>
 							<option>2016</option>
 							<option>2017</option>
 							<option>2018</option>
@@ -297,3 +326,4 @@
 		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 	</body>
 </html>
+]

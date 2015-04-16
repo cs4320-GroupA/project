@@ -6,7 +6,39 @@
         }
 
 		public function index() {
-			$this->load->view('application');
+			$this->load->model('form_data_model');
+			$this->load->model('form_model');
+
+			$query = $this->form_model->getForm($this->session->userdata(['user_id'], $this->session->userdata['semester_id']));
+
+			if($query != FALSE) {
+				$result = $this->form_data_model->getFormDataByID($query->row()->form_data);
+				$row = $result->row();
+
+				$data = array('first_name' => $row->first_name,
+							  'last_name' => $row->last_name,
+							  'mizzou_email' => $row->mizzou_email,
+							  'student_id' => $row->student_id,
+							  'assistant_type' => $row->assistant_type,
+							  'expected_graduation' => $row->expected_graduation,
+							  'grade' => $row->grade,
+							  'SPEAK_OPT_score' => $row->SPEAK_OPT_score,
+							  'department' => $row->department,
+							  'advisor' => $row->advisor,
+							  'gpa' => $row->gpa,
+							  'phone_number' => $row->phone_number,
+							  'last_date_of_test' => $row->last_date_of_test,
+							  'grad_type' => $row->grad_type,
+							  'other_work' => $row->other_work,
+							  'gato' => $row->gato,
+							  'speak_assessment' => $row->speak_assessment,
+							  'onita' => $row->onita,
+							  'message' => '<p>*Your form was successfully submitted.<br>*To edit your submission changes the values and click Edit Button');
+
+				$this->load->view('application', $data);
+			} else {			
+				$this->load->view('application');
+			}
 		}
 
 		public function submitForm() {

@@ -24,6 +24,7 @@
 			$signature = htmlspecialchars($_POST['signature']);
 			$gato = htmlspecialchars($_POST['gatoRadio']);
 			$semester = $this->session->userdata('semester_title');
+			$date = htmlspecialchars($_POST['date']);
 			$department = NULL;
 			$grade = NULL;
 			$advisor = NULL;
@@ -60,7 +61,7 @@
 
 			$fdata_id = $this->form_data_model->getFormDataID($studentID, $semester);
 
-			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature);
+			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature, $date);
 
 			if($result == TRUE) {
 				redirect('home', 'refresh');

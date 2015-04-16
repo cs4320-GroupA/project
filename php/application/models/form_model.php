@@ -4,13 +4,10 @@
             parent::__construct();
         }
 
-        public function submitForm($semester_id, $form_data, $user_id, $signature) {
-            $sql = 'INSERT INTO form(semester_id, submission_date, form_data, user_id, signature, signature_date) VALUES(?, ?, ?, ?, ?, ?)';
+        public function submitForm($semester_id, $form_data, $user_id, $signature, $date) {
+            $sql = 'INSERT INTO form(semester_id, form_data, user_id, signature, signature_date) VALUES(?, ?, ?, ?, ?)';
             
-            $mysqldate = date('Y-m-d', $date);
-            $date = strtotime($mysqldate);
-            
-            $this->db->query($sql, array($semester_id, $date, $form_data, $user_id, $signature, $mysqldate));
+            $this->db->query($sql, array($semester_id, $form_data, $user_id, $signature, $date));
 
             //Return TRUE on success, FALSE on failure
             if($this->db->affected_rows() == 1) {

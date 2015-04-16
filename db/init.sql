@@ -36,7 +36,6 @@ DROP TABLE IF EXISTS form;
 create table form(
     form_id int not null auto_increment,
     semester_id int references semester(semester_id),
-    submission_date date not null,
     form_data int references form_data( form_data_id ),
     user_id int references user(user_id),
     signature varchar(50),

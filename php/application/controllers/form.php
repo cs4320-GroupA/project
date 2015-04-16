@@ -56,7 +56,7 @@
 
 			$result = $this->form_data_model->submitFormData($asstType, $fname, $lname, $email, $studentID, $gpa, $expected_grad, $phone, 
                                        						 $gato, $department, $grade, $advisor, $speakOPTscore, $lastTestDate, $onita, 
-                                       						 $other_work, $semester, $graduate_type, $speak_assessment)
+                                       						 $other_work, $semester, $graduate_type, $speak_assessment);
 
 			$fdata_id = $this->form_data_model->getFormDataID($studentID, $semester);
 

@@ -29,10 +29,10 @@
 						<?php 
 							if(isset($assistant_type)) {
 								if($assistant_type == 'PLA') {
-									echo '<input type="radio" name="radioTAPLA" value = "PLA" checked>'
+									echo '<input type="radio" name="radioTAPLA" value = "PLA" checked>';
 								}
 							} else {
-								echo '<input type="radio" name="radioTAPLA" value = "PLA">'
+								echo '<input type="radio" name="radioTAPLA" value = "PLA">';
 							}
 						?>
 						<label class="radio-inline">PLA (Undergraduate Student)</label>
@@ -41,10 +41,10 @@
 						<?php 
 							if(isset($assistant_type)) {
 								if($assistant_type == 'TA') {
-									echo '<input type="radio" name="radioTAPLA" value = "TA" checked>'
+									echo '<input type="radio" name="radioTAPLA" value = "TA" checked>';
 								}
 							} else {
-								echo '<input type="radio" name="radioTAPLA" value = "TA">'
+								echo '<input type="radio" name="radioTAPLA" value = "TA">';
 							}
 						?>
 						<label class="radio-inline">TA (Graduate Student)</label>

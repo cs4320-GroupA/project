@@ -9,7 +9,7 @@
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
 
-			$query = $this->form_model->getForm($this->session->userdata(['user_id'], $this->session->userdata['semester_id']));
+			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
 
 			if($query != FALSE) {
 				$result = $this->form_data_model->getFormDataByID($query->row()->form_data);

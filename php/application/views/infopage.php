@@ -11,7 +11,7 @@
 				echo '<div class="jumbotron">';
 					echo '<center>';
 					echo '<h1>Welcome!</h1>';
-					echo '<p>Current Window: '.$this->session->userdata("status_title").'</p>';
+					echo '<p>Current Window: '.$this->session->userdata("status").'</p>';
 					echo '<p>Current Semester: '.$this->session->userdata("semester_title").'</p>';
 					echo '</center>';
 				echo '</div>';

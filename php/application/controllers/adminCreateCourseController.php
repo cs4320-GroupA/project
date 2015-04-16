@@ -8,7 +8,7 @@
 
 		public function index() 
 		{ 
-			$this->load->view('instructorAddCourse');
+			$this->load->view('adminCreateCourse');
 		}
 	}
 ?>

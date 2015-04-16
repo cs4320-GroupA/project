@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" href="../../favicon.ico">
-		<title>Add Course</title>
+		<title>Create Course</title>
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -18,9 +18,10 @@
 		?>
 		<div class="container">
 			<div class="page-header">
-				<h2>Add a Course</h2>
+				<h2>Create Course</h2>
 			</div>
 		</div>
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 	</body>

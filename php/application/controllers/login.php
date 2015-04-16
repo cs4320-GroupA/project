@@ -71,8 +71,7 @@
 		public function register() {
 			$this->load->model('user_model');
 			$this->load->model('account_type_model');
-			
-			$result = $this->user_model->login();
+			$this->load->model('semester_model');
 
 			$username = htmlspecialchars($_POST['pawprint']); 
 			$password = htmlspecialchars($_POST['passwordinput']);
@@ -102,6 +101,8 @@
 			$result = $this->user_model->register($username, $saltedPass, $salt, $account_type);
 
 			if($result == 1) {
+				$semester_result = $this->semester_model->getCurrentSemester();
+
 				$newSession = array(
 					'user_id' => $result->user_id,
 					'pawprint' => $result->username,

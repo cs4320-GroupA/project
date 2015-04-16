@@ -37,7 +37,7 @@
 					redirect('login', 'refresh');
 				}			
 			?>
-		<li><a href='login/logout'>Logout</a></li>
+		<li><a href='<?php echo base_url(); ?>index.php/login/logout'>Logout</a></li>
           </ul>
         </div>
       </div>

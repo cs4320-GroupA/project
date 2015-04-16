@@ -10,8 +10,7 @@
             $query = $this->db->query($sql, array($id));
 
             if($query->num_rows() > 0) {
-                echo $query->row()->status_title;
-                //return $query->row()->status_title;
+                return $query->row()->status_title;
             } else {
                 return FALSE;
             }

@@ -43,7 +43,7 @@
 						'failed_login' => FALSE
 					);
 				} else {
-					$status_title = $this->status_model->getStatusTitle($semester_result->row()->status_id);
+					$status_title = $this->status_model->getStatusTitle($semester_result->row()->status);
 					
 					$newSession = array(
 						'user_id' => $result->user_id,

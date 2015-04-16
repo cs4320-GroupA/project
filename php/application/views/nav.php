@@ -27,13 +27,14 @@
 						//Nav options for admin
 						} else if($this->session->userdata('user_type') == 'admin'){
 							echo "<li><a href='".base_url()."index.php/adminCreateCourseController'>Create Course</a></li>";
+							echo "<li><a href='".base_url()."index.php/adminAssignApplicant'>Assign Applicants</a></li>";
 						}
 					}
 				else {
 					redirect('login', 'refresh');
 				}			
 			?>
-		<li><a href='<?php echo base_url(); ?>index.php/login/logout'>Logout</a></li>
+			<li><a href='<?php echo base_url(); ?>index.php/login/logout'>Logout</a></li>
           </ul>
         </div>
       </div>

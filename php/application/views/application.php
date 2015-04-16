@@ -19,7 +19,7 @@
 		<div class="container">
 	      <div class="page-header">
 	        <h2>Application</h2>
-	        <?php echo $message; ?>
+	        <?php if(isset($message)) {echo $message;} ?>
 	      </div>
 		</div>
 		<div class = "container">

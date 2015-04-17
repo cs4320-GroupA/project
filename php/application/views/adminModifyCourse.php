@@ -46,52 +46,51 @@
 							<label for="instructorPawprint">Instructor Pawprint: </label>
 							<input type="text" class="form-control" id="instructorPawprint" placeholder="pws326">
 						</div>
-						<button type="submit" class="btn btn-primary">Add</button>
+						<button type="submit" class="btn btn-success">Add</button>
 					</form>
 				</div>
 			</div>
 			<br>
 			<br>
 			<div class="row">
-				<h3>Modify a Course</h3>
-				<table class="table table-bordered table-hover">
-					<tr>
-						<td><b>Action</b></td>
-						<td>
-							<button type="button" class="btn btn-primary">Add</button>
-							<button type="button" class="btn btn-danger">Remove</button>
-						</td>
-						<td>
-							<button type="button" class="btn btn-primary">Add</button>
-							<button type="button" class="btn btn-danger">Remove</button>
-						</td>
-						<td>
-							<button type="button" class="btn btn-primary">Add</button>
-							<button type="button" class="btn btn-danger">Remove</button>
-						</td>
-						<td>
-							<button type="button" class="btn btn-primary">Add</button>
-							<button type="button" class="btn btn-danger">Remove</button>
-						</td>
-					</tr>
-					<tr>
-						<td><b>Course Name</b></td>
-						<td>example</td>
-						<td>example</td>
-						<td>example</td>
-						<td>example</td>
-					</tr>
-					<tr>
-						<td><b>Instructor</b></td>
-						<td>example</td>
-						<td>example</td>
-						<td>example</td>
-						<td>example</td>
-					</tr>
-				</table>				
+				<h3>Edit or Remove an Existing Course</h3>
+				<table class="table table-hover">
+		        <thead>
+		          <tr>
+		            <th>Action</th>
+		            <th>Course</th>
+		            <th>Instructor</th>
+		          </tr>
+		        </thead>
+		        <tbody>
+		          <tr>
+		            <td>
+		                <button type="button" class="btn btn-primary">Edit</button>
+						<button type="button" class="btn btn-danger">Remove</button>
+		            </td>
+		            <td>CS4320</td>
+		            <td>scottgs</td>
+		          </tr>
+		          <tr>
+		            <td>
+		                <button type="button" class="btn btn-primary">Edit</button>
+						<button type="button" class="btn btn-danger">Remove</button>
+		            </td>
+		            <td>CS4001</td>
+		            <td>scottgs</td>
+		          </tr>
+		          <tr>
+		            <td>
+		                <button type="button" class="btn btn-primary">Edit</button>
+						<button type="button" class="btn btn-danger">Remove</button>
+		            </td>
+		            <td>CS3380</td>
+		            <td>klaricm</td>
+		          </tr>
+		        </tbody>
+		      </table>				
 			</div>
 		</div>
-		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 	</body>

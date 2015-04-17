@@ -23,7 +23,7 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-12">
 					<h3>Add a Course</h3>
 					<form>
 						<div class="form-group">
@@ -49,12 +49,43 @@
 						<button type="submit" class="btn btn-primary">Add</button>
 					</form>
 				</div>
-				<div class="col-md-4">
-					<h3>Modify a Course</h3>
-				</div>
-				<div class="col-md-4">
-					<h3>Remove a Course</h3>
-				</div>
+			</div>
+			<div class="row">
+				<table class="table table-bordered table-hover">
+					<tr>
+						<td><b>Action</b></td>
+						<td>
+							<button type="button" class="btn btn-success">Add</button>
+							<button type="button" class="btn btn-danger">Remove</button>
+						</td>
+						<td>
+							<button type="button" class="btn btn-success">Add</button>
+							<button type="button" class="btn btn-danger">Remove</button>
+						</td>
+						<td>
+							<button type="button" class="btn btn-success">Add</button>
+							<button type="button" class="btn btn-danger">Remove</button>
+						</td>
+						<td>
+							<button type="button" class="btn btn-success">Add</button>
+							<button type="button" class="btn btn-danger">Remove</button>
+						</td>
+					</tr>
+					<tr>
+						<td><b>Course Name</b></td>
+						<td>example</td>
+						<td>example</td>
+						<td>example</td>
+						<td>example</td>
+					</tr>
+					<tr>
+						<td><b>Instructor</b></td>
+						<td>example</td>
+						<td>example</td>
+						<td>example</td>
+						<td>example</td>
+					</tr>
+				</table>				
 			</div>
 		</div>
 		

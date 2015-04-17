@@ -50,24 +50,27 @@
 					</form>
 				</div>
 			</div>
+			<br>
+			<br>
 			<div class="row">
+				<h3>Modify a Course</h3>
 				<table class="table table-bordered table-hover">
 					<tr>
 						<td><b>Action</b></td>
 						<td>
-							<button type="button" class="btn btn-success">Add</button>
+							<button type="button" class="btn btn-primary">Add</button>
 							<button type="button" class="btn btn-danger">Remove</button>
 						</td>
 						<td>
-							<button type="button" class="btn btn-success">Add</button>
+							<button type="button" class="btn btn-primary">Add</button>
 							<button type="button" class="btn btn-danger">Remove</button>
 						</td>
 						<td>
-							<button type="button" class="btn btn-success">Add</button>
+							<button type="button" class="btn btn-primary">Add</button>
 							<button type="button" class="btn btn-danger">Remove</button>
 						</td>
 						<td>
-							<button type="button" class="btn btn-success">Add</button>
+							<button type="button" class="btn btn-primary">Add</button>
 							<button type="button" class="btn btn-danger">Remove</button>
 						</td>
 					</tr>

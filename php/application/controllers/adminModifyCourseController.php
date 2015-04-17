@@ -1,5 +1,5 @@
 <?php
-	class adminCreateCourseController extends CI_Controller 
+	class adminModifyCourseController extends CI_Controller 
 	{
 		public function __construct() 
 		{
@@ -8,7 +8,7 @@
 
 		public function index() 
 		{ 
-			$this->load->view('adminCreateCourse');
+			$this->load->view('adminModifyCourse');
 		}
 	}
 ?>

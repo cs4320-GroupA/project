@@ -32,7 +32,7 @@
 						}
 						else if($this->session->userdata('user_type') == 'admin')
 						{
-							echo "<li><a href='".base_url()."index.php/adminCreateCourseController'>Create Course</a></li>";
+							echo "<li><a href='".base_url()."index.php/adminModifyCourseController'>Modify Course</a></li>";
 							echo "<li><a href='".base_url()."index.php/adminAssignApplicantController'>Assign Applicants</a></li>";
 							echo "<li><a href='".base_url()."index.php/adminAccountCreationController'>Account Creation</a></li>";
 						}

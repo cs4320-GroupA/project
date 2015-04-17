@@ -32,7 +32,7 @@
 						</div>
 						<div class="form-group">
 							<label for="semester">Semester: </label>
-							<select>
+							<select class="form-control">
 							    <option>FALL 2015</option>
 							    <option>SPRING 2016</option>
 							    <option>FALL 2016</option>
@@ -44,9 +44,9 @@
 						</div>
 						<div class="form-group">
 							<label for="instructorPawprint">Instructor Pawprint: </label>
-							<input type="text" id="instructorPawprint" placeholder="ptf342">
+							<input type="text" class="form-control" id="instructorPawprint" placeholder="pws326">
 						</div>
-						<button type="submit" class="btn btn-default">Add</button>
+						<button type="submit" class="btn btn-primary">Add</button>
 					</form>
 				</div>
 				<div class="col-md-4">

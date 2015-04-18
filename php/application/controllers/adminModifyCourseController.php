@@ -3,19 +3,16 @@
 	{
 		public function __construct() 
 		{
-            parent::__construct();
-        }
+			$this->load->model('Course_model');
+			$this->load->model('Semester_model');
+            		parent::__construct();
+       		 }
 
 		public function index() 
 		{ 
-			$this->load->view('adminModifyCourse');
-		}
 
-		public function populate(){
-			$this->load->model('Course_model');
-			$this->load->model('Semester_model');
-
-			
+			$courses = $this->course_model->getCourses();
+			$this->load->view('adminModifyCourse',$courses);
 		}
 
 		public function remove(){
@@ -30,7 +27,7 @@
 
 		}
 
-		public function modify(){
+		public function edit(){
 			$this->load->model('Course_model');
 			$this->load->model('Semester_model');
 		}

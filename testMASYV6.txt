@@ -1,1 +1,0 @@
-masyv6 test of git remote

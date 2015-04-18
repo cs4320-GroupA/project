@@ -16,19 +16,15 @@
 		}
 
 		public function remove(){
-			$this->load->model('Course_model');
-			$this->load->model('Semester_model');
+
+			
 
 		}
 
 		public function add(){
-			$this->load->model('Course_model');
-			$this->load->model('Semester_model');
 
 		}
 
 		public function edit(){
-			$this->load->model('Course_model');
-			$this->load->model('Semester_model');
 		}
 ?>

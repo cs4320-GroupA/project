@@ -112,6 +112,11 @@
 			if($query != FALSE) {
 				redirect('form', 'refresh');
 			}
+			//redirect if required is not filled
+			if(!isset($_POST['fname'])) {
+				redirect('form', 'refresh');
+			}
+
 			//Grab the required fields from form, and set specific fields to NULL
 			$asstType = htmlspecialchars($_POST['radioTAPLA']); 
 			$fname = htmlspecialchars($_POST['fname']);
@@ -185,6 +190,11 @@
 				redirect('form', 'refresh');
 			}
 
+			//redirect if required is not filled
+			if(!isset($_POST['fname'])) {
+				redirect('form', 'refresh');
+			} 
+
 			//Grab the required fields from form, and set specific fields to NULL
 			$asstType = htmlspecialchars($_POST['radioTAPLA']); 
 			$fname = htmlspecialchars($_POST['fname']);
@@ -236,7 +246,7 @@
                                        						 $other_work, $semester, $graduate_type, $speak_assessment);
 
 			//Update form meta data into database
-			$result = $this->form_model->editForm($query->row()->form_id, $query->row()->semester_id, $signature, $date);
+			$result = $this->form_model->editForm($query->row()->user_id, $query->row()->semester_id, $signature, $date);
 			
 			//Redirect to form
 			redirect('form', 'refresh');

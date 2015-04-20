@@ -7,7 +7,7 @@ class applicantPoolController extends CI_Controller {
     }// end constructor
     
     public function index(){ 
-	   $this->load->view('applicantPool');
+	   $this->load->view('applicant_pool');
     }// end index
 
 }// end class

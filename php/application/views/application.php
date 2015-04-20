@@ -29,12 +29,12 @@
 						<?php 
 							if(isset($assistant_type)) {
 								if($assistant_type == 'PLA') {
-									echo '<input type="radio" name="radioTAPLA" value = "PLA" checked>';
+									echo '<input type="radio" name="radioTAPLA" value = "PLA" checked required>';
 								} else {
-									echo '<input type="radio" name="radioTAPLA" value = "PLA">';
+									echo '<input type="radio" name="radioTAPLA" value = "PLA" required>';
 								}
 							} else {
-									echo '<input type="radio" name="radioTAPLA" value = "PLA">';
+									echo '<input type="radio" name="radioTAPLA" value = "PLA" required>';
 							}
 						?>
 						<label class="radio-inline">PLA (Undergraduate Student)</label>
@@ -61,9 +61,9 @@
 						<label for="fname">First Name: </label>
 						<?php 
 							if(isset($first_name)) {
-								echo '<input type="text" class="form-control" name="fname" value="'.$first_name.'">';
+								echo '<input type="text" class="form-control" name="fname" value="'.$first_name.'" required>';
 							} else {
-								echo '<input type="text" class="form-control" name="fname" placeholder="John ">';
+								echo '<input type="text" class="form-control" name="fname" placeholder="John " required>';
 							}
 						?>
 					</div>
@@ -71,9 +71,9 @@
 						<label for="lname">Last Name: </label>
 						<?php 
 							if(isset($last_name)) {
-								echo '<input type="text" class="form-control" name="lname" value="'.$last_name.' ">';
+								echo '<input type="text" class="form-control" name="lname" value="'.$last_name.' " required>';
 							} else {
-								echo '<input type="text" class="form-control" name="lname" placeholder="Doe ">';
+								echo '<input type="text" class="form-control" name="lname" placeholder="Doe " required>';
 							}
 						?>
 					</div>
@@ -81,9 +81,9 @@
 						<label for="idNumber">ID: </label>
 						<?php
 							if(isset($student_id)) {
-								echo '<input type="text" class="form-control" name="idNumber" value="'.$student_id.'">';
+								echo '<input type="text" class="form-control" name="idNumber" value="'.$student_id.'" required>';
 							} else {
-								echo '<input type="text" class="form-control" name="idNumber" placeholder="14359687">';
+								echo '<input type="text" class="form-control" name="idNumber" placeholder="14359687" required>';
 							}
 						?>
 					</div>
@@ -91,15 +91,15 @@
 						<label for="gpa">GPA: </label>
 						<?php
 							if(isset($gpa)) {
-								echo '<input type="text" class="form-control" name="gpa" value="'.$gpa.'">';
+								echo '<input type="text" class="form-control" name="gpa" value="'.$gpa.'" required>';
 							} else {
-								echo '<input type="text" class="form-control" name="gpa" placeholder="3.487">';
+								echo '<input type="text" class="form-control" name="gpa" placeholder="3.487" required>';
 							}
 						?>						
 					</div>
 					<div class = "col-md-2">
 						<label for="gradYear">Grad Year: </label>
-						<select class="form-control" name = "gradYear">
+						<select class="form-control" name = "gradYear" required>
 							<?php
 								if(isset($expected_graduation)) {
 									echo '<option selected hidden value="'.$expected_graduation.'">'.$expected_graduation.'</option>';
@@ -208,9 +208,9 @@
 						<label for="phoneNumber">Phone Number: </label>
 						<?php
 							if(isset($phone_number)) {
-								echo '<input type="text" class="form-control" name="phoneNumber" value="'.$phone_number.'">';
+								echo '<input type="text" class="form-control" name="phoneNumber" value="'.$phone_number.'" required>';
 							} else {
-								echo '<input type="text" class="form-control" name="phoneNumber" placeholder="5738675309">';
+								echo '<input type="text" class="form-control" name="phoneNumber" placeholder="5738675309" required>';
 							}
 						?>
 					</div>
@@ -218,9 +218,9 @@
 						<label for="mizzouEmail">Email: </label>
 						<?php
 							if(isset($mizzou_email)) {
-								echo '<input type="text" class="form-control" name="mizzouEmail" value="'.$mizzou_email.'">';
+								echo '<input type="text" class="form-control" name="mizzouEmail" value="'.$mizzou_email.'" required>';
 							} else {
-								echo '<input type="text" class="form-control" name="mizzouEmail" placeholder="abc123@mail.missouri.edu">';
+								echo '<input type="text" class="form-control" name="mizzouEmail" placeholder="abc123@mail.missouri.edu" required>';
 							}
 						?>
 					</div>
@@ -329,12 +329,12 @@
 								<?php
 									if(isset($gato)) {
 										if($gato == 'Met') {
-											echo '<input type="radio" name="gatoRadio" value = "Met" checked> Requirement Met';
+											echo '<input type="radio" name="gatoRadio" value = "Met" checked required> Requirement Met';
 										} else {
-											echo '<input type="radio" name="gatoRadio" value = "Met"> Requirement Met';
+											echo '<input type="radio" name="gatoRadio" value = "Met" required> Requirement Met';
 										}
 									} else {
-										echo '<input type="radio" name="gatoRadio" value = "Met"> Requirement Met';
+										echo '<input type="radio" name="gatoRadio" value = "Met" required> Requirement Met';
 									}
 								?>
 								</label>
@@ -382,12 +382,12 @@
 								<?php
 									if(isset($speak_assessment)) {
 										if($speak_assessment == 'Met') {
-											echo '<input type="radio" name="speakRadio" value = "Met" checked> Requirement Met';
+											echo '<input type="radio" name="speakRadio" value = "Met" checked required> Requirement Met';
 										} else {
-											echo '<input type="radio" name="speakRadio" value = "Met"> Requirement Met';
+											echo '<input type="radio" name="speakRadio" value = "Met" required> Requirement Met';
 										}
 									} else {
-										echo '<input type="radio" name="speakRadio" value = "Met"> Requirement Met';
+										echo '<input type="radio" name="speakRadio" value = "Met" required> Requirement Met';
 									}
 								?>
 							</label>
@@ -420,12 +420,12 @@
 								<?php
 									if(isset($onita)) {
 										if($onita == 'Met') {
-											echo '<input type="radio" name="onitaRadio" value = "Met" checked> Requirement Met';
+											echo '<input type="radio" name="onitaRadio" value = "Met" checked required> Requirement Met';
 										} else {
-											echo '<input type="radio" name="onitaRadio" value = "Met"> Requirement Met';
+											echo '<input type="radio" name="onitaRadio" value = "Met" required> Requirement Met';
 										}
 									} else {
-										echo '<input type="radio" name="onitaRadio" value = "Met"> Requirement Met';
+										echo '<input type="radio" name="onitaRadio" value = "Met" required> Requirement Met';
 									}
 								?>
 							</label>
@@ -457,11 +457,11 @@
 				<div class = "row">
 					<div class = "col-md-4">
 						<label for="name">Signature: </label>
-						<input type="text" class="form-control" name="signature" placeholder="John Doe">
+						<input type="text" class="form-control" name="signature" placeholder="John Doe" required>
 					</div>
 					<div class = "col-md-4">
 						<label for="name">Date: </label>
-						<input type="text" class="form-control" name="date" placeholder="1/1/2015">
+						<input type="text" class="form-control" name="date" placeholder="1/1/2015" required>
 					</div>
 					<div class = "col-md-12">
 						<br>

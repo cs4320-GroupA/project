@@ -26,12 +26,12 @@
 			<?php 
 				if(isset($editable)) {
 					if($editable == TRUE) {
-						echo '<form class="form-inline" name="form_data" role="form" action="<?php echo base_url(); ?>index.php/form/editForm" method="POST">';
+						echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/editForm" method="POST">';
 					}
 				}
 				if(isset($submitable)) {
 					if($submitable == TRUE) {
-							echo '<form class="form-inline" name="form_data" role="form" action="<?php echo base_url(); ?>index.php/form/submitForm" method="POST">';
+							echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/submitForm" method="POST">';
 					}
 				}
 			?>

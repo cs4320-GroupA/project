@@ -51,6 +51,31 @@
                 return FALSE;
             }
         }
+        
+        /*
+         * not 100% sure this needs to go here
+         */
+        createPreference( $course_id, $course_name, $form_id, $semester_id, $preference_number ){
+            $q = "insert into course_preference (
+                    course_id,
+                    course_name,
+                    form_id,
+                    semester_id,
+                    preference_number
+                ) values(
+                    ?, ?, ?, ?, ?
+                );";
+
+            $result = this->db->query( $q, array( $course_id, $form_id, $semester_id, $preference_number ));
+
+            // needto varify outputs here
+        
+            if($result == TRUE){
+                return true;
+            } else{
+                return false;
+            }
+        }// end createPreference
     }
 
 ?>

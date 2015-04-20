@@ -51,6 +51,19 @@
                 return FALSE;
             }
         }
+
+        public function assignCourse($course_id, $course_name, $semester, $instructor_id)
+        {
+            $sql = 'INSERT into course VALUES (?,?,?,?) WHERE $course_id = ?, $course_name = ?, $semester = ?';
+
+            $query = $this->db-?query($sql, array($course_id, $course_name, $semester, $instructor_id));
+
+            if($query->affected_rows() == 1) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
     }
 
 ?>

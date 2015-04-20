@@ -52,10 +52,11 @@
             }
         }
         
-        /*
-         * not 100% sure this needs to go here
-         */
-        createPreference( $course_id, $course_name, $form_id, $semester_id, $preference_number ){
+ /*
+  * not 100% sure this needs to go here, this function may better belong
+  * in a different file(?)
+  */
+        public function createPreference( $course_id, $course_name, $form_id, $semester_id, $preference_number ){
             $q = "insert into course_preference (
                     course_id,
                     course_name,
@@ -66,7 +67,7 @@
                     ?, ?, ?, ?, ?
                 );";
 
-            $result = this->db->query( $q, array( $course_id, $form_id, $semester_id, $preference_number ));
+            $result = $this->db->query( $q, array( $course_id, $form_id, $semester_id, $preference_number ));
 
             // needto varify outputs here
         

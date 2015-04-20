@@ -34,7 +34,7 @@
 
             $query = $this->db->query($sql, array($signature, $date, $form_id, $semester_id));
 
-            if($query->affected_rows() == 1) {
+            if($this->db->affected_rows() == 1) {
                 return TRUE;
             } else  {
                 return FALSE;

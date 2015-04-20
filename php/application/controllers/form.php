@@ -50,6 +50,7 @@
 				//If it is not the application window then do not allow submissions/edits
 				$data['editable'] = FALSE;
 				$data['submitted'] = FALSE;
+				$data['view_only'] = TRUE;
 			}
 
 			//Load view with array
@@ -89,7 +90,8 @@
 							  'gato' => $row->gato,
 							  'speak_assessment' => $row->speak_assessment,
 							  'onita' => $row->onita,
-							  'message_header' => 'Edit',
+							  'signature' => $query->row()->signature,
+							  'date' => $query->row()->signature_date,
 							  'view_only' => TRUE);
 			}
 			else {

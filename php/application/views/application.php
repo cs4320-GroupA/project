@@ -486,11 +486,23 @@
 				<div class = "row">
 					<div class = "col-md-4">
 						<label for="name">Signature: </label>
-						<input type="text" class="form-control" name="signature" placeholder="John Doe" required>
+						<?php
+							if(isset($signature)) {
+								echo '<input type="text" class="form-control" name="signature" value="'.$signature.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="signature" placeholder="John Doe" required>';
+							}
+						?>
 					</div>
 					<div class = "col-md-4">
 						<label for="name">Date: </label>
-						<input type="text" class="form-control" name="date" placeholder="1/1/2015" required>
+						<?php
+							if(isset($signature)) {
+								echo '<input type="text" class="form-control" name="date" value="'.$date.'" required>';
+							} else {
+								echo '<input type="text" class="form-control" name="date" placeholder="1/1/2015" required>';
+							}
+						?>
 					</div>
 					<div class = "col-md-12">
 						<br>

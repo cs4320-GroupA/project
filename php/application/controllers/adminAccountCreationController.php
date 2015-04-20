@@ -3,7 +3,6 @@
 	{
 		public function __construct() 
 		{
-		$this->load->model('admin_model');
             parent::__construct();
         }
 
@@ -12,13 +11,15 @@
 			$this->load->view('adminAccountCreation');
 		}
 
-		public function createAccount($username,$password,$id){
-
+		public function createAccount($username,$password){
+			
+			$this->load->model('User_model');
 			$username = htmlspecialchars($username);
 			$password = htmlspecialchars($password);
-			$id = htmlspecialchars($id);
+			$salt = uniqid(mt_rand(), false);
+			$account_type = 'admin';
 
-			$result = $this->admin_model->createAccount($username,$password,$id);
+			$result = $this->admin_model->createAccount($username,$password,$salt,$account_type);
 			
 			if($result == TRUE) {
 				redirect('form', 'refresh');

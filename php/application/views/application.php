@@ -11,6 +11,19 @@
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+		<?php
+			if(isset($view_only)) {
+				if($view_only == TRUE) {
+					echo '<script type="text/javascript">
+							$(document).ready(function(){
+        						$(".container :input").attr("disabled", true);
+    						});
+						</script>';
+				}	
+			}
+		?>
 	</head>
 	<body>
 		<?php
@@ -29,9 +42,14 @@
 						echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/editForm" method="POST">';
 					}
 				}
-				if(isset($submitable)) {
-					if($submitable == TRUE) {
+				if(isset($submittable)) {
+					if($submittable == TRUE) {
 							echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/submitForm" method="POST">';
+					}
+				}
+				if(isset($view_only)) {
+					if($view_only == TRUE) {
+							echo '<form class="form-inline" name="form_data" role="form" action="" method="POST">';
 					}
 				}
 			?>
@@ -468,11 +486,23 @@
 				<div class = "row">
 					<div class = "col-md-4">
 						<label for="name">Signature: </label>
-						<input type="text" class="form-control" name="signature" placeholder="John Doe" required>
+						<?php
+							if(isset($signature)) {
+								echo '<input type="text" class="form-control" name="signature" value="'.$signature.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="signature" placeholder="John Doe" required>';
+							}
+						?>
 					</div>
 					<div class = "col-md-4">
 						<label for="name">Date: </label>
-						<input type="text" class="form-control" name="date" placeholder="1/1/2015" required>
+						<?php
+							if(isset($signature)) {
+								echo '<input type="text" class="form-control" name="date" value="'.$date.'" required>';
+							} else {
+								echo '<input type="text" class="form-control" name="date" placeholder="1/1/2015" required>';
+							}
+						?>
 					</div>
 					<div class = "col-md-12">
 						<br>
@@ -484,8 +514,8 @@
 										echo '<button name="formSubmission" class="btn btn-success">Edit Application</button>';
 									}
 								}
-								if(isset($submitable)) {
-									if($submitable == TRUE) {
+								if(isset($submittable)) {
+									if($submittable == TRUE) {
 										echo '<button name="formSubmission" class="btn btn-success">Submit Application</button>';
 									}
 								}
@@ -497,8 +527,6 @@
 				<hr>
 			</form>
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 	</body>
 </html>
 ]

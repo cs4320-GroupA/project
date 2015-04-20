@@ -42,6 +42,44 @@
             }
         }
 
+        public function editFormData($form_data_id, $asstType, $fname, $lname, $email, $studentID, $gpa, $expected_grad, $phone, 
+                                       $gato, $department, $grade, $advisor, $speakOPTscore, $lastTestDate, $onita, 
+                                       $other_work, $semester, $graduate_type, $speak_assessment) {
+            
+            $form_data_sql = 'UPDATE form_data SET
+                first_name = ?, 
+                last_name = ?, 
+                mizzou_email = ?, 
+                student_id = ?, 
+                assistant_type = ?,
+                semester = ?, 
+                expected_graduation = ?,
+                grade = ?,        
+                SPEAK_OPT_score = ?,
+                department = ?,
+                advisor = ?,
+                gpa = ?,
+                phone_number = ?, 
+                last_date_of_test = ?,
+                grad_type = ?,
+                other_work = ?,
+                gato = ?,
+                speak_assessment = ?,
+                onita = ?
+                WHERE form_data_id = ?';
+        
+            $form_data_result = $this->db->query($form_data_sql, array($fname, $lname, $email, $studentID, $asstType, $semester, $expected_grad, $grade,
+                                                                       $speakOPTscore, $department, $advisor, $gpa, $phone, $lastTestDate, $graduate_type, 
+                                                                       $other_work, $gato, $speak_assessment, $onita, $form_data_id));
+        
+            //Return TRUE on success, FALSE on failure
+            if($this->db->affected_rows() == 1) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+
         public function getFormDataByID($formDataID) {
             $sql = 'SELECT * from tasub.form_data WHERE form_data_id = ?';
 

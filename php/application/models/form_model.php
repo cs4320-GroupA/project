@@ -28,5 +28,17 @@
                 return FALSE; //No form entry with user and semester
             }
         }
+
+        public function editForm($form_id, $semester_id, $signature, $date) {
+            $sql = 'UPDATE form SET signature = ?, signature_date = ? WHERE form_id = ? AND semester_id = ?';
+
+            $query = $this->db->query($sql, array($signature, $date, $form_id, $semester_id));
+
+            if($this->db->affected_rows() == 1) {
+                return TRUE;
+            } else  {
+                return FALSE;
+            }
+        }
     }
 ?>

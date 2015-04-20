@@ -29,8 +29,8 @@
 						echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/editForm" method="POST">';
 					}
 				}
-				if(isset($submitable)) {
-					if($submitable == TRUE) {
+				if(isset($submittable)) {
+					if($submittable == TRUE) {
 							echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/submitForm" method="POST">';
 					}
 				}

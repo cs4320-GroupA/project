@@ -192,7 +192,7 @@
                                        						 $other_work, $semester, $graduate_type, $speak_assessment);
 
 			//Update form meta data into database
-			$result = $this->form_model->editForm($query->form_id, $query->semester_id, $signature, $date);
+			$result = $this->form_model->editForm($query->row()->form_id, $query->row()->semester_id, $signature, $date);
 			
 			//Redirect to form
 			redirect('form', 'refresh');

@@ -15,16 +15,6 @@
 	<body>
 		<?php
 			include 'nav.php';
-			
-			if(isset($view_only)) {
-				if($view_only == TRUE) {
-					echo '<script type="text/javascript">
-							$(document).ready(function(){
-        						$("#container :input").attr("disabled", true);
-    						});
-						</script>';
-				}
-			}
 		?>
 		<div class="container">
 	      <div class="page-header">
@@ -44,7 +34,6 @@
 							echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/submitForm" method="POST">';
 					}
 				}
-				if()
 			?>
 				<div class = "row">
 					<div class = "col-md-6">
@@ -510,6 +499,17 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+		<?php
+			if(isset($view_only)) {
+				if($view_only == TRUE) {
+					echo '<script type="text/javascript">
+							$(document).ready(function(){
+        						$("#container :input").attr("disabled", true);
+    						});
+						</script>';
+				}	
+			}
+		?>
 	</body>
 </html>
 ]

@@ -92,8 +92,8 @@
   				    foreach ($query->result() as $row){
 					echo '<tr>';
 		         		    echo '<td>';
-						<a href='controllers/adminModifyCourseController/edit'>Edit</a>;
-						<a href='controllers/adminModifyCourseController/remove'>Remove</a>;
+						echo "<a href='controllers/adminModifyCourseController/edit'>Edit</a>";
+						echo "<a href='controllers/adminModifyCourseController/remove'>Remove</a>";
 						//echo '<button type="button" class="btn btn-primary">Edit</button>';
 						//echo '<button type="button" class="btn btn-danger">Remove</button>';
 					    echo '</td>';

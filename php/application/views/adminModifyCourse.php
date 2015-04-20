@@ -88,8 +88,8 @@
 		            <td>klaricm</td>
 		          </tr>
 			  <?php
-				if ($query->num_rows() > 0){
-  				    foreach ($query->result() as $row){
+				if ($courses->num_rows() > 0){
+  				    foreach ($courses->result() as $row){
 					echo '<tr>';
 		         		    echo '<td>';
 						echo "<a href='controllers/adminModifyCourseController/edit'>Edit</a>";

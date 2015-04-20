@@ -4,7 +4,6 @@
 		public function __construct() 
 		{
             		parent::__construct();
-			$this->adminModifyCourseController->index();
        		 }
 
 		public function index() 

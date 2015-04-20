@@ -33,12 +33,17 @@
 							  'gato' => $row->gato,
 							  'speak_assessment' => $row->speak_assessment,
 							  'onita' => $row->onita,
-							  'message' => '<p>*Your form was successfully submitted.<br>*To edit your submission changes the values and click Edit Button');
-
-				$this->load->view('application', $data);
-			} else {			
-				$this->load->view('application');
+							  'message' => '<p>*Your form was successfully submitted.<br>*To edit your submission changes the values and click Edit Button',
+							  'editable' => TRUE);
+			} else {
+				$data = array('submitable' => TRUE);			
 			}
+
+			if($this->session->userdata('status_title') != 'APPLICATION') {
+				$data['editable'] = FALSE;
+			}
+
+			$this->load->view('application', $data);
 		}
 
 		public function submitForm() {

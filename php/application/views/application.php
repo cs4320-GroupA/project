@@ -23,7 +23,18 @@
 	      </div>
 		</div>
 		<div class = "container">
-			<form class="form-inline" name="form_data" role="form" action="<?php echo base_url(); ?>index.php/form/submitForm" method="POST">
+			<?php 
+				if(isset($editable)) {
+					if($editable == TRUE) {
+						echo '<form class="form-inline" name="form_data" role="form" action="<?php echo base_url(); ?>index.php/form/editForm" method="POST">';
+					}
+				}
+				if(isset($submitable)) {
+					if($submitable == TRUE) {
+							echo '<form class="form-inline" name="form_data" role="form" action="<?php echo base_url(); ?>index.php/form/submitForm" method="POST">';
+					}
+				}
+			?>
 				<div class = "row">
 					<div class = "col-md-6">
 						<?php 
@@ -467,7 +478,18 @@
 						<br>
 						<label class="control-label" for="formSubmission"></label>
 						<div class="controls">
-							<button name="formSubmission" class="btn btn-success">Submit Application</button>
+							<?php 
+								if(isset($editable)) {
+									if($editable == TRUE) {
+										echo '<button name="formSubmission" class="btn btn-success">Edit Application</button>';
+									}
+								}
+								if(isset($submitable)) {
+									if($submitable == TRUE) {
+										echo '<button name="formSubmission" class="btn btn-success">Submit Application</button>';
+									}
+								}
+							?>
 						</div>
 					</div>
 					<br>

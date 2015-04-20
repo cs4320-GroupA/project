@@ -485,7 +485,7 @@
 									}
 								}
 								if(isset($submittable)) {
-									if($submitable == TRUE) {
+									if($submittable == TRUE) {
 										echo '<button name="formSubmission" class="btn btn-success">Submit Application</button>';
 									}
 								}

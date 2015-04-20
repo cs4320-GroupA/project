@@ -15,6 +15,16 @@
 	<body>
 		<?php
 			include 'nav.php';
+			
+			if(isset($view_only)) {
+				if($view_only == TRUE) {
+					echo '<script type="text/javascript">
+							$(document).ready(function(){
+        						$("#container :input").attr("disabled", true);
+    						});
+						</script>';
+				}
+			}
 		?>
 		<div class="container">
 	      <div class="page-header">
@@ -34,6 +44,7 @@
 							echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/submitForm" method="POST">';
 					}
 				}
+				if()
 			?>
 				<div class = "row">
 					<div class = "col-md-6">

@@ -56,6 +56,48 @@
 			$this->load->view('application', $data);
 		}
 
+		public function viewForm($user_id, $semester_id) {
+			// Load form_data and form models
+			$this->load->model('form_data_model');
+			$this->load->model('form_model');
+
+			//Get the current applicant's form
+			$query = $this->form_model->getForm($user_id, $semester_id);
+
+			//If an entry for user's application exists for this semester, then auto load for data
+			if($query != FALSE) {
+				//Grab the form data for the user's form
+				$result = $this->form_data_model->getFormDataByID($query->row()->form_data);
+				$row = $result->row();
+
+				//Fill array with the form data to pass to view
+				$data = array('first_name' => $row->first_name,
+							  'last_name' => $row->last_name,
+							  'mizzou_email' => $row->mizzou_email,
+							  'student_id' => $row->student_id,
+							  'assistant_type' => $row->assistant_type,
+							  'expected_graduation' => $row->expected_graduation,
+							  'grade' => $row->grade,
+							  'SPEAK_OPT_score' => $row->SPEAK_OPT_score,
+							  'department' => $row->department,
+							  'advisor' => $row->advisor,
+							  'gpa' => $row->gpa,
+							  'phone_number' => $row->phone_number,
+							  'last_date_of_test' => $row->last_date_of_test,
+							  'grad_type' => $row->grad_type,
+							  'other_work' => $row->other_work,
+							  'gato' => $row->gato,
+							  'speak_assessment' => $row->speak_assessment,
+							  'onita' => $row->onita,
+							  'message_header' => 'Edit',
+							  'view_only' => TRUE);
+			}
+			else {
+				redirect('applicantPoolController', 'refresh');
+			} 
+
+			$this->load->view('application', $data);
+		}
 		public function submitForm() {
 			//Load form data and form models
 			$this->load->model('form_data_model');

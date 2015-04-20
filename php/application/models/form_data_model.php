@@ -68,9 +68,9 @@
                 onita = ?
                 WHERE form_data_id = ?';
         
-            $form_data_result = $this->db->query($form_data_sql, array($form_data_id, $fname, $lname, $email, $studentID, $asstType, $semester, $expected_grad, $grade,
+            $form_data_result = $this->db->query($form_data_sql, array($fname, $lname, $email, $studentID, $asstType, $semester, $expected_grad, $grade,
                                                                        $speakOPTscore, $department, $advisor, $gpa, $phone, $lastTestDate, $graduate_type, 
-                                                                       $other_work, $gato, $speak_assessment, $onita));
+                                                                       $other_work, $gato, $speak_assessment, $onita, $form_data_id));
         
             //Return TRUE on success, FALSE on failure
             if($this->db->affected_rows() == 1) {

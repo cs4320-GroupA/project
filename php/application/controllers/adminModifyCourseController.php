@@ -10,7 +10,7 @@
 		{ 
 			$this->load->model('Course_model');
 			$courses = $this->Course_model->getCourses();
-			$this->load->view('adminModifyCourse',$courses);
+			$this->load->view('adminModifyCourse',$courses->results());
 		}
 
 		public function remove(){

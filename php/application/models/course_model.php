@@ -19,7 +19,7 @@
 	public function removeCourse($course_id) {
 		$sql = 'DELETE FROM course WHERE course_id = ?'; 
 
-		$query = $this->db->query($sql, array($course));
+		$query = $this->db->query($sql, array($course_id));
             
 	        if($query->affected_rows() == 1){
 	           return TRUE;
@@ -40,10 +40,10 @@
             }
         }
 
-        public function createCourse($course_name) {
-            $sql = 'INSERT into course (course_name) VALUES (?)';
+        public function createCourse($course_id,$course_name,$semester,$instructor_id) {
+            $sql = 'INSERT into course VALUES (?, ?, ?, ?)';
 
-            $query = $this->db->query($sql, array($course_name));
+            $query = $this->db->query($sql, array($course_id,$course_name,$semester,$instructor_id));
 
             if($query->affected_rows() == 1) {
                 return TRUE;

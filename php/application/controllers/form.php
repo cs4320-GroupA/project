@@ -181,7 +181,7 @@
 			//Insert form meta data into database
 			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature, $date);
 			
-			var $basestring = 'currently_teaching1';
+			$basestring = 'currently_teaching1';
 			if(isset($_POST[$basestring])) {
 				foreach($_POST[$basestring] as $row) {
 					$query = $this->course_model->getCourseByName($row);

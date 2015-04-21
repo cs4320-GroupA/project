@@ -313,7 +313,7 @@
 				if($return == FALSE) {
 					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data, $_POST[$grade_string]);
 				} else {
-					$this->desired_courses_model->update($return->row()->desired_courses_id, $_POST[$grade_string]);
+					$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
 				}
 				
 				$counter++;

@@ -23,7 +23,7 @@
 
     		function addCurrentlyRow(form) {
     			currently_count++;
-    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching[]">'+getCourses()+'/select><input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching[]">'+getCourses()+'/select> <input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
     			$('.currently_wrapper').append(new_row);
     		}
 
@@ -33,7 +33,7 @@
     		
     		function addPreviouslyRow(form) {
     			previously_count++;
-    			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught[]">'+getCourses()+'</select><input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught[]">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
     			$('.previously_wrapper').append(new_row);
     		}
 
@@ -43,8 +43,8 @@
     		
     		function addDesiredRow(form) {
     			desired_count++;
-    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "currently_teaching[]">'+getCourses()+'</select>';
-    			new_row += '<select class="form-control" name = "gradeReceived[]"> \
+    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "currently_teaching[]">'+getCourses()+'</select> ';
+    			new_row += ' <select class="form-control" name = "gradeReceived[]"> \
 								<option>A+</option> \
 								<option>A</option> \
 								<option>A-</option> \
@@ -58,7 +58,7 @@
 								<option>D</option> \
 								<option>D-</option> \
 								<option>F</option> \
-							</select>'
+							</select> ';
 				new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
     			$('.desired_wrapper').append(new_row);
     		}

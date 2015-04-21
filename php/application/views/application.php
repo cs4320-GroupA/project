@@ -329,7 +329,7 @@
 					<div class="col-md-12">
 						<label for="classesTeaching">Classes Currently Teaching: </label>
 						<div class="currently_wrapper">
-							<select id="courses" class="form-control" name = "currently_teaching[]">
+							<select id="courses" class="form-control" name = "currently_teaching1">
 								<option selected disabled hidden value=""></option>
 								<?php 
 									foreach($courses as $temp) {

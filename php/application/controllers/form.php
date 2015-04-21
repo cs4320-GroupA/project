@@ -181,8 +181,9 @@
 			//Insert form meta data into database
 			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature, $date);
 			
-			if(isset($_POST['currently_teaching[]'])) {
-				foreach($_POST['currently_teaching[]'] as $row) {
+			var $basestring = 'currently_teaching1';
+			if(isset($_POST[$basestring])) {
+				foreach($_POST[$basestring] as $row) {
 					$query = $this->course_model->getCourseByName($row);
 					$this->currently_teaching_model->insert($query->row()->course_id, $query->row()->course_name, $fdata_id);
 				}
@@ -265,18 +266,12 @@
 			//Update form meta data into database
 			$result = $this->form_model->editForm($query->row()->user_id, $query->row()->semester_id, $signature, $date);
 			
-			if(isset($_POST['currently_teaching[]'])) {
-				foreach($_POST['currently_teaching[]'] as $row) {
-					echo $row;
-					$temp = $this->course_model->getCourseByName($row);
-					if($this->currently_teaching_model->insert($temp->row()->course_id, $query->row()->course_name, $$query->row()->form_data) == FALSE) {
-						echo $temp->row()->course_id;
-					}
-
-				}
-
-			
+			var $basestring = 'currently_teaching1';
+			if(isset($_POST[$basestring])) {
+				$result = $this->course_model->getCourseByName($row);
+				$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
 			}
+
 
 			//Redirect to form
 			redirect('form', 'refresh');

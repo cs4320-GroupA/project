@@ -335,6 +335,7 @@
 						<input type="button" class="btn btn-success" onclick="addCurrentlyRow(this.form);" value="Add row"/>
 						<p></p>						
 					</div>
+				</div>
 				<hr>
 				<div class = "row">
 					<label for="classesTaught">Classes Previously Taught: </label>
@@ -386,19 +387,21 @@
 				</div>
 				<hr>
 				<div class = "row">
-					<label for="otherWork">Other Work:  </label>
-					<?php
-						if(isset($other_work)) {
-							echo '<input type="text" class="form-control" name="otherWork" value="'.$other_work.'">';
-						} else {
-							echo '<input type="text" class="form-control" name="otherWork" placeholder="Tiger Tech">';
-						}
-					?>
+					<div class = "col-md-12">
+						<label for="otherWork">Other Work:  </label>
+						<?php
+							if(isset($other_work)) {
+								echo '<input type="text" class="form-control" name="otherWork" value="'.$other_work.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="otherWork" placeholder="Tiger Tech">';
+							}
+						?>
+					</div>
 				</div>
 				<hr>
 				<div class = "row">
 					<div class = "col-md-6">
-						<label for="speakOPT">SPEAK/OPT Score, if applicable):  </label>
+						<label for="speakOPT">SPEAK/OPT Score (if applicable):  </label>
 						<?php 
 							if(isset($SPEAK_OPT_score)) {
 								echo '<input type="text" class="form-control" name="speakOPT" value="'.$SPEAK_OPT_score.'">';

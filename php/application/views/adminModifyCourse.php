@@ -89,12 +89,10 @@
 		          </tr>
 			  <?php
   				    foreach($courses as $row){
-					echo '<tr>';
+							echo '<tr>';
 		         		    echo '<td>';
-						echo "<a href='controllers/adminModifyCourseController/edit'>Edit</a>";
-						echo "<a href='controllers/adminModifyCourseController/remove'>Remove</a>";
-						//echo '<button type="button" class="btn btn-primary">Edit</button>';
-						//echo '<button type="button" class="btn btn-danger">Remove</button>';
+						echo '<button type="button" class="btn btn-primary" onclick="'.base_url().'index.php/adminModifyCourseController/edit/'.$row->course_id.'">Edit</button>';
+						echo '<button type="button" class="btn btn-danger" onclick="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'">>Remove</button>';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 

@@ -266,10 +266,16 @@
 			//Update form meta data into database
 			$result = $this->form_model->editForm($query->row()->user_id, $query->row()->semester_id, $signature, $date);
 			
-			$basestring = 'currently_teaching1';
-			if(isset($_POST[$basestring])) {
-				$result = $this->course_model->getCourseByName($row);
+			$base_string = 'currently_teaching';
+			$post_string = $base_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
 				$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				
+				$counter++;
+				$post_string = $base_string.$counter;
 			}
 
 

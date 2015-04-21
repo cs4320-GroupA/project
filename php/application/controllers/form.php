@@ -282,6 +282,37 @@
 				$post_string = $base_string.strval($counter);
 			}
 
+			$base_string = 'previously_taught';
+			$post_string = $base_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				if($return == FALSE) {
+					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				}
+				
+				$counter++;
+				$post_string = $base_string.strval($counter);
+			}
+
+			$base_string = 'desired_courses';
+			$post_string = $base_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				if($return == FALSE) {
+					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				}
+				
+				$counter++;
+				$post_string = $base_string.strval($counter);
+			}
 
 			//Redirect to form
 			redirect('form', 'refresh');

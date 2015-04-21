@@ -47,7 +47,7 @@
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo'<button class="btn btn-primary">Text</button>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
 				        echo'</div>';
 				        echo'<div class="col-md-4">';
 				             echo'<h3>Test 2</h3>';
@@ -57,7 +57,7 @@
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo'<button class="btn btn-warning">Text</button>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
 				        echo'</div>';
 				        echo'<div class="col-md-4">';
 				             echo'<h3>Test 3</h3>';
@@ -67,7 +67,7 @@
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo'<button class="btn btn-info">Text</button>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
 				        echo'</div>';
 				    echo'</div>';
 				echo'</div>';
@@ -84,7 +84,7 @@
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo'<button class="btn btn-primary">Text</button>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
 				        echo'</div>';
 				        echo'<div class="col-md-3">';
 				             echo'<h3>Test 2</h3>';
@@ -94,7 +94,7 @@
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo'<button class="btn btn-warning">Text</button>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
 				        echo'</div>';
 				        echo'<div class="col-md-3">';
 				             echo'<h3>Test 3</h3>';
@@ -104,7 +104,7 @@
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo'<button class="btn btn-info">Text</button>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
 				        echo'</div>';
 				      	echo'<div class="col-md-3">';
 				             echo'<h3>Test 4</h3>';
@@ -114,7 +114,7 @@
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo'<button class="btn btn-danger">Text</button>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
 				        echo'</div>';
 				    echo'</div>';
 				echo'</div>';

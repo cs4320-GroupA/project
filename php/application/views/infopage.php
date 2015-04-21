@@ -19,20 +19,19 @@
 			//If statemanets that change the given message depending on who
 			if($this->session->userdata('user_type') == 'applicant')
 			{
-				echo'<div class = "container">';
-					echo'<div class = "row">';					
-						echo'<div class="col-md-6 col-md-offset-3">';
-							echo'<a href="#"class="thumbnail" alt = "application"></a>';
-							echo'<h3>Application</h3>';
-							echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-							echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
-						echo'</div>';
-					echo'</div>';
+				echo'<div class="container">';
+			    	echo'<div class="row">';
+				        echo'<div class="col-md-6 col-md-offset-3">';
+				             echo'<h3>Application</h3>';
+								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
+				        echo'</div>';
+				    echo'</div>';
 				echo'</div>';
 			}
 			else if($this->session->userdata('user_type') == 'instructor')

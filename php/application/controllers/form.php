@@ -107,6 +107,8 @@
 			//Load form data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
+			$this->load->model('currently_teaching_model');
+			$this->load->model('course_model');
 
 			//Get the current applicant's form if exists
 			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
@@ -150,6 +152,9 @@
 
 			//If the appliant is PLA then the dept and grade must be inputed
 			if($asstType == 'PLA') {
+				if(!isset($department)) {
+					$this->session->set_flashdata('missing_dept', TRUE);
+				}
 				$department = htmlspecialchars($_POST['dept']);
 				$grade = htmlspecialchars($_POST['grade']);
 			} 
@@ -176,6 +181,13 @@
 			//Insert form meta data into database
 			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature, $date);
 			
+			if(isset($_POST['currently_teaching[]'])) {
+				foreach($_POST['currently_teaching[]'] as $row) {
+					$query = $this->course_model->getCourseByName($row);
+					$this->currently_teaching_model->insert($query->row()->course_id, $query->row()->course_name, $fdata_id);
+				}
+			}
+
 			//Redirect to form
 			redirect('form', 'refresh');
 		}

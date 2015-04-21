@@ -64,6 +64,18 @@
                 return FALSE;
             }
         }
+
+        public function getCourseByName($course_name) {
+            $sql = 'SELECT * FROM tasub.course WHERE course_name = ?';
+
+            $query = $this->db->query($sql, array($course_name));
+
+            if($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return FALSE;
+            }
+        }
         
  /*
   * not 100% sure this needs to go here, this function may better belong

@@ -17,7 +17,7 @@
         }
 
         public function checkForEntry($course_id, $course_name, $form_data_id) {
-            $sql = 'SELECT * FROM tasub.currently_teaching WHERE course_id = ?, AND course_name = ?, AND form_data_id = ?';
+            $sql = 'SELECT * FROM tasub.currently_teaching WHERE course_id = ? AND course_name = ? AND form_data_id = ?';
 
             $query = $this->db->query($sql, array($course_id, $course_name, $form_data_id));
 

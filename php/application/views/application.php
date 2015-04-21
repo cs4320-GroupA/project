@@ -150,7 +150,7 @@
 				<br>
 				<hr>
 				<div class="row">
-					<div class = "col-md-2">
+					<div class = "col-md-12">
 						<label for="fname">First Name: </label>
 						<?php 
 							if(isset($first_name)) {
@@ -160,7 +160,7 @@
 							}
 						?>
 					</div>
-					<div class = "col-md-2">
+					<div class = "col-md-12">
 						<label for="lname">Last Name: </label>
 						<?php 
 							if(isset($last_name)) {
@@ -170,7 +170,7 @@
 							}
 						?>
 					</div>
-					<div class = "col-md-2">
+					<div class = "col-md-12">
 						<label for="idNumber">ID: </label>
 						<?php
 							if(isset($student_id)) {
@@ -180,7 +180,7 @@
 							}
 						?>
 					</div>
-					<div class = "col-md-2">
+					<div class = "col-md-12">
 						<label for="gpa">GPA: </label>
 						<?php
 							if(isset($gpa)) {
@@ -190,7 +190,7 @@
 							}
 						?>						
 					</div>
-					<div class = "col-md-2">
+					<div class = "col-md-12">
 						<label for="gradYear">Grad Year: </label>
 						<select class="form-control" name = "gradYear" required>
 							<?php

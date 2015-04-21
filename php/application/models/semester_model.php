@@ -29,7 +29,7 @@
             } else { //Should theoretically never be reached, since but better safe than sorry
                 return FALSE;
             }
-        }
+        }// end getCurrentSemester
 
         public function getSemesterTitle($semester_id) {
             $sql = 'SELECT * FROM tasub.semester WHERE semester_id = ?';
@@ -41,6 +41,27 @@
             } else {
                 return FALSE;
             }
-        }
-    }
+        }// end getSemesterTitle
+        
+    /*
+     * setTime() - modifies the status of a given semester
+     * input:   $semester_id - id of target semester (in relation to semester table)
+     *          $status_id - id of new temporal status to assign (in relation to status table)
+     */
+        public function setTime( $semester_id, $status_id){
+        
+            $sql = 'update tasub.semester set semester.status = ? where semester.semester_id = ?';
+            
+            $query = $this->db->query( $sql, array( $status_id, $semester_id) );
+            
+            // do some sort of error checking down here...
+            if( !$query ){
+                return false;
+            }
+            else
+                return true;
+            
+        }// end setTime
+        
+    }// endSemester_model
 ?>

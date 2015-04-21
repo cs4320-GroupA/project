@@ -110,6 +110,8 @@
 					'logged_in' => FALSE,
 					'account_exists' => TRUE
 				);
+				
+				$this->session->set_userdata($newSession);
 				redirect('login', 'refresh');
 			}
 

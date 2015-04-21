@@ -27,7 +27,7 @@
         }
         if($this->session->userdata('account_exists')) {
           if($this->session->userdata('account_exists') == TRUE) {
-            echo '<font color=red>Account already exists.</font><br />';
+            echo '<font color=red>Username already exists.</font><br />';
           }
         }
       ?>

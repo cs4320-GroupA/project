@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" href="../../favicon.ico">
-		<title>Modify Application Timeline</title>
+		<title>Change Timeline</title>
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -18,7 +18,7 @@
 		?>
 		<div class="container">
 			<div class="page-header">
-				<h2>Modify Application Timeline</h2>
+				<h2>Change Timeline</h2>
 			</div>
 		</div>
 		

@@ -300,7 +300,7 @@
 						<select class="form-control" name = "currently_teaching[]">
 							<?php 
 								foreach($courses as $temp) {
-									echo '<option>'.$temp.'</option>';
+									echo '<option>'.$temp['course_title'].'</option>';
 								}
 							?>
 						</select>
@@ -314,7 +314,7 @@
 						<select class="form-control" name = "previously_taught[]">
 							<?php 
 								foreach($courses as $temp) {
-									echo '<option>'.$temp.'</option>';
+									echo '<option>'.$temp['course_title'].'</option>';
 								}
 							?>
 						</select>
@@ -329,7 +329,7 @@
 						<select class="form-control" name = "desired_courses[]">
 							<?php 
 								foreach($courses as $temp) {
-									echo '<option>'.$temp.'</option>';
+									echo '<option>'.$temp['course_title'].'</option>';
 								}
 							?>
 						</select>

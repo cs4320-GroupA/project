@@ -18,11 +18,9 @@
 			$this->load->view('adminModifyCourse', $data);
 		}
 
-		public function remove(){
+		public function remove($course_id){
 
-			$course_id = htmlspecialchars($_POST['course_id']);
-
-			$this->Course_model->remove($course_id);
+			$this->course_model->remove($course_id);
 			$courses = $this->course_model->getCourses();
 			$this->load->view('adminModifyCourse',$courses);
 			
@@ -36,7 +34,7 @@
 			//need to change this to whatever the session id is
     			$instructor_id = $this->session->userdata('user_agent');
 
-			$result = $this->Course_model->createCourse($course_id,$course_name,$semester,$instructor_id);
+			$result = $this->course_model->createCourse($course_id,$course_name,$semester,$instructor_id);
 			
 			if($result == TRUE) {
 				redirect('form', 'refresh');

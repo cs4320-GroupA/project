@@ -3,11 +3,10 @@
 	{
 		public function __construct() 
 		{
-			
+            		parent::__construct();
+
 			$this->load->model('Course_model');
 			$this->load->model('Semester_model');
-            		parent::__construct();
-			$this->adminModifyCourseController->index();
        		 }
 
 		public function index() 

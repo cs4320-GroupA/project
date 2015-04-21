@@ -35,6 +35,7 @@
 							echo "<li><a href='".base_url()."index.php/adminModifyCourseController'>Modify Course</a></li>";
 							echo "<li><a href='".base_url()."index.php/adminAssignApplicantController'>Assign Applicants</a></li>";
 							echo "<li><a href='".base_url()."index.php/adminAccountCreationController'>Account Creation</a></li>";
+							echo "<li><a href='".base_url()."index.php/adminTemporalModificationController'>Modify Application Timeline</a></li>";
 						}
 					}
 					else

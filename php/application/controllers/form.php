@@ -199,6 +199,8 @@
 			$this->load->model('form_model');
 			$this->load->model('currently_teaching_model');
 			$this->load->model('course_model');
+			$this->load->model('previous_taught_model');
+			$this->load->model('desired_courses_model');
 
 			//Get the current applicant's form if exists
 			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
@@ -300,6 +302,7 @@
 
 			$base_string = 'desired_courses';
 			$post_string = $base_string.'1';
+			$grade_string = $
 			$counter = 1;
 			
 			while(isset($_POST[$post_string])) {
@@ -307,7 +310,7 @@
 
 				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
 				if($return == FALSE) {
-					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data, );
 				}
 				
 				$counter++;

@@ -347,7 +347,7 @@
 					<div class="col-md-12">
 						<label for="classesTaught">Classes Previously Taught: </label>
 						<div class="previously_wrapper">
-							<select class="form-control" name = "previously_taught[]">
+							<select class="form-control" name = "previously_taught1">
 								<option selected disabled hidden value=""></option>
 								<?php 
 									foreach($courses as $temp) {
@@ -365,7 +365,7 @@
 					<div class="col-md-12">
 						<label for="classesPreferred">Preferred Classe & Grade Received: </label>
 						<div class="desired_wrapper">
-							<select class="form-control" name = "desired_courses[]">
+							<select class="form-control" name = "desired_courses1">
 								<option selected disabled hidden value=""></option>
 								<?php 
 									foreach($courses as $temp) {
@@ -373,7 +373,7 @@
 									}
 								?>
 							</select>
-							<select class="form-control" name = "gradeReceived[]">
+							<select class="form-control" name = "gradeReceived1">
 								<option selected disabled hidden value=""></option>'
 								<option>A+</option>
 								<option>A</option>

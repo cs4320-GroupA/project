@@ -324,6 +324,7 @@
 					<label for="classesTeaching">Classes Currently Teaching: </label>
 					<div class="currently_wrapper">
 						<select id="courses" class="form-control" name = "currently_teaching[]">
+							<option selected disabled hidden value=""></option>
 							<?php 
 								foreach($courses as $temp) {
 									echo '<option>'.$temp['course_name'].'</option>';
@@ -338,6 +339,7 @@
 					<label for="classesTaught">Classes Previously Taught: </label>
 					<div class="previously_wrapper">
 						<select class="form-control" name = "previously_taught[]">
+							<option selected disabled hidden value=""></option>
 							<?php 
 								foreach($courses as $temp) {
 									echo '<option>'.$temp['course_name'].'</option>';
@@ -354,6 +356,7 @@
 					<label for="gradeReceived">                          Grade Received: </label>
 					<div class="desired_wrapper">
 						<select class="form-control" name = "desired_courses[]">
+							<option selected disabled hidden value=""></option>
 							<?php 
 								foreach($courses as $temp) {
 									echo '<option>'.$temp['course_name'].'</option>';

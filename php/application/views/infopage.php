@@ -77,54 +77,50 @@
 			}
 			else if($this->session->userdata('user_type') == 'admin')
 			{
-				echo'<div class = "container">';
-					echo'<div class = "row">';
-						echo'<div class="col-md-3">';
-							echo'<a href="#"class="thumbnail" alt = "mouse"></a>';
-							echo'<h3>Modify Course</h3>';
+				echo'<div class="container">';
+			    echo'<div class="row">';
+			        echo'<div class="col-md-3">';
+			             echo'<h3>Test 1</h3>';
 							echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-							echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminModifyCourseController">Modify Course</a>';
-						echo'</div';
-						echo'<div class="col-md-3">';
-							echo'<a href="#"class="thumbnail" alt = "assign"></a>';
-							echo'<h3>Assign Applicants</h3>';
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+			            echo'<button class="btn btn-primary">Text</button>';
+			        echo'</div>';
+			        echo'<div class="col-md-3">';
+			             echo'<h3>Test 2</h3>';
 							echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-							echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminAssignApplicantController">Assign Applicants</a>';
-						echo'</div';
-						echo'<div class="col-md-3">';
-							echo'<a href="#"class="thumbnail" alt = "accountcreation"></a>';
-							echo'<h3>Admin Account Creation</h3>';
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+			            echo'<button class="btn btn-warning">Text</button>';
+			        echo'</div>';
+			        echo'<div class="col-md-3">';
+			             echo'<h3>Test 3</h3>';
 							echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-							echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminAccountCreationController">Create Admin Account</a>';
-						echo'</div';
-						echo'<div class="col-md-3">';
-							echo'<a href="#"class="thumbnail" alt = "timeline"></a>';
-							echo'<h3>Change Timeline</h3>';
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+			            echo'<button class="btn btn-info">Text</button>';
+			        echo'</div>';
+			      	echo'<div class="col-md-3">';
+			             echo'<h3>Test 4</h3>';
 							echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-							echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminTemporalModificationController">Change Timeline</a>';
-						echo'</div';
-					echo'</div';
-				echo'</div>';
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+			            echo'<button class="btn btn-danger">Text</button>';
+			        echo'</div>';
+			    echo'</div>';
+			echo'</div>';
 			}
 			else
 			{

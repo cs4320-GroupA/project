@@ -152,7 +152,7 @@
 				<hr>
 				<div class="row">
 					<div class = "col-md-6">
-						<label for="fname">First Name</label>
+						<label for="fname">First Name: </label>
 						<?php 
 							if(isset($first_name)) {
 								echo '<input type="text" class="form-control" name="fname" value="'.$first_name.'" required>';
@@ -162,7 +162,7 @@
 						?>
 						</div>
 					<div class = "col-md-6">
-						<label for="lname">Last Name</label>
+						<label for="lname">Last Name: </label>
 						<?php 
 							if(isset($last_name)) {
 								echo '<input type="text" class="form-control" name="lname" value="'.$last_name.' " required>';
@@ -176,7 +176,7 @@
 				<hr>
 				<div class="row">
 					<div class = "col-sm-4">
-						<label for="idNumber">ID</label>
+						<label for="idNumber">ID: </label>
 						<?php
 							if(isset($student_id)) {
 								echo '<input type="text" class="form-control" name="idNumber" value="'.$student_id.'" required>';
@@ -186,7 +186,7 @@
 						?>
 						</div>
 					<div class = "col-sm-4">
-						<label for="gpa">GPA</label>
+						<label for="gpa">GPA: </label>
 						<?php
 							if(isset($gpa)) {
 								echo '<input type="text" class="form-control" name="gpa" value="'.$gpa.'" required>';
@@ -196,7 +196,7 @@
 						?>						
 						</div>
 					<div class = "col-sm-4">
-						<label for="gradYear">Grad Year</label>
+						<label for="gradYear">Grad Year: </label>
 						<select class="form-control" name = "gradYear" required>
 							<?php
 								if(isset($expected_graduation)) {
@@ -205,7 +205,7 @@
 									echo '<option selected disabled hidden value=""></option>';
 								}
 							?>
-							<option>2016</option>
+							<option selected>2016</option>
 							<option>2017</option>
 							<option>2018</option>
 							<option>2019</option>

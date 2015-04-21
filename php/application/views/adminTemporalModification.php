@@ -30,7 +30,7 @@
 							echo '<p>';
 							echo 'The application timeline is currently in the Application mode. Here, applicants can submit applications to be a TA/PLA for the upcoming semester. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
 							echo '</p>';
-							echo '<button type="button" class="btn btn-primary">Move to Selection</button>';
+							echo '<button type="button" class="btn btn-primary">Move Forward to Selection</button>';
 						echo '</div>';
 					}
 					else if ($this->session->userdata("status_title") == "SELECTION")
@@ -39,13 +39,28 @@
 							echo '<p>';
 							echo 'The application timeline is currently in the Selection mode. Here, instructors will preference applicants for each of their classes. Upon moving back to the Application mode, applicant submissions are reopened.';
 							echo '</p>';
-							echo '<button type="button" class="btn btn-primary">Move to Application</button>';
+							echo '<button type="button" class="btn btn-primary">Move Back to Application</button>';
 						echo '</div>';
 						echo '<div class ="col-md-6">';
 							echo '<p>';
 							echo 'The application timeline is currently in the Selection mode. Here, instructors will preference applicants for each of their classes. Upon moving to the Notification mode, applicants are notified of their potential appointment as a TA/PLA of a course.';
 							echo '</p>';
-							echo '<button type="button" class="btn btn-primary">Move to Notification</button>';
+							echo '<button type="button" class="btn btn-primary">Move Forward to Notification</button>';
+						echo '</div>';
+					}
+					else if ($this->session->userdata("status_title") == "Notification")
+					{
+						echo '<div class ="col-md-6">';
+							echo '<p>';
+							echo 'The application timeline is currently in the Notification mode. Here, instructors will preference applicants for each of their classes. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
+							echo '</p>';
+							echo '<button type="button" class="btn btn-primary">Move Back to Selection</button>';
+						echo '</div>';
+						echo '<div class ="col-md-6">';
+							echo '<p>';
+							echo 'The application timeline is currently in the Notification mode. Here, instructors will preference applicants for each of their classes. Upon moving back to the Application mode, applicant submissions are reopened.';
+							echo '</p>';
+							echo '<button type="button" class="btn btn-primary">Move Back to Application</button>';
 						echo '</div>';
 					}
 					else

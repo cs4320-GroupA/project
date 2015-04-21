@@ -294,8 +294,8 @@
 				$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
 				if($return == FALSE) {
 					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
-				}
-				
+				} 
+
 				$counter++;
 				$post_string = $base_string.strval($counter);
 			}
@@ -312,6 +312,8 @@
 				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
 				if($return == FALSE) {
 					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data, $_POST[$grade_string]);
+				} else {
+					$this->desired_courses_model->update($return->row()->desired_courses_id, $_POST[$grade_string]);
 				}
 				
 				$counter++;

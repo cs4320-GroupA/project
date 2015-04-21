@@ -44,21 +44,21 @@
     		function addDesiredRow(form) {
     			desired_count++;
     			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "currently_teaching[]"></select>';
-    			new_row += '<select class="form-control" name = "gradeReceived[]">
-								<option>A+</option>
-								<option>A</option>
-								<option>A-</option>
-								<option>B+</option>
-								<option>B</option>
-								<option>B-</option>
-								<option>C+</option>
-								<option>C</option>
-								<option>C-</option>
-								<option>D+</option>
-								<option>D</option>
-								<option>D-</option>
-								<option>F</option>
-							</select>';
+    			new_row += '<select class="form-control" name = "gradeReceived[]"> \
+								<option>A+</option> \
+								<option>A</option> \
+								<option>A-</option> \
+								<option>B+</option> \
+								<option>B</option> \
+								<option>B-</option> \
+								<option>C+</option> \
+								<option>C</option> \
+								<option>C-</option> \
+								<option>D+</option> \
+								<option>D</option> \
+								<option>D-</option> \
+								<option>F</option> \
+							</select>'
 				new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
     			$('.desired_wrapper').append(new_row);
     		}

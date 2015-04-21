@@ -19,7 +19,7 @@
         public function update($id, $grade) {
             $sql = 'UPDATE desired_courses SET grade = ? WHERE desired_courses_id = ?';
 
-            $this->db->query($sql, array($course_id, $course_name, $form_data_id, $grade));
+            $this->db->query($sql, array($id, $grade));
 
             if($this->db->affected_rows() == 1) {
                 return TRUE;

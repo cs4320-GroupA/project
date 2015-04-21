@@ -35,7 +35,7 @@
         			if(currently_count < currently_max_fields) { //max input box allowed
             			currently_count++; //text box increment
             			$(currently_wrapper).append('<div><input type="text" name="currently_teaching[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-        			}
+        			});
 
     			$(desired_add).click(function(e){ //on add input button click
         			e.preventDefault();
@@ -44,6 +44,7 @@
             			$(desired_wrapper).append('<div><input type="select" name="desired_courses[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
             			$(grade_wrapper).append('<div><input type="select" name="gradesRecieved[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         			}
+        		});
 
     			$(previous_add).click(function(e){ //on add input button click
         			e.preventDefault();
@@ -51,21 +52,29 @@
             			previously_count++; //text box increment
             			$(previous_wrapper).append('<div><input type="text" name="previously_taught[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         			}
-    		});
+    			});
     
-    		$(currently_wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        		e.preventDefault(); 
-        		$(this).parent('div').remove(); 
-        		x--;
-    			})
+    			$(currently_wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        			e.preventDefault(); 
+        			$(this).parent('div').remove(); 
+        			currently_count--;
+    			});
+
+    			$(desired_wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        			e.preventDefault(); 
+        			$(this).parent('div').remove(); 
+        			desired_count--;
+    			});
+
+    			$(previously_wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        			e.preventDefault(); 
+        			$(this).parent('div').remove(); 
+        			previously_count--;
+    			});
+			});
 			});
     		 
-    		$(desired_wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        		e.preventDefault(); 
-        		$(this).parent('div').remove(); 
-        		x--;
-    			})
-			});
+
 
     		$(previously_wrapper).on("click",".remove_field", function(e){ //user click on remove text
         		e.preventDefault(); 
@@ -320,7 +329,7 @@
 				<div class = "row">
 					<label for="classesTeaching">Classes Currently Teaching: </label>
 					<div class="currently_wrapper">
-						<button class="currently_add">Add more courses</button>
+						<button class="currently_add" class="btn btn-success">Add more courses</button><br>
 						<select class="form-control" name = "currently_teaching[]">
 							<?php 
 								foreach($courses as $temp) {
@@ -333,7 +342,7 @@
 				<div class = "row">
 					<label for="classesTaught">Classes Previously Taught: </label>
 					<div class="previous_wrapper">
-						<button class="previously_add">Add more courses</button>
+						<button class="previously_add" class="btn btn-success">Add more courses</button><br>
 						<select class="form-control" name = "previously_taught[]">
 							<?php 
 								foreach($courses as $temp) {
@@ -347,7 +356,7 @@
 				<div class = "row">
 					<label for="classesPreferred">Preferred Classes: </label>
 					<div class="desired_wrapper">
-						<button class="desired_add">Add more courses</button>
+						<button class="desired_add" class="btn btn-success">Add more courses</button><br>
 						<select class="form-control" name = "desired_courses[]">
 							<?php 
 								foreach($courses as $temp) {

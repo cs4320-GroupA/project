@@ -83,7 +83,7 @@
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-						echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminModifyCourseController">Add Courses</a>';
+						echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminModifyCourseController">Modify Course</a>';
 					echo'</div';
 					echo'<div class="col-md-3">';
 						echo'<a href="#"class="thumbnail" alt = "assign"></a>';
@@ -94,7 +94,7 @@
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-						echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminAssignApplicantController">Your Courses</a>';
+						echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminAssignApplicantController">Assign Applicants</a>';
 					echo'</div';
 					echo'<div class="col-md-3">';
 						echo'<a href="#"class="thumbnail" alt = "accountcreation"></a>';
@@ -105,7 +105,7 @@
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-						echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminAccountCreationController">Applicant Pool</a>';
+						echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminAccountCreationController">Create Admin Account</a>';
 					echo'</div';
 					echo'<div class="col-md-3">';
 						echo'<a href="#"class="thumbnail" alt = "timeline"></a>';
@@ -116,7 +116,7 @@
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-						echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminTemporalModificationController">Your Courses</a>';
+						echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminTemporalModificationController">Change Timeline</a>';
 					echo'</div';
 				echo'</div>';
 			}

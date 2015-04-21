@@ -45,6 +45,7 @@
     			desired_count++;
     			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_teaching[]">'+getCourses()+'</select> ';
     			new_row += ' <select class="form-control" name = "gradeReceived[]"> \
+    							<option selected disabled hidden value=""></option> \
 								<option>A+</option> \
 								<option>A</option> \
 								<option>A-</option> \
@@ -326,68 +327,67 @@
 				<hr>
 				<br>
 				<div class = "row">
-					<div class="col-md-12">
-						<label for="classesTeaching">Classes Currently Teaching: </label>
-						<div class="currently_wrapper">
-							<select id="courses" class="form-control" name = "currently_teaching[]">
-								<?php 
-									foreach($courses as $temp) {
-										echo '<option>'.$temp['course_name'].'</option>';
-									}
-								?>
-							</select>
-							<input type="button" class="btn btn-success" onclick="addCurrentlyRow(this.form);" value="Add row"/>
-							<p></p>						
-						</div>
+					<label for="classesTeaching">Classes Currently Teaching: </label>
+					<div class="currently_wrapper">
+						<select id="courses" class="form-control" name = "currently_teaching[]">
+							<option selected disabled hidden value=""></option>
+							<?php 
+								foreach($courses as $temp) {
+									echo '<option>'.$temp['course_name'].'</option>';
+								}
+							?>
+						</select>
+						<input type="button" class="btn btn-success" onclick="addCurrentlyRow(this.form);" value="Add row"/>
+						<p></p>						
 					</div>
 				</div>
 				<hr>
 				<div class = "row">
-					<div class = "col-md-12">
-						<label for="classesTaught">Classes Previously Taught: </label>
-						<div class="previously_wrapper">
-							<select class="form-control" name = "previously_taught[]">
-								<?php 
-									foreach($courses as $temp) {
-										echo '<option>'.$temp['course_name'].'</option>';
-									}
-								?>
-							</select>
-							<input type="button" class="btn btn-success" onclick="addPreviouslyRow(this.form);" value="Add row"/>
-							<p></p>
-						</div>
+					<label for="classesTaught">Classes Previously Taught: </label>
+					<div class="previously_wrapper">
+						<select class="form-control" name = "previously_taught[]">
+							<option selected disabled hidden value=""></option>
+							<?php 
+								foreach($courses as $temp) {
+									echo '<option>'.$temp['course_name'].'</option>';
+								}
+							?>
+						</select>
+						<input type="button" class="btn btn-success" onclick="addPreviouslyRow(this.form);" value="Add row"/>
+						<p></p>
 					</div>
 				</div>
 				<hr>
 				<div class = "row">
-					<div class="col-md-12">
-						<label for="classesPreferred">Preferred Classes & Grade Received: </label>					
-						<div class="desired_wrapper">
-							<select class="form-control" name = "desired_courses[]">
-								<?php 
-									foreach($courses as $temp) {
-										echo '<option>'.$temp['course_name'].'</option>';
-									}
-								?>
-							</select>
-							<select class="form-control" name = "gradeReceived[]">
-								<option>A+</option>
-								<option>A</option>
-								<option>A-</option>
-								<option>B+</option>
-								<option>B</option>
-								<option>B-</option>
-								<option>C+</option>
-								<option>C</option>
-								<option>C-</option>
-								<option>D+</option>
-								<option>D</option>
-								<option>D-</option>
-								<option>F</option>
-							</select>
-							<input type="button" class="btn btn-success" onclick="addDesiredRow(this.form);" value="Add row"/>
-							<p></p>
-						</div>
+					<label for="classesPreferred">Preferred Classes: </label>
+					<label for="gradeReceived">                          Grade Received: </label>
+					<div class="desired_wrapper">
+						<select class="form-control" name = "desired_courses[]">
+							<option selected disabled hidden value=""></option>
+							<?php 
+								foreach($courses as $temp) {
+									echo '<option>'.$temp['course_name'].'</option>';
+								}
+							?>
+						</select>
+						<select class="form-control" name = "gradeReceived[]">
+							<option selected disabled hidden value=""></option>'
+							<option>A+</option>
+							<option>A</option>
+							<option>A-</option>
+							<option>B+</option>
+							<option>B</option>
+							<option>B-</option>
+							<option>C+</option>
+							<option>C</option>
+							<option>C-</option>
+							<option>D+</option>
+							<option>D</option>
+							<option>D-</option>
+							<option>F</option>
+						</select>
+						<input type="button" class="btn btn-success" onclick="addDesiredRow(this.form);" value="Add row"/>
+						<p></p>
 					</div>
 				</div>
 				<hr>

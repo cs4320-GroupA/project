@@ -9,6 +9,7 @@
 			// Load form_data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
+			$this->load->model('course_model');
 
 			//Get the current applicant's form
 			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
@@ -39,7 +40,6 @@
 							  'speak_assessment' => $row->speak_assessment,
 							  'onita' => $row->onita,
 							  'message_header' => 'Edit',
-							  'courses' => 'test',
 							  'message' => '<p>*Your form was successfully submitted.<br>*To edit your submission changes the values and click Edit Button',
 							  'editable' => TRUE);
 			} else {
@@ -54,6 +54,8 @@
 				$data['view_only'] = TRUE;
 			}
 
+			$result = $this->course_model->getCourses();
+			$data['courses'] = $result->result_array();
 			//Load view with array
 			$this->load->view('application', $data);
 		}

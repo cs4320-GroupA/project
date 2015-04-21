@@ -159,6 +159,7 @@
 								echo '<input type="text" class="form-control" name="fname" placeholder="John " required>';
 							}
 						?>
+						<br>
 					</div>
 					<div class = "col-md-12">
 						<label for="lname">Last Name: </label>
@@ -169,6 +170,7 @@
 								echo '<input type="text" class="form-control" name="lname" placeholder="Doe " required>';
 							}
 						?>
+						<br>
 					</div>
 					<div class = "col-md-12">
 						<label for="idNumber">ID: </label>
@@ -179,6 +181,7 @@
 								echo '<input type="text" class="form-control" name="idNumber" placeholder="14359687" required>';
 							}
 						?>
+						<br>
 					</div>
 					<div class = "col-md-12">
 						<label for="gpa">GPA: </label>
@@ -189,6 +192,7 @@
 								echo '<input type="text" class="form-control" name="gpa" placeholder="3.487" required>';
 							}
 						?>						
+						<br>
 					</div>
 					<div class = "col-md-12">
 						<label for="gradYear">Grad Year: </label>
@@ -211,6 +215,7 @@
 							<option>2024</option>
 							<option>2025</option>
 						</select>
+						<br>
 					</div>
 				</div>
 				<br>

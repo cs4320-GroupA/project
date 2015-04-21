@@ -181,7 +181,7 @@
 							}
 						?>
 						</div>
-					<div class = "col-sm-2">
+					<div class = "col-sm-1">
 						<label for="gpa">GPA</label>
 						<?php
 							if(isset($gpa)) {
@@ -191,7 +191,7 @@
 							}
 						?>						
 						</div>
-					<div class = "col-sm-2">
+					<div class = "col-sm-3">
 						<label for="gradYear">Grad Year</label>
 						<select class="form-control" name = "gradYear" required>
 							<?php

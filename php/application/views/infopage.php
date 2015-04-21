@@ -40,34 +40,34 @@
 				echo'<div class="container">';
 			    	echo'<div class="row">';
 				        echo'<div class="col-md-4">';
-				             echo'<h3>Test 1</h3>';
+				             echo'<h3>Add Courses</h3>';
 								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/instructorAddCourseController">Add Courses</a>';
 				        echo'</div>';
 				        echo'<div class="col-md-4">';
-				             echo'<h3>Test 2</h3>';
+				             echo'<h3>Your Courses</h3>';
 								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/instructorViewCoursesController">Your Courses</a>';
 				        echo'</div>';
 				        echo'<div class="col-md-4">';
-				             echo'<h3>Test 3</h3>';
+				             echo'<h3>Applicant Pool</h3>';
 								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/applicantPoolController">Applicant Pool</a>';
 				        echo'</div>';
 				    echo'</div>';
 				echo'</div>';
@@ -77,44 +77,44 @@
 				echo'<div class="container">';
 			    	echo'<div class="row">';
 				        echo'<div class="col-md-3">';
-				             echo'<h3>Test 1</h3>';
+				             echo'<h3>Modify Course</h3>';
 								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminModifyCourseController">Modify Course</a>';
 				        echo'</div>';
 				        echo'<div class="col-md-3">';
-				             echo'<h3>Test 2</h3>';
+				             echo'<h3>Assign Applicants</h3>';
 								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminAssignApplicantController">Assign Applicants</a>';
 				        echo'</div>';
 				        echo'<div class="col-md-3">';
-				             echo'<h3>Test 3</h3>';
+				             echo'<h3>Account Creation</h3>';
 								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminAccountCreationController">Account Creation</a>';
 				        echo'</div>';
 				      	echo'<div class="col-md-3">';
-				             echo'<h3>Test 4</h3>';
+				             echo'<h3>Change Timeline</h3>';
 								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/form">Application</a>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminTemporalModificationController">Change Timeline</a>';
 				        echo'</div>';
 				    echo'</div>';
 				echo'</div>';

@@ -278,9 +278,8 @@
 			
 			}
 
-
 			//Redirect to form
-			//redirect('form', 'refresh');
+			redirect('form', 'refresh');
 		}
 	}
 ?>

@@ -43,7 +43,7 @@
     		
     		function addDesiredRow(form) {
     			desired_count++;
-    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_teaching'+currently_count+'">'+getCourses()+'</select> ';
+    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+currently_count+'">'+getCourses()+'</select> ';
     			new_row += ' <select class="form-control" name = "gradeReceived[]"> \
     							<option selected disabled hidden value=""></option> \
 								<option>A+</option> \
@@ -205,7 +205,7 @@
 									echo '<option selected disabled hidden value=""></option>';
 								}
 							?>
-							<option selected>2016</option>
+							<option>2016</option>
 							<option>2017</option>
 							<option>2018</option>
 							<option>2019</option>

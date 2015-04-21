@@ -17,7 +17,7 @@
         }
 
         public function update($id, $grade) {
-            $sql = 'UPDATE desired_courses SET grade = ? WHERE desired_courses_id = ?';
+            $sql = 'UPDATE desired_courses SET grade = ? WHERE desired_course_id = ?';
 
             $this->db->query($sql, array($id, $grade));
 

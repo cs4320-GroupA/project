@@ -23,12 +23,32 @@
 
     		function addCurrentlyRow(form) {
     			currently_count++;
-    			var new_row = '<p id="row'+currently_count+'"><select class="form-control" name = "currently_teaching[]"></select><input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching[]"></select><input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
     			$('.currently_wrapper').append(new_row);
     		}
 
     		function removeCurrentlyRow(row) {
+    			$('#currently_row'+row).remove();
+    		}
+    		
+    		function addPreviouslyRow(form) {
+    			previously_count++;
+    			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught[]"></select><input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    			$('.previously_wrapper').append(new_row);
+    		}
+
+    		function removePreviouslyRow(row) {
     			$('#row'+row).remove();
+    		}
+    		
+    		function addDesiredRow(form) {
+    			desired_count++;
+    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "currently_teaching[]"></select><input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
+    			$('.desired_wrapper').append(new_row);
+    		}
+
+    		function removeDesiredRow(row) {
+    			$('#desired_row'+row).remove();
     		}
 		</script>
 		<?php
@@ -285,12 +305,12 @@
 							?>
 						</select>
 						<input type="button" class="btn btn-success" onclick="addCurrentlyRow(this.form);" value="Add row"/>
+						<p></p>						
 					</div>
 				<hr>
 				<div class = "row">
 					<label for="classesTaught">Classes Previously Taught: </label>
-					<div class="previous_wrapper">
-						<button class="previously_add" class="btn btn-success">Add more</button><br>
+					<div class="previously_wrapper">
 						<select class="form-control" name = "previously_taught[]">
 							<?php 
 								foreach($courses as $temp) {
@@ -298,13 +318,14 @@
 								}
 							?>
 						</select>
+						<input type="button" class="btn btn-success" onclick="addPreviouslyRow(this.form);" value="Add row"/>
+						<p></p>
 					</div>
 				</div>
 				<hr>
 				<div class = "row">
 					<label for="classesPreferred">Preferred Classes: </label>
 					<div class="desired_wrapper">
-						<button class="desired_add" class="btn btn-success">Add more</button><br>
 						<select class="form-control" name = "desired_courses[]">
 							<?php 
 								foreach($courses as $temp) {
@@ -312,6 +333,8 @@
 								}
 							?>
 						</select>
+						<input type="button" class="btn btn-success" onclick="addDesiredRow(this.form);" value="Add row"/>
+						<p></p>
 					</div>
 					<label for="gradeReceived">Grade Received: </label>
 					<div class="grade_wrapper">

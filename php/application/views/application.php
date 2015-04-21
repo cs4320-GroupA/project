@@ -151,7 +151,7 @@
 				<br>
 				<hr>
 				<div class="row">
-					<div class = "col-md-12">
+					<div class = "col-md-2">
 						<label for="fname">First Name: </label>
 						<?php 
 							if(isset($first_name)) {
@@ -160,9 +160,8 @@
 								echo '<input type="text" class="form-control" name="fname" placeholder="John " required>';
 							}
 						?>
-						<br>
-					</div>
-					<div class = "col-md-12">
+						</div>
+					<div class = "col-md-2">
 						<label for="lname">Last Name: </label>
 						<?php 
 							if(isset($last_name)) {
@@ -171,9 +170,8 @@
 								echo '<input type="text" class="form-control" name="lname" placeholder="Doe " required>';
 							}
 						?>
-						<br>
-					</div>
-					<div class = "col-md-12">
+						</div>
+					<div class = "col-sm-2">
 						<label for="idNumber">ID: </label>
 						<?php
 							if(isset($student_id)) {
@@ -182,9 +180,8 @@
 								echo '<input type="text" class="form-control" name="idNumber" placeholder="14359687" required>';
 							}
 						?>
-						<br>
-					</div>
-					<div class = "col-md-12">
+						</div>
+					<div class = "col-sm-2">
 						<label for="gpa">GPA: </label>
 						<?php
 							if(isset($gpa)) {
@@ -193,9 +190,8 @@
 								echo '<input type="text" class="form-control" name="gpa" placeholder="3.487" required>';
 							}
 						?>						
-						<br>
-					</div>
-					<div class = "col-md-12">
+						</div>
+					<div class = "col-md-2">
 						<label for="gradYear">Grad Year: </label>
 						<select class="form-control" name = "gradYear" required>
 							<?php
@@ -216,8 +212,7 @@
 							<option>2024</option>
 							<option>2025</option>
 						</select>
-						<br>
-					</div>
+						</div>
 				</div>
 				<br>
 				<hr>

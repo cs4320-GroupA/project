@@ -61,7 +61,7 @@ create table form_data(
     department varchar(2),
     advisor varchar(50),
     gpa float not null,
-    phone_number int,
+    phone_number varchar(20) not null,
     last_date_of_test varchar(20),
     grad_type varchar(4),
     other_work varchar(30),

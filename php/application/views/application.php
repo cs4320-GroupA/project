@@ -45,6 +45,7 @@
     			desired_count++;
     			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_teaching[]">'+getCourses()+'</select> ';
     			new_row += ' <select class="form-control" name = "gradeReceived[]"> \
+    							<option selected disabled hidden value=""></option> \
 								<option>A+</option> \
 								<option>A</option> \
 								<option>A-</option> \
@@ -364,6 +365,7 @@
 							?>
 						</select>
 						<select class="form-control" name = "gradeReceived[]">
+							<option selected disabled hidden value=""></option>'
 							<option>A+</option>
 							<option>A</option>
 							<option>A-</option>

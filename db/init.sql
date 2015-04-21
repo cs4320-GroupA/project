@@ -150,7 +150,7 @@ create table desired_courses(
     course_id int references course( course_id ),
     course_name varchar(50) references course( course_name ),
     form_data_id int references form_data( form_data_id ),
-    grade float not null,
+    grade varchar(3) not null,
     primary key( desired_course_id, course_id, course_name, form_data_id )
 )character set 'utf8'; 
  

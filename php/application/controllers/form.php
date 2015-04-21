@@ -196,6 +196,8 @@
 			//Load form data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
+			$this->load->model('currently_teaching_model');
+			$this->load->model('course_model');
 
 			//Get the current applicant's form if exists
 			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
@@ -263,6 +265,14 @@
 			//Update form meta data into database
 			$result = $this->form_model->editForm($query->row()->user_id, $query->row()->semester_id, $signature, $date);
 			
+			if(isset($_POST['currently_teaching[]'])) {
+				foreach($_POST['currently_teaching[]'] as $row) {
+					$temp = $this->course_model->getCourseByName($row);
+					$this->currently_teaching_model->insert($temp->row()->course_id, $query->row()->course_name, $$query->row()->form_data);
+				}
+			}
+
+
 			//Redirect to form
 			redirect('form', 'refresh');
 		}

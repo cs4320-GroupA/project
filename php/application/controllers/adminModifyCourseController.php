@@ -5,14 +5,17 @@
 		{
             		parent::__construct();
 
-			$this->load->model('Course_model');
-			$this->load->model('Semester_model');
+			$this->load->model('course_model');
+			$this->load->model('semester_model');
        		 }
 
 		public function index() 
 		{ 
-			$courses = $this->Course_model->getCourses();
-			$this->load->view('adminModifyCourse',$courses);
+			$courses = $this->course_model->getCourses();
+
+			$data = array('courses' => $couses->result());
+
+			$this->load->view('adminModifyCourse', $data);
 		}
 
 		public function remove(){

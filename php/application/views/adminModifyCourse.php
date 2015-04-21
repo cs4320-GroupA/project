@@ -88,7 +88,7 @@
 		            <td>klaricm</td>
 		          </tr>
 			  <?php
-  				    foreach ($courses as $row){
+  				    foreach($courses as $row){
 					echo '<tr>';
 		         		    echo '<td>';
 						echo "<a href='controllers/adminModifyCourseController/edit'>Edit</a>";
@@ -97,8 +97,14 @@
 						//echo '<button type="button" class="btn btn-danger">Remove</button>';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
-					    echo '<td>'.$row->instructor_id.'</td>';
-	                                echo '</tr>';
+
+					    if($row->instructor_id == NULL) {
+					    	 echo '<td>unassigned</td>';
+					    } else {
+					   		echo '<td>'.$row->instructor_id.'</td>';
+					   	}
+	                    
+	                echo '</tr>';
 				    };
 
 

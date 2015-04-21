@@ -10,7 +10,7 @@ class User_model extends CI_Model {
 		$sql = 'SELECT * FROM tasub.user WHERE username = ?';
 		$query = $this->db->query($sql, array($username));
 
-		if($query->num_rows() == 1) {
+		if($query->num_rows() > 0) {
 			return $query->row(); 
 		} else {
 			return FALSE;

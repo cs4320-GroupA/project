@@ -23,7 +23,7 @@
 
     		function addCurrentlyRow(form) {
     			currently_count++;
-    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching[]">'+getCourses()+'/select> <input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching[]">'+getCourses()+'/select>  <input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
     			$('.currently_wrapper').append(new_row);
     		}
 

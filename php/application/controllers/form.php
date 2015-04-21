@@ -302,7 +302,8 @@
 
 			$base_string = 'desired_courses';
 			$post_string = $base_string.'1';
-			$grade_string = $
+			$base_grade_string = 'gradeReceived';
+			$grade_string = $base_grade_string.'1';
 			$counter = 1;
 			
 			while(isset($_POST[$post_string])) {
@@ -310,11 +311,12 @@
 
 				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
 				if($return == FALSE) {
-					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data, );
+					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data, $_POST[$grade_string]);
 				}
 				
 				$counter++;
 				$post_string = $base_string.strval($counter);
+				$grade_string = $base_grade_string.strval($counter);
 			}
 
 			//Redirect to form

@@ -4,10 +4,10 @@
             parent::__construct();
         }
 
-        public function insert($course_id, $course_name, $form_data_id) {
-            $sql = 'INSERT INTO desired_courses(course_id, course_name, form_data_id) VALUES (?, ?, ?)';
+        public function insert($course_id, $course_name, $form_data_id, $grade) {
+            $sql = 'INSERT INTO desired_courses(course_id, course_name, form_data_id, grade) VALUES (?, ?, ?, ?)';
 
-            $this->db->query($sql, array($course_id, $course_name, $form_data_id));
+            $this->db->query($sql, array($course_id, $course_name, $form_data_id, $grade));
 
             if($this->db->affected_rows() == 1) {
                 return TRUE;

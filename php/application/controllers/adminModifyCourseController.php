@@ -13,7 +13,7 @@
 		{ 
 			$courses = $this->course_model->getCourses();
 
-			$data = array('courses' => $couses->result());
+			$data = array('courses' => $courses->result());
 
 			$this->load->view('adminModifyCourse', $data);
 		}

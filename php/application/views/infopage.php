@@ -48,7 +48,7 @@
 							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
-							echo '<a class = "btn btn-primary" href="'.base_url()'index.php/instructorAddCourseController">Add Courses</a>';
+							echo '<a class = "btn btn-primary" href="'.base_url().'index.php/instructorAddCourseController">Add Courses</a>';
 						echo'</div';
 						echo'<div class="col-md-4">';
 							echo'<a href="#"class="thumbnail" alt = "lecturehall"></a>';

@@ -38,7 +38,7 @@
     		}
 
     		function removePreviouslyRow(row) {
-    			$('#row'+row).remove();
+    			$('#previously_row'+row).remove();
     		}
     		
     		function addDesiredRow(form) {

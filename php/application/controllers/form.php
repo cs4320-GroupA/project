@@ -272,10 +272,14 @@
 			
 			while(isset($_POST[$post_string])) {
 				$result = $this->course_model->getCourseByName($_POST[$post_string]);
-				$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+
+				$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				if($return == FALSE) {
+					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				}
 				
 				$counter++;
-				$post_string = $base_string.$counter;
+				$post_string = $base_string.strval($counter);
 			}
 
 

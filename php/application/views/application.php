@@ -14,74 +14,23 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 		<script> 
-			$(document).ready(function() {
-    			var currently_max_fields     = 4; //maximum input boxes allowed
-    			var currently_wrapper        = $(".currently_wrapper"); //Fields wrapper
-    			var currently_add    		 = $(".currently_add"); //Add button ID
-    			var desired_max_fields       = 8; //maximum input boxes allowed
-    			var desired_wrapper          = $(".desired_wrapper"); //Fields wrapper
-    			var desired_add    			 = $(".desired_add"); //Add button ID
-    			var previous_max_fields      = 10; //maximum input boxes allowed
-    			var previous_wrapper         = $(".previous_wrapper"); //Fields wrapper
-    			var previous_add    		 = $(".previous_add"); //Add button ID
-    
-    			var currently_count = 1; //initlal text box count
-    			var desired_count = 1;
-    			var previously_count = 1;
+    		var currently_max_fields = 4; //maximum input boxes allowed
+    		var desired_max_fields = 8; //maximum input boxes allowed
+    		var previous_max_fields = 10; //maximum input boxes allowed
+    		var currently_count = 1; //initlal text box count
+    		var desired_count = 1;
+    		var previously_count = 1;
 
+    		function addCurrentlyRow(form) {
+    			currently_count++;
+    			var new_row = '<p id="row'+currently_count+'<select class="form-control" name = "currently_teaching[]"></select>
+    							<input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    			$(#currently_wrapper).append(new_row);
+    		}
 
-    			$(currently_add).click(function(e){ //on add input button click
-        			e.preventDefault();
-        			if(currently_count < currently_max_fields) { //max input box allowed
-            			currently_count++; //text box increment
-            			$(currently_wrapper).append('<div><input type="text" name="currently_teaching[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-        			});
-
-    			$(desired_add).click(function(e){ //on add input button click
-        			e.preventDefault();
-        			if(desired_count < desired_max_fields) { //max input box allowed
-            			desired_count++; //text box increment
-            			$(desired_wrapper).append('<div><input type="select" name="desired_courses[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-            			$(grade_wrapper).append('<div><input type="select" name="gradesRecieved[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-        			}
-        		});
-
-    			$(previous_add).click(function(e){ //on add input button click
-        			e.preventDefault();
-        			if(previously_count < previous_max_fields) { //max input box allowed
-            			previously_count++; //text box increment
-            			$(previous_wrapper).append('<div><input type="text" name="previously_taught[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-        			}
-    			});
-    
-    			$(currently_wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        			e.preventDefault(); 
-        			$(this).parent('div').remove(); 
-        			currently_count--;
-    			});
-
-    			$(desired_wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        			e.preventDefault(); 
-        			$(this).parent('div').remove(); 
-        			desired_count--;
-    			});
-
-    			$(previously_wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        			e.preventDefault(); 
-        			$(this).parent('div').remove(); 
-        			previously_count--;
-    			});
-			});
-			});
-    		 
-
-
-    		$(previously_wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        		e.preventDefault(); 
-        		$(this).parent('div').remove(); 
-        		x--;
-    			})
-			});
+    		function removeCurrentlyRow(row) {
+    			$('#row'+row).remove();
+    		}
 		</script>
 		<?php
 			if(isset($view_only)) {
@@ -329,7 +278,6 @@
 				<div class = "row">
 					<label for="classesTeaching">Classes Currently Teaching: </label>
 					<div class="currently_wrapper">
-						<button class="currently_add" class="btn btn-success">Add more courses</button><br>
 						<select class="form-control" name = "currently_teaching[]">
 							<?php 
 								foreach($courses as $temp) {
@@ -337,12 +285,13 @@
 								}
 							?>
 						</select>
+						<input type="button" class="btn btn-success" onclick="addCurrentlyRow(this.form);" value="Add row">
 					</div>
 				<hr>
 				<div class = "row">
 					<label for="classesTaught">Classes Previously Taught: </label>
 					<div class="previous_wrapper">
-						<button class="previously_add" class="btn btn-success">Add more courses</button><br>
+						<button class="previously_add" class="btn btn-success">Add more</button><br>
 						<select class="form-control" name = "previously_taught[]">
 							<?php 
 								foreach($courses as $temp) {
@@ -356,7 +305,7 @@
 				<div class = "row">
 					<label for="classesPreferred">Preferred Classes: </label>
 					<div class="desired_wrapper">
-						<button class="desired_add" class="btn btn-success">Add more courses</button><br>
+						<button class="desired_add" class="btn btn-success">Add more</button><br>
 						<select class="form-control" name = "desired_courses[]">
 							<?php 
 								foreach($courses as $temp) {

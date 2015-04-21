@@ -20,6 +20,11 @@
       <h1><b>Welcome to the Mizzou CS/IT TA & PLA Application Website</b></h1>
       <h3>Please log in or register</h3>
       <?php
+        if($this->session->userdata('logged_in')) {
+          if($this->session->userdata('logged_in') == TRUE) {
+            redirect('home', 'refresh');
+          }
+        }
         if($this->session->userdata('failed_login')) {
           if($this->session->userdata('failed_login') == TRUE) {
             echo '<font color=red>Invalid username, access code, and/or password.</font><br />';

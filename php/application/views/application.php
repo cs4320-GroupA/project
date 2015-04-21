@@ -13,6 +13,67 @@
 		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+		<script> 
+			$(document).ready(function() {
+    			var currently_max_fields     = 4; //maximum input boxes allowed
+    			var currently_wrapper        = $(".currently_wrapper"); //Fields wrapper
+    			var currently_add    		 = $(".currently_add"); //Add button ID
+    			var desired_max_fields       = 8; //maximum input boxes allowed
+    			var desired_wrapper          = $(".desired_wrapper"); //Fields wrapper
+    			var desired_add    			 = $(".desired_add"); //Add button ID
+    			var previous_max_fields      = 10; //maximum input boxes allowed
+    			var previous_wrapper         = $(".previous_wrapper"); //Fields wrapper
+    			var previous_add    		 = $(".previous_add"); //Add button ID
+    
+    			var currently_count = 1; //initlal text box count
+    			var desired_count = 1;
+    			var previously_count = 1;
+
+
+    			$(currently_add).click(function(e){ //on add input button click
+        			e.preventDefault();
+        			if(currently_count < currently_max_fields) { //max input box allowed
+            			currently_count++; //text box increment
+            			$(currently_wrapper).append('<div><input type="text" name="currently_teaching[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        			}
+
+    			$(desired_add).click(function(e){ //on add input button click
+        			e.preventDefault();
+        			if(desired_count < desired_max_fields) { //max input box allowed
+            			desired_count++; //text box increment
+            			$(desired_wrapper).append('<div><input type="select" name="desired_courses[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            			$(grade_wrapper).append('<div><input type="select" name="gradesRecieved[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        			}
+
+    			$(previous_add).click(function(e){ //on add input button click
+        			e.preventDefault();
+        			if(previously_count < previous_max_fields) { //max input box allowed
+            			previously_count++; //text box increment
+            			$(previous_wrapper).append('<div><input type="text" name="previously_taught[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        			}
+    		});
+    
+    		$(currently_wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        		e.preventDefault(); 
+        		$(this).parent('div').remove(); 
+        		x--;
+    			})
+			});
+    		 
+    		$(desired_wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        		e.preventDefault(); 
+        		$(this).parent('div').remove(); 
+        		x--;
+    			})
+			});
+
+    		$(previously_wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        		e.preventDefault(); 
+        		$(this).parent('div').remove(); 
+        		x--;
+    			})
+			});
+		</script>
 		<?php
 			if(isset($view_only)) {
 				if($view_only == TRUE) {
@@ -258,45 +319,61 @@
 				<br>
 				<div class = "row">
 					<label for="classesTeaching">Classes Currently Teaching: </label>
-					<select class="form-control" name = "classesTeaching">
-						<option>X</option>
-						<option>Y</option>
-						<option>Z</option>
-					</select>
-				</div>
+					<div class="currently_wrapper">
+						<button class="currently_add">Add more courses</button>
+						<select class="form-control" name = "currently_teaching[]">
+							<?php 
+								foreach($courses as $temp) {
+									echo '<option>'.$temp.'</option>';
+								}
+							?>
+						</select>
+					</div>
 				<hr>
 				<div class = "row">
 					<label for="classesTaught">Classes Previously Taught: </label>
-					<select class="form-control" name = "classesTaught">
-						<option>X</option>
-						<option>Y</option>
-						<option>Z</option>
-					</select>
+					<div class="previous_wrapper">
+						<button class="previously_add">Add more courses</button>
+						<select class="form-control" name = "previously_taught[]">
+							<?php 
+								foreach($courses as $temp) {
+									echo '<option>'.$temp.'</option>';
+								}
+							?>
+						</select>
+					</div>
 				</div>
 				<hr>
 				<div class = "row">
 					<label for="classesPreferred">Preferred Classes: </label>
-					<select class="form-control" name = "classesPreferred">
-						<option>X</option>
-						<option>Y</option>
-						<option>Z</option>
-					</select>
+					<div class="desired_wrapper">
+						<button class="desired_add">Add more courses</button>
+						<select class="form-control" name = "desired_courses[]">
+							<?php 
+								foreach($courses as $temp) {
+									echo '<option>'.$temp.'</option>';
+								}
+							?>
+						</select>
+					</div>
 					<label for="gradeReceived">Grade Received: </label>
-					<select class="form-control" name = "gradeReceived">
-						<option>A+</option>
-						<option>A</option>
-						<option>A-</option>
-						<option>B+</option>
-						<option>B</option>
-						<option>B-</option>
-						<option>C+</option>
-						<option>C</option>
-						<option>C-</option>
-						<option>D+</option>
-						<option>D</option>
-						<option>D-</option>
-						<option>F</option>
-					</select>
+					<div class="grade_wrapper">
+						<select class="form-control" name = "gradeReceived[]">
+							<option>A+</option>
+							<option>A</option>
+							<option>A-</option>
+							<option>B+</option>
+							<option>B</option>
+							<option>B-</option>
+							<option>C+</option>
+							<option>C</option>
+							<option>C-</option>
+							<option>D+</option>
+							<option>D</option>
+							<option>D-</option>
+							<option>F</option>
+						</select>
+					</div>
 				</div>
 				<hr>
 				<div class = "row">

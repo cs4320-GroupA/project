@@ -39,11 +39,12 @@
 							  'speak_assessment' => $row->speak_assessment,
 							  'onita' => $row->onita,
 							  'message_header' => 'Edit',
+							  'courses' => 'test',
 							  'message' => '<p>*Your form was successfully submitted.<br>*To edit your submission changes the values and click Edit Button',
 							  'editable' => TRUE);
 			} else {
 				//User has not submitted a form yet, so allow submission
-				$data = array('submittable' => TRUE);			
+				$data = array('courses' => 'test', 'submittable' => TRUE);			
 			}
 
 			if($this->session->userdata('status_title') != 'APPLICATION') {

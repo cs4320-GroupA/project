@@ -25,7 +25,7 @@
     			currently_count++;
     			var new_row = '<p id="row'+currently_count+'<select class="form-control" name = "currently_teaching[]"></select>
     							<input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
-    			$(#currently_wrapper).append(new_row);
+    			$('.currently_wrapper').append(new_row);
     		}
 
     		function removeCurrentlyRow(row) {

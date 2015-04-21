@@ -35,7 +35,13 @@
 					}
 					else if ($this->session->userdata("status_title") == "SELECTION")
 					{
-						echo '<div class ="col-md-12">';
+						echo '<div class ="col-md-6">';
+							echo '<p>';
+							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
+							echo '</p>';
+							echo '<button type="button" class="btn btn-primary">Move to Application</button>';
+						echo '</div>';
+						echo '<div class ="col-md-6">';
 							echo '<p>';
 							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
 							echo '</p>';
@@ -44,11 +50,23 @@
 					}
 					else
 					{
-						echo '<div class ="col-md-12">';
+						echo '<div class ="col-md-4">';
 							echo '<p>';
 							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
 							echo '</p>';
 							echo '<button type="button" class="btn btn-primary">Move to Application</button>';
+						echo '</div>';
+						echo '<div class ="col-md-4">';
+							echo '<p>';
+							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
+							echo '</p>';
+							echo '<button type="button" class="btn btn-primary">Move to Selection</button>';
+						echo '</div>';
+						echo '<div class ="col-md-4">';
+							echo '<p>';
+							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
+							echo '</p>';
+							echo '<button type="button" class="btn btn-primary">Move to Notification</button>';
 						echo '</div>';
 					}
 				?>				

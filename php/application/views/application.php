@@ -387,14 +387,16 @@
 				</div>
 				<hr>
 				<div class = "row">
-					<label for="otherWork">Other Work:  </label>
-					<?php
-						if(isset($other_work)) {
-							echo '<input type="text" class="form-control" name="otherWork" value="'.$other_work.'">';
-						} else {
-							echo '<input type="text" class="form-control" name="otherWork" placeholder="Tiger Tech">';
-						}
-					?>
+					<div class = "col-md-12">
+						<label for="otherWork">Other Work:  </label>
+						<?php
+							if(isset($other_work)) {
+								echo '<input type="text" class="form-control" name="otherWork" value="'.$other_work.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="otherWork" placeholder="Tiger Tech">';
+							}
+						?>
+					</div>
 				</div>
 				<hr>
 				<div class = "row">

@@ -28,7 +28,7 @@
 					{
 						echo '<div class ="col-md-12">';
 							echo '<p>';
-							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
+							echo 'The application timeline is currently in the Application mode. Here, applicants can submit applications to be a TA/PLA for the upcoming semester. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
 							echo '</p>';
 							echo '<button type="button" class="btn btn-primary">Move to Selection</button>';
 						echo '</div>';
@@ -37,13 +37,13 @@
 					{
 						echo '<div class ="col-md-6">';
 							echo '<p>';
-							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
+							echo 'The application timeline is currently in the Selection mode. Here, instructors will preference applicants for each of their classes. Upon moving back to the Application mode, applicant submissions are reopened.';
 							echo '</p>';
 							echo '<button type="button" class="btn btn-primary">Move to Application</button>';
 						echo '</div>';
 						echo '<div class ="col-md-6">';
 							echo '<p>';
-							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
+							echo 'The application timeline is currently in the Selection mode. Here, instructors will preference applicants for each of their classes. Upon moving to the Notification mode, applicants are notified of their potential appointment as a TA/PLA of a course.';
 							echo '</p>';
 							echo '<button type="button" class="btn btn-primary">Move to Notification</button>';
 						echo '</div>';
@@ -52,19 +52,19 @@
 					{
 						echo '<div class ="col-md-4">';
 							echo '<p>';
-							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
+							echo 'Move to the Application mode. Here, applicants can submit applications to be a TA/PLA for the upcoming semester. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
 							echo '</p>';
 							echo '<button type="button" class="btn btn-primary">Move to Application</button>';
 						echo '</div>';
 						echo '<div class ="col-md-4">';
 							echo '<p>';
-							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
+							echo 'Move to the Selection mode. Here, instructors will preference applicants for each of their classes. Upon moving to the Notification mode, applicants are notified of their potential appointment as a TA/PLA of a course.';
 							echo '</p>';
 							echo '<button type="button" class="btn btn-primary">Move to Selection</button>';
 						echo '</div>';
 						echo '<div class ="col-md-4">';
 							echo '<p>';
-							echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel augue ex. Nunc lobortis convallis cursus. Donec vestibulum eleifend felis eu ultricies. Sed mattis ornare pharetra. Curabitur vitae nunc fringilla, eleifend turpis sed, ullamcorper odio. Aenean enim est, aliquam vitae laoreet a, ultrices eu eros. Nulla massa dolor, pulvinar sed tellus at, gravida consequat mi. In fringilla, purus ac gravida pharetra, tortor urna viverra massa, id tincidunt nisi magna eget dolor. In scelerisque vitae diam quis tempus.';
+							echo 'Move to the Notification mode. Here, the applicants are notified of their potential appointment as a TA/PLA of a course.';
 							echo '</p>';
 							echo '<button type="button" class="btn btn-primary">Move to Notification</button>';
 						echo '</div>';

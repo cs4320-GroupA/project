@@ -20,11 +20,16 @@
       <h1><b>Welcome to the Mizzou CS/IT TA & PLA Application Website</b></h1>
       <h3>Please log in or register</h3>
       <?php
-      if($this->session->userdata('failed_login')) {
-      if($this->session->userdata('failed_login') == TRUE) {
-      echo '<font color=red>Invalid username, access code, and/or password.</font><br />';
-      }
-      }
+        if($this->session->userdata('failed_login')) {
+          if($this->session->userdata('failed_login') == TRUE) {
+            echo '<font color=red>Invalid username, access code, and/or password.</font><br />';
+          }
+        }
+        if($this->session->userdata('account_exists')) {
+          if($this->session->userdata('account_exists') == TRUE) {
+            echo '<font color=red>Account already exists.</font><br />';
+          }
+        }
       ?>
       <br>
       <button class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#login">Log In</button>

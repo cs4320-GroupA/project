@@ -100,9 +100,18 @@
 					redirect('login', 'refresh');
 				}
 			}
-					
+			
+			$query = $this->user_model->login($username);		
 
-			$query = $this->user_model->register($username, $saltedPass, $salt, $account_type);
+			if($query == FALSE) {
+				$query = $this->user_model->register($username, $saltedPass, $salt, $account_type);
+			} else {
+				$newSession = array(
+					'logged_in' => FALSE,
+					'account_exists' => TRUE
+				);
+				redirect('login', 'refresh');
+			}
 
 			if($query == 1) {
 				$result = $this->user_model->login($username);

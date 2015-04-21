@@ -91,8 +91,8 @@
   				    foreach($courses as $row){
 							echo '<tr>';
 		         		    echo '<td>';
-						echo '<button type="button" class="btn btn-primary" onclick="'.base_url().'index.php/adminModifyCourseController/edit/'.$row->course_id.'">Edit</button>';
-						echo '<button type="button" class="btn btn-danger" onclick="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'">>Remove</button>';
+						echo '<button type="button" class="btn btn-primary" onclick="'.base_url().'index.php/adminModifyCourseController/edit/'.$row->course_id.'">Edit</button> ';
+						echo '<button type="button" class="btn btn-danger" onclick="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'">Remove</button> ';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 

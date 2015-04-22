@@ -26,13 +26,13 @@
 
 		public function add(){
 			
-    			$course_id = htmlspecialchars($_POST['course_id']);
-    			$course_name = htmlspecialchars($_POST['course_name']);
+    			//$course_id = htmlspecialchars($_POST['courseId']);
+    			$course_name = htmlspecialchars($_POST['courseName']);
     			$semester = getCurrentSemester();
 			//need to change this to whatever the session id is
-    			$instructor_id = $this->session->userdata('user_agent');
+    			//$instructor_id = $this->session->userdata('user_agent');
 
-			$result = $this->course_model->createCourse($course_id,$course_name,$semester,$instructor_id);
+			$result = $this->course_model->createCourse(NULL,$course_name,$semester,NULL);
 			
 			if($result == TRUE) {
 				redirect('form', 'refresh');

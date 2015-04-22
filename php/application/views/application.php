@@ -123,7 +123,7 @@
     			new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'">';
 
     			<?php
-    				echo '\'<option selected hidden value="'.$row->grade.'"></option> \'';
+    				echo 'new_row += \'<option selected hidden value="'.$row->grade.'"></option> \';';
     			?>
 				new_row +=	 '<option>A+</option> \
 								<option>A</option> \

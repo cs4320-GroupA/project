@@ -28,11 +28,11 @@
 					<form method="post" accept-charset="utf-8" action=<?php echo base_url().'index.php/adminModifyCourseController/add/'; ?> />
 						<div class="form-group">
 							<label for="courseName">Course Name: </label>
-							<input type="text" class="form-control" id="courseName" placeholder="CS4320">
+							<input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS4320">
 						</div>
 						<div class="form-group">
 							<label for="semester">Semester: </label>
-							<select class="form-control">
+							<select name="semester" class="form-control">
 							    <option>FALL 2015</option>
 							    <option>SPRING 2016</option>
 							    <option>FALL 2016</option>

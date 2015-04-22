@@ -28,22 +28,21 @@
 			
     			//$course_id = htmlspecialchars($_POST['courseId']);
     			$course_name = htmlspecialchars($_POST['courseName']);
-    			$course_name = htmlspecialchars($_POST['semester']);
+    			$semester = htmlspecialchars($_POST['semester']);
 			//need to change this to whatever the session id is
     			//$instructor_id = htmlspecialchars($_POST['instructorPawprint']);
 
 			//instructor id and courseId is currently null
 			$result = $this->course_model->createCourse(NULL,$course_name,$semester,NULL);
 			
-			/*
-			if($result == TRUE) {
-				redirect('form', 'refresh');
-			} else {
-				redirect('form', 'refresh');
-			}*/
-
 			
-			redirect('adminModifyCourseController', 'refresh');
+			if($result == TRUE) {
+				redirect('adminModifyCourseController', 'refresh');
+			} else {
+				//commenting this out for testing
+				//redirect('adminModifyCourseController', 'refresh');
+			}
+
     			
 
 		}

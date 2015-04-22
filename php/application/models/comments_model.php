@@ -9,5 +9,13 @@
 
             $query = $this->db->query($sql, array($posted_by_id, $posted_about_id, $score, $description));
         }
+
+        public function getAllByUser($user_id) {
+            $sql = 'SELECT * FROM tasub.comments WHERE posted_about = ?';
+
+            $query = $this->db->query($sql, array($user_id));
+
+            return $query;
+        }
     }
 ?>

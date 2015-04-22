@@ -118,7 +118,10 @@
 				redirect('applicantPoolController', 'refresh');
 			}
 			
-			$data['comments'] = TRUE;
+			$result = $this->comments_model->getAllByUser($user_id);
+
+			$data['comments'] = array('allowed' => TRUE, 'data' => $result->result());
+
 			$result = $this->course_model->getCourses();
 			$data['courses'] = $result->result_array();
 			

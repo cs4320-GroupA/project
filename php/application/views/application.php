@@ -772,7 +772,7 @@
 				<div class="col-md-3"></div>
     			<div class="col-md-6">
 					<form name="comment_box" action="<?php echo base_url().'index.php/comments/add/'.$user_id.'/'.$semester_id; ?>" method="POST">
-						Score: <input type="number" class="comments" name="score" min="1" max="5" required>
+						Score: <input type="number" class="comments" name="score" min="1" max="5" required> <br>
 						<textarea class="comments" name="description" placeholder="Things to note...." required></textarea>
 						<button type="submit" class="comments pull-right btn btn-primary">Post</button>
 					</form>
@@ -781,6 +781,20 @@
        		<?php
 				}
 			?>
+			<div class="row">
+				<div class="col-md-3"></div>
+    			<div class="col-md-6">
+    				<ul style="list-style-type:none">
+    			<?php 
+    				if(isset($comments->data)) {
+    					foreach($comments->data as $row) {
+    						echo '<li>Posted By: '.$row->posted_by.'      Score: '.$row->score.'</li>';
+    						echo '<li>Description:</li>';
+    						echo '<li>'.$row->description.'</li>';
+    						echo '<hr>';
+    					}
+    				}
+    			?>
 		</div>
 	</body>
 </html>

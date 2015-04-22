@@ -3,8 +3,6 @@
 
 		public function __construct() {
 			parent::__construct();
-
-			$this->instructorAddCourseController->index();
        }
 
 		public function index() {

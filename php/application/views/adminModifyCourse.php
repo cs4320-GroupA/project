@@ -63,6 +63,7 @@
 		          </tr>
 		        </thead>
 		        <tbody>
+			<!--
 		          <tr>
 		            <td>
 		                <button type="button" class="btn btn-primary">Edit</button>
@@ -87,6 +88,7 @@
 		            <td>CS3380</td>
 		            <td>klaricm</td>
 		          </tr>
+			-->
 			  <?php
   				    foreach($courses as $row){
 						echo '<tr>';

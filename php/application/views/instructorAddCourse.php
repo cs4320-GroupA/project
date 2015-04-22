@@ -24,28 +24,19 @@
 	      	<table class="table table-hover">
 	      		<thead>
 		        	<tr>
-		        		<th>Action</th>
-		        		<th>Signature</th>
-		        		<th>GPA</th>
+		        		<th>Course Title</th>
 		        	</tr>
 		    	</thead>
 		    	<tbody>
 					<?php
-  						foreach($applicants as $row) {
+  						foreach($courses as $row) {
 							echo '<tr>';
 		    				echo '<td>';
 
 		    				echo '<form>';
 							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/form/viewForm/'.$row->user_id.'/'.$row->semester_id.'">View</button> ';
 			    			echo '</td>';
-			    			echo '<td>'.$row->signature.'</td>';
-
-			   	 			foreach($form_data as $temp) {
-			    				if($temp->form_data_id == $row->form_data) {
-			    					echo '<td>'.$temp->gpa.'</td>';
-			    					break;
-			    				}
-			    			}
+			    			echo '<td>'.$row['course_name'].'</td>';
 
                				echo '</tr>';
                				echo '</form>';

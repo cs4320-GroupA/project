@@ -8,8 +8,8 @@
 		public function index() {
 			$this->load->model('course_model');
 			
-			$courses = $this->course_model->getCourses();
-			$this->load->view('instructorAddCourse', $courses);
+			$data['courses'] = $this->course_model->getCourses();
+			$this->load->view('instructorAddCourse', $data);
 		}
 
 		public function add($course_id, $course_name) {

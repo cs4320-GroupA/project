@@ -75,7 +75,7 @@
 			$this->load->model('currently_teaching_model');
 			$this->load->model('previous_taught_model');
 			$this->load->model('desired_courses_model');
-			
+			$this->load->model('comments_model');
 			//Get the current applicant's form
 			$query = $this->form_model->getForm($user_id, $semester_id);
 

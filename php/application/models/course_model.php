@@ -81,7 +81,7 @@
 	public function editCourse($course_id,$semester,$instructor_oid) {
 		$retrieveQuery = "UPDATE FROM course SET course_name = ?, semester = ?, instructor_id = ? WHERE course_id = ?";			
             	$query = $this->db->query($sql, array($course_id));
-		$editQuery = 
+		$editQuery = NULL;
 	} 	
         
  /*

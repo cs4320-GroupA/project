@@ -4,10 +4,10 @@
             parent::__construct();
         }
 
-        public function insert($posted_about_id, $posted_by_id, $score, $description) {
-            $sql = 'INSERT into tasub.comments(posted_by, posted_about, score, description) VALUES(?, ?, ?, ?)';
+        public function insert($posted_about_id, $posted_by_id, $pawprint, $score, $description) {
+            $sql = 'INSERT into tasub.comments(posted_by, posted_about, posted_by_pawprint, score, description) VALUES(?, ?, ?, ?, ?)';
 
-            $query = $this->db->query($sql, array($posted_by_id, $posted_about_id, $score, $description));
+            $query = $this->db->query($sql, array($posted_by_id, $posted_about_id, $pawprint, $score, $description));
         }
 
         public function getAllByUser($user_id) {

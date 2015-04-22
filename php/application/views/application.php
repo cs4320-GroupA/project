@@ -782,6 +782,7 @@
 				}
 			?>
 			<div class="row">
+				<hr>
 				<div class="col-md-3"></div>
     			<div class="col-md-6">
     				<ul style="list-style-type:none">

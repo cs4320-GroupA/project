@@ -45,7 +45,7 @@
 
             $query = $this->db->query($sql, array($id, $course_id, $course_name, $form_data_id));
 
-            if($this->db->affected_rows > 0) {
+            if($this->db->affected_rows() > 0) {
                 return TRUE;
             } else {
                 return FALSE;

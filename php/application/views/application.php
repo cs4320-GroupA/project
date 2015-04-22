@@ -732,10 +732,15 @@
 				if(isset($comments)) {
 			?>
 			<div class="row">
+				<div class="page-header">
+	        		<h2>Application</h2>
+	     	 	</div>
+	     	 </div>
+	     	 <div class="row">
 				<div class="col-md-3"></div>
     			<div class="col-md-6">
 					<form>
-						<textarea placeholder="What are you doing right now?" ></textarea><br>
+						<textarea placeholder="What are you doing right now?" ></textarea>
 						<button type="submit" class="btn btn-success green">Share</button>
 					</form>
 				</div>

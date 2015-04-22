@@ -400,8 +400,13 @@
 						<label for="classesTeaching">Classes Currently Teaching: </label>
 						<div class="currently_wrapper">
 							<select id="courses" class="form-control" name = "currently_teaching1">
-								<option selected disabled hidden value=""></option>
-								<?php 
+								<?php
+									if(isset($current)) {
+										echo '<option selected '.$current->course_name.' hidden value=""></option>';
+									} else {
+										echo '<option selected disabled hidden value=""></option>';
+									}
+								
 									foreach($courses as $temp) {
 										echo '<option>'.$temp['course_name'].'</option>';
 									}
@@ -418,8 +423,13 @@
 						<label for="classesTaught">Classes Previously Taught: </label>
 						<div class="previously_wrapper">
 							<select class="form-control" name = "previously_taught1">
-								<option selected disabled hidden value=""></option>
 								<?php 
+									if(isset($previous)) {
+										echo '<option selected '.$previous->course_name.' hidden value=""></option>';
+									} else {
+										echo '<option selected disabled hidden value=""></option>';
+									}
+								
 									foreach($courses as $temp) {
 										echo '<option>'.$temp['course_name'].'</option>';
 									}
@@ -436,8 +446,13 @@
 						<label for="classesPreferred">Preferred Classe & Grade Received: </label>
 						<div class="desired_wrapper">
 							<select class="form-control" name = "desired_courses1">
-								<option selected disabled hidden value=""></option>
-								<?php 
+								<?php
+									if(isset($desired)) {
+										echo '<option selected '.$desired->course_name.' hidden value=""></option>';
+									} else {
+										echo '<option selected disabled hidden value=""></option>';
+									}
+								 
 									foreach($courses as $temp) {
 										echo '<option>'.$temp['course_name'].'</option>';
 									}

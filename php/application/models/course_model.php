@@ -71,16 +71,21 @@
   */
         public function createPreference( $course_id, $course_name, $form_id, $semester_id, $preference_number ){
             $q = 'insert into course_preference (
-                    course_id,
-                    course_name,
-                    form_id,
-                    semester_id,
-                    preference_number
+                  course_id,
+                  course_name,
+                  form_id,
+                  semester_id,
+                  preference_number
                 ) values(
-                    ?, ?, ?, ?, ?
+                  ?, ?, ?, ?, ?
                 )';
 
-            $result = $this->db->query( $q, array( $course_id, $form_id, $semester_id, $preference_number ));
+            $result = $this->db->query( $q, array(
+                $course_id, 
+                $form_id, 
+                $semester_id, 
+                $preference_number
+            ));
 
             // needto varify outputs here
         

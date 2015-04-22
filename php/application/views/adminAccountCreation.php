@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<form class="form-horizontal" action=<?php echo base_url().'index.php/adminAccountCreationController/createAccount/'; ?>>
+			<form method="POST" class="form-horizontal" action=<?php echo base_url().'index.php/adminAccountCreationController/createAccount/'; ?>>
 				<div class="form-group">
 					<label for="adminID" class="col-sm-2 control-label">Admin Pawprint</label>
 					<div class="col-sm-10">

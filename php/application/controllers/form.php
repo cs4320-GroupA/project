@@ -444,7 +444,7 @@
 					}
 				}
 				if($safe == FALSE) {
-					$this->desired_courses_model->delete($row->desired_courses_id, $row->course_id, $row->course_name, $form_data_id);
+					$this->desired_courses_model->delete($row->desired_course_id, $row->course_id, $row->course_name, $form_data_id);
 				}
 
 				$safe = FALSE;

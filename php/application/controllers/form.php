@@ -120,7 +120,8 @@
 			
 			$result = $this->comments_model->getAllByUser($user_id);
 
-			$data['comments'] = array('allowed' => TRUE, 'data' => $result->result());
+			$data['comments'] = TRUE;
+			$data['comments_about_user'] = $result->result();
 
 			$result = $this->course_model->getCourses();
 			$data['courses'] = $result->result_array();

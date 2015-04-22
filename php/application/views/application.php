@@ -786,8 +786,8 @@
     			<div class="col-md-6">
     				<ul style="list-style-type:none">
     			<?php 
-    				if(isset($comments->data)) {
-    					foreach($comments->data as $row) {
+    				if(isset($comments_about_user)) {
+    					foreach($comments_about_user as $row) {
     						echo '<li>Posted By: '.$row->posted_by.'      Score: '.$row->score.'</li>';
     						echo '<li>Description:</li>';
     						echo '<li>'.$row->description.'</li>';
@@ -795,6 +795,9 @@
     					}
     				}
     			?>
+    				</ul>
+    			</div>
+    		</div>
 		</div>
 	</body>
 </html>

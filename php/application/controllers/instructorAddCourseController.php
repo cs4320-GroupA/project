@@ -2,9 +2,6 @@
 	class instructorAddCourseController extends CI_Controller {
 
 		public function __construct() {
-            $this->load->model('course_model');
-			$this->load->model('semester_model');
-
 			parent::__construct();
 
 			$this->instructorAddCourseController->index();
@@ -15,8 +12,10 @@
 			$this->load->view('instructorAddCourse', $courses);
 		}
 
-		public function add($course_id, $course_name)
-		{
+		public function add($course_id, $course_name) {
+			$this->load->model('course_model');
+			$this->load->model('semester_model');
+
     		$semester = getCurrentSemester();
 
     		$result = $this->course_model->assignCourse($course_id, $course_name, $this->session->userdata('user_id'));

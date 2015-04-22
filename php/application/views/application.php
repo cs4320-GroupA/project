@@ -728,7 +728,7 @@
 				<hr>
 			</form>
 			<?php 
-				if(isset($comments) {
+				if(isset($comments)) {
 			?>
 			<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 			<div class="row">

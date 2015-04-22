@@ -51,5 +51,17 @@
                 return FALSE;
             }
         }
+
+        public function delete($id, $course_id, $course_name, $form_data_id) {
+            $sql = 'DELETE FROM tasub.desired_courses WHERE desired_course_id = ? AND course_id = ? AND course_name = ? AND form_data_id = ?';
+
+            $query = $this->db->query($sql, array($id, $course_id, $course_name, $form_data_id));
+
+            if($this->db->affected_rows() > 0) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
     }
 ?>

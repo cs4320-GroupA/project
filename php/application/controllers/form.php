@@ -107,13 +107,17 @@
 							  'signature' => $query->row()->signature,
 							  'date' => $query->row()->signature_date,
 							  'view_only' => TRUE);
+
+				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
+				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data);
+				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');
 			}
 			
 			$data['comments'] = TRUE;
-
+			
 			$this->load->view('application', $data);
 		}
 		public function submitForm() {
@@ -327,36 +331,83 @@
 			//Update form meta data into database
 			$result = $this->form_model->editForm($query->row()->user_id, $query->row()->semester_id, $signature, $date);
 			
+			$form_data_id = $query->row()->form_data;
 			$base_string = 'currently_teaching';
 			$post_string = $base_string.'1';
 			$counter = 1;
 			
-			while(isset($_POST[$post_string])) {
-				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+			for($i = 1; $i <= 4; $i++) {
+				if(isset($_POST[$post_string])) {
+					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
-				$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
-				if($return == FALSE) {
-					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+					$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					if($return == FALSE) {
+						$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					}
 				}
-				
+
 				$counter++;
 				$post_string = $base_string.strval($counter);
+			}
+
+			//check for deletions
+			$query = $this->currently_teaching_model->getAll($form_data_id);
+			$safe = FALSE;
+			
+			foreach ($query as $row) {
+				for($i = 1; $i < $counter; $i++) {
+					$post_string = $base_string.strval($i);
+					
+					if(isset($_POST[$post_string])) {
+						if($row->course_name == $_POST[$post_string]) {
+							$safe = TRUE;
+						}
+					}
+				}
+				if($safe == FALSE) {
+					$this->currently_teaching_model->delete($row->currently_teaching_id, $row->course_id, $row->course_name, $form_data_id);
+				}
+
+				$safe = FALSE;
 			}
 
 			$base_string = 'previously_taught';
 			$post_string = $base_string.'1';
 			$counter = 1;
 			
-			while(isset($_POST[$post_string])) {
-				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+			for($i = 1; $i <= 10; $i++) {
+				if(isset($_POST[$post_string])) {
+					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
-				$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
-				if($return == FALSE) {
-					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
-				} 
+					$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					if($return == FALSE) {
+						$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					}
+				}
 
 				$counter++;
 				$post_string = $base_string.strval($counter);
+			}
+
+			//check for deletions
+			$query = $this->previous_taught_model->getAll($form_data_id);
+			$safe = FALSE;
+			
+			foreach ($query as $row) {
+				for($i = 1; $i < $counter; $i++) {
+					$post_string = $base_string.strval($i);
+					
+					if(isset($_POST[$post_string])) {
+						if($row->course_name == $_POST[$post_string]) {
+							$safe = TRUE;
+						}
+					}
+				}
+				if($safe == FALSE) {
+					$this->previous_taught_model->delete($row->previous_taught_id, $row->course_id, $row->course_name, $form_data_id);
+				}
+
+				$safe = FALSE;
 			}
 
 			$base_string = 'desired_courses';
@@ -365,19 +416,42 @@
 			$grade_string = $base_grade_string.'1';
 			$counter = 1;
 			
-			while(isset($_POST[$post_string])) {
-				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+			for($i = 1; $i <= 8; $i++) {
+				if(isset($_POST[$post_string])) {
+					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
-				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
-				if($return == FALSE) {
-					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data, $_POST[$grade_string]);
-				} else {
-					$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
+					$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					if($return == FALSE) {
+						$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id, $_POST[$grade_string]);
+					} else {
+						$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
+					}
 				}
-				
+
 				$counter++;
 				$post_string = $base_string.strval($counter);
 				$grade_string = $base_grade_string.strval($counter);
+			}
+
+			//check for deletions
+			$query = $this->desired_courses_model->getAll($form_data_id);
+			$safe = FALSE;
+			
+			foreach ($query as $row) {
+				for($i = 1; $i < $counter; $i++) {
+					$post_string = $base_string.strval($i);
+					
+					if(isset($_POST[$post_string])) {
+						if($row->course_name == $_POST[$post_string]) {
+							$safe = TRUE;
+						}
+					}
+				}
+				if($safe == FALSE) {
+					$this->desired_courses_model->delete($row->desired_course_id, $row->course_id, $row->course_name, $form_data_id);
+				}
+
+				$safe = FALSE;
 			}
 
 			//Redirect to form

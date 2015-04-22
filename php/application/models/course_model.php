@@ -21,11 +21,11 @@
 
 		$query = $this->db->query($sql, array($course_id));
             
-	        if($query->affected_rows() == 1){
-	           return TRUE;
-	        } else{
-	           return FALSE; //No courses found
-	        }
+	    if($this->db->affected_rows() == 1){
+	       return TRUE;
+	    } else{
+	       return FALSE; //No courses found
+	   }
 	}
         
         public function getCoursesByInstructor($user_id) {
@@ -45,7 +45,7 @@
 
             $query = $this->db->query($sql, array($course_id,$course_name,$semester,$instructor_id));
 
-            if($query->affected_rows() == 1) {
+            if($this->db->affected_rows() == 1) {
                 return TRUE;
             } else {
                 return FALSE;

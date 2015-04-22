@@ -82,7 +82,12 @@
 		$( document ).ready(function() {
 		<?php
 			if(isset($previous)) {
+				$count = 1;
 				foreach($previous as $row) {
+					if($count == 1) {
+						$first_previous = $row->course_name;
+						$count++;
+					} else {
 		?>
     			previously_count++;
     			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses();
@@ -94,10 +99,16 @@
 				new_row += '<input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
     			$('.previously_wrapper').append(new_row);
     	<?php
+    				}	
     			}
 			}
 			if(isset($current)) {
+				$count = 1;
 				foreach($current as $row) {
+					if($count == 1) {
+						$first_current = $row->course_name;
+						$count++;
+					} else {
 		?>
     			currently_count++;
     			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses();
@@ -109,10 +120,16 @@
 				new_row += '<input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
     			$('.currently_wrapper').append(new_row);
     	<?php
+    				}
 				}
 			}
 			if(isset($desired)) {
+				$count = 1;
 				foreach($desired as $row) {
+					if($count == 1) {
+						$first_desired = $row->course_name;
+						$count++;
+					} else {
 		?>
     			desired_count++;
     			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'">'+getCourses();
@@ -143,6 +160,7 @@
 				new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
     			$('.desired_wrapper').append(new_row);
     	<?php
+    				}
 				}
 			}
 		?>
@@ -401,8 +419,8 @@
 						<div class="currently_wrapper">
 							<select id="courses" class="form-control" name = "currently_teaching1">
 								<?php
-									if(isset($current)) {
-										echo '<option selected hidden value="'.$current[0]->course_name.'"></option>';
+									if(isset($first_current)) {
+										echo '<option selected hidden value="'.$first_current.'"></option>';
 									} else {
 										echo '<option selected disabled hidden value=""></option>';
 									}
@@ -424,8 +442,8 @@
 						<div class="previously_wrapper">
 							<select class="form-control" name = "previously_taught1">
 								<?php 
-									if(isset($previous)) {
-										echo '<option selected hidden value="'.$previous[0]->course_name.'"></option>';
+									if(isset($first_previous)) {
+										echo '<option selected hidden value="'.$first_previous.'"></option>';
 									} else {
 										echo '<option selected disabled hidden value=""></option>';
 									}
@@ -447,8 +465,8 @@
 						<div class="desired_wrapper">
 							<select class="form-control" name = "desired_courses1">
 								<?php
-									if(isset($desired)) {
-										echo '<option selected hidden value="'.$desired[0]->course_name.'"></option>';
+									if(isset($first_desired)) {
+										echo '<option selected hidden value="'.$first_desired.'"></option>';
 									} else {
 										echo '<option selected disabled hidden value=""></option>';
 									}

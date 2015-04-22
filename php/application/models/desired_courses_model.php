@@ -39,5 +39,17 @@
                 return FALSE;
             }
         }
+
+        public function getAll($form_data_id) {
+            $sql = 'SELECT * FROM tasub.desired_courses WHERE form_data_id = ?';
+
+            $query = $this->db->query($sql, array($form_data_id));
+
+            if($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return FALSE;
+            }
+        }
     }
 ?>

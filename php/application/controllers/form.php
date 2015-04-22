@@ -10,6 +10,9 @@
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
 			$this->load->model('course_model');
+			$this->load->model('previous_taught_model');
+			$this->load->model('currently_teaching_model');
+			$this->load->model('desired_courses_model');
 
 			//Get the current applicant's form
 			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
@@ -42,9 +45,13 @@
 							  'message_header' => 'Edit',
 							  'message' => '<p>*Your form was successfully submitted.<br>*To edit your submission changes the values and click Edit Button',
 							  'editable' => TRUE);
+
+				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data)->result();
+				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data->result();
+				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data)->result();
 			} else {
 				//User has not submitted a form yet, so allow submission
-				$data = array('courses' => 'test', 'submittable' => TRUE);			
+				$data = array('submittable' => TRUE);			
 			}
 
 			if($this->session->userdata('status_title') != 'APPLICATION') {

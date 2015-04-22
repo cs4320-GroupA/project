@@ -732,17 +732,13 @@
 			?>
 			<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 			<div class="row">
-    			<div class="col-md-6">
-    						<div class="widget-area no-padding blank">
-								<div class="status-upload">
-									<form>
-										<textarea placeholder="What are you doing right now?" ></textarea>
-										<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
-									</form>
-								</div>
-							</div>
-						</div>
-       		</div>
+				<div class="status-upload">
+					<form>
+						<textarea placeholder="What are you doing right now?" ></textarea>
+						<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+					</form>
+				</div>
+			</div>
        		<?php
 				}
 			?>

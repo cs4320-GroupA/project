@@ -8,6 +8,7 @@
 		<meta name="author" content="">
 		<link rel="icon" href="../../favicon.ico">
 		<title>Application Form</title>
+		<link href="<?php echo base_url(); ?>css/comments.css" rel="stylesheet">
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -730,15 +731,14 @@
 			<?php 
 				if(isset($comments)) {
 			?>
-			<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 			<div class="row">
-				<div class="status-upload">
+    			<div class="col-md-6">
 					<form>
-						<textarea placeholder="What are you doing right now?" ></textarea>
-						<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+						<textarea placeholder="What are you doing right now?" ></textarea><br>
+						<button type="submit" class="btn btn-success green">Share</button>
 					</form>
 				</div>
-			</div>
+       		</div>
        		<?php
 				}
 			?>

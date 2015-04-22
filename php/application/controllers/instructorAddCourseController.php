@@ -2,8 +2,8 @@
 	class instructorAddCourseController extends CI_Controller {
 
 		public function __construct() {
-            $this->load->model('Course_model');
-			$this->load->model('Semester_model');
+            $this->load->model('course_model');
+			$this->load->model('semester_model');
 
 			parent::__construct();
 
@@ -15,18 +15,16 @@
 			$this->load->view('instructorAddCourse', $courses);
 		}
 
-		public function add()
+		public function add($course_id, $course_name)
 		{
-			$course_id = htmlspecialchars($_POST['course_id']);
-    		$course_name = htmlspecialchars($_POST['course_name']);
     		$semester = getCurrentSemester();
 
-    		$result = $this->Course_model->AssignCourse($course_id,$course_name,$semester,$instructor_id);
+    		$result = $this->course_model->assignCourse($course_id, $course_name, $this->session->userdata('user_id'));
 
-    			if($result == TRUE) {
-				redirect('form', 'refresh');
+    		if($result == TRUE) {
+				redirect('instructorAddCourse', 'refresh');
 			} else {
-				redirect('form', 'refresh');
+				redirect('instructorAddCourse', 'refresh');
 			}
 		}
 	}

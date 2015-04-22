@@ -52,11 +52,11 @@
             }
         }
 
-        public function assignCourse($course_id, $course_name, $semester, $instructor_id)
+        public function assignCourse($course_id, $course_name, $instructor_id)
         {
-            $sql = 'INSERT into course (course_id, course_name, semester, instructor_id) VALUES (?,?,?,?) WHERE $course_id = ?, $course_name = ?, $semester = ?, $instructor_id = ?';
+            $sql = 'UPDATE course set instructor_id WHERE $course_id = ?, $course_name = ?';
 
-            $query = $this->db->query($sql, array($course_id, $course_name, $semester, $instructor_id));
+            $query = $this->db->query($sql, array($instructor_id, $course_id, $course_name));
 
             if($query->affected_rows() == 1) {
                 return TRUE;

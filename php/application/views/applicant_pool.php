@@ -29,7 +29,7 @@
 		    	</thead>
 		    	<tbody>
 					<?php
-  						foreach($applicant as $row) {
+  						foreach($applicants as $row) {
 							echo '<tr>';
 		    				echo '<td>';
 

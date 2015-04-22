@@ -9,8 +9,6 @@
 		<link rel="icon" href="../../favicon.ico">
 		<title>Account Creation</title>
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<?php
@@ -22,17 +20,17 @@
 			</div>
 		</div>
 		<div class="container">
-			<form class="form-horizontal">
+			<form method="POST" class="form-horizontal" action=<?php echo base_url().'index.php/adminAccountCreationController/createAccount/'; ?>>
 				<div class="form-group">
 					<label for="adminID" class="col-sm-2 control-label">Admin Pawprint</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="adminID" placeholder="Admin Pawprint">
+						<input type="text" class="form-control" id="adminID" name="adminID" placeholder="Admin Pawprint">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="adminPassword" class="col-sm-2 control-label">Password</label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" id="adminPassword" placeholder="Password">
+						<input type="password" class="form-control" name="password" id="adminPassword" placeholder="Password">
 					</div>
 				</div>
 				<div class="form-group">

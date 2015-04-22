@@ -9,8 +9,6 @@
 		<link rel="icon" href="../../favicon.ico">
 		<title>Modify Course</title>
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<?php
@@ -25,14 +23,14 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3>Add a Course</h3>
-					<form>
+					<form method="post" accept-charset="utf-8" action=<?php echo base_url().'index.php/adminModifyCourseController/add/'; ?> />
 						<div class="form-group">
 							<label for="courseName">Course Name: </label>
-							<input type="text" class="form-control" id="courseName" placeholder="CS4320">
+							<input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS4320">
 						</div>
 						<div class="form-group">
 							<label for="semester">Semester: </label>
-							<select class="form-control">
+							<select name="semester" class="form-control">
 							    <option>FALL 2015</option>
 							    <option>SPRING 2016</option>
 							    <option>FALL 2016</option>
@@ -63,6 +61,7 @@
 		          </tr>
 		        </thead>
 		        <tbody>
+			<!--
 		          <tr>
 		            <td>
 		                <button type="button" class="btn btn-primary">Edit</button>
@@ -87,18 +86,26 @@
 		            <td>CS3380</td>
 		            <td>klaricm</td>
 		          </tr>
+			-->
 			  <?php
-  				    foreach ($courses as $row){
-					echo '<tr>';
-		         		    echo '<td>';
-						echo "<a href='controllers/adminModifyCourseController/edit'>Edit</a>";
-						echo "<a href='controllers/adminModifyCourseController/remove'>Remove</a>";
-						//echo '<button type="button" class="btn btn-primary">Edit</button>';
-						//echo '<button type="button" class="btn btn-danger">Remove</button>';
+  				    foreach($courses as $row){
+						echo '<tr>';
+		         		echo '<td>';
+
+		         		echo '<form>';
+						echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminEditCourseController/'.$row->course_id.'">Edit</button> ';
+						echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'">Remove</button> ';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
-					    echo '<td>'.$row->instructor_id.'</td>';
-	                                echo '</tr>';
+
+					    if($row->instructor_id == NULL) {
+					    	 echo '<td>unassigned</td>';
+					    } else {
+					   		echo '<td>'.$row->instructor_id.'</td>';
+					   	}
+	                    
+	                	echo '</tr>';
+	                	echo '</form>';
 				    };
 
 

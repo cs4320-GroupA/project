@@ -10,6 +10,9 @@
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
 			$this->load->model('course_model');
+			$this->load->model('previous_taught_model');
+			$this->load->model('currently_teaching_model');
+			$this->load->model('desired_courses_model');
 
 			//Get the current applicant's form
 			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
@@ -42,9 +45,13 @@
 							  'message_header' => 'Edit',
 							  'message' => '<p>*Your form was successfully submitted.<br>*To edit your submission changes the values and click Edit Button',
 							  'editable' => TRUE);
+
+				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
+				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data);
+				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
 			} else {
 				//User has not submitted a form yet, so allow submission
-				$data = array('courses' => 'test', 'submittable' => TRUE);			
+				$data = array('submittable' => TRUE);			
 			}
 
 			if($this->session->userdata('status_title') != 'APPLICATION') {
@@ -64,7 +71,11 @@
 			// Load form_data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
-
+			$this->load->model('course_model');
+			$this->load->model('currently_teaching_model');
+			$this->load->model('previous_taught_model');
+			$this->load->model('desired_courses_model');
+			
 			//Get the current applicant's form
 			$query = $this->form_model->getForm($user_id, $semester_id);
 
@@ -99,7 +110,9 @@
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');
-			} 
+			}
+			
+			$data['comments'] = TRUE;
 
 			$this->load->view('application', $data);
 		}
@@ -107,6 +120,10 @@
 			//Load form data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
+			$this->load->model('course_model');
+			$this->load->model('currently_teaching_model');
+			$this->load->model('previous_taught_model');
+			$this->load->model('desired_courses_model');
 
 			//Get the current applicant's form if exists
 			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
@@ -150,6 +167,9 @@
 
 			//If the appliant is PLA then the dept and grade must be inputed
 			if($asstType == 'PLA') {
+				if(!isset($department)) {
+					$this->session->set_flashdata('missing_dept', TRUE);
+				}
 				$department = htmlspecialchars($_POST['dept']);
 				$grade = htmlspecialchars($_POST['grade']);
 			} 
@@ -176,6 +196,58 @@
 			//Insert form meta data into database
 			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature, $date);
 			
+			$base_string = 'currently_teaching';
+			$post_string = $base_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $fdata_id);
+				if($return == FALSE) {
+					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $fdata_id);
+				}
+				
+				$counter++;
+				$post_string = $base_string.strval($counter);
+			}
+
+			$base_string = 'previously_taught';
+			$post_string = $base_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $fdata_id);
+				if($return == FALSE) {
+					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $fdata_id);
+				} 
+
+				$counter++;
+				$post_string = $base_string.strval($counter);
+			}
+
+			$base_string = 'desired_courses';
+			$post_string = $base_string.'1';
+			$base_grade_string = 'gradeReceived';
+			$grade_string = $base_grade_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $fdata_id);
+				if($return == FALSE) {
+					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $fdata_id, $_POST[$grade_string]);
+				} else {
+					$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
+				}
+				
+				$counter++;
+				$post_string = $base_string.strval($counter);
+				$grade_string = $base_grade_string.strval($counter);
+			}
 			//Redirect to form
 			redirect('form', 'refresh');
 		}
@@ -184,6 +256,10 @@
 			//Load form data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
+			$this->load->model('course_model');
+			$this->load->model('currently_teaching_model');
+			$this->load->model('previous_taught_model');
+			$this->load->model('desired_courses_model');
 
 			//Get the current applicant's form if exists
 			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
@@ -251,6 +327,59 @@
 			//Update form meta data into database
 			$result = $this->form_model->editForm($query->row()->user_id, $query->row()->semester_id, $signature, $date);
 			
+			$base_string = 'currently_teaching';
+			$post_string = $base_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				if($return == FALSE) {
+					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				}
+				
+				$counter++;
+				$post_string = $base_string.strval($counter);
+			}
+
+			$base_string = 'previously_taught';
+			$post_string = $base_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				if($return == FALSE) {
+					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				} 
+
+				$counter++;
+				$post_string = $base_string.strval($counter);
+			}
+
+			$base_string = 'desired_courses';
+			$post_string = $base_string.'1';
+			$base_grade_string = 'gradeReceived';
+			$grade_string = $base_grade_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				if($return == FALSE) {
+					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data, $_POST[$grade_string]);
+				} else {
+					$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
+				}
+				
+				$counter++;
+				$post_string = $base_string.strval($counter);
+				$grade_string = $base_grade_string.strval($counter);
+			}
+
 			//Redirect to form
 			redirect('form', 'refresh');
 		}

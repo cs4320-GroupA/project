@@ -1,6 +1,12 @@
-!DOCTYPE html
-<html>
+<!DOCTYPE html>
+<html lang = "en">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="../../favicon.ico">
 		<title>Home</title>
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 	</head>
@@ -19,19 +25,108 @@
 			//If statemanets that change the given message depending on who
 			if($this->session->userdata('user_type') == 'applicant')
 			{
-				echo "<p>APPLICANT FILLER UNTIL WE KNOW WHAT'S HAPPENING</p>";
+				echo'<div class="container">';
+			    	echo'<div class="row">';
+				        echo'<div class="col-md-6 col-md-offset-3">';
+				             echo'<h3>Application</h3>';
+								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+				            echo '<a class = "btn btn-success" href="'.base_url().'index.php/form">Application</a>';
+				        echo'</div>';
+				    echo'</div>';
+				echo'</div>';
 			}
 			else if($this->session->userdata('user_type') == 'instructor')
 			{
-				echo "<p>INSTRUCTOR FILLER UNTIL WE KNOW WHAT'S HAPPENING</p>";
+				echo'<div class="container">';
+			    	echo'<div class="row">';
+				        echo'<div class="col-md-4">';
+				             echo'<h3>Add Courses</h3>';
+								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+				            echo '<a class = "btn btn-success" href="'.base_url().'index.php/instructorAddCourseController">Add Courses</a>';
+				        echo'</div>';
+				        echo'<div class="col-md-4">';
+				             echo'<h3>Your Courses</h3>';
+								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/instructorViewCoursesController">Your Courses</a>';
+				        echo'</div>';
+				        echo'<div class="col-md-4">';
+				             echo'<h3>Applicant Pool</h3>';
+								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+				            echo '<a class = "btn btn-warning" href="'.base_url().'index.php/applicantPoolController">Applicant Pool</a>';
+				        echo'</div>';
+				    echo'</div>';
+				echo'</div>';
 			}
 			else if($this->session->userdata('user_type') == 'admin')
 			{
-				echo "<p>ADMIN FILLER UNTIL WE KNOW WHAT'S HAPPENING</p>";
+				echo'<div class="container">';
+			    	echo'<div class="row">';
+				        echo'<div class="col-md-3">';
+				             echo'<h3>Modify Course</h3>';
+								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+				            echo '<a class = "btn btn-primary" href="'.base_url().'index.php/adminModifyCourseController">Modify Course</a>';
+				        echo'</div>';
+				        echo'<div class="col-md-3">';
+				             echo'<h3>Assign Applicants</h3>';
+								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+				            echo '<a class = "btn btn-warning" href="'.base_url().'index.php/adminAssignApplicantController">Assign Applicants</a>';
+				        echo'</div>';
+				        echo'<div class="col-md-3">';
+				             echo'<h3>Account Creation</h3>';
+								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+				            echo '<a class = "btn btn-success" href="'.base_url().'index.php/adminAccountCreationController">Account Creation</a>';
+				        echo'</div>';
+				      	echo'<div class="col-md-3">';
+				             echo'<h3>Change Timeline</h3>';
+								echo'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+				            echo '<a class = "btn btn-danger" href="'.base_url().'index.php/adminTemporalModificationController">Change Timeline</a>';
+				        echo'</div>';
+				    echo'</div>';
+				echo'</div>';
 			}
 			else
 			{
-				echo "<p>YOU'RE NOT LOGGED IN. PLEASE LOG IN.</p>";
+				echo 'ERROR';
 			};
 		?>
 	</body>

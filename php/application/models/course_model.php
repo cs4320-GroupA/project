@@ -21,11 +21,11 @@
 
 		$query = $this->db->query($sql, array($course_id));
             
-	        if($query->affected_rows() == 1){
-	           return TRUE;
-	        } else{
-	           return FALSE; //No courses found
-	        }
+	    if($this->db->affected_rows() == 1){
+	       return TRUE;
+	    } else{
+	       return FALSE; //No courses found
+	   }
 	}
         
         public function getCoursesByInstructor($user_id) {
@@ -45,7 +45,7 @@
 
             $query = $this->db->query($sql, array($course_id,$course_name,$semester,$instructor_id));
 
-            if($query->affected_rows() == 1) {
+            if($this->db->affected_rows() == 1) {
                 return TRUE;
             } else {
                 return FALSE;
@@ -54,7 +54,7 @@
 
         public function assignCourse($course_id, $course_name, $semester, $instructor_id)
         {
-            $sql = 'INSERT into course VALUES (?,?,?,?) WHERE $course_id = ?, $course_name = ?, $semester = ?';
+            $sql = 'INSERT into course (course_id, course_name, semester, instructor_id) VALUES (?,?,?,?) WHERE $course_id = ?, $course_name = ?, $semester = ?, $instructor_id = ?';
 
             $query = $this->db->query($sql, array($course_id, $course_name, $semester, $instructor_id));
 
@@ -64,6 +64,25 @@
                 return FALSE;
             }
         }
+
+        public function getCourseByName($course_name) {
+            $sql = 'SELECT * FROM tasub.course WHERE course_name = ?';
+
+            $query = $this->db->query($sql, array($course_name));
+
+            if($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return FALSE;
+            }
+        }
+
+
+	public function editCourse($course_id,$semester,$instructor_oid) {
+		$retrieveQuery = "UPDATE FROM course SET course_name = ?, semester = ?, instructor_id = ? WHERE course_id = ?";			
+            	$query = $this->db->query($sql, array($course_id));
+		$editQuery = NULL;
+	} 	
         
  /*
   * not 100% sure this needs to go here, this function may better belong

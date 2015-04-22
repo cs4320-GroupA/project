@@ -8,9 +8,8 @@
 		<meta name="author" content="">
 		<link rel="icon" href="../../favicon.ico">
 		<title>Application Form</title>
+		<link href="<?php echo base_url(); ?>css/comments.css" rel="stylesheet">
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 		<script> 
@@ -23,7 +22,7 @@
 
     		function addCurrentlyRow(form) {
     			currently_count++;
-    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching[]">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
     			$('.currently_wrapper').append(new_row);
     		}
 
@@ -33,7 +32,7 @@
     		
     		function addPreviouslyRow(form) {
     			previously_count++;
-    			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught[]">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
     			$('.previously_wrapper').append(new_row);
     		}
 
@@ -43,8 +42,8 @@
     		
     		function addDesiredRow(form) {
     			desired_count++;
-    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_teaching[]">'+getCourses()+'</select> ';
-    			new_row += ' <select class="form-control" name = "gradeReceived[]"> \
+    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'">'+getCourses()+'</select> ';
+    			new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'"> \
     							<option selected disabled hidden value=""></option> \
 								<option>A+</option> \
 								<option>A</option> \
@@ -77,6 +76,94 @@
 				return string;
     		}
 
+		</script>
+		<script type="text/javascript">
+		$( document ).ready(function() {
+		<?php
+			if(isset($previous)) {
+				$count = 1;
+				foreach($previous as $row) {
+					if($count == 1) {
+						$first_previous = $row->course_name;
+						$count++;
+					} else {
+		?>
+    			previously_count++;
+    			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses();
+
+    			<?php 
+    				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
+    			?>
+
+				new_row += '<input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    			$('.previously_wrapper').append(new_row);
+    	<?php
+    				}	
+    			}
+			}
+			if(isset($current)) {
+				$count = 1;
+				foreach($current as $row) {
+					if($count == 1) {
+						$first_current = $row->course_name;
+						$count++;
+					} else {
+		?>
+    			currently_count++;
+    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses();
+
+    			<?php 
+    				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
+    			?>
+    			
+				new_row += '<input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    			$('.currently_wrapper').append(new_row);
+    	<?php
+    				}
+				}
+			}
+			if(isset($desired)) {
+				$count = 1;
+				foreach($desired as $row) {
+					if($count == 1) {
+						$first_desired = $row->course_name;
+						$count++;
+					} else {
+		?>
+    			desired_count++;
+    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'">'+getCourses();
+
+    			<?php 
+    				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
+    			?>
+
+    			new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'">';
+
+    			<?php
+    				echo 'new_row += \'<option selected hidden value="'.$row->grade.'"></option> \';';
+    			?>
+				new_row +=	 '<option>A+</option> \
+								<option>A</option> \
+								<option>A-</option> \
+								<option>B+</option> \
+								<option>B</option> \
+								<option>B-</option> \
+								<option>C+</option> \
+								<option>C</option> \
+								<option>C-</option> \
+								<option>D+</option> \
+								<option>D</option> \
+								<option>D-</option> \
+								<option>F</option> \
+							</select> ';
+				new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
+    			$('.desired_wrapper').append(new_row);
+    	<?php
+    				}
+				}
+			}
+		?>
+		});	
 		</script>
 		<?php
 			if(isset($view_only)) {
@@ -151,7 +238,7 @@
 				<br>
 				<hr>
 				<div class="row">
-					<div class = "col-md-2">
+					<div class = "col-md-6">
 						<label for="fname">First Name: </label>
 						<?php 
 							if(isset($first_name)) {
@@ -161,7 +248,7 @@
 							}
 						?>
 						</div>
-					<div class = "col-md-2">
+					<div class = "col-md-6">
 						<label for="lname">Last Name: </label>
 						<?php 
 							if(isset($last_name)) {
@@ -171,7 +258,11 @@
 							}
 						?>
 						</div>
-					<div class = "col-sm-2">
+				</div>
+				<br>
+				<hr>
+				<div class="row">
+					<div class = "col-sm-4">
 						<label for="idNumber">ID: </label>
 						<?php
 							if(isset($student_id)) {
@@ -181,7 +272,7 @@
 							}
 						?>
 						</div>
-					<div class = "col-sm-2">
+					<div class = "col-sm-4">
 						<label for="gpa">GPA: </label>
 						<?php
 							if(isset($gpa)) {
@@ -191,7 +282,7 @@
 							}
 						?>						
 						</div>
-					<div class = "col-md-2">
+					<div class = "col-sm-4">
 						<label for="gradYear">Grad Year: </label>
 						<select class="form-control" name = "gradYear" required>
 							<?php
@@ -212,7 +303,7 @@
 							<option>2024</option>
 							<option>2025</option>
 						</select>
-						</div>
+					</div>
 				</div>
 				<br>
 				<hr>
@@ -322,67 +413,99 @@
 				<hr>
 				<br>
 				<div class = "row">
-					<label for="classesTeaching">Classes Currently Teaching: </label>
-					<div class="currently_wrapper">
-						<select id="courses" class="form-control" name = "currently_teaching[]">
-							<option selected disabled hidden value=""></option>
-							<?php 
-								foreach($courses as $temp) {
-									echo '<option>'.$temp['course_name'].'</option>';
-								}
-							?>
-						</select>
-						<input type="button" class="btn btn-success" onclick="addCurrentlyRow(this.form);" value="Add row"/>
-						<p></p>						
+					<div class="col-md-12">
+						<label for="classesTeaching">Classes Currently Teaching: </label>
+						<div class="currently_wrapper">
+							<select id="courses" class="form-control" name = "currently_teaching1">
+								<option selected disabled hidden value=""></option>
+								<?php
+									foreach($courses as $temp) {
+										if(isset($first_current)) {
+											if($first_current == $temp['course_name']) {
+												echo '<option selected value="'.$first_current.'">'.$first_current.'</option>';
+											}
+											else {
+												echo '<option>'.$temp['course_name'].'</option>';
+											}
+										} else {
+											echo '<option>'.$temp['course_name'].'</option>';
+										}
+									}
+								?>
+							</select>
+							<input type="button" class="btn btn-success" onclick="addCurrentlyRow(this.form);" value="Add row"/>
+							<p></p>						
+						</div>
 					</div>
 				</div>
 				<hr>
 				<div class = "row">
-					<label for="classesTaught">Classes Previously Taught: </label>
-					<div class="previously_wrapper">
-						<select class="form-control" name = "previously_taught[]">
-							<option selected disabled hidden value=""></option>
-							<?php 
-								foreach($courses as $temp) {
-									echo '<option>'.$temp['course_name'].'</option>';
-								}
-							?>
-						</select>
-						<input type="button" class="btn btn-success" onclick="addPreviouslyRow(this.form);" value="Add row"/>
-						<p></p>
+					<div class="col-md-12">
+						<label for="classesTaught">Classes Previously Taught: </label>
+						<div class="previously_wrapper">
+							<select class="form-control" name = "previously_taught1">
+								<option selected disabled hidden value=""></option>
+								<?php
+									foreach($courses as $temp) {
+										if(isset($first_previous)) {
+											if($first_previous == $temp['course_name']) {
+												echo '<option selected value="'.$first_previous.'">'.$first_previous.'</option>';
+											}
+											else {
+												echo '<option>'.$temp['course_name'].'</option>';
+											}
+										} else {
+											echo '<option>'.$temp['course_name'].'</option>';
+										}
+									}
+								?>
+							</select>
+							<input type="button" class="btn btn-success" onclick="addPreviouslyRow(this.form);" value="Add row"/>
+							<p></p>
+						</div>
 					</div>
 				</div>
 				<hr>
 				<div class = "row">
-					<label for="classesPreferred">Preferred Classes: </label>
-					<label for="gradeReceived">                          Grade Received: </label>
-					<div class="desired_wrapper">
-						<select class="form-control" name = "desired_courses[]">
-							<option selected disabled hidden value=""></option>
-							<?php 
-								foreach($courses as $temp) {
-									echo '<option>'.$temp['course_name'].'</option>';
-								}
-							?>
-						</select>
-						<select class="form-control" name = "gradeReceived[]">
-							<option selected disabled hidden value=""></option>'
-							<option>A+</option>
-							<option>A</option>
-							<option>A-</option>
-							<option>B+</option>
-							<option>B</option>
-							<option>B-</option>
-							<option>C+</option>
-							<option>C</option>
-							<option>C-</option>
-							<option>D+</option>
-							<option>D</option>
-							<option>D-</option>
-							<option>F</option>
-						</select>
-						<input type="button" class="btn btn-success" onclick="addDesiredRow(this.form);" value="Add row"/>
-						<p></p>
+					<div class="col-md-12">
+						<label for="classesPreferred">Preferred Classe & Grade Received: </label>
+						<div class="desired_wrapper">
+							<select class="form-control" name = "desired_courses1">
+								<option selected disabled hidden value=""></option>
+								<?php
+									foreach($courses as $temp) {
+										if(isset($first_desired)) {
+											if($first_desired == $temp['course_name']) {
+												echo '<option selected value="'.$first_desired.'">'.$first_desired.'</option>';
+											}
+											else {
+												echo '<option>'.$temp['course_name'].'</option>';
+											}
+										} else {
+											echo '<option>'.$temp['course_name'].'</option>';
+										}
+									}
+								?>
+							</select>
+							<select class="form-control" name = "gradeReceived1">
+								<option selected disabled hidden value=""></option>'
+								<option>A+</option>
+								<option>A</option>
+								<option>A-</option>
+								<option>B+</option>
+								<option>B</option>
+								<option>B-</option>
+								<option>C+</option>
+								<option>C</option>
+								<option>C-</option>
+								<option>D+</option>
+								<option>D</option>
+								<option>D-</option>
+								<option>F</option>
+							</select>
+							<input type="button" class="btn btn-success" onclick="addDesiredRow(this.form);" value="Add row"/>
+							<p></p>
+						</div>
 					</div>
 				</div>
 				<hr>
@@ -615,6 +738,26 @@
 				</div>
 				<hr>
 			</form>
+			<?php 
+				if(isset($comments)) {
+			?>
+			<div class="row">
+				<div class="page-header">
+	        		<h2>Comments</h2>
+	     	 	</div>
+	     	 </div>
+	     	 <div class="row">
+				<div class="col-md-3"></div>
+    			<div class="col-md-6">
+					<form>
+						<textarea placeholder="Things to note...." ></textarea>
+						<button type="submit" class="pull-right btn btn-success red">Post</button>
+					</form>
+				</div>
+       		</div>
+       		<?php
+				}
+			?>
 		</div>
 	</body>
 </html>

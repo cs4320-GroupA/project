@@ -4,6 +4,8 @@
 		public function __construct() 
 		{
             parent::__construct();
+
+			$this->load->model('user_model');
         }
 
 		public function index() 
@@ -11,20 +13,20 @@
 			$this->load->view('adminAccountCreation');
 		}
 
-		public function createAccount($username,$password){
+		public function createAccount(){
 			
-			$this->load->model('User_model');
-			$username = htmlspecialchars($username);
-			$password = htmlspecialchars($password);
+			$username = htmlspecialchars($_POST['adminID']);
+			$password = htmlspecialchars($_POST['password']);
 			$salt = uniqid(mt_rand(), false);
+			$saltedPass = hash("sha1", $password . $salt);
 			$account_type = 'admin';
 
-			$result = $this->admin_model->createAccount($username,$password,$salt,$account_type);
+			$result = $this->user_model->register($username,$saltedPass,$salt,$account_type);
 			
 			if($result == TRUE) {
-				redirect('form', 'refresh');
+				redirect('adminAccountCreationController', 'refresh');
 			} else {
-				redirect('form', 'refresh');
+				redirect('adminAccountCreationController', 'refresh');
 			}
 		}
 

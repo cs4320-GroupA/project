@@ -4,48 +4,55 @@
 		public function __construct() 
 		{
             		parent::__construct();
-       		 }
+
+			$this->load->model('course_model');
+			$this->load->model('semester_model');
+       	}
 
 		public function index() 
 		{ 
-			$this->load->model('Course_model');
-			$courses = $this->Course_model->getCourses();
-			$this->load->view('adminModifyCourse',$courses);
+			$courses = $this->course_model->getCourses();
+
+			$data = array('courses' => $courses->result());
+
+			$this->load->view('adminModifyCourse', $data);
 		}
 
-		public function remove(){
-			$this->load->model('Course_model');
-
-			$course_id = htmlspecialchars($_POST['course_id']);
-
-			$this->Course_model->remove($course_id);
-			$courses = $this->course_model->getCourses();
-			$this->load->view('adminModifyCourse',$courses);
+		public function remove($course_id){
+			$this->course_model->removeCourse($course_id);
 			
+			redirect('adminModifyCourseController', 'refresh');
 		}
 
 		public function add(){
-			$this->load->model('Course_model');
-			$this->load->model('Semester_model');
 			
-    			$course_id = htmlspecialchars($_POST['course_id']);
-    			$course_name = htmlspecialchars($_POST['course_name']);
-    			$semester = getCurrentSemester();
+    			//$course_id = htmlspecialchars($_POST['courseId']);
+    			$course_name = htmlspecialchars($_POST['courseName']);
+    			$semester = htmlspecialchars($_POST['semester']);
 			//need to change this to whatever the session id is
-    			$instructor_id = $this->session->userdata('user_agent');
+    			//$instructor_id = htmlspecialchars($_POST['instructorPawprint']);
 
-			$result = $this->Course_model->createCourse($course_id,$course_name,$semester,$instructor_id);
+			//instructor id and courseId is currently null
+			$result = $this->course_model->createCourse(NULL,$course_name,$semester,NULL);
+			
 			
 			if($result == TRUE) {
-				redirect('form', 'refresh');
+				redirect('adminModifyCourseController', 'refresh');
 			} else {
-				redirect('form', 'refresh');
+				redirect('adminModifyCourseController', 'refresh');
 			}
+
     			
 
 		}
 
 		public function edit(){
+			
+			$oldCourseName = htmlspecialchars($course_id);						
+    			$course_name = htmlspecialchars($_POST['courseName']);
+    			$semester = htmlspecialchars($_POST['semester']);
+
+			
 		}
 
 	}

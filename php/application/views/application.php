@@ -79,6 +79,7 @@
 
 		</script>
 		<script type="text/javascript">
+		$( document ).ready(function() {
 		<?php
 			if(isset($previous)) {
 				foreach($previous as $row) {
@@ -145,6 +146,7 @@
 				}
 			}
 		?>
+		});	
 		</script>
 		<?php
 			if(isset($view_only)) {

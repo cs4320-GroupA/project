@@ -26,7 +26,7 @@
 				<div class="form-group">
 					<label for="adminID" class="col-sm-2 control-label">Admin Pawprint</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="adminID" name="username" placeholder="Admin Pawprint">
+						<input type="text" class="form-control" id="adminID" name="adminID" placeholder="Admin Pawprint">
 					</div>
 				</div>
 				<div class="form-group">

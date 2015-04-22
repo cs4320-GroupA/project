@@ -22,49 +22,64 @@
 
     		function addCurrentlyRow(form) {
     			currently_count++;
-    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
-    			$('.currently_wrapper').append(new_row);
+    			if(currently_count < currently_max_fields) {
+    				var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    				$('.currently_wrapper').append(new_row);
+    			} else {
+    				currently_count--;
+    			}
     		}
 
     		function removeCurrentlyRow(row) {
     			$('#currently_row'+row).remove();
+    			currently_count--;
     		}
     		
     		function addPreviouslyRow(form) {
     			previously_count++;
-    			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
-    			$('.previously_wrapper').append(new_row);
+    			if(previously_count <= previous_max_fields) {
+    				var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    				$('.previously_wrapper').append(new_row);
+    			} else {
+					previously_count--;
+    			}
     		}
 
     		function removePreviouslyRow(row) {
     			$('#previously_row'+row).remove();
+    			previously_count--;
     		}
     		
     		function addDesiredRow(form) {
     			desired_count++;
-    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'">'+getCourses()+'</select> ';
-    			new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'"> \
-    							<option selected disabled hidden value=""></option> \
-								<option>A+</option> \
-								<option>A</option> \
-								<option>A-</option> \
-								<option>B+</option> \
-								<option>B</option> \
-								<option>B-</option> \
-								<option>C+</option> \
-								<option>C</option> \
-								<option>C-</option> \
-								<option>D+</option> \
-								<option>D</option> \
-								<option>D-</option> \
-								<option>F</option> \
-							</select> ';
-				new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
-    			$('.desired_wrapper').append(new_row);
+    			if(desired_count <= desired_max_fields) {
+    				var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'">'+getCourses()+'</select> ';
+    				new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'"> \
+    								<option selected disabled hidden value=""></option> \
+									<option>A+</option> \
+									<option>A</option> \
+									<option>A-</option> \
+									<option>B+</option> \
+									<option>B</option> \
+									<option>B-</option> \
+									<option>C+</option> \
+									<option>C</option> \
+									<option>C-</option> \
+									<option>D+</option> \
+									<option>D</option> \
+									<option>D-</option> \
+									<option>F</option> \
+								</select> ';
+					new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
+    				$('.desired_wrapper').append(new_row);
+    			} else {
+    				desired_count--;
+    			}
     		}
 
     		function removeDesiredRow(row) {
     			$('#desired_row'+row).remove();
+    			desired_count--;
     		}
 
     		function getCourses() {

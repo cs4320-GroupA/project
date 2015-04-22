@@ -127,6 +127,7 @@
 				foreach($desired as $row) {
 					if($count == 1) {
 						$first_desired = $row->course_name;
+						$first_grade = $row->grade;
 						$count++;
 					} else {
 		?>
@@ -140,7 +141,7 @@
     			new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'">';
 
     			<?php
-    				echo 'new_row += \'<option selected hidden value="'.$row->grade.'"></option> \';';
+    				echo 'new_row += \'<option selected hidden value="'.$row->grade.'">'.$row->grade.'</option> \';';
     			?>
 				new_row +=	 '<option>A+</option> \
 								<option>A</option> \
@@ -488,7 +489,12 @@
 								?>
 							</select>
 							<select class="form-control" name = "gradeReceived1">
-								<option selected disabled hidden value=""></option>'
+								<option selected disabled hidden value=""></option>
+								<?php
+									if(isset($first_grade)) {
+										echo '<option selected hidden value="'.$first_grade.'">'.$first_grade.'</option>';
+									}
+								?>
 								<option>A+</option>
 								<option>A</option>
 								<option>A-</option>

@@ -188,14 +188,58 @@
 			//Insert form meta data into database
 			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature, $date);
 			
-			$basestring = 'currently_teaching1';
-			if(isset($_POST[$basestring])) {
-				foreach($_POST[$basestring] as $row) {
-					$query = $this->course_model->getCourseByName($row);
-					$this->currently_teaching_model->insert($query->row()->course_id, $query->row()->course_name, $fdata_id);
+			$base_string = 'currently_teaching';
+			$post_string = $base_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				if($return == FALSE) {
+					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
 				}
+				
+				$counter++;
+				$post_string = $base_string.strval($counter);
 			}
 
+			$base_string = 'previously_taught';
+			$post_string = $base_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				if($return == FALSE) {
+					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				} 
+
+				$counter++;
+				$post_string = $base_string.strval($counter);
+			}
+
+			$base_string = 'desired_courses';
+			$post_string = $base_string.'1';
+			$base_grade_string = 'gradeReceived';
+			$grade_string = $base_grade_string.'1';
+			$counter = 1;
+			
+			while(isset($_POST[$post_string])) {
+				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+
+				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				if($return == FALSE) {
+					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data, $_POST[$grade_string]);
+				} else {
+					$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
+				}
+				
+				$counter++;
+				$post_string = $base_string.strval($counter);
+				$grade_string = $base_grade_string.strval($counter);
+			}
 			//Redirect to form
 			redirect('form', 'refresh');
 		}

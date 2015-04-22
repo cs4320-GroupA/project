@@ -111,6 +111,8 @@
 				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
 				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data);
 				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
+				$data['user_id'] = $user_id;
+				$data['semester_id'] = $semester_id;
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');

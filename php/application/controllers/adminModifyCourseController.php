@@ -19,11 +19,9 @@
 		}
 
 		public function remove($course_id){
-
 			$this->course_model->removeCourse($course_id);
-			$courses = $this->course_model->getCourses();
-			$this->load->view('adminModifyCourse',$courses);
 			
+			redirect('adminModifyCourse', 'refresh');
 		}
 
 		public function add(){

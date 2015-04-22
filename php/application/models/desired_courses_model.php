@@ -46,7 +46,7 @@
             $query = $this->db->query($sql, array($form_data_id));
 
             if($query->num_rows() > 0) {
-                return $query;
+                return $query->result();
             } else {
                 return FALSE;
             }

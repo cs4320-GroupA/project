@@ -46,9 +46,9 @@
 							  'message' => '<p>*Your form was successfully submitted.<br>*To edit your submission changes the values and click Edit Button',
 							  'editable' => TRUE);
 
-				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data)->result();
-				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data)->result();
-				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data)->result();
+				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
+				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data);
+				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
 			} else {
 				//User has not submitted a form yet, so allow submission
 				$data = array('submittable' => TRUE);			

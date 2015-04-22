@@ -35,11 +35,15 @@
 			//instructor id and courseId is currently null
 			$result = $this->course_model->createCourse(NULL,$course_name,$semester,NULL);
 			
+			/*
 			if($result == TRUE) {
 				redirect('form', 'refresh');
 			} else {
 				redirect('form', 'refresh');
-			}
+			}*/
+
+			
+			redirect('adminModifyCourseController', 'refresh');
     			
 
 		}

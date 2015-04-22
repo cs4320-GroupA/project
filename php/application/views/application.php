@@ -187,6 +187,7 @@
 					echo '<script type="text/javascript">
 							$(document).ready(function(){
         						$(".container :input").attr("disabled", true);
+        						$(".container .comments").attr("disabled", false);
     						});
 						</script>';
 				}	
@@ -397,7 +398,7 @@
 							if(isset($advisor)) {
 								echo '<input type="text" class="form-control" name="advisorName" value="'.$advisor.'">';
 							} else {
-								echo '<input type="text" class="form-control" name="advisorName" placeholder="John Doe">';
+								echo '<input type="text" class="form-control" name="advisorName">';
 							}
 						?>
 					</div>
@@ -537,7 +538,7 @@
 							if(isset($other_work)) {
 								echo '<input type="text" class="form-control" name="otherWork" value="'.$other_work.'">';
 							} else {
-								echo '<input type="text" class="form-control" name="otherWork" placeholder="Tiger Tech">';
+								echo '<input type="text" class="form-control" name="otherWork">';
 							}
 						?>
 					</div>
@@ -550,7 +551,7 @@
 							if(isset($SPEAK_OPT_score)) {
 								echo '<input type="text" class="form-control" name="speakOPT" value="'.$SPEAK_OPT_score.'">';
 							} else {
-								echo '<input type="text" class="form-control" name="speakOPT" placeholder="15">';
+								echo '<input type="text" class="form-control" name="speakOPT">';
 							}
 						?>
 					</div>
@@ -771,8 +772,8 @@
 				<div class="col-md-3"></div>
     			<div class="col-md-6">
 					<form>
-						<textarea placeholder="Things to note...." ></textarea>
-						<button type="submit" class="pull-right btn btn-success red">Post</button>
+						<textarea class="comments" placeholder="Things to note...." ></textarea>
+						<button type="submit" class="comments pull-right btn btn-primary">Post</button>
 					</form>
 				</div>
        		</div>

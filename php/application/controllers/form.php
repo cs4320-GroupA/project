@@ -110,7 +110,9 @@
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');
-			} 
+			}
+			
+			$data['comments'] = TRUE;
 
 			$this->load->view('application', $data);
 		}

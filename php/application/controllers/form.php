@@ -114,8 +114,10 @@
 			//Load form data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
-			$this->load->model('currently_teaching_model');
 			$this->load->model('course_model');
+			$this->load->model('currently_teaching_model');
+			$this->load->model('previous_taught_model');
+			$this->load->model('desired_courses_model');
 
 			//Get the current applicant's form if exists
 			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
@@ -248,8 +250,8 @@
 			//Load form data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
-			$this->load->model('currently_teaching_model');
 			$this->load->model('course_model');
+			$this->load->model('currently_teaching_model');
 			$this->load->model('previous_taught_model');
 			$this->load->model('desired_courses_model');
 

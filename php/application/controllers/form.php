@@ -117,6 +117,8 @@
 			}
 			
 			$data['comments'] = TRUE;
+			$result = $this->course_model->getCourses();
+			$data['courses'] = $result->result_array();
 			
 			$this->load->view('application', $data);
 		}

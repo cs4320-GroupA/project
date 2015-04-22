@@ -25,7 +25,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3>Add a Course</h3>
-					<form method="post" accept-charset="utf-8" action=<?php echo base_url().'index.php/adminModifyCourseController/edit/'; ?> />
+					<form method="post" accept-charset="utf-8" action=<?php echo base_url().'index.php/adminModifyCourseController/edit/'.$course_id; ?> />
 						<div class="form-group">
 							<label for="courseName">Course Name: </label>
 							<input type="text" class="form-control" name="courseName" id="courseName" placeholder="<?php echo $courseName?>">

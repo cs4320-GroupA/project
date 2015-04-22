@@ -40,5 +40,13 @@
                 return FALSE;
             }
         }
+
+        public function getAllBySemesterId($semester_id) {
+            $sql = 'SELECT * FROM tasub.form WHERE semester_id = ?';
+            
+            $query = $this->db->query($sql, array($semester_id));
+
+            return $query;
+        }
     }
 ?>

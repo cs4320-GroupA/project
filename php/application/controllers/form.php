@@ -195,9 +195,9 @@
 			while(isset($_POST[$post_string])) {
 				$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
-				$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $fdata_id);
 				if($return == FALSE) {
-					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $fdata_id);
 				}
 				
 				$counter++;
@@ -211,9 +211,9 @@
 			while(isset($_POST[$post_string])) {
 				$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
-				$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $fdata_id);
 				if($return == FALSE) {
-					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $fdata_id);
 				} 
 
 				$counter++;
@@ -229,9 +229,9 @@
 			while(isset($_POST[$post_string])) {
 				$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
-				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $query->row()->form_data);
+				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $fdata_id);
 				if($return == FALSE) {
-					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $query->row()->form_data, $_POST[$grade_string]);
+					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $fdata_id, $_POST[$grade_string]);
 				} else {
 					$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
 				}

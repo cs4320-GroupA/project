@@ -121,7 +121,7 @@
 					echo 'new_row += \'<input type="button" class="btn btn-success" onclick="removeDesiredRow(\'+desired_count+\');" value="Remove"></p>\';';
 				}
 			}
-			
+			echo '</script>';
 			if(isset($view_only)) {
 				if($view_only == TRUE) {
 					echo '<script type="text/javascript">

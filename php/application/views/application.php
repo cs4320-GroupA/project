@@ -78,50 +78,75 @@
     		}
 
 		</script>
-
+		<script type="text/javascript">
 		<?php
-			echo '<script>';
 			if(isset($previous)) {
 				foreach($previous as $row) {
-					echo 'previously_count++;';
-					echo 'var new_row = \'<p id="previously_row\'+previously_count+\'"><select class="form-control" name = "previously_taught\'+previously_count+\'">\'+getCourses()+\'';
-					echo '<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> <input type="button" class="btn btn-success" onclick="removePreviouslyRow(\'+previously_count+\');" value="Remove"></p>';
-					echo '$(\'.previously_wrapper\').append(new_row);';
-				}
+		?>
+    			previously_count++;
+    			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses();
+
+    			<?php 
+    				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
+    			?>
+
+				new_row += '<input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    			$('.previously_wrapper').append(new_row);
+    	<?php
+    			}
 			}
 			if(isset($current)) {
 				foreach($current as $row) {
-					echo 'currently_count++;';
-					echo 'var new_row = \'<p id="currently_row\'+currently_row+\'"><select class="form-control" name = "currently_teaching\'+currently_count+\'">\'+getCourses()+\'';
-					echo '<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> <input type="button" class="btn btn-success" onclick="removeCurrentlyRow(\'+currently_count+\');" value="Remove"></p>';
-					echo '$(\'.currently_wrapper\').append(new_row);';
+		?>
+    			currently_count++;
+    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses();
+
+    			<?php 
+    				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
+    			?>
+    			
+				new_row += '<input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    			$('.currently_wrapper').append(new_row);
+    	<?php
 				}
 			}
 			if(isset($desired)) {
 				foreach($desired as $row) {
-					echo 'desired_count++;';
-					echo 'var new_row = \'<p id="desired_row\'+desired_count+\'"><select class="form-control" name = "desired_courses\'+desired_count+\'">\'+getCourses()+\'';
-					echo '<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';';
-    				echo 'new_row += \' <select class="form-control" name = "gradeReceived\'+desired_count+\'"> \
-    									<option selected hidden value="'.$row->grade.'"></option> \
-											<option>A+</option> \
-											<option>A</option> \
-											<option>A-</option> \
-											<option>B+</option> \
-											<option>B</option> \
-											<option>B-</option> \
-											<option>C+</option> \
-											<option>C</option> \
-											<option>C-</option> \
-											<option>D+</option> \
-											<option>D</option> \
-											<option>D-</option> \
-											<option>F</option> \
-										</select> \';';
-					echo 'new_row += \'<input type="button" class="btn btn-success" onclick="removeDesiredRow(\'+desired_count+\');" value="Remove"></p>\';';
+		?>
+    			desired_count++;
+    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'">'+getCourses();
+
+    			<?php 
+    				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
+    			?>
+
+    			new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'">';
+
+    			<?php
+    				echo '\'<option selected hidden value="'.$row->grade.'"></option> \'';
+    			?>
+				new_row +=	 '<option>A+</option> \
+								<option>A</option> \
+								<option>A-</option> \
+								<option>B+</option> \
+								<option>B</option> \
+								<option>B-</option> \
+								<option>C+</option> \
+								<option>C</option> \
+								<option>C-</option> \
+								<option>D+</option> \
+								<option>D</option> \
+								<option>D-</option> \
+								<option>F</option> \
+							</select> ';
+				new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
+    			$('.desired_wrapper').append(new_row);
+    	<?php
 				}
 			}
-			echo '</script>';
+		?>
+		</script>
+		<?php
 			if(isset($view_only)) {
 				if($view_only == TRUE) {
 					echo '<script type="text/javascript">

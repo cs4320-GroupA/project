@@ -6,6 +6,8 @@
        }
 
 		public function index() {
+			$this->load->model('course_model');
+			
 			$courses = $this->course_model->getCourses();
 			$this->load->view('instructorAddCourse', $courses);
 		}

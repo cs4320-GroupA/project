@@ -18,9 +18,10 @@
 			$username = htmlspecialchars($_POST['adminID']);
 			$password = htmlspecialchars($_POST['password']);
 			$salt = uniqid(mt_rand(), false);
+			$saltedPass = hash("sha1", $password . $salt);
 			$account_type = 'admin';
 
-			$result = $this->user_model->register($username,$password,$salt,$account_type);
+			$result = $this->user_model->register($username,$saltedPass,$salt,$account_type);
 			
 			if($result == TRUE) {
 				redirect('adminAccountCreationController', 'refresh');

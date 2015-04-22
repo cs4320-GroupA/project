@@ -28,7 +28,7 @@
 			
     			//$course_id = htmlspecialchars($_POST['courseId']);
     			$course_name = htmlspecialchars($_POST['courseName']);
-    			$semester = getCurrentSemester();
+    			$semester = $this->semester_model->getCurrentSemester();
 			//need to change this to whatever the session id is
     			//$instructor_id = htmlspecialchars($_POST['instructorPawprint']);
 

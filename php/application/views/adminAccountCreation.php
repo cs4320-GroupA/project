@@ -22,17 +22,17 @@
 			</div>
 		</div>
 		<div class="container">
-			<form class="form-horizontal">
+			<form class="form-horizontal" action=<?php echo base_url().'index.php/adminAccountCreationController/createAccount/'; ?>>
 				<div class="form-group">
 					<label for="adminID" class="col-sm-2 control-label">Admin Pawprint</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="adminID" placeholder="Admin Pawprint">
+						<input type="text" class="form-control" id="adminID" name="username" placeholder="Admin Pawprint">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="adminPassword" class="col-sm-2 control-label">Password</label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" id="adminPassword" placeholder="Password">
+						<input type="password" class="form-control" name="password" id="adminPassword" placeholder="Password">
 					</div>
 				</div>
 				<div class="form-group">

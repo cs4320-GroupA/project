@@ -39,8 +39,7 @@
 			if($result == TRUE) {
 				redirect('adminModifyCourseController', 'refresh');
 			} else {
-				//commenting this out for testing
-				//redirect('adminModifyCourseController', 'refresh');
+				redirect('adminModifyCourseController', 'refresh');
 			}
 
     			

@@ -13,10 +13,10 @@
 			$this->load->view('adminAccountCreation');
 		}
 
-		public function createAccount($username,$password){
+		public function createAccount(){
 			
-			$username = htmlspecialchars($username);
-			$password = htmlspecialchars($password);
+			$username = htmlspecialchars($_POST['username']);
+			$password = htmlspecialchars($_POST['password']);
 			$salt = uniqid(mt_rand(), false);
 			$account_type = 'admin';
 

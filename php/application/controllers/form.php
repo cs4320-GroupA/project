@@ -332,14 +332,16 @@
 			$post_string = $base_string.'1';
 			$counter = 1;
 			
-			while(isset($_POST[$post_string])) {
-				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+			for($i = 1; $i < 6; $i++) {
+				if(isset($_POST[$post_string])) {
+					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
-				$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $form_data_id);
-				if($return == FALSE) {
-					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					if($return == FALSE) {
+						$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					}
 				}
-				
+
 				$counter++;
 				$post_string = $base_string.strval($counter);
 			}
@@ -352,8 +354,10 @@
 				for($i = 1; $i < $counter; $i++) {
 					$post_string = $base_string.strval($i);
 					
-					if($row->course_name == $_POST[$post_string]) {
-						$safe = TRUE;
+					if(isset($_POST[$post_string])) {
+						if($row->course_name == $_POST[$post_string]) {
+							$safe = TRUE;
+						}
 					}
 				}
 				if($safe == FALSE) {

@@ -47,7 +47,7 @@
 							  'editable' => TRUE);
 
 				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data)->result();
-				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data->result();
+				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data)->result();
 				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data)->result();
 			} else {
 				//User has not submitted a form yet, so allow submission

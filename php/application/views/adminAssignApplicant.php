@@ -24,7 +24,7 @@
 		<div class="container">
 			<div class='row'>
 				<div class="col-md-4">
-					<label for="courseToAssign">Course</label>
+					<h3>Course</h3>
 					<select class="form-control" name = "courseToAssign" required>
 						<option>a</option>
 						<option>b</option>

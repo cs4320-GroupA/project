@@ -417,15 +417,19 @@
 						<label for="classesTeaching">Classes Currently Teaching: </label>
 						<div class="currently_wrapper">
 							<select id="courses" class="form-control" name = "currently_teaching1">
+								<option selected disabled hidden value=""></option>
 								<?php
-									if(isset($first_current)) {
-										echo '<option selected hidden value="'.$first_current.'">'.$first_current.'</option>';
-									} else {
-										echo '<option selected disabled hidden value=""></option>';
-									}
-								
 									foreach($courses as $temp) {
-										echo '<option>'.$temp['course_name'].'</option>';
+										if(isset($first_current)) {
+											if($first_current == $temp['course_name']) {
+												echo '<option selected value="'.$first_current.'">'.$first_current.'</option>';
+											}
+											else {
+												echo '<option>'.$temp['course_name'].'</option>';
+											}
+										} else {
+											echo '<option>'.$temp['course_name'].'</option>';
+										}
 									}
 								?>
 							</select>
@@ -440,15 +444,19 @@
 						<label for="classesTaught">Classes Previously Taught: </label>
 						<div class="previously_wrapper">
 							<select class="form-control" name = "previously_taught1">
-								<?php 
-									if(isset($first_previous)) {
-										echo '<option selected hidden value="'.$first_previous.'">'.$first_previous.'</option>';
-									} else {
-										echo '<option selected disabled hidden value=""></option>';
-									}
-								
+								<option selected disabled hidden value=""></option>
+								<?php
 									foreach($courses as $temp) {
-										echo '<option>'.$temp['course_name'].'</option>';
+										if(isset($first_previous)) {
+											if($first_previous == $temp['course_name']) {
+												echo '<option selected value="'.$first_previous.'">'.$first_previous.'</option>';
+											}
+											else {
+												echo '<option>'.$temp['course_name'].'</option>';
+											}
+										} else {
+											echo '<option>'.$temp['course_name'].'</option>';
+										}
 									}
 								?>
 							</select>
@@ -463,15 +471,19 @@
 						<label for="classesPreferred">Preferred Classe & Grade Received: </label>
 						<div class="desired_wrapper">
 							<select class="form-control" name = "desired_courses1">
+								<option selected disabled hidden value=""></option>
 								<?php
-									if(isset($first_desired)) {
-										echo '<option selected hidden value="'.$first_desired.'">'.$first_desired.'</option>';
-									} else {
-										echo '<option selected disabled hidden value=""></option>';
-									}
-								 
 									foreach($courses as $temp) {
-										echo '<option>'.$temp['course_name'].'</option>';
+										if(isset($first_desired)) {
+											if($first_desired == $temp['course_name']) {
+												echo '<option selected value="'.$first_desired.'">'.$first_desired.'</option>';
+											}
+											else {
+												echo '<option>'.$temp['course_name'].'</option>';
+											}
+										} else {
+											echo '<option>'.$temp['course_name'].'</option>';
+										}
 									}
 								?>
 							</select>

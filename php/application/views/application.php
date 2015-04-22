@@ -420,7 +420,7 @@
 							<select id="courses" class="form-control" name = "currently_teaching1">
 								<?php
 									if(isset($first_current)) {
-										echo '<option selected hidden value="'.$first_current.'"></option>';
+										echo '<option selected hidden value="'.$first_current.'">'.$first_current.'</option>';
 									} else {
 										echo '<option selected disabled hidden value=""></option>';
 									}
@@ -443,7 +443,7 @@
 							<select class="form-control" name = "previously_taught1">
 								<?php 
 									if(isset($first_previous)) {
-										echo '<option selected hidden value="'.$first_previous.'"></option>';
+										echo '<option selected hidden value="'.$first_previous.'">'.$first_previous.'</option>';
 									} else {
 										echo '<option selected disabled hidden value=""></option>';
 									}
@@ -466,7 +466,7 @@
 							<select class="form-control" name = "desired_courses1">
 								<?php
 									if(isset($first_desired)) {
-										echo '<option selected hidden value="'.$first_desired.'"></option>';
+										echo '<option selected hidden value="'.$first_desired.'">'.$first_desired.'</option>';
 									} else {
 										echo '<option selected disabled hidden value=""></option>';
 									}

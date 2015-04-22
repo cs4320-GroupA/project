@@ -418,12 +418,15 @@
 
 					$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $form_data_id);
 					if($return == FALSE) {
-						$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+						$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id, $_POST[$grade_string]);
+					} else {
+						$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
 					}
 				}
 
 				$counter++;
 				$post_string = $base_string.strval($counter);
+				$grade_string = $base_grade_string.strval($counter);
 			}
 
 			//check for deletions

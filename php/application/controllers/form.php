@@ -332,7 +332,7 @@
 			$post_string = $base_string.'1';
 			$counter = 1;
 			
-			for($i = 1; $i < 6; $i++) {
+			for($i = 1; $i <= 4; $i++) {
 				if(isset($_POST[$post_string])) {
 					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
@@ -371,7 +371,7 @@
 			$post_string = $base_string.'1';
 			$counter = 1;
 			
-			for($i = 1; $i < 6; $i++) {
+			for($i = 1; $i <= 10; $i++) {
 				if(isset($_POST[$post_string])) {
 					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
@@ -412,7 +412,7 @@
 			$grade_string = $base_grade_string.'1';
 			$counter = 1;
 			
-			for($i = 1; $i < 6; $i++) {
+			for($i = 1; $i <= 8; $i++) {
 				if(isset($_POST[$post_string])) {
 					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 

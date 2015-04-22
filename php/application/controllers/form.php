@@ -107,13 +107,17 @@
 							  'signature' => $query->row()->signature,
 							  'date' => $query->row()->signature_date,
 							  'view_only' => TRUE);
+
+				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
+				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data);
+				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');
 			}
 			
 			$data['comments'] = TRUE;
-
+			
 			$this->load->view('application', $data);
 		}
 		public function submitForm() {

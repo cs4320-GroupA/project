@@ -7,7 +7,7 @@
 
 			$this->load->model('course_model');
 			$this->load->model('semester_model');
-       		 }
+       	}
 
 		public function index() 
 		{ 
@@ -20,7 +20,7 @@
 
 		public function remove($course_id){
 
-			$this->course_model->remove($course_id);
+			$this->course_model->removeCourse($course_id);
 			$courses = $this->course_model->getCourses();
 			$this->load->view('adminModifyCourse',$courses);
 			

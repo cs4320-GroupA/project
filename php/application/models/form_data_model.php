@@ -109,7 +109,7 @@
 
             $query = $this->db->query($sql, array($semester));
 
-            return $query;
+            return $query->result();
         }
     }
 ?>

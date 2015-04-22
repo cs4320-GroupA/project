@@ -46,7 +46,7 @@
             
             $query = $this->db->query($sql, array($semester_id));
 
-            return $query;
+            return $query->result();
         }
     }
 ?>

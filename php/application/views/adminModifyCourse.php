@@ -95,7 +95,7 @@
 		         		echo '<td>';
 
 		         		echo '<form>';
-						echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminModifyCourseController/edit/'.$row->course_id.'">Edit</button> ';
+						echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminEditCourseController/edit/'.$row->course_id.'">Edit</button> ';
 						echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'">Remove</button> ';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';

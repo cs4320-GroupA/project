@@ -21,7 +21,7 @@
 		public function remove($course_id){
 			$this->course_model->removeCourse($course_id);
 			
-			redirect('adminModifyCourse', 'refresh');
+			redirect('adminModifyCourseController', 'refresh');
 		}
 
 		public function add(){

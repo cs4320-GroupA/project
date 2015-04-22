@@ -789,7 +789,7 @@
     			<?php 
     				if(isset($comments_about_user)) {
     					foreach($comments_about_user as $row) {
-    						echo '<li>Posted By: '.$row->pawprint.'      Score: '.$row->score.'</li>';
+    						echo '<li>Posted By: '.$row->posted_by_pawprint.'      Score: '.$row->score.'</li>';
     						echo '<li>Description:</li>';
     						echo '<li>'.$row->description.'</li>';
     						echo '<hr>';

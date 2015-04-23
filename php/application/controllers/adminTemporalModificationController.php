@@ -16,7 +16,7 @@
         public function set( $new_time ){
             
             // need to load
-            $this->load->model('temporal_model');
+            //$this->load->model('temporal_model');
             $this->load->model('semester_model');
             
             // semester to modify (onl option is 1 anyway)
@@ -27,7 +27,10 @@
             //$status_id = $this->temporal_model->getTime($status_id);
             
             
-            
+        /*
+         *  hard coded it to just send 1 as the semester ID for now,
+         *  should be changed if multiple semesters are added to the site
+         */  
             $result = $this->semester_model->setTime( 1, $new_time);
             
             // redirect to index if change is sucessful

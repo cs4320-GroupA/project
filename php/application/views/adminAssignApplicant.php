@@ -36,6 +36,7 @@
 						<option>j</option>
 					</select>
 				</div>
+				<button type = "submit" class="btn btn-primary">Select Course</button>
 			</div>
 			<br><br>
 			<div class='row'>

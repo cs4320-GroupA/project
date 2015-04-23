@@ -4,12 +4,16 @@
             parent::__construct();
         }// end constructor
 
+    // load adminTemporalModification as default
 		public function index(){ 
 			$this->load->view('adminTemporalModification');
 		}// end index
         
-        
-        public function set(){
+    /*
+     * set() - changes the current semester to a new status
+     * input:   $new_time - new status to send
+     */
+        public function set( $new_time ){
             
             // need to load
             $this->load->model('temoral_model');
@@ -19,12 +23,12 @@
             $semester_id = $this->semester_model->getCurrentSemester(); 
             
             // new status to change to
-            $status_id = htmlspecialchars($_POST['status_id']);
+            //$status_id = htmlspecialchars($_POST['status_id']);
             //$status_id = $this->temporal_model->getTime($status_id);
             
             
             
-            $result = $this->semester_model->setTime( $semester_id, $status_id);
+            $result = $this->semester_model->setTime( $semester_id, $new_time);
             
             // redirect to index if change is sucessful
             if($result == true){

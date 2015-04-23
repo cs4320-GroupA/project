@@ -780,6 +780,7 @@
 										<option>4</option>
 										<option>5</option>
 									</select>
+									<br><br>
 						</div>
 						<textarea class="comments" name="description" placeholder="Things to note...." required></textarea>
 						<button type="submit" class="comments pull-right btn btn-primary">Post</button>

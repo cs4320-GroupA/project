@@ -56,7 +56,7 @@
         {
             $sql = 'UPDATE course SET instructor_id = ? WHERE course_id = ?';
 
-            $query = $this->db->query($sql, array($instructor_id, $course_id, $course_name, $semester));
+            $query = $this->db->query($sql, array($instructor_id, $course_id));
 
             if($this->db->affected_rows() == 1) {
                 return TRUE;

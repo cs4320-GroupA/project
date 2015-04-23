@@ -40,10 +40,10 @@
             }
         }
 
-        public function createCourse($course_id,$course_name,$semester,$instructor_id) {
-            $sql = 'INSERT into course VALUES (?, ?, ?, ?)';
+        public function createCourse($course_name,$semester,$instructor_id) {
+            $sql = 'INSERT into course VALUES (?, ?, ?)';
 
-            $query = $this->db->query($sql, array($course_id,$course_name,$semester,$instructor_id));
+            $query = $this->db->query($sql, array($course_name,$semester,$instructor_id));
 
             if($this->db->affected_rows() == 1) {
                 return TRUE;
@@ -81,14 +81,26 @@
 	public function editCourse($course_id,$course_name,$semester,$instructor_id) {
 		$retrieveQuery = "UPDATE FROM course SET course_name = ?, semester = ?, instructor_id = ? WHERE course_id = ?";			
 
-            	$query = $this->db->query($sql, array($course_name,$semester,$instructor_id,$course_id));
+        $query = $this->db->query($sql, array($course_name,$semester,$instructor_id,$course_id));
 		
 		if($this->db->affected_rows() == 1) {
 		        return TRUE;
 		    } else {
 		        return FALSE;
 		    }
-	} 	
+	}
+
+    public function getCourseById($course_id) {
+        $sql = 'SELECT * FROM tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id WHERE course_id = ?';
+
+        $query = $this->db->query($sql, array($course_id));
+
+        if($query->num_rows() > 0) {
+            return $query;
+        } else {
+            return FALSE;
+        }
+    }
         
  /*
   * not 100% sure this needs to go here, this function may better belong

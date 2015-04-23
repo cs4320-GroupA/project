@@ -35,6 +35,12 @@
 						<option>i</option>
 						<option>j</option>
 					</select>
+				</div>				
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+				<br>
+					<button type = "submit" class="btn btn-primary">Select Course</button>
 				</div>
 			</div>
 			<br><br>
@@ -45,29 +51,33 @@
 						<thead>
 							<tr>
 								<th>Assign</th>
-								<th>Pawprint</th>
+								<th>Full Name</th>
 								<th>GPA</th>
 								<th>Course Grade</th>
+								<th>Grad Year</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td><input type="checkbox"></td>
-								<td>masyv6</td>
+								<td>Michael Slaughter</td>
 								<td>3.875</td>
 								<td>A-</td>
+								<td>2016</td>
 							</tr>
 							<tr>
 								<td><input type="checkbox"></td>
-								<td>ats314</td>
+								<td>Jack Boening</td>
 								<td>3.245</td>
 								<td>A+</td>
+								<td>2016</td>
 							</tr>
 							<tr>
 								<td><input type="checkbox"></td>
-								<td>pws326</td>
+								<td>James Landy</td>
 								<td>2.587</td>
 								<td>C+</td>
+								<td>2016</td>
 							</tr>
 						</tbody>
 					</table>
@@ -78,22 +88,22 @@
 					<table class="table table-hover table-striped">
 						<thead>
 							<tr>
-								<th>Pawprint</th>
-								<th>Comments</th>
+								<th>Full Name</th>
+								<th>Instructor Preference</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>masyv6</td>
-								<td>Great TA -- would love him back this semester</td>
+								<td>5</td>
 							</tr>
 							<tr>
 								<td>ats314</td>
-								<td>Never again</td>
+								<td>4</td>
 							</tr>
 							<tr>
 								<td>pws326</td>
-								<td>Solid TA -- strong technical ability, low effort in the classroom</td>
+								<td>1</td>
 							</tr>
 						</tbody>
 					</table>

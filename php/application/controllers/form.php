@@ -42,8 +42,8 @@
 							  'gato' => $row->gato,
 							  'speak_assessment' => $row->speak_assessment,
 							  'onita' => $row->onita,
-							  'message_header' => 'Edit',
-							  'message' => '<p>*Your form was successfully submitted.<br>*To edit your submission changes the values and click Edit Button',
+							  'message_header' => 'Edit Your Form',
+							  'message' => '<p>Your form has been successfully submitted.<br>To edit your submission changes the values as desired and click Edit Button',
 							  'editable' => TRUE);
 
 				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
@@ -118,6 +118,7 @@
 				$data['semester_id'] = $semester_id;
 				$result = $this->course_model->getCourses();
 				$data['courses'] = $result->result_array();
+				$data['message_header'] = 'Current Preferences';
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');

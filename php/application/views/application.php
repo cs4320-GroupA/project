@@ -203,16 +203,18 @@
 	        <h2>Application</h2>
 	      </div>
 	      <div class = "row">
-	        <?php if(isset($message_header)) { ?>
-				<div class="panel panel-default">
- 		 			<div class="panel-heading">
-    					<h3 class="panel-title"><?php echo $message_header?></h3>
-  					</div>
-  					<div class="panel-body">
-    					<?php echo $message; ?>
-  					</div>
-				</div>
-	        <?php } ?>
+	      	<div class="col-md-6 col-md-offset-3">
+		        <?php if(isset($message_header)) { ?>
+					<div class="panel panel-default">
+	 		 			<div class="panel-heading">
+	    					<h3 class="panel-title"><b><?php echo $message_header?></b></h3>
+	  					</div>
+	  					<div class="panel-body">
+	    					<?php echo $message; ?>
+	  					</div>
+					</div>
+		        <?php } ?>
+	        </div>
 	      </div>
 	      <hr>
 		</div>

@@ -23,13 +23,13 @@
 			<form method="POST" class="form-horizontal" action=<?php echo base_url().'index.php/adminAccountCreationController/createAccount/'; ?>>
 				<div class="form-group">
 					<label for="adminID" class="col-sm-2 control-label">Admin Pawprint</label>
-					<div class="col-sm-10">
+					<div class="col-sm-8">
 						<input type="text" class="form-control" id="adminID" name="adminID" placeholder="Admin Pawprint">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="adminPassword" class="col-sm-2 control-label">Password</label>
-					<div class="col-sm-10">
+					<div class="col-sm-8">
 						<input type="password" class="form-control" name="password" id="adminPassword" placeholder="Password">
 					</div>
 				</div>

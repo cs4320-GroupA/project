@@ -201,6 +201,8 @@
 		<div class="container">
 	      <div class="page-header">
 	        <h2>Application</h2>
+	      </div>
+	      <div class = "row">
 	        <?php if(isset($message_header)) { ?>
 				<div class="panel panel-default">
  		 			<div class="panel-heading">

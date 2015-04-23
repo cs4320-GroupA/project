@@ -118,6 +118,7 @@
 				$data['semester_id'] = $semester_id;
 				$result = $this->course_model->getCourses();
 				$data['courses'] = $result->result_array();
+				$data['message_header'] = 'Current Preferences';
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');

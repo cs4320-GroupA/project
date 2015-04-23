@@ -23,7 +23,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3>Add a Course</h3>
-					<form method="post" accept-charset="utf-8" action=<?php echo base_url().'index.php/adminModifyCourseController/edit/'.$course_id; ?> />
+					<form method="post" accept-charset="utf-8" action=<?php echo base_url().'index.php/adminModifyCourseController/edit/'.$course_id.$instructor_id; ?> />
 						<div class="form-group">
 							<label for="courseName">Course Name: </label>
 							<input type="text" class="form-control" name="courseName" id="courseName" placeholder="<?php echo $courseName?>">
@@ -42,7 +42,7 @@
 						</div>
 						<div class="form-group">
 							<label for="instructorPawprint">Instructor Pawprint: </label>
-							<input type="text" class="form-control" id="instructorPawprint" placeholder="<?php echo $instructorPawnprint?>">
+							<input type="text" class="form-control" id="instructorPawprint" placeholder="<?php echo $instructor_id?>">
 						</div>
 						<button type="submit" class="btn btn-success">Finish Editing</button>
 					</form>

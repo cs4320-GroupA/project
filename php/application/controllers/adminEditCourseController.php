@@ -1,5 +1,5 @@
 <?php
-	class adminModifyCourseController extends CI_Controller 
+	class adminEditCourseController extends CI_Controller 
 	{
 		public function __construct() 
 		{
@@ -11,16 +11,22 @@
 
 		public function index() 
 		{ 
-			$this->load->view('adminEditCourse',$course_id);
+			$this->load->view('adminEditCourse',$course_id,$instructor_id);
 		}
 
-		public function edit($course_id){
+		public function edit($course_id,$instructor_id){
 			
-			$oldCourseName = htmlspecialchars($course_id);						
+			$course_id = htmlspecialchars($course_id);						
     			$course_name = htmlspecialchars($_POST['courseName']);
     			$semester = htmlspecialchars($_POST['semester']);
 
-			
+			$result = $this->course_model->edit($course_id,$course_name,$semester,$instructor_id);
+
+			if($result == TRUE) {
+				redirect('adminModifyCourseController', 'refresh');
+			} else {
+				redirect('adminEditCourseController', 'refresh');
+			}
 			
 		}
 

@@ -27,14 +27,14 @@
 
 		public function add(){
 			
-    			//$course_id = htmlspecialchars($_POST['courseId']);
-    			$course_name = htmlspecialchars($_POST['courseName']);
-    			$semester = htmlspecialchars($_POST['semester']);
+    		//$course_id = htmlspecialchars($_POST['courseId']);
+    		$course_name = htmlspecialchars($_POST['courseName']);
+    		$semester = htmlspecialchars($_POST['semester']);
 			//need to change this to whatever the session id is
     			//$instructor_id = htmlspecialchars($_POST['instructorPawprint']);
 
 			$instructor_filler = $this->user_model->login("unassigned");
-			$instructor_filler = $instructor_filler->instructor_id;
+			$instructor_filler = $instructor_filler->user_id;
 			//instructor id and courseId is currently null
 			$result = $this->course_model->createCourse($course_name,$semester,$instructor_filler);
 			

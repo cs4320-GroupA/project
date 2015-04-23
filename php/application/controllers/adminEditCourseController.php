@@ -16,7 +16,7 @@
 
 			$data = array('course' => $course->row());
 
-			$this->load->view('adminEditCourse',$course);
+			$this->load->view('adminEditCourse',$data);
 			
 		
 		}

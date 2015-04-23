@@ -97,13 +97,7 @@
 						echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'">Remove</button> ';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
-
-					    if($row->instructor_id == NULL) {
-					    	 echo '<td>unassigned</td>';
-					    } else {
-					   		echo '<td>'.$row->instructor_id.'</td>';
-					   	}
-	                    
+					    echo '<td>'.$row->username.'</td>';
 	                	echo '</tr>';
 	                	echo '</form>';
 				    };

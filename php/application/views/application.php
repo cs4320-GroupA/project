@@ -214,6 +214,7 @@
 				</div>
 	        <?php } ?>
 	      </div>
+	      <hr>
 		</div>
 		<div class = "container">
 			<?php 

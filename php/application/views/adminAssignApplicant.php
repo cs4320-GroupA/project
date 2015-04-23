@@ -35,8 +35,12 @@
 						<option>i</option>
 						<option>j</option>
 					</select>
+				</div>				
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<button type = "submit" class="btn btn-primary">Select Course</button>
 				</div>
-				<button type = "submit" class="btn btn-primary">Select Course</button>
 			</div>
 			<br><br>
 			<div class='row'>

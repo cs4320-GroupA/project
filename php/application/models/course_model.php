@@ -81,7 +81,7 @@
 	public function editCourse($course_id,$course_name,$semester,$instructor_id) {
 		$retrieveQuery = "UPDATE FROM course SET course_name = ?, semester = ?, instructor_id = ? WHERE course_id = ?";			
 
-        $query = $this->db->query($sql, array($course_name,$semester,$instructor_id,$course_id));
+        	$query = $this->db->query($retrieveQuery, array($course_name,$semester,$instructor_id,$course_id));
 		
 		if($this->db->affected_rows() == 1) {
 		        return TRUE;

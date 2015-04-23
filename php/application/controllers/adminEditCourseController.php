@@ -25,7 +25,7 @@
 			
 
 			$course_id = htmlspecialchars($course_id);						
-    			$course_name = htmlspecialchars($_POST['courseName']);
+    			$course_name = htmlspecialchars($_POST['course_name']);
     			$semester = htmlspecialchars($_POST['semester']);
 			$instructor_id = htmlspecialchars($_POST['instructor_id']);
 

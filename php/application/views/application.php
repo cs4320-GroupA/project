@@ -485,7 +485,7 @@
 				<hr>
 				<div class = "row">
 					<div class="col-md-12">
-						<label for="classesPreferred">Preferred Classe & Grade Received: </label>
+						<label for="classesPreferred">Preferred Classes & Grade Received: </label>
 						<div class="desired_wrapper">
 							<select class="form-control" name = "desired_courses1">
 								<option selected disabled hidden value=""></option>

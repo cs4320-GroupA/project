@@ -42,7 +42,7 @@
         }
 
         public function getAllBySemesterId($semester_id) {
-            $sql = 'SELECT * FROM tasub.form AS form WHERE semester_id = ? INNER JOIN tasub.form_data AS form_data ON form.form_data = form_data.form_data_id';
+            $sql = 'SELECT * FROM tasub.form INNER JOIN tasub.form_data ON tasub.form.form_data = tasub.form_data.form_data_id WHERE semester_id = ?';
             
             $query = $this->db->query($sql, array($semester_id));
 

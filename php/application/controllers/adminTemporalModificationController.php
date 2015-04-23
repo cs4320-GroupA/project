@@ -22,13 +22,6 @@
             // semester to modify (onl option is 1 anyway)
             $semester_id = $this->semester_model->getCurrentSemester(); 
             
-            // new status to change to
-            //$status_id = htmlspecialchars($_POST['status_id']);
-            //$status_id = $this->temporal_model->getTime($status_id);
-            
-            
-            
-            
         /*
          *  hard coded it to just send 1 as the semester ID for now,
          *  should be changed if multiple semesters are added to the site

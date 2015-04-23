@@ -9,10 +9,10 @@
 			$this->load->view('adminTemporalModification');
 		}// end index
         
-    /*
-     * set() - changes the current semester to a new status
-     * input:   $new_time - new status to send
-     */
+/*
+ * set() - changes the current semester to a new status
+ * input:   $new_time - new status to send
+ */
         public function set( $new_time ){
             
             // need to load
@@ -35,27 +35,36 @@
          */  
             $result = $this->semester_model->setTime( 1, $new_time);
             
-            // not sure what to do here
+            
+        /*
+         * here we delete "status_title" from the session, then create a new session
+         * with the new temporal status
+         */
             if($result == true){
                 // not sure if this is the right spot to change session data
                 $new_Time_Title = '';
                 if( $new_time == 1 ){
-                    $this->session->set_userdata("status_title") = "APPLICATION";    
+                    $this->session->unset_userdata("status_title");
+                    $new_data = array('status_title' => "APPLICATION");
+                    $this->session->set_userdata($new_data);    
                 }
                 else if( $new_time == 2 ){
-                    $this->session->set_userdata("status_title") = "SELECTION";
+                    $this->session->unset_userdata("status_title");
+                    $new_data = array('status_title' => "APPLICATION");
+                    $this->session->set_userdata($new_data);    
                 }
                 else if( $new_time == 3 ){
-                    $this->session->set_userdata("status_title") = "Notification";
+                    $this->session->unset_userdata("status_title");
+                    $new_data = array('status_title' => "Notification");
+                    $this->session->set_userdata($new_data);    
                 }
-                else
-                    $this->session->set_userdata("status_title") = "Closed";    // check on this...
-                
-                
+                else{
+                    $this->session->unset_userdata("status_title");
+                    $new_data = array('status_title' => "Closed");
+                    $this->session->set_userdata($new_data);    
+                }
                 redirect('adminTemporalModificationController','refresh');
             }
-            //else
-                //redirect('adminTemporalModification','refresh');
             
         }// end set
         

@@ -30,7 +30,7 @@
   				    foreach ($query->result() as $row){
 					echo '<tr>';
 		         		    echo '<td>';
-						<a href='controllers/instructorViewCourses'>View</a>;
+						<a href='controllers/instructorViewCoursesController'>View</a>;
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->instructor_id.'</td>';

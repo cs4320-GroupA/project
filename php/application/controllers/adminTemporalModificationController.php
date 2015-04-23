@@ -8,22 +8,29 @@
 			$this->load->view('adminTemporalModification');
 		}// end index
         
+        
         public function set(){
-            $this->load->model();
+            
+            // need to load
+            $this->load->model('temoral_model');
+            $this->load->model('semester_model');
+            
+            // semester to modify (onl option is 1 anyway)
+            $semester_id = $this->semester_model->getCurrentSemester(); 
             
             // new status to change to
             $status_id = htmlspecialchars($_POST['status_id']);
+            //$status_id = $this->temporal_model->getTime($status_id);
             
-            // semester to modify (onl option is 1 anyway)
-            $semester_id = $this->session->userdata('semester_id'); 
+            
             
             $result = $this->semester_model->setTime( $semester_id, $status_id);
             
             if($result == true){
-                redirect('form','refresh');
+                redirect('adminTemporalModification','refresh');
             }
             else
-                redirect('form','refresh');
+                redirect('adminTemporalModification','refresh');
             
         }// end set
         

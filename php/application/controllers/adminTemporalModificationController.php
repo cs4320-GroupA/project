@@ -28,7 +28,7 @@
             
             
             
-            $result = $this->semester_model->setTime( $semester_id, $new_time);
+            $result = $this->semester_model->setTime( 1, $new_time);
             
             // redirect to index if change is sucessful
             if($result == true){

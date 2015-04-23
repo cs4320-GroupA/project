@@ -7,6 +7,7 @@
 
 			$this->load->model('course_model');
 			$this->load->model('semester_model');
+			$this->load->model('user_model');
        	}
 
 		public function index() 
@@ -32,8 +33,10 @@
 			//need to change this to whatever the session id is
     			//$instructor_id = htmlspecialchars($_POST['instructorPawprint']);
 
+			$instructor_filler = $this->user_model->login("unassigned");
+			$instructor_filler = $instructor_filler->instructor_id;
 			//instructor id and courseId is currently null
-			$result = $this->course_model->createCourse(NULL,$course_name,$semester,NULL);
+			$result = $this->course_model->createCourse($course_name,$semester,$instructor_filler);
 			
 			
 			if($result == TRUE) {

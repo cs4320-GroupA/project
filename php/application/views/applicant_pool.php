@@ -23,7 +23,7 @@
 	      		<thead>
 		        	<tr>
 		        		<th>Action</th>
-		        		<th>Signature</th>
+		        		<th>Name</th>
 		        		<th>GPA</th>
 		        	</tr>
 		    	</thead>

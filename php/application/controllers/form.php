@@ -68,6 +68,9 @@
 		}
 
 		public function viewForm($user_id, $semester_id) {
+			if($this->session->userdata('user_type') == 'applicant') {
+				redirect('form', 'refresh');
+			}
 			// Load form_data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
@@ -119,15 +122,12 @@
 			else {
 				redirect('applicantPoolController', 'refresh');
 			}
-			
-			if($this->session->userdata('user_type') != 'APPLICANT') {
-				$result = $this->comments_model->getAllByUser($user_id);
+		
+			$result = $this->comments_model->getAllByUser($user_id);
+			$data['comments'] = TRUE;
 
-				$data['comments'] = TRUE;
-
-				if($result != FALSE) {
-					$data['comments_about_user'] = $result->result();
-				}
+			if($result != FALSE) {
+				$data['comments_about_user'] = $result->result();
 			}
 			
 			$this->load->view('application', $data);

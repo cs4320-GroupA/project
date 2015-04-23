@@ -40,10 +40,6 @@
 							    <option>FALL 2018</option>
 							</select>
 						</div>
-						<div class="form-group">
-							<label for="instructorPawprint">Instructor Pawprint: </label>
-							<input type="text" class="form-control" id="instructorPawprint" placeholder="pws326">
-						</div>
 						<button type="submit" class="btn btn-success">Add</button>
 					</form>
 				</div>
@@ -61,32 +57,6 @@
 		          </tr>
 		        </thead>
 		        <tbody>
-			<!--
-		          <tr>
-		            <td>
-		                <button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Remove</button>
-		            </td>
-		            <td>CS4320</td>
-		            <td>scottgs</td>
-		          </tr>
-		          <tr>
-		            <td>
-		                <button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Remove</button>
-		            </td>
-		            <td>CS4001</td>
-		            <td>scottgs</td>
-		          </tr>
-		          <tr>
-		            <td>
-		                <button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Remove</button>
-		            </td>
-		            <td>CS3380</td>
-		            <td>klaricm</td>
-		          </tr>
-			-->
 			  <?php
   				    foreach($courses as $row){
 						echo '<tr>';

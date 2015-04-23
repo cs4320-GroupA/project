@@ -14,7 +14,7 @@
 			$this->load->view('instructorAddCourse', $data);
 		}
 
-		public function add($course_idr) {
+		public function add($course_id) {
 			$this->load->model('course_model');
 			$this->load->model('semester_model');
 

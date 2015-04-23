@@ -9,7 +9,7 @@
 			$this->load->model('semester_model');
        	}
 
-		public function index() 
+		public function index($course_id,$instructor_id) 
 		{ 
 			$this->load->view('adminEditCourse',$course_id,$instructor_id);
 		}

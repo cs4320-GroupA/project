@@ -49,7 +49,7 @@
 							echo 'The application timeline is currently in the <b>Selection mode</b>. Here, instructors will preference applicants for each of their classes. Upon moving back to the Application mode, applicant submissions are reopened.';
 							echo '</p>';
 							echo "\n<form>\n\t\t";
-                            echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminTemporalModificationController/set/1">Move Back to Application</button>';
+                            echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminTemporalModificationController/set/1">Move Back to Application</button>';
                             echo "\n</form>";
 						echo '</div>';
 						echo '<div class ="col-md-6">';
@@ -68,7 +68,7 @@
 							echo 'The application timeline is currently in the <b>Notification mode</b>. Here, instructors will preference applicants for each of their classes. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
 							echo '</p>';
                             echo "\n<form>\n";
-                            echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminTemporalModificationController/set/2">Move Back to Selection</button>';
+                            echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminTemporalModificationController/set/2">Move Back to Selection</button>';
                             echo "\n</form>";
 						echo '</div>';
 						echo '<div class ="col-md-6">';
@@ -76,7 +76,7 @@
 							echo 'The application timeline is currently in the <b>Notification mode</b>. Here, instructors will preference applicants for each of their classes. Upon moving back to the Application mode, applicant submissions are reopened.';
 							echo '</p>';
                             echo '<form>';
-                            echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminTemporalModificationController/set/1">Move Back to Application</button>';
+                            echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminTemporalModificationController/set/1">Move Back to Application</button>';
                             echo '</form>';
 						echo '</div>';
 					}// end notification else if

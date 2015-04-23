@@ -33,12 +33,12 @@
          */  
             $result = $this->semester_model->setTime( 1, $new_time);
             
-            // redirect to index if change is sucessful
+            // not sure what to do here
             if($result == true){
-                redirect('index','refresh');
+                //redirect('index','refresh');
             }
-            else
-                redirect('adminTemporalModification','refresh');
+            //else
+                //redirect('adminTemporalModification','refresh');
             
         }// end set
         

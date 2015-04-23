@@ -58,7 +58,7 @@
 
             $query = $this->db->query($sql, array($instructor_id, $course_id, $course_name, $semester));
 
-            if($query->affected_rows() == 1) {
+            if($this->db->affected_rows() == 1) {
                 return TRUE;
             } else {
                 return FALSE;

@@ -26,8 +26,9 @@
             
             $result = $this->semester_model->setTime( $semester_id, $status_id);
             
+            // redirect to index if change is sucessful
             if($result == true){
-                redirect('adminTemporalModification','refresh');
+                redirect('index','refresh');
             }
             else
                 redirect('adminTemporalModification','refresh');

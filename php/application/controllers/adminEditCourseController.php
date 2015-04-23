@@ -11,7 +11,15 @@
 
 		public function index($course_id,$instructor_id,$course_name) 
 		{ 
-			
+			if($course_id == NULL){
+				$course_id = 1;
+			}
+			if($instructor_id == NULL){
+				$instructor_id = 1;
+			}
+			if($course_name == NULL){
+				$course_name = 'FILLER';
+			}
 			$this->load->view('adminEditCourse',$course_id,$instructor_id,$course_name);
 		}
 

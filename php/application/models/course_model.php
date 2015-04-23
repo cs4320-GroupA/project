@@ -41,7 +41,7 @@
         }
 
         public function createCourse($course_name,$semester,$instructor_id) {
-            $sql = 'INSERT into course VALUES (?, ?, ?)';
+            $sql = 'INSERT into course(course_name, semester, instructor_id) VALUES (?, ?, ?)';
 
             $query = $this->db->query($sql, array($course_name,$semester,$instructor_id));
 

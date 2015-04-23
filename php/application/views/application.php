@@ -779,7 +779,7 @@
 			          <label for="description" class="col-sm-2 control-label">Admin Pawprint</label>
 			        </div>
 			        <div class="col-md-10">
-			          <textarea class="form-control" rows = "6" id="description" placeholder="Things to note about this applicant...." required></textarea>
+			          <textarea class="form-control comments" rows = "6" id="description" placeholder="Things to note about this applicant...." required></textarea>
 			        </div>
 			      </div>
 			      <br>
@@ -788,7 +788,7 @@
 			          <label for="description" class="col-sm-2 control-label">Score</label>
 			        </div>
 			        <div class="col-md-10">
-			          <select class="form-control" name="score" required>
+			          <select class="form-control comments" name="score" required>
 			            <option>1</option>
 			            <option>2</option>
 			            <option>3</option>
@@ -800,7 +800,7 @@
 			      </div>
 			      <div class="row">
 			        <div class="col-md-2 col-md-offset-10">
-			          <button type="submit" class="btn btn-primary">Post</button>
+			          <button type="submit" class="btn btn-primary comments">Post</button>
 			        </div>
 			      </div>
 			    </form>

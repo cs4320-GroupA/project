@@ -29,7 +29,7 @@
     			$semester = htmlspecialchars($_POST['semester']);
 			$instructor_id = htmlspecialchars($_POST['instructor_id']);
 
-			$result = $this->course_model->edit($course_id,$course_name,$semester,$instructor_id);
+			$result = $this->course_model->editCourse($course_id,$course_name,$semester,$instructor_id);
 
 			if($result == TRUE) {
 				redirect('adminModifyCourseController', 'refresh');

@@ -772,8 +772,18 @@
 				<div class="col-md-3"></div>
     			<div class="col-md-6">
 					<form name="comment_box" action="<?php echo base_url().'index.php/comments/add/'.$user_id.'/'.$semester_id; ?>" method="POST">
-						Score: <input type="number" class="comments" name="score" min="1" max="5" required> <br>
-						<textarea class="comments" name="description" placeholder="Things to note...." required></textarea>
+						<div>
+							Score: <select class="comments pull-right" name="score" required>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+						</div>
+						<div>
+							<textarea class="comments" name="description" placeholder="Things to note...." required></textarea>
+						</div>
 						<button type="submit" class="comments pull-right btn btn-primary">Post</button>
 					</form>
 				</div>

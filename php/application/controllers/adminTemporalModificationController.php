@@ -40,16 +40,16 @@
                 // not sure if this is the right spot to change session data
                 $new_Time_Title = '';
                 if( $new_time == 1 ){
-                    $this->session->userdata("status_title") = "APPLICATION";    
+                    $this->session->set_userdata("status_title") = "APPLICATION";    
                 }
                 else if( $new_time == 2 ){
-                    $this->session->userdata("status_title") = "SELECTION";
+                    $this->session->set_userdata("status_title") = "SELECTION";
                 }
                 else if( $new_time == 3 ){
-                    $this->session->userdata("status_title") = "Notification";
+                    $this->session->set_userdata("status_title") = "Notification";
                 }
                 else
-                    $this->session->userdata("status_title") = "Closed";    // check on this...
+                    $this->session->set_userdata("status_title") = "Closed";    // check on this...
                 
                 
                 redirect('adminTemporalModificationController','refresh');

@@ -45,23 +45,23 @@
                 $new_Time_Title = '';
                 if( $new_time == 1 ){
                     $this->session->unset_userdata("status_title");
-                    $new_data = array('status_title' => "APPLICATION");
-                    $this->session->set_userdata($new_data);    
+                    //$new_data = array('status_title' => "APPLICATION");
+                    $this->session->set_userdata('status_title', 'APPLICATION');    
                 }
                 else if( $new_time == 2 ){
                     $this->session->unset_userdata("status_title");
-                    $new_data = array('status_title' => "APPLICATION");
-                    $this->session->set_userdata($new_data);    
+                    //$new_data = array('status_title' => "APPLICATION");
+                    $this->session->set_userdata('status_title', 'SELECTION');    
                 }
                 else if( $new_time == 3 ){
                     $this->session->unset_userdata("status_title");
-                    $new_data = array('status_title' => "Notification");
-                    $this->session->set_userdata($new_data);    
+                    //$new_data = array('status_title' => "Notification");
+                    $this->session->set_userdata('status_title', 'NOTIFICATION');    
                 }
                 else{
                     $this->session->unset_userdata("status_title");
-                    $new_data = array('status_title' => "Closed");
-                    $this->session->set_userdata($new_data);    
+                    //$new_data = array('status_title' => "Closed");
+                    $this->session->set_userdata('status_title', 'CLOSED');    
                 }
                 redirect('adminTemporalModificationController','refresh');
             }

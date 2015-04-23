@@ -35,7 +35,7 @@
             
             // not sure what to do here
             if($result == true){
-                redirect('adminTemporalModification','refresh');
+                redirect('adminTemporalModificationController','refresh');
             }
             //else
                 //redirect('adminTemporalModification','refresh');

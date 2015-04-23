@@ -25,6 +25,7 @@
 	      		<thead>
 		        	<tr>
 		        		<th>Course Title</th>
+		        		<th>Current Instructor</th>
 		        	</tr>
 		    	</thead>
 		    	<tbody>
@@ -34,10 +35,15 @@
 		    				echo '<td>';
 
 		    				echo '<form>';
-							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/instructorAddCourseController/add/'.$row['course_id'].'/'.$row['semester_id'].'">View</button> ';
+							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/instructorAddCourseController/add/'.$row['course_id'].'/'.$row['course_name'].'/'.$row['semester'].'">Add</button> ';
 			    			echo '</td>';
 			    			echo '<td>'.$row['course_name'].'</td>';
 
+					    	if($row->instructor_id == NULL) {
+					    		 echo '<td>unassigned</td>';
+					    	} else {
+					   			echo '<td>'.$row['instructor_id'].'</td>';
+					   		}
                				echo '</tr>';
                				echo '</form>';
                			}

@@ -10,17 +10,17 @@
 			
 			$result = $this->course_model->getCourses();
 			$data['courses'] = $result->result_array();
-			
+
 			$this->load->view('instructorAddCourse', $data);
 		}
 
-		public function add($course_id, $course_name) {
+		public function add($course_id, $course_name, $semester) {
 			$this->load->model('course_model');
 			$this->load->model('semester_model');
 
     		$semester = getCurrentSemester();
 
-    		$result = $this->course_model->assignCourse($course_id, $course_name, $this->session->userdata('user_id'));
+    		$result = $this->course_model->assignCourse($course_id, $course_name, $semester, $this->session->userdata('user_id'));
 
     		if($result == TRUE) {
 				redirect('instructorAddCourse', 'refresh');

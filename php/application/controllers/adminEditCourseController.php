@@ -9,22 +9,21 @@
 			$this->load->model('semester_model');
        	}
 
-		public function index($course_id,$instructor_id,$course_name) 
+		public function index($course_id) 
 		{ 
-			if($course_id == NULL){
-				$course_id = 1;
-			}
-			if($instructor_id == NULL){
-				$instructor_id = 1;
-			}
-			if($course_name == NULL){
-				$course_name = 'FILLER';
-			}
-			$this->load->view('adminEditCourse',$course_id,$instructor_id,$course_name);
+			
+			$course = $this->course_model->getCourseById($course_id);
+
+			$data = array('course' => $course->row());
+
+			$this->load->view('adminEditCourse',$course);
+			
+		
 		}
 
 		public function edit($course_id){
 			
+
 			$course_id = htmlspecialchars($course_id);						
     			$course_name = htmlspecialchars($_POST['courseName']);
     			$semester = htmlspecialchars($_POST['semester']);

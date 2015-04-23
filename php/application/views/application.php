@@ -773,7 +773,7 @@
     			<div class="col-md-6">
 					<form name="comment_box" action="<?php echo base_url().'index.php/comments/add/'.$user_id.'/'.$semester_id; ?>" method="POST">
 						<div class="pull-right">
-							<h1 class="pull-right">Score: </h1> <select class="comments pull-right" name="score" required>
+							Score: <select class="comments pull-right" name="score" required>
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>

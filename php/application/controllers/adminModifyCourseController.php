@@ -46,14 +46,6 @@
 
 		}
 
-		public function edit(){
-			
-			$oldCourseName = htmlspecialchars($course_id);						
-    			$course_name = htmlspecialchars($_POST['courseName']);
-    			$semester = htmlspecialchars($_POST['semester']);
-
-			
-		}
 
 	}
 ?>

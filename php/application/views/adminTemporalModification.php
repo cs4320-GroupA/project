@@ -59,7 +59,7 @@
                             echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminTemporalModificationController/set/3">Move Forward to Notification</button>';          
 						echo '</div>';
 					}// end selection else if
-					else if ($this->session->userdata("status_title") == "Notification")
+					else if ($this->session->userdata("status_title") == "NOTIFICATION")
 					{
 						echo '<div class ="col-md-6">';
 							echo '<p>';

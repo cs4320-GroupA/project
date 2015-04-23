@@ -56,7 +56,7 @@
 							echo '<p>';
 							echo 'The application timeline is currently in the <b>Selection mode</b>. Here, instructors will preference applicants for each of their classes. Upon moving to the Notification mode, applicants are notified of their potential appointment as a TA/PLA of a course.';
 							echo '</p>';
-                            echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminTemporalModificationController/set/3">Move Forward to Notification</button>';          
+                            echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminTemporalModificationController/set/3">Move Forward to Notification</button>';
 						echo '</div>';
 					}// end selection else if
 					else if ($this->session->userdata("status_title") == "NOTIFICATION")

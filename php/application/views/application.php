@@ -760,54 +760,82 @@
 				</div>
 				<hr>
 			</form>
-			<?php 
-				if(isset($comments)) {
+			<?php
+			  if(isset($comments)) 
+			  {
 			?>
 			<div class="row">
-				<div class="page-header">
-	        		<h2>Comments</h2>
-	     	 	</div>
-	     	 </div>
-	     	 <div class="row">
-				<div class="col-md-3"></div>
-    			<div class="col-md-6">
-					<form name="comment_box" action="<?php echo base_url().'index.php/comments/add/'.$user_id.'/'.$semester_id; ?>" method="POST">
-						<div class="pull-right">
-							Score: <select class="comments pull-right" name="score" required>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-									</select>
-									<br><br>
-						</div>
-						<textarea class="comments" name="description" placeholder="Things to note...." required></textarea>
-						<button type="submit" class="comments pull-right btn btn-primary">Post</button>
-					</form>
-				</div>
-       		</div>
-       		<?php
-				}
-			?>
+			  <div class="page-header">
+			    <h2>Comments</h2>
+			  </div>
+			</div>
 			<div class="row">
-				<hr>
-				<div class="col-md-3"></div>
-    			<div class="col-md-6">
-    				<ul style="list-style-type:none">
-    			<?php 
-    				if(isset($comments_about_user)) {
-    					foreach($comments_about_user as $row) {
-    						echo '<li>Posted By: '.$row->posted_by_pawprint.'Score: '.$row->score.'</li>';
-    						echo '<li>Description:</li>';
-    						echo '<li>'.$row->description.'</li>';
-    						echo '<hr>';
-    					}
-    				}
-    			?>
-    				</ul>
-    			</div>
-    		</div>
+			  <div class="col-md-6">
+			    <div class="row">
+			      <h3>Post a Comment</h3>
+			      <br>
+			      <form name="comment_box" action="<?php echo base_url().'index.php/comments/add/'.$user_id.'/'.$semester_id; ?>" method="POST">
+			        <div class="col-md-2">
+			          <label for="description" class="col-sm-2 control-label">Admin Pawprint</label>
+			        </div>
+			        <div class="col-md-10">
+			          <textarea class="form-control" rows = "6" id="description" placeholder="Things to note about this applicant...." required></textarea>
+			        </div>
+			      </div>
+			      <br>
+			      <div class="row">
+			        <div class="col-md-2">
+			          <label for="description" class="col-sm-2 control-label">Score</label>
+			        </div>
+			        <div class="col-md-10">
+			          <select class="form-control" name="score" required>
+			            <option>1</option>
+			            <option>2</option>
+			            <option>3</option>
+			            <option>4</option>
+			            <option>5</option>
+			          </select>
+			          <p class="help-block">1 = Lowest, 5 = Highest</p>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="col-md-2 col-md-offset-10">
+			          <button type="submit" class="btn btn-primary">Post</button>
+			        </div>
+			      </div>
+			    </form>
+			  </div>
+			  <?php
+			    }
+			  ?>
+			  <div class = "col-md-6">
+			    <h3>Prior Comments</h3>
+			    <table class="table table-hover table-striped">
+			      <thead>
+			        <tr>
+			          <th>Instructor</th>
+			          <th>Score</th>
+			          <th>Comment</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <?php
+			          if(isset($comments_about_user)) 
+			          {
+			            foreach($comments_about_user as $row) 
+			            {
+			              echo '<tr>';
+			              echo '<td>'.$row->posted_by_pawprint.'</td>';
+			              echo '<td>'.$row->score.'</td>';
+			              echo '<td>'.$row->description.'</td>';
+			              echo '</tr>';
+			            }
+			          }
+			        ?>
+			      </tbody>
+			    </table>
+			  </div>
+			</div>
 		</div>
 	</body>
 </html>

@@ -39,12 +39,8 @@
 							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/instructorAddCourseController/add/'.$row['course_id'].'">Add</button> ';
 			    			echo '</td>';
 			    			echo '<td>'.$row['course_name'].'</td>';
+			    			echo '<td>'.$row['username'].'</td>';
 
-					    	if($row['instructor_id'] == NULL) {
-					    		 echo '<td>unassigned</td>';
-					    	} else {
-					   			echo '<td>'.$row['instructor_id'].'</td>';
-					   		}
                				echo '</tr>';
                				echo '</form>';
                			}

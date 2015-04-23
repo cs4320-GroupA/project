@@ -14,18 +14,16 @@
 			$this->load->view('instructorAddCourse', $data);
 		}
 
-		public function add($course_id, $course_name, $semester) {
+		public function add($course_idr) {
 			$this->load->model('course_model');
 			$this->load->model('semester_model');
 
-    		$result = $this->course_model->assignCourse($course_id, $course_name, $semester, $this->session->userdata('user_id'));
+    		$result = $this->course_model->assignCourse($course_id, $this->session->userdata('user_id'));
 
     		if($result == TRUE) {
-    			echo $this->session->userdata('user_id');
-				//redirect('instructorAddCourseController', 'refresh');
+				redirect('instructorAddCourseController', 'refresh');
 			} else {
-				echo $this->session->userdata('user_id');
-				//redirect('instructorAddCourseController', 'refresh');
+				redirect('instructorAddCourseController', 'refresh');
 			}
 		}
 	}

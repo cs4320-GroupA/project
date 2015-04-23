@@ -24,6 +24,7 @@
 	      	<table class="table table-hover">
 	      		<thead>
 		        	<tr>
+		        		<th>Action</th>
 		        		<th>Course Title</th>
 		        		<th>Current Instructor</th>
 		        	</tr>
@@ -35,7 +36,7 @@
 		    				echo '<td>';
 
 		    				echo '<form>';
-							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/instructorAddCourseController/add/'.$row['course_id'].'/'.$row['course_name'].'/'.$row['semester'].'">Add</button> ';
+							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/instructorAddCourseController/add/'.$row['course_id'].'">Add</button> ';
 			    			echo '</td>';
 			    			echo '<td>'.$row['course_name'].'</td>';
 

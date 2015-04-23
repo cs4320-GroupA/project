@@ -52,9 +52,9 @@
             }
         }
 
-        public function assignCourse($course_id, $course_name, $semester, $instructor_id)
+        public function assignCourse($course_id, $instructor_id)
         {
-            $sql = 'UPDATE course SET instructor_id = ? WHERE course_id = ? AND course_name = ? AND semester = ?';
+            $sql = 'UPDATE course SET instructor_id = ? WHERE course_id = ?';
 
             $query = $this->db->query($sql, array($instructor_id, $course_id, $course_name, $semester));
 

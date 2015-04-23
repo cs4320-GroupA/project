@@ -24,12 +24,13 @@
             if($status_query->num_rows() > 0) { 
                 //Add all three status_ids where correspond to being open for query
                 $query = $this->db->query($sql, array($status_query->first_row()->status_id, $status_query->next_row()->status_id, $status_query->next_row()->status_id));
-
+            }
             if($query->num_rows() > 0) {
                 return $query;
             } else { //Should theoretically never be reached, since but better safe than sorry
                 return FALSE;
             }
+            
         }// end getCurrentSemester
 
 /*

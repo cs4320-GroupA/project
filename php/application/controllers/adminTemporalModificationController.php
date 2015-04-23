@@ -16,7 +16,7 @@
         public function set( $new_time ){
             
             // need to load
-            $this->load->model('temoral_model');
+            $this->load->model('temporal_model');
             $this->load->model('semester_model');
             
             // semester to modify (onl option is 1 anyway)

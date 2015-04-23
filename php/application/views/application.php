@@ -801,13 +801,12 @@
 			      <div class="row">
 			        <div class="col-md-2 col-md-offset-10">
 			          <button type="submit" class="btn btn-primary comments">Post</button>
+			          <br>
+			          <br>
 			        </div>
 			      </div>
 			    </form>
 			  </div>
-			  <?php
-			    }
-			  ?>
 			  <div class = "col-md-6">
 			    <h3>Prior Comments</h3>
 			    <table class="table table-hover table-striped">
@@ -835,6 +834,9 @@
 			      </tbody>
 			    </table>
 			  </div>
+			  <?php
+			    }
+			  ?>
 			</div>
 		</div>
 	</body>

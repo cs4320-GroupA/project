@@ -113,18 +113,22 @@
 				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
 				$data['user_id'] = $user_id;
 				$data['semester_id'] = $semester_id;
+				$result = $this->course_model->getCourses();
+				$data['courses'] = $result->result_array();
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');
 			}
 			
-			$result = $this->comments_model->getAllByUser($user_id);
+			if($this->session->userdata('user_type') != 'APPLICANT') {
+				$result = $this->comments_model->getAllByUser($user_id);
 
-			$data['comments'] = TRUE;
-			$data['comments_about_user'] = $result->result();
+				$data['comments'] = TRUE;
 
-			$result = $this->course_model->getCourses();
-			$data['courses'] = $result->result_array();
+				if($result != FALSE) {
+					$data['comments_about_user'] = $result->result();
+				}
+			}
 			
 			$this->load->view('application', $data);
 		}

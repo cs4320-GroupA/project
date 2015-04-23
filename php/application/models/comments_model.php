@@ -15,7 +15,11 @@
 
             $query = $this->db->query($sql, array($user_id));
 
-            return $query;
+            if($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return FALSE;
+            }
         }
     }
 ?>

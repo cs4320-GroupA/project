@@ -39,7 +39,8 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<button type = "submit" class="btn btn-primary">Select Course</button>
+				<br><br>
+					<button type = "submit" class="btn btn-success">Select Course</button>
 				</div>
 			</div>
 			<br><br>

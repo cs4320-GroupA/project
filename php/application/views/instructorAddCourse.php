@@ -39,7 +39,7 @@
 			    			echo '</td>';
 			    			echo '<td>'.$row['course_name'].'</td>';
 
-					    	if($row->instructor_id == NULL) {
+					    	if($row['instructor_id'] == NULL) {
 					    		 echo '<td>unassigned</td>';
 					    	} else {
 					   			echo '<td>'.$row['instructor_id'].'</td>';

@@ -21,9 +21,11 @@
     		$result = $this->course_model->assignCourse($course_id, $course_name, $semester, $this->session->userdata('user_id'));
 
     		if($result == TRUE) {
-				redirect('instructorAddCourse', 'refresh');
+    			echo $this->session->userdata('user_id');
+				//redirect('instructorAddCourseController', 'refresh');
 			} else {
-				redirect('instructorAddCourse', 'refresh');
+				echo $this->session->userdata('user_id');
+				//redirect('instructorAddCourseController', 'refresh');
 			}
 		}
 	}

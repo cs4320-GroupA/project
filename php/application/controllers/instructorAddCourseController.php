@@ -18,8 +18,6 @@
 			$this->load->model('course_model');
 			$this->load->model('semester_model');
 
-    		$semester = getCurrentSemester();
-
     		$result = $this->course_model->assignCourse($course_id, $course_name, $semester, $this->session->userdata('user_id'));
 
     		if($result == TRUE) {

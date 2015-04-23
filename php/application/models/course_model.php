@@ -5,7 +5,7 @@
         }
         
         public function getCourses() {
-            $sql = 'SELECT * FROM tasub.course';
+            $sql = 'SELECT * FROM tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id ORDER BY tasub.course.course_name';
 
             $query = $this->db->query($sql);
             
@@ -52,13 +52,13 @@
             }
         }
 
-        public function assignCourse($course_id, $course_name, $semester, $instructor_id)
+        public function assignCourse($course_id, $instructor_id)
         {
-            $sql = 'INSERT into course (course_id, course_name, semester, instructor_id) VALUES (?,?,?,?) WHERE $course_id = ?, $course_name = ?, $semester = ?, $instructor_id = ?';
+            $sql = 'UPDATE course SET instructor_id = ? WHERE course_id = ?';
 
-            $query = $this->db->query($sql, array($course_id, $course_name, $semester, $instructor_id));
+            $query = $this->db->query($sql, array($instructor_id, $course_id));
 
-            if($query->affected_rows() == 1) {
+            if($this->db->affected_rows() == 1) {
                 return TRUE;
             } else {
                 return FALSE;

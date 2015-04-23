@@ -113,6 +113,7 @@ create table comments(
     comment_id int auto_increment,
     posted_by int references user( user_id ),
     posted_about int references user( user_id ),
+    posted_by_pawprint varchar(10),
     score float,
     description text,
     primary key( comment_id, posted_by, posted_about )

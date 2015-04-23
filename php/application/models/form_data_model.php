@@ -103,5 +103,13 @@
                 return FALSE;
             }
         }
+
+        public function getAllBySemester($semester) {
+            $sql = 'SELECT * FROM tasub.form_data WHERE semester = ?';
+
+            $query = $this->db->query($sql, array($semester));
+
+            return $query->result();
+        }
     }
 ?>

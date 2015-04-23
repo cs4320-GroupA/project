@@ -68,6 +68,9 @@
 		}
 
 		public function viewForm($user_id, $semester_id) {
+			if($this->session->userdata('user_type') == 'applicant') {
+				redirect('form', 'refresh');
+			}
 			// Load form_data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
@@ -75,7 +78,7 @@
 			$this->load->model('currently_teaching_model');
 			$this->load->model('previous_taught_model');
 			$this->load->model('desired_courses_model');
-			
+			$this->load->model('comments_model');
 			//Get the current applicant's form
 			$query = $this->form_model->getForm($user_id, $semester_id);
 
@@ -111,14 +114,21 @@
 				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
 				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data);
 				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
+				$data['user_id'] = $user_id;
+				$data['semester_id'] = $semester_id;
+				$result = $this->course_model->getCourses();
+				$data['courses'] = $result->result_array();
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');
 			}
-			
+		
+			$result = $this->comments_model->getAllByUser($user_id);
 			$data['comments'] = TRUE;
-			$result = $this->course_model->getCourses();
-			$data['courses'] = $result->result_array();
+
+			if($result != FALSE) {
+				$data['comments_about_user'] = $result->result();
+			}
 			
 			$this->load->view('application', $data);
 		}

@@ -771,8 +771,18 @@
 	     	 <div class="row">
 				<div class="col-md-3"></div>
     			<div class="col-md-6">
-					<form>
-						<textarea class="comments" placeholder="Things to note...." ></textarea>
+					<form name="comment_box" action="<?php echo base_url().'index.php/comments/add/'.$user_id.'/'.$semester_id; ?>" method="POST">
+						<div class="pull-right">
+							Score: <select class="comments pull-right" name="score" required>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+									<br><br>
+						</div>
+						<textarea class="comments" name="description" placeholder="Things to note...." required></textarea>
 						<button type="submit" class="comments pull-right btn btn-primary">Post</button>
 					</form>
 				</div>
@@ -780,6 +790,24 @@
        		<?php
 				}
 			?>
+			<div class="row">
+				<hr>
+				<div class="col-md-3"></div>
+    			<div class="col-md-6">
+    				<ul style="list-style-type:none">
+    			<?php 
+    				if(isset($comments_about_user)) {
+    					foreach($comments_about_user as $row) {
+    						echo '<li>Posted By: '.$row->posted_by_pawprint.'Score: '.$row->score.'</li>';
+    						echo '<li>Description:</li>';
+    						echo '<li>'.$row->description.'</li>';
+    						echo '<hr>';
+    					}
+    				}
+    			?>
+    				</ul>
+    			</div>
+    		</div>
 		</div>
 	</body>
 </html>

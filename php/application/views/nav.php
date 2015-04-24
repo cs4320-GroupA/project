@@ -43,7 +43,7 @@
 						redirect('login', 'refresh');
 					}
 				?>
-				<li><a class="pull-right" href='<?php echo base_url(); ?>index.php/login/logout'>Logout</a></li>
+				<li><a href='<?php echo base_url(); ?>index.php/login/logout'>Logout</a></li>
 			</ul>
 		</div>
 	</div>

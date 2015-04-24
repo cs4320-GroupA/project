@@ -30,6 +30,7 @@
 						{
 							echo "You have no courses!";
 						}
+						
 				else if ($courses->num_rows() > 0){
   				    foreach ($courses->result() as $row){
 					echo '<tr>';

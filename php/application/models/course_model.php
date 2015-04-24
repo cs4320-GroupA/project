@@ -83,7 +83,7 @@
      *          $course_name - new course name (corresponding to course_id) to set
      *          $semester - new semester to set
      *          $instructor_id - instructor to set
-     */
+     *
         public function editCourse($course_id,$course_name,$semester,$instructor_id) {
             $retrieveQuery = "UPDATE FROM course SET course_name = ?, semester = ?, instructor_id = ? WHERE course_id = ?";			
 
@@ -94,8 +94,11 @@
                 } else {
                     return FALSE;
                 }
-        }// end editCourse()
-/*
+        } end editCourse() 
+
+	Not sure why this version was commented out?
+	*/	
+
 	public function editCourse($course_id,$course_name,$semester) {
 		$retrieveQuery = "UPDATE course SET course_name = ?, semester = ? WHERE course_id = ?";			
 
@@ -107,7 +110,6 @@
 		        return FALSE;
 		    }
 	}
-*/
 
     /*
      * getCourseById() - return all information (including instructor info) from user and course matching a give course id

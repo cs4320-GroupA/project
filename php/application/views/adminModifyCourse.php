@@ -52,7 +52,11 @@
 								</div>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success">Add</button>
+						<div class="row">
+							<div class="col-md-6 col-md-offset-2">
+								<button type="submit" class="btn btn-success">Add</button>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>

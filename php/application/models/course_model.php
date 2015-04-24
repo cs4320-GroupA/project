@@ -79,7 +79,7 @@
 
 
 	public function editCourse($course_id,$course_name,$semester) {
-		$retrieveQuery = "UPDATE FROM course SET course_name = ?, semester = ? WHERE course_id = ?";			
+		$retrieveQuery = "UPDATE course SET course_name = ?, semester = ? WHERE course_id = ?";			
 
         	$query = $this->db->query($retrieveQuery, array($course_name,$semester,$course_id));
 		

@@ -13,7 +13,7 @@
 			//$this->instructorViewCoursesController->index();
 			
 			$pawprint = $this->session->userdata('user_id');
-			$courses = $this->course_model->getCoursesByInstructor($pawprint);
+			$query = $this->course_model->getCoursesByInstructor($pawprint);
 			$this->load->view('instructorViewCourses', $courses);
 		}
 	}

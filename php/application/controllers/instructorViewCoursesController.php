@@ -13,14 +13,6 @@
 			
 			$pawprint = $this->session->userdata('user_id');
 			$courses = $this->course_model->getCoursesByInstructor($pawprint);
-			if ($courses == NULL)
-			{
-				print_r("You have no Courses!");
-			}
-			else
-			{
-				print_r("You have courses!");
-			}
 			$this->load->view('instructorViewCourses', $courses);
 		}
 	}

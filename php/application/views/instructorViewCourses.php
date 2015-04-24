@@ -26,7 +26,11 @@
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
 						<?php
-				if ($courses->num_rows() > 0){
+						if ($courses == FALSE)
+						{
+							echo "You have no courses!";
+						}
+				else if ($courses->num_rows() > 0){
   				    foreach ($courses->result() as $row){
 					echo '<tr>';
 		         		    echo '<td>';

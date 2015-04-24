@@ -28,8 +28,17 @@
 					<!--PULL THE PAWPRINT OF THE TEACHER AND USE TO 
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
+<<<<<<< HEAD
 				<?php
 				/*if ($courses->num_rows() > 0){
+=======
+						<?php
+						if ($courses == FALSE)
+						{
+							echo "You have no courses!";
+						}
+				else if ($courses->num_rows() > 0){
+>>>>>>> jmlmdf
   				    foreach ($courses->result() as $row){
 					echo '<tr>';
 		         		    echo '<td>';

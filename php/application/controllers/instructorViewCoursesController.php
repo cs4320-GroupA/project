@@ -10,10 +10,13 @@
 			$this->load->model('course_model');
 			$this->load->model('Semester_model');
 
-			//$this->instructorViewCoursesController->index();
 			
-			//$pawprint = $this->session->userdata('user_name');
-			$courses = $this->course_model->getCoursesByInstructor($this->session->userdata('user_id'));
+			$pawprint = $this->session->userdata('user_id');
+			$courses = $this->course_model->getCoursesByInstructor($pawprint));
+			if ($courses == NULL)
+			{
+				echo "You have no Courses!";
+			}
 			$this->load->view('instructorViewCourses', $courses);
 		}
 	}

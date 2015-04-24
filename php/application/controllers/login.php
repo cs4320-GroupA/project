@@ -105,7 +105,6 @@
 					'logged_in' => TRUE,
 					'failed_login' => FALSE
 					);
-				}
 
 				$this->session->set_userdata($newSession);
 

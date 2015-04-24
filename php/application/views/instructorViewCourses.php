@@ -30,10 +30,6 @@
 						CLASS THE TEACHER IS TEACHING-->
 
 				<?php
-						if ($courses == FALSE)
-						{
-							echo "You have no courses!";
-						}
 						
 				 if ($courses->num_rows() > 0){
 

@@ -69,6 +69,7 @@
 		          <tr>
 		            <th>Action</th>
 		            <th>Course</th>
+		            <th>Semester</th>
 		            <th>Instructor</th>
 		          </tr>
 		        </thead>
@@ -83,6 +84,7 @@
 						echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'">Remove</button> ';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
+					    echo '<td>'.$row->semester.'</td>';
 					    echo '<td>'.$row->username.'</td>';
 	                	echo '</tr>';
 	                	echo '</form>';

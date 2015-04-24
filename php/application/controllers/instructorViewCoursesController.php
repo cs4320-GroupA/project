@@ -14,7 +14,7 @@
 			
 			$pawprint = $this->session->userdata('user_id');
 			$query = $this->course_model->getCoursesByInstructor($pawprint);
-			$this->load->view('instructorViewCourses', $courses);
+			$this->load->view('instructorViewCourses', $query);
 		}
 	}
 ?>

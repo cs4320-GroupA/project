@@ -184,11 +184,8 @@
 
 			//If the appliant is PLA then the dept and grade must be inputed
 			if($asstType == 'PLA') {
-				if(!isset($department)) {
-					$this->session->set_flashdata('missing_dept', TRUE);
-				}
 				$department = htmlspecialchars($_POST['dept']);
-				$grade = htmlspecialchars($_POST['grade']);
+				$grade = htmlspecialchars($_POST['grade']);				
 			} 
 			//If the appliant is Ta then the advisor and graduate type must be inputed
 			else if($asstType == 'TA') {

@@ -20,6 +20,32 @@
     		var desired_count = 1;
     		var previously_count = 1;
 
+    		function validateForm() {
+    			var assistant_type = document.forms["form_data"]["radioTAPLA"].value;
+
+    			if(assistant_type == "PLA") {
+    				if(document.forms["form_data"]["dept"].value == "" || document.forms["form_data"]["dept"].value == null) {
+    					alert("If applying for PLA, department must be selected!");
+    					return false;
+    				}
+    				if(document.forms["form_data"]["grade"].value == "" || document.forms["form_data"]["grade"].value == null) {
+    					alert("If applying for PLA, grade must be selected!");
+    					return false;
+    				}
+    			} else {
+    				if(document.forms["form_data"]["advisorName"].value == "" || document.forms["form_data"]["advisorName"].value == null) {
+    					alert("If applying for TA, your advisor must be entered!");
+    					return false;
+    				}
+    				if(document.forms["form_data"]["gradRadio"].value == "" || document.forms["form_data"]["gradRadio"].value == null) {
+    					alert("If applying for TA, graduate type must be selected!");
+    					return false;
+    				}
+    			}
+
+    			return true;
+    		}
+
     		function addCurrentlyRow(form) {
     			currently_count++;
     			if(currently_count < currently_max_fields) {
@@ -204,7 +230,8 @@
 	      </div>
 	      <div class = "row">
 	      	<div class="col-md-6 col-md-offset-3">
-		        <?php if(isset($message_header)) { ?>
+		        <?php
+		        	if(isset($message_header)) { ?>
 					<div class="panel panel-default">
 	 		 			<div class="panel-heading">
 	    					<h3 class="panel-title"><b><?php echo $message_header?></b></h3>
@@ -222,12 +249,12 @@
 			<?php 
 				if(isset($editable)) {
 					if($editable == TRUE) {
-						echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/editForm" method="POST">';
+						echo '<form class="form-inline" name="form_data" role="form" onsubmit="return validateForm()" action="'.base_url().'index.php/form/editForm" method="POST">';
 					}
 				}
 				if(isset($submittable)) {
 					if($submittable == TRUE) {
-							echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/submitForm" method="POST">';
+							echo '<form class="form-inline" name="form_data" role="form" onsubmit="return validateForm()" action="'.base_url().'index.php/form/submitForm" method="POST">';
 					}
 				}
 				if(isset($view_only)) {

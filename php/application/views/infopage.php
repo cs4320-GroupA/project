@@ -68,7 +68,7 @@
 				        echo'</div>';
 				        echo'<div class="col-md-3">';
 				             echo'<h3>Assign Applicants</h3>';
-								echo'<p>Assign applicants to instructor courses. Be sure to consider both applicant and instructor preferences, as well as instructor comments.</p>';
+								echo'<p>Assign applicants to instructor courses -- consider preferences & comments.</p>';
 				            echo '<a class = "btn btn-default" href="'.base_url().'index.php/adminAssignApplicantController">Assign Applicants »</a>';
 				        echo'</div>';
 				        echo'<div class="col-md-3">';
@@ -78,7 +78,7 @@
 				        echo'</div>';
 				      	echo'<div class="col-md-3">';
 				             echo'<h3>Change Timeline</h3>';
-								echo'<p>Move the timeline of the application. Be careful moving the application timeline backwards -- doing so can have unintended consequences.</p>';
+								echo'<p>Move the timeline of the application either forwards or backwards.</p>';
 				            echo '<a class = "btn btn-default" href="'.base_url().'index.php/adminTemporalModificationController">Change Timeline »</a>';
 				        echo'</div>';
 				    echo'</div>';

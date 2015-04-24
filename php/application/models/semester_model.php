@@ -33,6 +33,18 @@
             
         }// end getCurrentSemester
 
+        public function getCurrentSemesterTitle() {
+            $query = $this->getCurrentSemester();
+
+            if($query != FALSE) {
+                $title = $this->getSemesterTitle($query->row()->semester_id);
+
+                return $title
+            } else {
+                return 'NONE';
+            }
+
+        }
 /*
  * getSemesterTitle() - returns name of semester (ie FALL 2013)
  * input:   $semester_id - id of semester to look up

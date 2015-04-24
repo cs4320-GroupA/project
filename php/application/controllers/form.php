@@ -13,9 +13,10 @@
 			$this->load->model('previous_taught_model');
 			$this->load->model('currently_teaching_model');
 			$this->load->model('desired_courses_model');
+			$this->load->model('semester_model');
 
 			//Get the current applicant's form
-			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
+			$query = $this->form_model->getForm($this->session->userdata('user_id'), ($this->semester_model->getCurrentSemester())->row()->semester_id);
 
 			//If an entry for user's application exists for this semester, then auto load for data
 			if($query != FALSE) {
@@ -141,9 +142,10 @@
 			$this->load->model('currently_teaching_model');
 			$this->load->model('previous_taught_model');
 			$this->load->model('desired_courses_model');
+			$this->load->model('semester_model');
 
 			//Get the current applicant's form if exists
-			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
+			$query = $this->form_model->getForm($this->session->userdata('user_id'), ($this->semester_model->getCurrentSemester())->row()->semester_id);
 
 			//If an entry for user's application exists for this semester, then do not allow resubmission
 			if($query != FALSE) {
@@ -274,9 +276,10 @@
 			$this->load->model('currently_teaching_model');
 			$this->load->model('previous_taught_model');
 			$this->load->model('desired_courses_model');
-
+			$this->load->model('semester_model');
+			
 			//Get the current applicant's form if exists
-			$query = $this->form_model->getForm($this->session->userdata('user_id'), $this->session->userdata('semester_id'));
+			$query = $this->form_model->getForm($this->session->userdata('user_id'), ($this->semester_model->getCurrentSemester())->row()->semester_id);
 
 			//If an entry for user's application exists for this semester, then do not allow edit
 			if($query == FALSE) {

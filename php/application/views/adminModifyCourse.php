@@ -22,29 +22,41 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h3>Add a Course</h3>
-					<form method="post" accept-charset="utf-8" action=<?php echo base_url().'index.php/adminModifyCourseController/add/'; ?> />
+					<h3>Add a Course</h3>					
+						<form method="post" accept-charset="utf-8" action=<?php echo base_url().'index.php/adminModifyCourseController/add/'; ?> />
 						<div class="form-group">
-							<label for="courseName">Course Name: </label>
-							<input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS4320">
+							<div class="row">
+								<div class="col-md-2">
+									<label for="courseName">Course Name </label>
+								</div>
+								<div class="col-md-6">
+									<input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS4320">
+								</div>
+							</div>
 						</div>
 						<div class="form-group">
-							<label for="semester">Semester: </label>
-							<select name="semester" class="form-control">
-							    <option>FALL 2015</option>
-							    <option>SPRING 2016</option>
-							    <option>FALL 2016</option>
-							    <option>SPRING 2017</option>
-							    <option>FALL 2017</option>
-							    <option>SPRING 2018</option>
-							    <option>FALL 2018</option>
-							</select>
+							<div class="row">
+								<div class="col-md-2">
+									<label for="semester">Semester </label>
+								</div>
+								<div class="col-md-6">
+									<select name="semester" class="form-control">
+									    <option>FALL 2015</option>
+									    <option>SPRING 2016</option>
+									    <option>FALL 2016</option>
+									    <option>SPRING 2017</option>
+									    <option>FALL 2017</option>
+									    <option>SPRING 2018</option>
+									    <option>FALL 2018</option>
+									</select>
+								</div>
+							</div>
 						</div>
-						<div class="form-group">
-							<label for="instructorPawprint">Instructor Pawprint: </label>
-							<input type="text" class="form-control" id="instructorPawprint" placeholder="pws326">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-2">
+								<button type="submit" class="btn btn-success">Add</button>
+							</div>
 						</div>
-						<button type="submit" class="btn btn-success">Add</button>
 					</form>
 				</div>
 			</div>
@@ -57,36 +69,11 @@
 		          <tr>
 		            <th>Action</th>
 		            <th>Course</th>
+		            <th>Semester</th>
 		            <th>Instructor</th>
 		          </tr>
 		        </thead>
 		        <tbody>
-			<!--
-		          <tr>
-		            <td>
-		                <button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Remove</button>
-		            </td>
-		            <td>CS4320</td>
-		            <td>scottgs</td>
-		          </tr>
-		          <tr>
-		            <td>
-		                <button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Remove</button>
-		            </td>
-		            <td>CS4001</td>
-		            <td>scottgs</td>
-		          </tr>
-		          <tr>
-		            <td>
-		                <button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Remove</button>
-		            </td>
-		            <td>CS3380</td>
-		            <td>klaricm</td>
-		          </tr>
-			-->
 			  <?php
   				    foreach($courses as $row){
 						echo '<tr>';
@@ -97,6 +84,7 @@
 						echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'">Remove</button> ';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
+					    echo '<td>'.$row->semester.'</td>';
 					    echo '<td>'.$row->username.'</td>';
 	                	echo '</tr>';
 	                	echo '</form>';

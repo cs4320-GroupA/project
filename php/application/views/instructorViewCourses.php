@@ -26,11 +26,11 @@
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
 						<?php
-				if ($query->num_rows() > 0){
-  				    foreach ($query->result() as $row){
+				if ($courses->num_rows() > 0){
+  				    foreach ($courses->result() as $row){
 					echo '<tr>';
 		         		    echo '<td>';
-						<a href='controllers/instructorViewCoursesController'>View</a>;
+						'<a href="controllers//instructorViewCoursesController">View</a>';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->instructor_id.'</td>';

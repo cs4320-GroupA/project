@@ -30,14 +30,14 @@
 						CLASS THE TEACHER IS TEACHING-->
 
 				<?php
-						if ($data == FALSE)
+						if ($courses == FALSE)
 						{
 							echo "You have no courses!";
 						}
 						
-				 if ($data->num_rows() > 0){
+				 if ($courses->num_rows() > 0){
 
-  				    foreach ($data->result() as $row){
+  				    foreach ($courses->result() as $row){
 					echo '<tr>';
 		         		    echo '<td>';
 						'<a href="controllers//instructorViewCoursesController">View</a>';

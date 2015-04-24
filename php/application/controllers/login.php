@@ -29,29 +29,13 @@
 				redirect('login', 'refresh');
 			}
 			else if(strcmp((hash("sha1", $_POST['passwordinput'].$result->salt)), $result->password) == 0) {
-				$semester_result = $this->semester_model->getCurrentSemester();
-
-				if($semester_result == FALSE) { //No current semester
-					$newSession = array(
-						'user_id' => $result->user_id,
-						'pawprint' => $result->username,
-						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-						'status_title' => 'NONE',
-						'logged_in' => TRUE,
-						'failed_login' => FALSE
-					);
-				} else {
-					$status_title = $this->status_model->getStatusTitle($semester_result->row()->status);
-					
-					$newSession = array(
-						'user_id' => $result->user_id,
-						'pawprint' => $result->username,
-						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-						'status_title' => $status_title,
-						'logged_in' => TRUE,
-						'failed_login' => FALSE
-					);
-				}
+				$newSession = array(
+					'user_id' => $result->user_id,
+					'pawprint' => $result->username,
+					'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
+					'logged_in' => TRUE,
+					'failed_login' => FALSE
+				);
 
 				$this->session->set_userdata($newSession);
 
@@ -113,29 +97,16 @@
 
 			if($query == 1) {
 				$result = $this->user_model->login($username);
-				$semester_result = $this->semester_model->getCurrentSemester();
 
-				if($semester_result == FALSE) { //No current semester
-					$newSession = array(
-						'user_id' => $result->user_id,
-						'pawprint' => $result->username,
-						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-						'status_title' => 'NONE',
-						'logged_in' => TRUE,
-						'failed_login' => FALSE
-					);
-				} else {
-					$status_title = $this->status_model->getStatusTitle($semester_result->row()->status);
-					
-					$newSession = array(
-						'user_id' => $result->user_id,
-						'pawprint' => $result->username,
-						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-						'status_title' => $status_title,
-						'logged_in' => TRUE,
-						'failed_login' => FALSE
+				$newSession = array(
+					'user_id' => $result->user_id,
+					'pawprint' => $result->username,
+					'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
+					'logged_in' => TRUE,
+					'failed_login' => FALSE
 					);
 				}
+
 				$this->session->set_userdata($newSession);
 
 				redirect('home', 'refresh');

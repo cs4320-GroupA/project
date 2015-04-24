@@ -56,7 +56,7 @@
 				$data = array('submittable' => TRUE);			
 			}
 
-			if($this->session->userdata('status_title') != 'APPLICATION') {
+			if($this->semester_model->getCurrentSemesterTitle() != 'APPLICATION') {
 				//If it is not the application window then do not allow submissions/edits
 				$data['editable'] = FALSE;
 				$data['submitted'] = FALSE;

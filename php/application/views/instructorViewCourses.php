@@ -28,7 +28,14 @@
 					<!--PULL THE PAWPRINT OF THE TEACHER AND USE TO 
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
-                    <table>
+                    <table class="table table-hover">
+                    <thead>
+                    	<tr>
+                    		<th>Course Name</th>
+                    		<th>Instructor</th>
+                    	</tr>
+                    </thead>
+                    <tbody>
 				<?php
 					if(isset($courses)) {
   				   	foreach ($courses as $row) {
@@ -45,6 +52,7 @@
 				   	echo '<p>You have no courses</p>';
 				   }
 				?>
+					</tbody>
                     </table>
 				</div><!--col-md-12-->
 			</div><!--row-->

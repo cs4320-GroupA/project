@@ -8,9 +8,9 @@
 
 		public function index() {
 			$this->load->model('course_model');
-			$this->load->model('semester_model');
+			//$this->load->model('semester_model');
 
-			$semester = $this->semester_model->getCurrentSemester();
+			//$semester = $this->semester_model->getCurrentSemester();
 
 			$pawprint = $this->session->userdata('user_id');
 
@@ -22,7 +22,7 @@
             	$data = NULL;
             }
        
-			$this->load->view('instructorViewCourses', $data, $semester);
+			$this->load->view('instructorViewCourses', $data);//, $semester);
 
 		}
 	}

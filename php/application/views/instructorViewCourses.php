@@ -26,10 +26,10 @@
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
 						<?php
-						/*if ($courses == FALSE)
+						if ($courses == FALSE)
 						{
 							echo "You have no courses!";
-						}*/
+						}
 						
 				 if ($courses->num_rows() > 0){
   				    foreach ($courses->result() as $row){

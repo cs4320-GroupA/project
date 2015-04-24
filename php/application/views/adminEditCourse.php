@@ -40,10 +40,6 @@
 							    <option>FALL 2018</option>
 							</select>
 						</div>
-						<div class="form-group">
-							<label for="instructorPawprint">Instructor Pawprint: </label>
-							<input type="text" class="form-control" name="instructor_id" id="instructorPawprint" placeholder="<?php echo $course->username;?>">
-						</div>
 						<button type="submit" class="btn btn-success">Finish Editing</button>
 					</form>
 				</div>

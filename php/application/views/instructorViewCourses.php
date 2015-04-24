@@ -29,29 +29,15 @@
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 				<?php
-						if ($courses == FALSE)
+						if ($data == FALSE)
 						{
 							echo "You have no courses!";
 						}
 						
-				 if ($courses->num_rows() > 0){
+				 if ($data->num_rows() > 0){
 
-  				    foreach ($courses->result() as $row){
+  				    foreach ($data->result() as $row){
 					echo '<tr>';
 		         		    echo '<td>';
 						'<a href="controllers//instructorViewCoursesController">View</a>';

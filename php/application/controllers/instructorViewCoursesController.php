@@ -15,11 +15,11 @@
 			$courses = $this->course_model->getCoursesByInstructor($pawprint);
 			if ($courses == NULL)
 			{
-				echo "You have no Courses!";
+				print_r("You have no Courses!");
 			}
 			else
 			{
-				echo "You have courses!";
+				print_r("You have courses!");
 			}
 			$this->load->view('instructorViewCourses', $courses);
 		}

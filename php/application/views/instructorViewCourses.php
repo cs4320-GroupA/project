@@ -46,7 +46,7 @@
 						echo '<button class="btn btn-primary" a href="controllers//instructorViewCoursesController"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
 					   	echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
-					    echo '<td>'.$row->instructor_id.'</td>';
+					    echo '<td>'.$row->semester.'</td>';
 	                    echo '</tr>';
                         echo "\n\t\t\t";
 				    }

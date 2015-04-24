@@ -26,7 +26,7 @@
 					<form method="post" accept-charset="utf-8" action="<?php echo base_url().'index.php/adminEditCourseController/edit/'.$course->course_id; ?>" />
 						<div class="form-group">
 							<label for="courseName">Course Name: </label>
-							<input type="text" class="form-control" name="course_name" id="courseName" value="<?php echo $course->course_name ?>"><?php echo $course->course_name ?></input>
+							<input type="text" class="form-control" name="course_name" id="courseName" value="<?php echo $course->course_name ?>">
 						</div>
 						<div class="form-group">
 							<label for="semester">Semester: </label>

@@ -30,7 +30,7 @@
                  *      notification - can go to application or to selection (1, 2)
                  *      closed - can go to any of the first three (1, 2, 3)
                  */
-					if ($this->session->userdata("status_title") == "APPLICATION")
+					if ($status_title == "APPLICATION")
 					{
 						echo '<div class ="col-md-12">';
 							echo '<p>';
@@ -42,7 +42,7 @@
                             echo "\n<form>";
 						echo '</div>';
 					}// end application if
-					else if ($this->session->userdata("status_title") == "SELECTION")
+					else if ($status_title == "SELECTION")
 					{
 						echo '<div class ="col-md-6">';
 							echo '<p>';
@@ -61,7 +61,7 @@
                             echo "\n</form>";
 						echo '</div>';
 					}// end selection else if
-					else if ($this->session->userdata("status_title") == "NOTIFICATION")
+					else if ($status_title == "NOTIFICATION")
 					{
 						echo '<div class ="col-md-6">';
 							echo '<p>';

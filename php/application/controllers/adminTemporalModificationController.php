@@ -6,7 +6,11 @@
 
     // load adminTemporalModification as default
 		public function index(){ 
-			$this->load->view('adminTemporalModification');
+            $this->load->model('semester_model');
+
+            $data['status_title'] = $this->semester_model->getCurrentSemesterStatus();
+
+			$this->load->view('adminTemporalModification', $data);
 		}// end index
         
     /*

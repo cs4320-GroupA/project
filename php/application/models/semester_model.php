@@ -43,6 +43,20 @@
                 return 'NONE';
             }
         }
+
+        public function getCurrentSemesterStatus() {
+            $query = $this->getCurrentSemester();
+
+            if($query != FALSE) {
+                $sql = "SELECT status_title FROM tasub.status WHERE status_id = ?";
+
+                $status = $this->db->query($sql, array($query->row()->status));
+
+                return $status->row()->status_title;
+            } else {
+                return 'NONE';
+            }
+        }
 /*
  * getSemesterTitle() - returns name of semester (ie FALL 2013)
  * input:   $semester_id - id of semester to look up

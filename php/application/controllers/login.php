@@ -36,8 +36,6 @@
 						'user_id' => $result->user_id,
 						'pawprint' => $result->username,
 						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-						'semester_id' => NULL,
-						'semester_title' => 'NONE',
 						'status_title' => 'NONE',
 						'logged_in' => TRUE,
 						'failed_login' => FALSE
@@ -49,8 +47,6 @@
 						'user_id' => $result->user_id,
 						'pawprint' => $result->username,
 						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-						'semester_id' => $semester_result->row()->semester_id,
-						'semester_title' => $semester_result->row()->semester_title,
 						'status_title' => $status_title,
 						'logged_in' => TRUE,
 						'failed_login' => FALSE
@@ -124,8 +120,6 @@
 						'user_id' => $result->user_id,
 						'pawprint' => $result->username,
 						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-						'semester_id' => NULL,
-						'semester_title' => 'NONE',
 						'status_title' => 'NONE',
 						'logged_in' => TRUE,
 						'failed_login' => FALSE
@@ -137,8 +131,6 @@
 						'user_id' => $result->user_id,
 						'pawprint' => $result->username,
 						'user_type' => strtolower($this->account_type_model->getAccountType($result->account_type)),
-						'semester_id' => $semester_result->row()->semester_id,
-						'semester_title' => $semester_result->row()->semester_title,
 						'status_title' => $status_title,
 						'logged_in' => TRUE,
 						'failed_login' => FALSE

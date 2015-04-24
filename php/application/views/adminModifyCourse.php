@@ -25,27 +25,31 @@
 					<h3>Add a Course</h3>					
 						<form method="post" accept-charset="utf-8" action=<?php echo base_url().'index.php/adminModifyCourseController/add/'; ?> />
 						<div class="form-group">
-							<div class="col-md-2">
-								<label for="courseName">Course Name </label>
-							</div>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS4320">
+							<div class="row">
+								<div class="col-md-2">
+									<label for="courseName">Course Name </label>
+								</div>
+								<div class="col-md-6">
+									<input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS4320">
+								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-md-2">
-								<label for="semester">Semester </label>
-							</div>
-							<div class="col-md-6">
-								<select name="semester" class="form-control">
-								    <option>FALL 2015</option>
-								    <option>SPRING 2016</option>
-								    <option>FALL 2016</option>
-								    <option>SPRING 2017</option>
-								    <option>FALL 2017</option>
-								    <option>SPRING 2018</option>
-								    <option>FALL 2018</option>
-								</select>
+							<div class="row">
+								<div class="col-md-2">
+									<label for="semester">Semester </label>
+								</div>
+								<div class="col-md-6">
+									<select name="semester" class="form-control">
+									    <option>FALL 2015</option>
+									    <option>SPRING 2016</option>
+									    <option>FALL 2016</option>
+									    <option>SPRING 2017</option>
+									    <option>FALL 2017</option>
+									    <option>SPRING 2018</option>
+									    <option>FALL 2018</option>
+									</select>
+								</div>
 							</div>
 						</div>
 						<button type="submit" class="btn btn-success">Add</button>

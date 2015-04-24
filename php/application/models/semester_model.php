@@ -38,12 +38,10 @@
 
             if($query != FALSE) {
                 $title = $this->getSemesterTitle($query->row()->semester_id);
-
-                return $title
+                return $title;
             } else {
                 return 'NONE';
             }
-
         }
 /*
  * getSemesterTitle() - returns name of semester (ie FALL 2013)

@@ -15,8 +15,9 @@
 			$this->load->model('desired_courses_model');
 			$this->load->model('semester_model');
 
+			$semester = $this->semester_model->getCurrentSemester();
 			//Get the current applicant's form
-			$query = $this->form_model->getForm($this->session->userdata('user_id'), ($this->semester_model->getCurrentSemester())->row()->semester_id);
+			$query = $this->form_model->getForm($this->session->userdata('user_id'), $semester->row()->semester_id);
 
 			//If an entry for user's application exists for this semester, then auto load for data
 			if($query != FALSE) {
@@ -144,8 +145,9 @@
 			$this->load->model('desired_courses_model');
 			$this->load->model('semester_model');
 
+			$semester = $this->semester_model->getCurrentSemester();
 			//Get the current applicant's form if exists
-			$query = $this->form_model->getForm($this->session->userdata('user_id'), ($this->semester_model->getCurrentSemester())->row()->semester_id);
+			$query = $this->form_model->getForm($this->session->userdata('user_id'), $semester->row()->semester_id);
 
 			//If an entry for user's application exists for this semester, then do not allow resubmission
 			if($query != FALSE) {
@@ -167,7 +169,7 @@
 			$email = htmlspecialchars($_POST['mizzouEmail']);
 			$signature = htmlspecialchars($_POST['signature']);
 			$gato = htmlspecialchars($_POST['gatoRadio']);
-			$semester = $this->session->userdata('semester_title');
+			$semester = $this->semester_model->getCurrentSemesterTitle();
 			$date = htmlspecialchars($_POST['date']);
 			$department = NULL;
 			$grade = NULL;
@@ -277,9 +279,10 @@
 			$this->load->model('previous_taught_model');
 			$this->load->model('desired_courses_model');
 			$this->load->model('semester_model');
-			
+
+			$semester = $this->semester_model->getCurrentSemester();
 			//Get the current applicant's form if exists
-			$query = $this->form_model->getForm($this->session->userdata('user_id'), ($this->semester_model->getCurrentSemester())->row()->semester_id);
+			$query = $this->form_model->getForm($this->session->userdata('user_id'), $semester->row()->semester_id);
 
 			//If an entry for user's application exists for this semester, then do not allow edit
 			if($query == FALSE) {
@@ -302,7 +305,7 @@
 			$email = htmlspecialchars($_POST['mizzouEmail']);
 			$signature = htmlspecialchars($_POST['signature']);
 			$gato = htmlspecialchars($_POST['gatoRadio']);
-			$semester = $this->session->userdata('semester_title');
+			$semester = $this->semester_model->getCurrentSemesterTitle();
 			$date = htmlspecialchars($_POST['date']);
 			$department = NULL;
 			$grade = NULL;

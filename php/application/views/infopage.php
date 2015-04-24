@@ -25,7 +25,7 @@
 			//If statemanets that change the given message depending on who
 			if($this->session->userdata('user_type') == 'applicant')
 			{
-				echo'<div class="container">';
+				echo'<div class="container text-center">';
 			    	echo'<div class="row">';
 				        echo'<div class="col-md-6 col-md-offset-3">';
 				             echo'<h3>Application</h3>';
@@ -37,7 +37,7 @@
 			}
 			else if($this->session->userdata('user_type') == 'instructor')
 			{
-				echo'<div class="container">';
+				echo'<div class="container text-center">';
 			    	echo'<div class="row">';
 				        echo'<div class="col-md-4">';
 				             echo'<h3>Add Courses</h3>';
@@ -59,7 +59,7 @@
 			}
 			else if($this->session->userdata('user_type') == 'admin')
 			{
-				echo'<div class="container">';
+				echo'<div class="container text-center">';
 			    	echo'<div class="row">';
 				        echo'<div class="col-md-3">';
 				             echo'<h3>Modify Course</h3>';

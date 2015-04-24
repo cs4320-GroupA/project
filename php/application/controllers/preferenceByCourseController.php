@@ -7,44 +7,20 @@ class preferenceByCourse extends CI_Controller {
     }// end constructor
 
     public function index(){
-        // do I need to redirect here?
 		//$this->load->view('preferenceByCourse');
 	}// end index
     
-    public function add(){
+/*
+ * add() - instructor adds applicant as preferred TA/PLA for course
+ * input:   $student_id - id of user to add as perference
+ *          $course_id - id of course to pair user to course
+ */
+    public function add($student_id, $course_id){
     
         // load course_model
         $this->load->model('course_model');
-        $this->load->model('form_model');
         
-        // get current applicant's form data
-        $query = $this->form_model->getForm(
-            $this->session->userdata('user_id'), 
-            $this->session->userdata('semester_id')
-        );
-        // returned $query contains all user form_data
-        
-        // error handling if session variables aren't found
-        if($query == FALSE) {
-            redirect('form', 'refresh');
-        }
-        
-        // course_id found in POST data(?)
-        $course_id = htmlspecialchars( $_POST['course_id'] );
-        
-        // form_id found when loading applicant's form data
-        //$form_id = htmlspecialchars( $_POST['form_id'] );
-        $form_id = $query->row()->form_data;
-        
-        // course_name found in post data(?)
-        $course_name = htmlspecialchars( $_POST['course_name'] );
-        
-        // not sure how best to represent semester_id
-        //$semester_id = htmlspecialchars( $_POST['semester_id'] );
-        $semester_id = $this->session->userdata('semester_id');
-        
-        // is pref_number somewhere in the form?
-        $pref_number = htmlspecialchars( $_POST['pref_number'] );
+        //$course_info = $this->course_model->getCourseById();
         
         $result = $this->Course_model->createPreference( 
             $course_id, 
@@ -54,9 +30,32 @@ class preferenceByCourse extends CI_Controller {
             $preference_number 
         );
         
-        redirect('form', 'refresh');
+        redirect('instructorViewCourseController', 'refresh');
         
     }// end add function
+    
+/*
+ * remove() - applicant-course preference to remove
+ * input:   $user_id - id of user to remove as preference
+ *          $course_id - id of course
+ */
+    public function remove(){
+        // load course_model
+        $this->load->model('course_model');
+        
+        //$course_info = $this->course_model->getCourseById();
+        
+        $result = $this->Course_model->removePreference( 
+            $course_id, 
+            $course_name, 
+            $form_id, 
+            $semester_id, 
+            $preference_number 
+        );
+        
+        redirect('instructorViewCourseController', 'refresh');
+    }// end remove function
+    
     
 }// end class
 

@@ -9,10 +9,10 @@
 			$this->load->view('adminTemporalModification');
 		}// end index
         
-/*
- * set() - changes the current semester to a new status
- * input:   $new_time - new status to send
- */
+    /*
+     * set() - changes the current semester to a new status
+     * input:   $new_time - new status to send
+     */
         public function set( $new_time ){
             
             // need to load

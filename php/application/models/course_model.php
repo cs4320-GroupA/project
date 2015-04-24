@@ -75,37 +75,51 @@
             } else {
                 return FALSE;
             }
-        }
+        }// end getCourseByName
 
+    /*
+     * editCourse() - update course information
+     * input:   $course_id - new course id to set
+     *          $course_name - new course name (corresponding to course_id) to set
+     *          $semester - new semester to set
+     *          $instructor_id - instructor to set
+     */
+        public function editCourse($course_id,$course_name,$semester,$instructor_id) {
+            $retrieveQuery = "UPDATE FROM course SET course_name = ?, semester = ?, instructor_id = ? WHERE course_id = ?";			
 
-	public function editCourse($course_id,$course_name,$semester,$instructor_id) {
-		$retrieveQuery = "UPDATE FROM course SET course_name = ?, semester = ?, instructor_id = ? WHERE course_id = ?";			
+            $query = $this->db->query($sql, array($course_name,$semester,$instructor_id,$course_id));
 
-        $query = $this->db->query($sql, array($course_name,$semester,$instructor_id,$course_id));
-		
-		if($this->db->affected_rows() == 1) {
-		        return TRUE;
-		    } else {
-		        return FALSE;
-		    }
-	}
+            if($this->db->affected_rows() == 1) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
+        }// end editCourse()
 
-    public function getCourseById($course_id) {
-        $sql = 'SELECT * FROM tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id WHERE course_id = ?';
+    /*
+     * getCourseById() - return all information (including instructor info) from user and course matching a give course id
+     * input:   $course_id - course to search
+     */
+        public function getCourseById($course_id) {
+            $sql = 'SELECT * FROM tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id WHERE course_id = ?';
 
-        $query = $this->db->query($sql, array($course_id));
+            $query = $this->db->query($sql, array($course_id));
 
-        if($query->num_rows() > 0) {
-            return $query;
-        } else {
-            return FALSE;
-        }
-    }
-        
- /*
-  * not 100% sure this needs to go here, this function may better belong
-  * in a different file(?)
-  */
+            if($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return FALSE;
+            }
+        }// end getCourseById()
+
+    /*
+     * createPreference() - create a preference between applicant and course
+     * input:  $course_id - id of course to bind
+     *         $course_name - corresponding course name
+     *         $form_id - id of applicant's form
+     *         $semester_id - which semester version of form to use (should be hardcoded to 1 for now?)
+     *         $preference_number - preference rank set by instructor(?)
+     */
         public function createPreference( $course_id, $course_name, $form_id, $semester_id, $preference_number ){
             $q = 'insert into course_preference (
                   course_id,
@@ -118,7 +132,8 @@
                 )';
 
             $result = $this->db->query( $q, array(
-                $course_id, 
+                $course_id,
+                $course_name,
                 $form_id, 
                 $semester_id, 
                 $preference_number
@@ -133,8 +148,48 @@
             }
         }// end createPreference
     
-    
-    
+    /*
+     * removePreference() - remove a preference between applicant and course
+     * input:  $course_id - id of course to remove
+     *         $form_id - id of applicant's form
+     *         $semester_id - which semester version of form to use (should be hardcoded to 1 for now?)
+     */
+        public function removePreference( $course_id, $form_id, $semester_id ){
+            $q = 'delete from course_preference where course_id = ? and form_id = ? and semester_id = ?';
+
+            $result = $this->db->query( $q, array(
+                $course_id, 
+                $form_id, 
+                $semester_id, 
+            ));
+
+            // needto varify outputs here
+        
+            if($result == TRUE){
+                return true;
+            } else{
+                return false;
+            }
+        }// end createPreference
+        
+    /*
+     * removePreference() - remove a preference between applicant and course using preference id
+     * input:  $preference_id
+     */
+        public function removePreferenceByyId( $preference_id ){
+            $q = 'delete from course_preference where preference_id = ?';
+
+            $result = $this->db->query( $q, array( $preference_id ));
+
+            // needto varify outputs here
+        
+            if($result == TRUE){
+                return true;
+            } else{
+                return false;
+            }
+        }// end createPreference  
+        
     }// end CI_Model
 
 ?>

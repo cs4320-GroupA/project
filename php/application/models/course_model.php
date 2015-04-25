@@ -165,7 +165,7 @@
     
     /*
      * getPreferenceByInstructor() - returns all preferences in courses owned by a given instructor
-     * input:   $instruct_Id
+     * input:   $instruct_Id - instructor to query
      */
         public function getPreferenceByInstructor( $instruct_Id ){
             $q = 'select cp.preference_id,
@@ -185,6 +185,29 @@
             }
             
         }// end getPreferenceByInstructor
+        
+    /*
+     * getPreferenceByCourse() - returns all preferences to a given course
+     * input:   $course_id - course to query
+     */
+        public function getPreferenceByCourse( $course_Id ){
+            $q = 'select f.signature, cp.course_id, c.course_name, u.username 
+                from form f, course_preference cp, course c, user u 
+                where cp.course_id = c.course_id 
+                    and c.instructor_id = u.user_id 
+                    and f.form_id = cp.form_id
+                and cp.course_id = ?';
+            
+            $result = $this->db->query( $q, array( $course_Id ) );
+            
+            if( $result->num_rows() > 0 ){
+                return $result;
+            }
+            else{
+                return false;
+            }
+            
+        }//  end getPreferenceByCourse
         
     /*
      * removePreference() - remove a preference between applicant and course

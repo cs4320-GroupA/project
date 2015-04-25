@@ -164,6 +164,29 @@
         }// end createPreference
     
     /*
+     * getPreferenceByInstructor() - returns all preferences in courses owned by a given instructor
+     * input:   $instruct_Id
+     */
+        public function getPreferenceByInstructor( $instruct_Id ){
+            $q = 'select cp.preference_id,
+                        c.course_id, 
+                        c.course_name, 
+                        c.instructor_id 
+                    from course_preference cp, course c, user u 
+                    where cp.course_id = c.course_id and c.instructor_id = u.user_id 
+                    and u.user_id = ?';
+            $result = $this->db->query( $q, array($instruct_Id) );
+            
+            if( $result->num_rows() > 0 ){
+                return $result;
+            }
+            else{
+                return false;
+            }
+            
+        }// end getPreferenceByInstructor
+        
+    /*
      * removePreference() - remove a preference between applicant and course
      * input:  $course_id - id of course to remove
      *         $form_id - id of applicant's form

@@ -40,6 +40,23 @@
             }
         }
 
+    /*
+     * getCourseById() - returns all information concerning a given course id
+     * input:   $courseId - unique course id
+     */
+        public function getCourseById( $courseId ){
+            $sql = 'select * from tasub.course where course_id = ?';
+            
+            $query = $this->db->query( $sql, array($courseId) );
+            
+            if($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return FALSE; //No courses found
+            }
+            
+        }
+        
         public function createCourse($course_name,$semester,$instructor_id) {
             $sql = 'INSERT into course(course_name, semester, instructor_id) VALUES (?, ?, ?)';
 
@@ -102,7 +119,7 @@
 	public function editCourse($course_id,$course_name,$semester) {
 		$retrieveQuery = "UPDATE course SET course_name = ?, semester = ? WHERE course_id = ?";			
 
-        	$query = $this->db->query($retrieveQuery, array($course_name,$semester,$course_id));
+        $query = $this->db->query($retrieveQuery, array($course_name,$semester,$course_id));
 		
 		if($this->db->affected_rows() == 1) {
 		        return TRUE;

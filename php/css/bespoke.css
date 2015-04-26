@@ -3,7 +3,7 @@ body {
 	padding-bottom: 50px;
 }
 
-p, li, td, tr {
+p, li, td, tr, th {
 	font-family: 'Open Sans', sans-serif;
 }
 

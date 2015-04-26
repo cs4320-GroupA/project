@@ -9,6 +9,9 @@
 		<link rel="icon" href="../../favicon.ico">
 		<title>Home</title>
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    	<link href="<?php echo base_url(); ?>css/bespoke.css" rel="stylesheet">
 	</head>
 	<body>
 		<?php

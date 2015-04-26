@@ -45,7 +45,7 @@
 				?>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href='<?php echo base_url(); ?>index.php/login/logout'>Logout<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+				<li><a href='<?php echo base_url(); ?>index.php/login/logout'><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
 			</ul>
 		</div>
 	</div>

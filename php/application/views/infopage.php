@@ -28,7 +28,7 @@
 				echo'<div class="container text-center">';
 			    	echo'<div class="row">';
 				        echo'<div class="col-md-6 col-md-offset-3">';
-				        echo'<img class="img-circle" src="<?php echo base_url(); ?>img/application.jpg">';
+				        echo'<img class="img-circle" src="<?php echo base_url(img/application.jpg); ?>">';
 				             echo'<h3>Application</h3>';
 								echo'<p>Fill out an application to apply to be a Teaching Assistant (for graduate students) or a Peer Learning Assistant (for undergraduate students). TAs and PLAs assist an instructor with the courses they teach. Common responsibilities are grading assignments, teaching lab sections, and holding office hours.</p>';
 				            echo '<a class = "btn btn-default" href="'.base_url().'index.php/form">Application »</a>';

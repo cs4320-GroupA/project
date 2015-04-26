@@ -43,6 +43,8 @@
 						redirect('login', 'refresh');
 					}
 				?>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
 				<li><a href='<?php echo base_url(); ?>index.php/login/logout'>Logout</a></li>
 			</ul>
 		</div>

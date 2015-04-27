@@ -31,7 +31,7 @@
 
 				<?php
 					if(isset($courses)) {
-  				   	foreach ($courses->result() as $row) {
+  				   	foreach ($courses as $row) {
 						echo '<tr>';
 		         		echo '<td>';
 						echo '<a href="controllers//instructorViewCoursesController">View</a>';

@@ -61,7 +61,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<!-- <tr>
 								<td><input type="checkbox"></td>
 								<td>Michael Slaughter</td>
 								<td>3.875</td>
@@ -81,7 +81,20 @@
 								<td>2.587</td>
 								<td>C+</td>
 								<td>2016</td>
-							</tr>
+							</tr> --> 
+
+							<?php 
+								foreach($classes as $row){
+									echo '<tr>'; 
+										echo "<td><input type='checkbox'></td>";
+										echo "<td>" . $row->first_name . " " . $row->last_name . "</td>"; 
+										echo "<td>" . $row->gpa_float . "</td>";
+										echo "<td>" . $row->grade . "</td>";
+										echo "<td>" . $row->expected_graduation . "</td>";
+									echo '</tr>'  
+								}
+							?>										
+			
 						</tbody>
 					</table>
 					<button type = "submit" class = "btn btn-success">Assign Selected Applicants</button>

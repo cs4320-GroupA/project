@@ -28,7 +28,7 @@
 					<!--PULL THE PAWPRINT OF THE TEACHER AND USE TO 
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
-
+                    <table>
 				<?php
 					if(isset($courses)) {
   				   	foreach ($courses as $row) {
@@ -39,11 +39,13 @@
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->instructor_id.'</td>';
 	                    echo '</tr>';
+                        echo "\n";
 				    }
 				   } else {
 				   	echo '<p>You have no courses</p>';
 				   }
 				?>
+                    </table>
 				</div><!--col-md-12-->
 			</div><!--row-->
 		</div><!--container-->

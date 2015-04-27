@@ -41,7 +41,8 @@
 	                    echo '</tr>';
 				    }
 				   } else {
-				   	echo '<p>You have no courses</p>'				   }
+				   	echo '<p>You have no courses</p>';
+				   }
 				?>
 				</div><!--col-md-12-->
 			</div><!--row-->

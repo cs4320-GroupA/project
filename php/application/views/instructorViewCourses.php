@@ -45,13 +45,10 @@
                 foreach($courses as $row) {
                     echo '<tr>';
                     echo '<td>';
-                    echo '<form>';
-                    echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/instructorAddCourseController/add/'.$row['course_id'].'">Add</button> ';
                     echo '</td>';
                     echo '<td>'.$row['course_name'].'</td>';
-                    echo '<td>'.$row['username'].'</td>';
+                    //echo '<td>'.$row['username'].'</td>';
                     echo '</tr>';
-                    echo '</form>';
                 }// end foreach
 				?>
 				</div><!--col-md-12-->

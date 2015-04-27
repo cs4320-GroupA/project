@@ -57,7 +57,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-md-offset-2">
-								<button type="submit" class="btn btn-success">Add</button>
+								<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>
 							</div>
 						</div>
 					</form>
@@ -83,8 +83,8 @@
 		         		echo '<td>';
 
 		         		echo '<form>';
-						echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/adminEditCourseController/index/'.$row->course_id.'/">Edit</button> ';
-						echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'">Remove</button> ';
+						echo '<button type="submit" class="btn btn-warning" formaction="'.base_url().'index.php/adminEditCourseController/index/'.$row->course_id.'/"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</button> ';
+						echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</button> ';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->semester.'</td>';

@@ -243,7 +243,18 @@
 	    					<?php 
                         
                             // something goes here
-                            echo $message; 
+                            //echo $message; 
+                            if(isset($prefs)){
+                                echo '<table>';
+                                foreach( $prefs as $p_row ){
+                                    echo '<td>';
+                                    echo '<tr>'.$p_row->course_name.'</tr>';
+                                    //echo '<tr>'..'</tr>';
+                                    echo '</td>';
+                                }// end foreach
+                                echo '</table>';
+                            }// end isset check
+                        
                             ?>
 	  					</div>
 					</div>

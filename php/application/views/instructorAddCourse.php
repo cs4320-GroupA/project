@@ -39,7 +39,7 @@
 		    				echo '<td>';
 
 		    				echo '<form>';
-							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/instructorAddCourseController/add/'.$row['course_id'].'">Add</button> ';
+							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/instructorAddCourseController/add/'.$row['course_id'].'"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button> ';
 			    			echo '</td>';
 			    			echo '<td>'.$row['course_name'].'</td>';
 			    			echo '<td>'.$row['username'].'</td>';

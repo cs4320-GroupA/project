@@ -37,7 +37,7 @@
 		    				echo '<td>';
 
 		    				echo '<form>';
-							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/form/viewForm/'.$row->user_id.'/'.$row->semester_id.'">View</button> ';
+							echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$row->user_id.'/'.$row->semester_id.'">View »</button> ';
 			    			echo '</td>';
 			    			echo '<td>'.$row->first_name.' '.$row->last_name.'</td>';
 			    			echo '<td>'.$row->gpa.'</td>';

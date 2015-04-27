@@ -28,8 +28,8 @@
 					<!--PULL THE PAWPRINT OF THE TEACHER AND USE TO 
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
-						<?php
-				if ($courses->num_rows() > 0){
+				<?php
+				//if ($courses->num_rows() > 0){
   				    foreach ($courses->result() as $row){
 					echo '<tr>';
 		         		    echo '<td>';
@@ -39,7 +39,7 @@
 					    echo '<td>'.$row->instructor_id.'</td>';
 	                                echo '</tr>';
 				    };
-				};
+				//};
 				?>
 				</div><!--col-md-12-->
 			</div><!--row-->

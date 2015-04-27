@@ -12,7 +12,7 @@
 			$pawprint = $this->session->userdata('user_id');
 			
             $courses = $this->course_model->getCoursesByInstructor($pawprint);
-            //$data['courses'] = $courses->result_array();
+            $data['courses'] = $courses->result_array();
             
 			/*if ($courses == NULL)
 			{
@@ -22,9 +22,8 @@
 			{
 				echo "You have courses!";
 			}
+			*/
 			$this->load->view('instructorViewCourses', $data);
-			}*/
-			$this->load->view('instructorViewCourses', $courses);
 		}
 	}
 ?>

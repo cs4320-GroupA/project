@@ -18,7 +18,7 @@
       <hr>
       <br>
       <center>
-      <h1>Welcome to the Mizzou CS/IT Department TA/PLA Application Website</h1>
+      <h2>Welcome to the Mizzou CS/IT Department TA/PLA Application Website</h2>
       <h3>Please log in or register</h3>
       <?php
         if($this->session->userdata('logged_in')) {

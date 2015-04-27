@@ -14,8 +14,10 @@
 
             $courses = $this->course_model->getCoursesByInstructor($pawprint);
 
-            if($course != FALSE) {
+            if($courses != FALSE) {
             	$data['courses'] = $courses->result();
+            } else {
+            	$data = NULL;
             }
        
 			$this->load->view('instructorViewCourses', $data);

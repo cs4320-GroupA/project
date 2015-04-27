@@ -13,7 +13,11 @@
 			$pawprint = $this->session->userdata('user_id');
 
             $courses = $this->course_model->getCoursesByInstructor($pawprint);
-            $data['courses'] = $courses->result_array();
+
+            if($course != FALSE) {
+            	$data['courses'] = $courses->result();
+            }
+       
 			$this->load->view('instructorViewCourses', $data);
 
 		}

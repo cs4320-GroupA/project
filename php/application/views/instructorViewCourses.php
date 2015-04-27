@@ -30,19 +30,18 @@
 						CLASS THE TEACHER IS TEACHING-->
 
 				<?php
-						
-				 if ($courses->num_rows() > 0){
-
-  				    foreach ($courses->result() as $row){
-					echo '<tr>';
-		         		    echo '<td>';
-						'<a href="controllers//instructorViewCoursesController">View</a>';
-					    echo '</td>';
+					if(isset($courses)) {
+  				   	foreach ($courses->result() as $row) {
+						echo '<tr>';
+		         		echo '<td>';
+						echo '<a href="controllers//instructorViewCoursesController">View</a>';
+					   	echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->instructor_id.'</td>';
-	                                echo '</tr>';
-				    };
-				};
+	                    echo '</tr>';
+				    }
+				   } else {
+				   	echo '<p>You have no courses</p>'				   }
 				?>
 				</div><!--col-md-12-->
 			</div><!--row-->

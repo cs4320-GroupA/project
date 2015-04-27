@@ -83,7 +83,7 @@
 		         		echo '<td>';
 
 		         		echo '<form>';
-						echo '<button type="submit" class="btn btn-warning" formaction="'.base_url().'index.php/adminEditCourseController/index/'.$row->course_id.'/"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</button> ';
+						echo '<button type="submit" class="btn btn-info" formaction="'.base_url().'index.php/adminEditCourseController/index/'.$row->course_id.'/"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</button> ';
 						echo '<button type="submit" class="btn btn-danger" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</button> ';
 					    echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';

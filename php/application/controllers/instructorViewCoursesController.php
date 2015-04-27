@@ -16,7 +16,7 @@
             $courses = $this->course_model->getCoursesByInstructor($pawprint);
             $data['courses'] = $courses->result_array();
             
-			if ($courses == NULL)
+			/*if ($courses == NULL)
 			{
 				echo "You have no Courses!";
 			}
@@ -25,6 +25,8 @@
 				echo "You have courses!";
 			}
 			$this->load->view('instructorViewCourses', $data);
+			}*/
+			$this->load->view('instructorViewCourses', $courses);
 		}
 	}
 ?>

@@ -23,7 +23,7 @@
             //$this->load->model('temporal_model');
             $this->load->model('semester_model');
             
-            // semester to modify (onl option is 1 anyway)
+            // semester to modify (hardcoded 1 for now)
             $semester_id = $this->semester_model->getCurrentSemester(); 
             
             $result = $this->semester_model->setTime($semester_id->row()->semester_id, $new_time);

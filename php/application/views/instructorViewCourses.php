@@ -44,8 +44,6 @@
 
                 foreach($courses as $row) {
                     echo '<tr>';
-                    echo '<td>';
-                    echo '</td>';
                     echo '<td>'.$row['course_name'].'</td>';
                     //echo '<td>'.$row['username'].'</td>';
                     echo '</tr>';

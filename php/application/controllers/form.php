@@ -133,6 +133,14 @@
 				$data['comments_about_user'] = $result->result();
 			}
 			
+            // here is the bit where we get the preferences
+            $pref_form = $this->form_model->getForm( $user_id, $semester_id );
+            $p_row = $pref_form->row();
+            $prefs = $this->course_model->getPreferenceByForm($p_row->form_id);
+            
+            $data['prefs'] = $prefs->result();
+            //$p_data['prefs'] = $prefs->result();  //OR...
+            
 			$this->load->view('application', $data);
 		}
 		public function submitForm() {
@@ -266,11 +274,6 @@
 				$post_string = $base_string.strval($counter);
 				$grade_string = $base_grade_string.strval($counter);
 			}
-            
-            // here is the bit where we get the preferences
-            
-            
-            
             
 			//Redirect to form
 			redirect('form', 'refresh');

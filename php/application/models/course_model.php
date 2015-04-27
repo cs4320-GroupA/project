@@ -129,22 +129,6 @@
 	}
 
     /*
-     * getCourseById() - return all information (including instructor info) from user and course matching a give course id
-     * input:   $course_id - course to search
-     */
-        public function getCourseById($course_id) {
-            $sql = 'SELECT * FROM tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id WHERE course_id = ?';
-
-            $query = $this->db->query($sql, array($course_id));
-
-            if($query->num_rows() > 0) {
-                return $query;
-            } else {
-                return FALSE;
-            }
-        }// end getCourseById()
-
-    /*
      * createPreference() - create a preference between applicant and course
      * input:  $course_id - id of course to bind
      *         $course_name - corresponding course name

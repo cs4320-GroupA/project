@@ -33,7 +33,7 @@
 									<label for="courseName">Course Name </label>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS4320">
+									<input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS 4320: Software Engineering">
 								</div>
 							</div>
 						</div>

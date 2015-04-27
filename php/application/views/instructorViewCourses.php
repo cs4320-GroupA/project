@@ -39,7 +39,7 @@
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->instructor_id.'</td>';
 	                    echo '</tr>';
-                        echo "\n";
+                        echo "\n\t\t\t";
 				    }
 				   } else {
 				   	echo '<p>You have no courses</p>';

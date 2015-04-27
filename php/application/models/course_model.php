@@ -29,7 +29,7 @@
 	}
         
         public function getCoursesByInstructor($user_id) {
-            $sql = 'SELECT * from tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.course.user_id WHERE tasub.course.instructor_id = ?';
+            $sql = 'SELECT * from tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id WHERE tasub.course.instructor_id = ?';
             
             $query = $this->db->query($sql, array($user_id));
 

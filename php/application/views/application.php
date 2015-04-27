@@ -240,7 +240,11 @@
 	    					<h3 class="panel-title"><b><?php echo $message_header?></b></h3>
 	  					</div>
 	  					<div class="panel-body">
-	    					<?php echo $message; ?>
+	    					<?php 
+                        
+                            // something goes here
+                            echo $message; 
+                            ?>
 	  					</div>
 					</div>
 		        <?php } ?>

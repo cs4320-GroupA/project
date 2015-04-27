@@ -266,6 +266,12 @@
 				$post_string = $base_string.strval($counter);
 				$grade_string = $base_grade_string.strval($counter);
 			}
+            
+            // here is the bit where we get the preferences
+            
+            
+            
+            
 			//Redirect to form
 			redirect('form', 'refresh');
 		}

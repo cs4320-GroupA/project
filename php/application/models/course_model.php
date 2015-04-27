@@ -186,6 +186,28 @@
             }
             
         }// end getPreferenceByInstructor
+      
+    /*
+     * getPreferenceByForm() - returns course preference by form ID
+     * input:   $form_id - form to query
+     */
+        public function getPreferenceByForm( $form_id ){
+            $q = 'select f.signature, cp.course_id, c.course_name, u.username 
+                from form f, course_preference cp, course c, user u 
+                where cp.course_id = c.course_id 
+                    and c.instructor_id = u.user_id 
+                    and f.form_id = cp.form_id
+                and cp.form_id = ?';
+            $result = $this->db->query($q, array($form_id));
+            
+            if( $result->num_rows() > 0 ){
+                return $result;
+            }
+            else{
+                return false;
+            }
+            
+        }// end getPreferenceByForm
         
     /*
      * getPreferenceByCourse() - returns all preferences to a given course

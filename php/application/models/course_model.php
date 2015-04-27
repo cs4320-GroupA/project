@@ -30,7 +30,7 @@
         
         public function getCoursesByInstructor($user_id) {
             //$sql = 'SELECT * FROM tasub.course WHERE instructor_id = ?';
-            $sql = 'select * from course c join user u where c.instructor_id = u.user_id and username = ?';
+            $sql = 'select * from tasub.course c join tasub.user u where c.instructor_id = u.user_id and u.username = ?';
             
             $query = $this->db->query($sql, array($user_id));
 

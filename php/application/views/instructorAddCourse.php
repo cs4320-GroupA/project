@@ -10,7 +10,8 @@
 		<title>Add Courses</title>
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    	<link href="<?php echo base_url(); ?>css/bespoke.css" rel="stylesheet">
 	</head>
 	<body>
 		<?php
@@ -22,24 +23,34 @@
 	      </div>
 		</div>
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<!--HAVE TEACHER TYPE OUT CSXXXX FOR WHICH CLASS THEY WANT. PULL THE PAWPRINT OF THE TEACHER AND SEND CLASS CHOICE TO THE DATABASE AND ASSIGN THEM TO IT-->
+	      	<div>
+	      	<table class="table table-hover">
+	      		<thead>
+		        	<tr>
+		        		<th>Action</th>
+		        		<th>Course Title</th>
+		        		<th>Current Instructor</th>
+		        	</tr>
+		    	</thead>
+		    	<tbody>
 					<?php
-				if ($query->num_rows() > 0){
-  				    foreach ($query->result() as $row){
-					echo '<tr>';
-		         		    echo '<td>';
-						<a href='controllers/instructorAddCourse/add'>Add</a>;
-					    echo '</td>';
-					    echo '<td>'.$row->course_name.'</td>';
-					    echo '<td>'.$row->instructor_id.'</td>';
-	                                echo '</tr>';
-				    };
-				};
-				?>
-				</div><!--col-md-12-->
-			</div><!--row-->
+  						foreach($courses as $row) {
+							echo '<tr>';
+		    				echo '<td>';
+
+		    				echo '<form>';
+							echo '<button type="submit" class="btn btn-primary" formaction="'.base_url().'index.php/instructorAddCourseController/add/'.$row['course_id'].'"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button> ';
+			    			echo '</td>';
+			    			echo '<td>'.$row['course_name'].'</td>';
+			    			echo '<td>'.$row['username'].'</td>';
+
+               				echo '</tr>';
+               				echo '</form>';
+               			}
+					?>
+				</tbody>
+		    </table>				
+			</div>
 		</div><!--container-->
 		
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

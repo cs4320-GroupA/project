@@ -2,18 +2,26 @@
 	class instructorViewCoursesController extends CI_Controller {
 
 		public function __construct() {
-            $this->load->model('Course_model');
-			$this->load->model('Semester_model');
 
 			parent::__construct();
-
-			$this->instructorViewCoursesController->index();
        }
 
 		public function index() {
+			$this->load->model('course_model');
+			//$this->load->model('Semester_model');
+
 			$pawprint = $this->session->userdata('user_id');
-			$courses = $this->course_model->getCoursesByInstructor($pawprint);
-			$this->load->view('instructorViewCourses', $courses);
+
+            $courses = $this->course_model->getCoursesByInstructor($pawprint);
+
+            if($courses != FALSE) {
+            	$data['courses'] = $courses->result();
+            } else {
+            	$data = NULL;
+            }
+       
+			$this->load->view('instructorViewCourses', $data);
+
 		}
 	}
 ?>

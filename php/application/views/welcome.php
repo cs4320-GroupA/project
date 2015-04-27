@@ -11,24 +11,35 @@
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href="<?php echo base_url(); ?>css/bespoke.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
       <hr>
       <br>
       <center>
-      <h1><b>Welcome to the Mizzou CS/IT TA & PLA Application Website</b></h1>
+      <h2>Welcome to the Mizzou CS/IT Department TA/PLA Application Website</h2>
       <h3>Please log in or register</h3>
       <?php
-      if($this->session->userdata('failed_login')) {
-      if($this->session->userdata('failed_login') == TRUE) {
-      echo '<font color=red>Invalid username, access code, and/or password.</font><br />';
-      }
-      }
+        if($this->session->userdata('logged_in')) {
+          if($this->session->userdata('logged_in') == TRUE) {
+            redirect('home', 'refresh');
+          }
+        }
+        if($this->session->userdata('failed_login')) {
+          if($this->session->userdata('failed_login') == TRUE) {
+            echo '<font color=red>Invalid username, access code, and/or password.</font><br />';
+          }
+        }
+        if($this->session->userdata('account_exists')) {
+          if($this->session->userdata('account_exists') == TRUE) {
+            echo '<font color=red>Username already exists.</font><br />';
+          }
+        }
       ?>
       <br>
-      <button class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#login">Log In</button>
-      <button class="btn btn-danger btn-lg" href="#" data-toggle="modal" data-target="#register">Register</button>
+      <button class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
+      <button class="btn btn-danger btn-lg" href="#" data-toggle="modal" data-target="#register"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Register</button>
       </center>
       <br>
       <hr>
@@ -61,7 +72,7 @@
                   <div class="control-group">
                     <label class="control-label" for="signin"></label>
                     <div class="controls">
-                      <button id="signin" name="signin" class="btn btn-success">Log In</button>
+                      <button id="signin" name="signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
                     </div>
                   </div>
                 </fieldset>
@@ -112,7 +123,7 @@
                   <div class="control-group">
                     <label class="control-label" for="signin"></label>
                     <div class="controls">
-                      <button id="signin" name="signin" class="btn btn-success">Register</button>
+                      <button id="signin" name="signin" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Account</button>
                     </div>
                   </div>
                 </fieldset>

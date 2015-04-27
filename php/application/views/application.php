@@ -8,17 +8,215 @@
 		<meta name="author" content="">
 		<link rel="icon" href="../../favicon.ico">
 		<title>Application Form</title>
+		<link href="<?php echo base_url(); ?>css/comments.css" rel="stylesheet">
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    	<link href="<?php echo base_url(); ?>css/bespoke.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+		<script> 
+    		var currently_max_fields = 4; //maximum input boxes allowed
+    		var desired_max_fields = 8; //maximum input boxes allowed
+    		var previous_max_fields = 10; //maximum input boxes allowed
+    		var currently_count = 1; //initlal text box count
+    		var desired_count = 1;
+    		var previously_count = 1;
+
+    		function validateForm() {
+    			var assistant_type = document.forms["form_data"]["radioTAPLA"].value;
+
+    			if(assistant_type == "PLA") {
+    				if(document.forms["form_data"]["dept"].value == "" || document.forms["form_data"]["dept"].value == null) {
+    					alert("If applying for PLA, department must be selected!");
+    					return false;
+    				}
+    				if(document.forms["form_data"]["grade"].value == "" || document.forms["form_data"]["grade"].value == null) {
+    					alert("If applying for PLA, grade must be selected!");
+    					return false;
+    				}
+    			} else {
+    				if(document.forms["form_data"]["advisorName"].value == "" || document.forms["form_data"]["advisorName"].value == null) {
+    					alert("If applying for TA, your advisor must be entered!");
+    					return false;
+    				}
+    				if(document.forms["form_data"]["gradRadio"].value == "" || document.forms["form_data"]["gradRadio"].value == null) {
+    					alert("If applying for TA, graduate type must be selected!");
+    					return false;
+    				}
+    			}
+
+    			return true;
+    		}
+
+    		function addCurrentlyRow(form) {
+    			currently_count++;
+    			if(currently_count < currently_max_fields) {
+    				var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    				$('.currently_wrapper').append(new_row);
+    			} else {
+    				currently_count--;
+    			}
+    		}
+
+    		function removeCurrentlyRow(row) {
+    			$('#currently_row'+row).remove();
+    			currently_count--;
+    		}
+    		
+    		function addPreviouslyRow(form) {
+    			previously_count++;
+    			if(previously_count <= previous_max_fields) {
+    				var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    				$('.previously_wrapper').append(new_row);
+    			} else {
+					previously_count--;
+    			}
+    		}
+
+    		function removePreviouslyRow(row) {
+    			$('#previously_row'+row).remove();
+    			previously_count--;
+    		}
+    		
+    		function addDesiredRow(form) {
+    			desired_count++;
+    			if(desired_count <= desired_max_fields) {
+    				var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'">'+getCourses()+'</select> ';
+    				new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'"> \
+    								<option selected disabled hidden value=""></option> \
+									<option>A+</option> \
+									<option>A</option> \
+									<option>A-</option> \
+									<option>B+</option> \
+									<option>B</option> \
+									<option>B-</option> \
+									<option>C+</option> \
+									<option>C</option> \
+									<option>C-</option> \
+									<option>D+</option> \
+									<option>D</option> \
+									<option>D-</option> \
+									<option>F</option> \
+								</select> ';
+					new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
+    				$('.desired_wrapper').append(new_row);
+    			} else {
+    				desired_count--;
+    			}
+    		}
+
+    		function removeDesiredRow(row) {
+    			$('#desired_row'+row).remove();
+    			desired_count--;
+    		}
+
+    		function getCourses() {
+    			var string = '';
+				$("#courses option").each(function() {
+   					string += '<option>'+$(this).val()+'</option>';
+				});
+
+				return string;
+    		}
+
+		</script>
+		<script type="text/javascript">
+		$( document ).ready(function() {
+		<?php
+			if(isset($previous)) {
+				$count = 1;
+				foreach($previous as $row) {
+					if($count == 1) {
+						$first_previous = $row->course_name;
+						$count++;
+					} else {
+		?>
+    			previously_count++;
+    			var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses();
+
+    			<?php 
+    				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
+    			?>
+
+				new_row += '<input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    			$('.previously_wrapper').append(new_row);
+    	<?php
+    				}	
+    			}
+			}
+			if(isset($current)) {
+				$count = 1;
+				foreach($current as $row) {
+					if($count == 1) {
+						$first_current = $row->course_name;
+						$count++;
+					} else {
+		?>
+    			currently_count++;
+    			var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses();
+
+    			<?php 
+    				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
+    			?>
+    			
+				new_row += '<input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    			$('.currently_wrapper').append(new_row);
+    	<?php
+    				}
+				}
+			}
+			if(isset($desired)) {
+				$count = 1;
+				foreach($desired as $row) {
+					if($count == 1) {
+						$first_desired = $row->course_name;
+						$first_grade = $row->grade;
+						$count++;
+					} else {
+		?>
+    			desired_count++;
+    			var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'">'+getCourses();
+
+    			<?php 
+    				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
+    			?>
+
+    			new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'">';
+
+    			<?php
+    				echo 'new_row += \'<option selected hidden value="'.$row->grade.'">'.$row->grade.'</option> \';';
+    			?>
+				new_row +=	 '<option>A+</option> \
+								<option>A</option> \
+								<option>A-</option> \
+								<option>B+</option> \
+								<option>B</option> \
+								<option>B-</option> \
+								<option>C+</option> \
+								<option>C</option> \
+								<option>C-</option> \
+								<option>D+</option> \
+								<option>D</option> \
+								<option>D-</option> \
+								<option>F</option> \
+							</select> ';
+				new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
+    			$('.desired_wrapper').append(new_row);
+    	<?php
+    				}
+				}
+			}
+		?>
+		});	
+		</script>
 		<?php
 			if(isset($view_only)) {
 				if($view_only == TRUE) {
 					echo '<script type="text/javascript">
 							$(document).ready(function(){
         						$(".container :input").attr("disabled", true);
+        						$(".container .comments").attr("disabled", false);
     						});
 						</script>';
 				}	
@@ -32,19 +230,34 @@
 		<div class="container">
 	      <div class="page-header">
 	        <h2>Application</h2>
-	        <?php if(isset($message)) {echo $message;} ?>
 	      </div>
+	      <div class = "row">
+	      	<div class="col-md-6 col-md-offset-3">
+		        <?php
+		        	if(isset($message_header)) { ?>
+					<div class="panel panel-default">
+	 		 			<div class="panel-heading">
+	    					<h3 class="panel-title"><b><?php echo $message_header?></b></h3>
+	  					</div>
+	  					<div class="panel-body">
+	    					<?php echo $message; ?>
+	  					</div>
+					</div>
+		        <?php } ?>
+	        </div>
+	      </div>
+	      <hr>
 		</div>
 		<div class = "container">
 			<?php 
 				if(isset($editable)) {
 					if($editable == TRUE) {
-						echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/editForm" method="POST">';
+						echo '<form class="form-inline" name="form_data" role="form" onsubmit="return validateForm()" action="'.base_url().'index.php/form/editForm" method="POST">';
 					}
 				}
 				if(isset($submittable)) {
 					if($submittable == TRUE) {
-							echo '<form class="form-inline" name="form_data" role="form" action="'.base_url().'index.php/form/submitForm" method="POST">';
+							echo '<form class="form-inline" name="form_data" role="form" onsubmit="return validateForm()" action="'.base_url().'index.php/form/submitForm" method="POST">';
 					}
 				}
 				if(isset($view_only)) {
@@ -86,7 +299,7 @@
 				<br>
 				<hr>
 				<div class="row">
-					<div class = "col-md-2">
+					<div class = "col-md-6">
 						<label for="fname">First Name: </label>
 						<?php 
 							if(isset($first_name)) {
@@ -95,8 +308,8 @@
 								echo '<input type="text" class="form-control" name="fname" placeholder="John " required>';
 							}
 						?>
-					</div>
-					<div class = "col-md-2">
+						</div>
+					<div class = "col-md-6">
 						<label for="lname">Last Name: </label>
 						<?php 
 							if(isset($last_name)) {
@@ -105,8 +318,12 @@
 								echo '<input type="text" class="form-control" name="lname" placeholder="Doe " required>';
 							}
 						?>
-					</div>
-					<div class = "col-md-2">
+						</div>
+				</div>
+				<br>
+				<hr>
+				<div class="row">
+					<div class = "col-sm-4">
 						<label for="idNumber">ID: </label>
 						<?php
 							if(isset($student_id)) {
@@ -115,8 +332,8 @@
 								echo '<input type="text" class="form-control" name="idNumber" placeholder="14359687" required>';
 							}
 						?>
-					</div>
-					<div class = "col-md-2">
+						</div>
+					<div class = "col-sm-4">
 						<label for="gpa">GPA: </label>
 						<?php
 							if(isset($gpa)) {
@@ -125,8 +342,8 @@
 								echo '<input type="text" class="form-control" name="gpa" placeholder="3.487" required>';
 							}
 						?>						
-					</div>
-					<div class = "col-md-2">
+						</div>
+					<div class = "col-sm-4">
 						<label for="gradYear">Grad Year: </label>
 						<select class="form-control" name = "gradYear" required>
 							<?php
@@ -225,7 +442,7 @@
 							if(isset($advisor)) {
 								echo '<input type="text" class="form-control" name="advisorName" value="'.$advisor.'">';
 							} else {
-								echo '<input type="text" class="form-control" name="advisorName" placeholder="John Doe">';
+								echo '<input type="text" class="form-control" name="advisorName">';
 							}
 						?>
 					</div>
@@ -257,67 +474,128 @@
 				<hr>
 				<br>
 				<div class = "row">
-					<label for="classesTeaching">Classes Currently Teaching: </label>
-					<select class="form-control" name = "classesTeaching">
-						<option>X</option>
-						<option>Y</option>
-						<option>Z</option>
-					</select>
+					<div class="col-md-12">
+						<label for="classesTeaching">Classes Currently Teaching: </label>
+						<div class="currently_wrapper">
+							<select id="courses" class="form-control" name = "currently_teaching1">
+								<option selected disabled hidden value=""></option>
+								<?php
+									foreach($courses as $temp) {
+										if(isset($first_current)) {
+											if($first_current == $temp['course_name']) {
+												echo '<option selected value="'.$first_current.'">'.$first_current.'</option>';
+											}
+											else {
+												echo '<option>'.$temp['course_name'].'</option>';
+											}
+										} else {
+											echo '<option>'.$temp['course_name'].'</option>';
+										}
+									}
+								?>
+							</select>
+							<input type="button" class="btn btn-success" onclick="addCurrentlyRow(this.form);" value="Add row"/>
+							<p></p>						
+						</div>
+					</div>
 				</div>
 				<hr>
 				<div class = "row">
-					<label for="classesTaught">Classes Previously Taught: </label>
-					<select class="form-control" name = "classesTaught">
-						<option>X</option>
-						<option>Y</option>
-						<option>Z</option>
-					</select>
+					<div class="col-md-12">
+						<label for="classesTaught">Classes Previously Taught: </label>
+						<div class="previously_wrapper">
+							<select class="form-control" name = "previously_taught1">
+								<option selected disabled hidden value=""></option>
+								<?php
+									foreach($courses as $temp) {
+										if(isset($first_previous)) {
+											if($first_previous == $temp['course_name']) {
+												echo '<option selected value="'.$first_previous.'">'.$first_previous.'</option>';
+											}
+											else {
+												echo '<option>'.$temp['course_name'].'</option>';
+											}
+										} else {
+											echo '<option>'.$temp['course_name'].'</option>';
+										}
+									}
+								?>
+							</select>
+							<input type="button" class="btn btn-success" onclick="addPreviouslyRow(this.form);" value="Add row"/>
+							<p></p>
+						</div>
+					</div>
 				</div>
 				<hr>
 				<div class = "row">
-					<label for="classesPreferred">Preferred Classes: </label>
-					<select class="form-control" name = "classesPreferred">
-						<option>X</option>
-						<option>Y</option>
-						<option>Z</option>
-					</select>
-					<label for="gradeReceived">Grade Received: </label>
-					<select class="form-control" name = "gradeReceived">
-						<option>A+</option>
-						<option>A</option>
-						<option>A-</option>
-						<option>B+</option>
-						<option>B</option>
-						<option>B-</option>
-						<option>C+</option>
-						<option>C</option>
-						<option>C-</option>
-						<option>D+</option>
-						<option>D</option>
-						<option>D-</option>
-						<option>F</option>
-					</select>
+					<div class="col-md-12">
+						<label for="classesPreferred">Preferred Classes & Grade Received: </label>
+						<div class="desired_wrapper">
+							<select class="form-control" name = "desired_courses1">
+								<option selected disabled hidden value=""></option>
+								<?php
+									foreach($courses as $temp) {
+										if(isset($first_desired)) {
+											if($first_desired == $temp['course_name']) {
+												echo '<option selected value="'.$first_desired.'">'.$first_desired.'</option>';
+											}
+											else {
+												echo '<option>'.$temp['course_name'].'</option>';
+											}
+										} else {
+											echo '<option>'.$temp['course_name'].'</option>';
+										}
+									}
+								?>
+							</select>
+							<select class="form-control" name = "gradeReceived1">
+								<option selected disabled hidden value=""></option>
+								<?php
+									if(isset($first_grade)) {
+										echo '<option selected hidden value="'.$first_grade.'">'.$first_grade.'</option>';
+									}
+								?>
+								<option>A+</option>
+								<option>A</option>
+								<option>A-</option>
+								<option>B+</option>
+								<option>B</option>
+								<option>B-</option>
+								<option>C+</option>
+								<option>C</option>
+								<option>C-</option>
+								<option>D+</option>
+								<option>D</option>
+								<option>D-</option>
+								<option>F</option>
+							</select>
+							<input type="button" class="btn btn-success" onclick="addDesiredRow(this.form);" value="Add row"/>
+							<p></p>
+						</div>
+					</div>
 				</div>
 				<hr>
 				<div class = "row">
-					<label for="otherWork">Other Work:  </label>
-					<?php
-						if(isset($other_work)) {
-							echo '<input type="text" class="form-control" name="otherWork" value="'.$other_work.'">';
-						} else {
-							echo '<input type="text" class="form-control" name="otherWork" placeholder="Tiger Tech">';
-						}
-					?>
+					<div class = "col-md-12">
+						<label for="otherWork">Other Work:  </label>
+						<?php
+							if(isset($other_work)) {
+								echo '<input type="text" class="form-control" name="otherWork" value="'.$other_work.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="otherWork">';
+							}
+						?>
+					</div>
 				</div>
 				<hr>
 				<div class = "row">
 					<div class = "col-md-6">
-						<label for="speakOPT">SPEAK/OPT Score, if applicable):  </label>
+						<label for="speakOPT">SPEAK/OPT Score (if applicable):  </label>
 						<?php 
 							if(isset($SPEAK_OPT_score)) {
 								echo '<input type="text" class="form-control" name="speakOPT" value="'.$SPEAK_OPT_score.'">';
 							} else {
-								echo '<input type="text" class="form-control" name="speakOPT" placeholder="15">';
+								echo '<input type="text" class="form-control" name="speakOPT">';
 							}
 						?>
 					</div>
@@ -486,11 +764,23 @@
 				<div class = "row">
 					<div class = "col-md-4">
 						<label for="name">Signature: </label>
-						<input type="text" class="form-control" name="signature" placeholder="John Doe" required>
+						<?php
+							if(isset($signature)) {
+								echo '<input type="text" class="form-control" name="signature" value="'.$signature.'">';
+							} else {
+								echo '<input type="text" class="form-control" name="signature" placeholder="John Doe" required>';
+							}
+						?>
 					</div>
 					<div class = "col-md-4">
 						<label for="name">Date: </label>
-						<input type="text" class="form-control" name="date" placeholder="1/1/2015" required>
+						<?php
+							if(isset($signature)) {
+								echo '<input type="text" class="form-control" name="date" value="'.$date.'" required>';
+							} else {
+								echo '<input type="text" class="form-control" name="date" placeholder="1/1/2015" required>';
+							}
+						?>
 					</div>
 					<div class = "col-md-12">
 						<br>
@@ -514,7 +804,84 @@
 				</div>
 				<hr>
 			</form>
+			<?php
+			  if(isset($comments)) 
+			  {
+			?>
+			<div class="row">
+			  <div class="page-header">
+			    <h2>Comments</h2>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-6">
+			    <div class="row">
+			      <h3>Post a Comment</h3>
+			      <br>
+			      <form name="comment_box" action="<?php echo base_url().'index.php/comments/add/'.$user_id.'/'.$semester_id; ?>" method="POST">
+			        <div class="col-md-2">
+			          <label for="description" class="col-sm-2 control-label">Admin Pawprint</label>
+			        </div>
+			        <div class="col-md-10">
+			          <textarea class="form-control comments" rows = "6" id="description" name = "description" placeholder="Things to note about this applicant...." required></textarea>
+			        </div>
+			      </div>
+			      <br>
+			      <div class="row">
+			        <div class="col-md-2">
+			          <label for="description" class="col-sm-2 control-label">Score</label>
+			        </div>
+			        <div class="col-md-10">
+			          <select class="form-control comments" id = "score" name = "score" required>
+			            <option>1</option>
+			            <option>2</option>
+			            <option>3</option>
+			            <option>4</option>
+			            <option>5</option>
+			          </select>
+			          <p class="help-block">1 = Lowest, 5 = Highest</p>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="col-md-2 col-md-offset-10">
+			          <button type="submit" class="btn btn-primary comments">Post</button>
+			          <br>
+			          <br>
+			        </div>
+			      </div>
+			    </form>
+			  </div>
+			  <div class = "col-md-6">
+			    <h3>Prior Comments</h3>
+			    <table class="table table-hover table-striped">
+			      <thead>
+			        <tr>
+			          <th>Instructor</th>
+			          <th>Score</th>
+			          <th>Comment</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <?php
+			          if(isset($comments_about_user)) 
+			          {
+			            foreach($comments_about_user as $row) 
+			            {
+			              echo '<tr>';
+			              echo '<td>'.$row->posted_by_pawprint.'</td>';
+			              echo '<td>'.$row->score.'</td>';
+			              echo '<td>'.$row->description.'</td>';
+			              echo '</tr>';
+			            }
+			          }
+			        ?>
+			      </tbody>
+			    </table>
+			  </div>
+			  <?php
+			    }
+			  ?>
+			</div>
 		</div>
 	</body>
 </html>
-]

@@ -10,7 +10,8 @@
 		<title>View Your Courses</title>
 		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    	<link href="<?php echo base_url(); ?>css/bespoke.css" rel="stylesheet">
 	</head>
 	<body>
 		<?php
@@ -27,23 +28,27 @@
 					<!--PULL THE PAWPRINT OF THE TEACHER AND USE TO 
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
-						<?php
-				if ($query->num_rows() > 0){
-  				    foreach ($query->result() as $row){
-					echo '<tr>';
-		         		    echo '<td>';
-						<a href='controllers/instructorViewCourses'>View</a>;
-					    echo '</td>';
+                    <table>
+				<?php
+					if(isset($courses)) {
+  				   	foreach ($courses as $row) {
+						echo '<tr>';
+		         		echo '<td>';
+						echo '<a href="controllers//instructorViewCoursesController">View</a>';
+					   	echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->instructor_id.'</td>';
-	                                echo '</tr>';
-				    };
-				};
+	                    echo '</tr>';
+                        echo "\n";
+				    }
+				   } else {
+				   	echo '<p>You have no courses</p>';
+				   }
 				?>
+                    </table>
 				</div><!--col-md-12-->
 			</div><!--row-->
 		</div><!--container-->
-
 		
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   	 <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>

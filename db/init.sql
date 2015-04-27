@@ -61,7 +61,7 @@ create table form_data(
     department varchar(2),
     advisor varchar(50),
     gpa float not null,
-    phone_number int,
+    phone_number varchar(20) not null,
     last_date_of_test varchar(20),
     grad_type varchar(4),
     other_work varchar(30),
@@ -113,6 +113,7 @@ create table comments(
     comment_id int auto_increment,
     posted_by int references user( user_id ),
     posted_about int references user( user_id ),
+    posted_by_pawprint varchar(10),
     score float,
     description text,
     primary key( comment_id, posted_by, posted_about )
@@ -150,7 +151,7 @@ create table desired_courses(
     course_id int references course( course_id ),
     course_name varchar(50) references course( course_name ),
     form_data_id int references form_data( form_data_id ),
-    grade float not null,
+    grade varchar(3) not null,
     primary key( desired_course_id, course_id, course_name, form_data_id )
 )character set 'utf8'; 
  

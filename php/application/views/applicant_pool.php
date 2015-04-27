@@ -1,84 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Test</title>
-	<link rel="stylesheet" type="text/css" href="CSS/applicant_view.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-</head>
-<body onload='test()'>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="../../favicon.ico">
+		<title>Add Courses</title>
+		<link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    	<link href="<?php echo base_url(); ?>css/bespoke.css" rel="stylesheet">
+	</head>
+	<body>
+		<?php
+			include 'nav.php';
+		?>
+		<div class="container">
+	    	<div class="page-header">
+	        	<h2>Applicant Pool</h2>
+	      	</div>
+	      	<div>
+	      	<table class="table table-hover">
+	      		<thead>
+		        	<tr>
+		        		<th>Action</th>
+		        		<th>Name</th>
+		        		<th>GPA</th>
+		        	</tr>
+		    	</thead>
+		    	<tbody>
+					<?php
+  						foreach($applicants as $row) {
+							echo '<tr>';
+		    				echo '<td>';
 
-	<!-- This list would be populated automatically using database queries to fill out the data -->
-
-	<div id='potential'>
-		<h2>Potential Applicants</h2>
-		<ul>
-			<li onclick='select()' class='applicant'>Applicant #1</li>
-			<li onclick='select()' class='applicant'>Applicant #2</li>
-			<li onclick='select()' class='applicant'>Applicant #3</li>
-			<li onclick='select()' class='applicant'>Applicant #4</li>
-		</ul>
-		<button id='sendToDesired' onclick='send(applicants)'>TEST</button>
-	</div>
-
-	<div id='desired'>
-		<h2>Desired Applicants</h2>
-		<ul>
-
-		</ul>
-	</div>
-
-	<script type="text/javascript">
-
-	var applicants = []; 
-
-	function test(){
-		$(".applicant").mouseover(function(){
-			$(this).css("background-color", "blue");
-		});
-
-		$(".applicant").mouseleave(function(){
-			$(this).css("background-color", "white");
-		});
-	}
-
-	function select(){
-		var isColored;
-
-		console.log(isColored);
-
-		if(isColored == 1){
-			$(".applicant").click(function(){
-				$(this).css("color", "black");
-				isColored = 0; 
-			});
-		}else{
-			$(".applicant").click(function(){
-				$(this).css("color", "red");
-				$("#sendToDesired").css("display", "inline");
-				$("#assignToDesired").css("display", "inline");
-					assign($(this).html());
-				isColored = 1; 
-			});
-		}
-	}
-
-	function send(applicants){
-		//this should parse out the applicants and set them to the other active list. 
-		//this is more complicated than i initally had thought. 
-
-		var index = 0;
-		for(index = 0; index < applicants.length; index++){
-			$("#desired > ul").append(applicants[index]);
-		}
-	}
-
-	function assign(applicant){
-		applicants[applicants.length] = applicant; 
-	}
-
-	//OTHER SIDE OF SPECTRUM; NEED TO BE ABLE TO REMOVE THEM IF NEED BE
-
-	</script>
-
+		    				echo '<form>';
+							echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$row->user_id.'/'.$row->semester_id.'">View »</button> ';
+			    			echo '</td>';
+			    			echo '<td>'.$row->first_name.' '.$row->last_name.'</td>';
+			    			echo '<td>'.$row->gpa.'</td>';
+			    			
+               				echo '</tr>';
+               				echo '</form>';
+               			}
+					?>
+				</tbody>
+		    </table>				
+			</div>
+		</div>
 </body>
 </html>

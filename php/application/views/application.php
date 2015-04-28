@@ -262,8 +262,16 @@
                                 }// end foreach
                                 echo '</table>';
                             }// end isset check
-                        
-                            ?>
+
+                        	echo '<form name="quick_reference" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
+                        	echo '<select class="form-control" name = "course_for_preference">';
+							echo '<option selected disabled hidden value=""></option>';
+							
+							foreach($instructor_courses as $temp) {
+								echo '<option>'.$temp->course_name.'</option>';
+							}
+							echo '</select>';
+                           ?>
 	  					</div>
 					</div>
 		        <?php } ?>

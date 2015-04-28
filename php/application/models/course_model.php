@@ -168,7 +168,7 @@
      * getPreferenceByInstructor() - returns all preferences in courses owned by a given instructor
      * input:   $instruct_Id - instructor to query
      */
-        public function getPreferenceByInstructor( $instruct_Id ){
+        public function getPreferenceByInstructor($instruct_Id){
             $q = 'SELECT * FROM tasub.course_preference INNER JOIN tasub.form ON tasub.course_preference.form_id = tasub.form.form_id WHERE user_id = ? ORDER BY course_name';
             $result = $this->db->query( $q, array($instruct_Id) );
             

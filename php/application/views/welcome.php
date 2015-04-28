@@ -38,8 +38,8 @@
         }
       ?>
       <br>
-      <button class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
-      <button class="btn btn-danger btn-lg" href="#" data-toggle="modal" data-target="#register"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Register</button>
+      <button class="btn btn-default btn-lg" href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
+      <button class="btn btn-default btn-lg" href="#" data-toggle="modal" data-target="#register"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Register</button>
       </center>
       <br>
       <hr>

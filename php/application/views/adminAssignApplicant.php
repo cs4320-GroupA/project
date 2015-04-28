@@ -91,7 +91,7 @@
 										echo "<td>" . $row->gpa_float . "</td>";
 										echo "<td>" . $row->grade . "</td>";
 										echo "<td>" . $row->expected_graduation . "</td>";
-									echo '</tr>'  
+									echo '</tr>';
 								}
 							?>										
 			

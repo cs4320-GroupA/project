@@ -28,13 +28,22 @@
 					<!--PULL THE PAWPRINT OF THE TEACHER AND USE TO 
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
-                    <table>
+                    <table class="table table-hover">
+                    <thead>
+                    	<tr>
+                    		<th>Action</th>
+                    		<th>Course Name</th>
+                    		<th>Semester</th>
+                    	</tr>
+                    </thead>
+                    <tbody>
 				<?php
 					if(isset($courses)) {
   				   	foreach ($courses as $row) {
 						echo '<tr>';
 		         		echo '<td>';
-						echo '<a href="controllers//instructorViewCoursesController">View</a>';
+						//echo '<a href="controllers//instructorViewCoursesController">View</a>';
+						echo '<button class="btn btn-primary" a href="controllers//instructorViewCoursesController"> span class="glyphicon-plus" aria-hidden="true"></span>View</button>';
 					   	echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->instructor_id.'</td>';
@@ -45,6 +54,7 @@
 				   	echo '<p>You have no courses</p>';
 				   }
 				?>
+					</tbody>
                     </table>
 				</div><!--col-md-12-->
 			</div><!--row-->

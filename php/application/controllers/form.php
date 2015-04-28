@@ -135,7 +135,9 @@
 			
             $prefs = $this->course_model->getPreferenceByInstructor($this->session->userdata('user_id'));
             
-            $data['prefs'] = $prefs->result();
+            if($prefs != FALSE){
+                $data['prefs'] = $prefs->result();
+            }
             //$p_data['prefs'] = $prefs->result();  //OR...
             
 			$this->load->view('application', $data);

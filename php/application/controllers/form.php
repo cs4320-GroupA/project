@@ -138,7 +138,9 @@
             $p_row = $pref_form->row();
             $prefs = $this->course_model->getPreferenceByForm($p_row->form_id);
             
-            $data['prefs'] = $prefs->result();
+            if($prefs != FALSE){
+                $data['prefs'] = $prefs->result();
+            }
             //$p_data['prefs'] = $prefs->result();  //OR...
             
 			$this->load->view('application', $data);

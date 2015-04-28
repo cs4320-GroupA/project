@@ -217,6 +217,7 @@
 							$(document).ready(function(){
         						$(".container :input").attr("disabled", true);
         						$(".container .comments").attr("disabled", false);
+        						$("#quick_reference").attr("disabled", false);
     						});
 						</script>';
 				}	
@@ -263,7 +264,7 @@
                                 echo '</table>';
                             }// end isset check
 
-                        	echo '<form name="quick_reference" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
+                        	echo '<form id="quick_reference" name="quick_reference" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
                         	echo '<select class="form-control" name = "course_for_preference">';
 							echo '<option selected disabled hidden value=""></option>';
 							
@@ -272,6 +273,7 @@
 							}
 							echo '</select>';
                            ?>
+                       </form>
 	  					</div>
 					</div>
 		        <?php } ?>

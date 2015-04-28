@@ -822,12 +822,12 @@
 							<?php 
 								if(isset($editable)) {
 									if($editable == TRUE) {
-										echo '<button name="formSubmission" class="btn btn-default">Edit Application</button>';
+										echo '<button name="formSubmission" class="btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Application</button>';
 									}
 								}
 								if(isset($submittable)) {
 									if($submittable == TRUE) {
-										echo '<button name="formSubmission" class="btn btn-default">Submit Application</button>';
+										echo '<button name="formSubmission" class="btn btn-default"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Submit Application</button>';
 									}
 								}
 							?>
@@ -877,7 +877,7 @@
 			      </div>
 			      <div class="row">
 			        <div class="col-md-2 col-md-offset-10">
-			          <button type="submit" class="btn btn-default comments">Post</button>
+			          <button type="submit" class="btn btn-default comments"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Post</button>
 			          <br>
 			          <br>
 			        </div>

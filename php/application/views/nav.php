@@ -17,6 +17,7 @@
 						if($this->session->userdata('user_type') == 'applicant')
 						{
 							echo "<li><a href='".base_url()."index.php/form'>Application</a></li>";
+							echo "<li><a href='".base_url()."index.php/form'>Notifications<span class="badge">1</span></a></li>"; 
 							//Nav options for instructor
 						}
 						else if($this->session->userdata('user_type') == 'instructor')

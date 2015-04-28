@@ -43,7 +43,7 @@
 						echo '<tr>';
 		         		echo '<td>';
 						//echo '<a href="controllers//instructorViewCoursesController">View</a>';
-						echo '<button class="btn btn-primary" a href="controllers//instructorViewCoursesController"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
+						echo '<button class="btn btn-default" a href="controllers//instructorViewCoursesController"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
 					   	echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->semester.'</td>';

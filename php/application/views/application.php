@@ -52,7 +52,7 @@
     		function addCurrentlyRow(form) {
     			currently_count++;
     			if(currently_count < currently_max_fields) {
-    				var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    				var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-default" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
     				$('.currently_wrapper').append(new_row);
     			} else {
     				currently_count--;
@@ -67,7 +67,7 @@
     		function addPreviouslyRow(form) {
     			previously_count++;
     			if(previously_count <= previous_max_fields) {
-    				var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    				var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-default" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
     				$('.previously_wrapper').append(new_row);
     			} else {
 					previously_count--;
@@ -99,7 +99,7 @@
 									<option>D-</option> \
 									<option>F</option> \
 								</select> ';
-					new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
+					new_row += '<input type="button" class="btn btn-default" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
     				$('.desired_wrapper').append(new_row);
     			} else {
     				desired_count--;
@@ -139,7 +139,7 @@
     				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
     			?>
 
-				new_row += '<input type="button" class="btn btn-success" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+				new_row += '<input type="button" class="btn btn-default" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
     			$('.previously_wrapper').append(new_row);
     	<?php
     				}	
@@ -160,7 +160,7 @@
     				echo 'new_row += \'<option selected hidden value="'.$row->course_name.'">'.$row->course_name.'</option></select> \';'; 
     			?>
     			
-				new_row += '<input type="button" class="btn btn-success" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+				new_row += '<input type="button" class="btn btn-default" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
     			$('.currently_wrapper').append(new_row);
     	<?php
     				}
@@ -201,7 +201,7 @@
 								<option>D-</option> \
 								<option>F</option> \
 							</select> ';
-				new_row += '<input type="button" class="btn btn-success" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
+				new_row += '<input type="button" class="btn btn-default" onclick="removeDesiredRow('+desired_count+');" value="Remove"></p>';
     			$('.desired_wrapper').append(new_row);
     	<?php
     				}
@@ -527,7 +527,7 @@
 									}
 								?>
 							</select>
-							<input type="button" class="btn btn-success" onclick="addCurrentlyRow(this.form);" value="Add row"/>
+							<input type="button" class="btn btn-default" onclick="addCurrentlyRow(this.form);" value="Add row"/>
 							<p></p>						
 						</div>
 					</div>
@@ -554,7 +554,7 @@
 									}
 								?>
 							</select>
-							<input type="button" class="btn btn-success" onclick="addPreviouslyRow(this.form);" value="Add row"/>
+							<input type="button" class="btn btn-default" onclick="addPreviouslyRow(this.form);" value="Add row"/>
 							<p></p>
 						</div>
 					</div>
@@ -602,7 +602,7 @@
 								<option>D-</option>
 								<option>F</option>
 							</select>
-							<input type="button" class="btn btn-success" onclick="addDesiredRow(this.form);" value="Add row"/>
+							<input type="button" class="btn btn-default" onclick="addDesiredRow(this.form);" value="Add row"/>
 							<p></p>
 						</div>
 					</div>
@@ -822,12 +822,12 @@
 							<?php 
 								if(isset($editable)) {
 									if($editable == TRUE) {
-										echo '<button name="formSubmission" class="btn btn-success">Edit Application</button>';
+										echo '<button name="formSubmission" class="btn btn-default">Edit Application</button>';
 									}
 								}
 								if(isset($submittable)) {
 									if($submittable == TRUE) {
-										echo '<button name="formSubmission" class="btn btn-success">Submit Application</button>';
+										echo '<button name="formSubmission" class="btn btn-default">Submit Application</button>';
 									}
 								}
 							?>
@@ -877,7 +877,7 @@
 			      </div>
 			      <div class="row">
 			        <div class="col-md-2 col-md-offset-10">
-			          <button type="submit" class="btn btn-primary comments">Post</button>
+			          <button type="submit" class="btn btn-default comments">Post</button>
 			          <br>
 			          <br>
 			        </div>

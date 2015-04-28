@@ -28,7 +28,7 @@
 					<!--PULL THE PAWPRINT OF THE TEACHER AND USE TO 
 						PULL THE INFO FROM THE DATABASE ABOUT WHAT
 						CLASS THE TEACHER IS TEACHING-->
-                    <table class="table table-hover">
+                    <table class="table table-hover table-striped">
                     <thead>
                     	<tr>
                     		<th>Action</th>

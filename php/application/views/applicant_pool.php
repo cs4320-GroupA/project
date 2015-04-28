@@ -22,7 +22,7 @@
 	        	<h2>Applicant Pool</h2>
 	      	</div>
 	      	<div>
-	      	<table class="table table-hover">
+	      	<table class="table table-hover table-striped">
 	      		<thead>
 		        	<tr>
 		        		<th>Action</th>

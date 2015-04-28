@@ -67,7 +67,7 @@
 			<br>
 			<div class="row">
 				<h3>Edit or Remove an Existing Course</h3>
-				<table class="table table-hover">
+				<table class="table table-hover table-striped">
 		        <thead>
 		          <tr>
 		            <th>Action</th>

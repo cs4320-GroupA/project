@@ -24,7 +24,7 @@
 		</div>
 		<div class="container">
 	      	<div>
-	      	<table class="table table-hover">
+	      	<table class="table table-hover table-striped">
 	      		<thead>
 		        	<tr>
 		        		<th>Action</th>

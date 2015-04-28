@@ -133,10 +133,7 @@
 				$data['comments_about_user'] = $result->result();
 			}
 			
-            // here is the bit where we get the preferences
-            $pref_form = $this->form_model->getForm( $user_id, $semester_id );
-            $p_row = $pref_form->row();
-            $prefs = $this->course_model->getPreferenceByForm($p_row->form_id);
+            $prefs = $this->course_model->getPreferenceByInstructor($this->session->userdata('user_id'));
             
             $data['prefs'] = $prefs->result();
             //$p_data['prefs'] = $prefs->result();  //OR...

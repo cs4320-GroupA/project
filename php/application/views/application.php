@@ -244,11 +244,18 @@
                         
                             // something goes here
                             //echo $message; 
+                            $current_course = NULL;
                             if(isset($prefs)){
                                 echo '<table>';
                                 foreach( $prefs as $p_row ){
-                                    echo '<td>';
-                                    echo '<tr>'.$p_row->course_name.'</tr>';
+                                	if($current_course != $p_row->course_name) {
+                                		$current_course = $p_row->course_name;
+                                		echo '<td>';
+                                    	echo '<tr>'.$p_row->course_name.'</tr>';
+                                	}
+                                	
+                                	echo '<td>';
+                                    echo '<tr>'.$p_row->user_id.'</tr>';
                                     //echo '<tr>'..'</tr>';
                                     echo '</td>';
                                 }// end foreach

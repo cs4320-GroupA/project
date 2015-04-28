@@ -169,20 +169,14 @@
      * input:   $instruct_Id - instructor to query
      */
         public function getPreferenceByInstructor( $instruct_Id ){
-            $q = 'select cp.preference_id,
-                        c.course_id, 
-                        c.course_name, 
-                        c.instructor_id 
-                    from course_preference cp, course c, user u 
-                    where cp.course_id = c.course_id and c.instructor_id = u.user_id 
-                    and u.user_id = ?';
+            $q = 'SELECT * FROM course_preference WHERE instructor_id = ? ORDER BY course_name';
             $result = $this->db->query( $q, array($instruct_Id) );
             
-            if( $result->num_rows() > 0 ){
+            if($result->num_rows() > 0) {
                 return $result;
             }
             else{
-                return false;
+                return FALSE;
             }
             
         }// end getPreferenceByInstructor

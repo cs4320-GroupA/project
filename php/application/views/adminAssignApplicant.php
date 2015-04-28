@@ -22,7 +22,7 @@
 				<h2>Assign Applicants</h2>
 			</div>
 		</div>
-		<div class="container">
+		<div class="container">	
 			<div class='row'>
 				<div class="col-md-4">
 					<h3>Course</h3>
@@ -116,7 +116,14 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php
+								echo '<tr>';
+									echo '<td>masyv6</td>';
+									echo '<td>5</td>';
+								echo '</tr>';
 							<tr>
+							?>
+							<!--
 								<td>masyv6</td>
 								<td>5</td>
 							</tr>
@@ -128,6 +135,7 @@
 								<td>pws326</td>
 								<td>1</td>
 							</tr>
+							-->
 						</tbody>
 					</table>
 				</div>

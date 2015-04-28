@@ -27,6 +27,12 @@
 				<div class="col-md-4">
 					<h3>Course</h3>
 					<select class="form-control" name = "courseToAssign" required>
+						<?php
+							foreach($courses as $row){
+								echo "<option>".$row->course_name."</option>";
+							}
+						?>
+						<!--
 						<option>a</option>
 						<option>b</option>
 						<option>c</option>
@@ -37,6 +43,7 @@
 						<option>h</option>
 						<option>i</option>
 						<option>j</option>
+						-->
 					</select>
 				</div>				
 			</div>
@@ -84,7 +91,7 @@
 							</tr> --> 
 
 							<?php 
-								foreach($classes as $row){
+								foreach($studentInfo as $row){
 									echo '<tr>'; 
 										echo "<td><input type='checkbox'></td>";
 										echo "<td>" . $row->first_name . " " . $row->last_name . "</td>"; 

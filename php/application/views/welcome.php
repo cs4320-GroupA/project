@@ -72,7 +72,7 @@
                   <div class="control-group">
                     <label class="control-label" for="signin"></label>
                     <div class="controls">
-                      <button id="signin" name="signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
+                      <button id="signin" name="signin" class="btn btn-default"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
                     </div>
                   </div>
                 </fieldset>
@@ -123,7 +123,7 @@
                   <div class="control-group">
                     <label class="control-label" for="signin"></label>
                     <div class="controls">
-                      <button id="signin" name="signin" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Account</button>
+                      <button id="signin" name="signin" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Account</button>
                     </div>
                   </div>
                 </fieldset>

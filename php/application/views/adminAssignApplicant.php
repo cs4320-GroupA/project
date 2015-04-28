@@ -121,7 +121,6 @@
 									echo '<td>masyv6</td>';
 									echo '<td>5</td>';
 								echo '</tr>';
-							<tr>
 							?>
 							<!--
 								<td>masyv6</td>

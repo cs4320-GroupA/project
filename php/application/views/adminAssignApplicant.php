@@ -50,7 +50,7 @@
 			<div class="row">
 				<div class="col-md-4">
 				<br>
-					<button type = "submit" class="btn btn-primary">Select Course</button>
+					<button type = "submit" class="btn btn-default"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select Course</button>
 				</div>
 			</div>
 			<br><br>
@@ -104,7 +104,7 @@
 			
 						</tbody>
 					</table>
-					<button type = "submit" class = "btn btn-success">Assign Selected Applicants</button>
+					<button type = "submit" class = "btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Assign Selected Applicants</button>
 				</div>
 				<div class="col-md-6">
 					<h3>Instructor Preferences</h3>

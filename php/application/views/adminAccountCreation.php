@@ -38,7 +38,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-success">Register a New Admin Account</button>
+						<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a New Admin Account</button>
 					</div>
 				</div>
 			</form>

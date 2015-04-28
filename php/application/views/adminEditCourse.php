@@ -43,7 +43,7 @@
 							    <option>FALL 2018</option>
 							</select>
 						</div>
-						<button type="submit" class="btn btn-success">Finish Editing</button>
+						<button type="submit" class="btn btn-default">Finish Editing</button>
 					</form>
 				</div>
 			</div>

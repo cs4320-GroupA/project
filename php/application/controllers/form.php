@@ -133,7 +133,7 @@
 				$data['comments_about_user'] = $result->result();
 			}
 			
-           // $prefs = $this->course_model->getPreferenceByInstructor($this->session->userdata('user_id'));
+           $prefs = $this->course_model->getPreferenceByInstructor($this->session->userdata('user_id'));
             
             if($prefs != FALSE){
                 $data['prefs'] = $prefs->result();

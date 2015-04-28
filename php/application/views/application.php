@@ -245,9 +245,10 @@
                             // something goes here
                             //echo $message; 
                             $current_course = NULL;
-                            if(isset($prefs)){
+                            if(isset($prefs) and isset($instructor_courses)){
                                 echo '<table>';
-                                foreach( $prefs as $p_row ){
+
+                                foreach($instructor_courses as $p_row){
                                 	if($current_course != $p_row->course_name) {
                                 		$current_course = $p_row->course_name;
                                 		echo '<td>';
@@ -255,7 +256,7 @@
                                 	}
                                 	
                                 	echo '<td>';
-                                    echo '<tr>'.$p_row->user_id.'</tr>';
+                                    echo '<tr>'.$p_row->signature.'</tr>';
                                     //echo '<tr>'..'</tr>';
                                     echo '</td>';
                                 }// end foreach

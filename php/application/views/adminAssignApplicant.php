@@ -70,7 +70,7 @@
                                     }
                                 } else {
                                     echo '<tr>';
-                                        echo "<td><input type='checkbox'></td>";
+                                        echo "<td></td>";
                                         echo "<td></td>"; 
                                         echo "<td></td>";
                                         echo "<td></td>";
@@ -94,7 +94,7 @@
 						<tbody>
 							<?php
                                  if(isset($preferences)){ 
-                                    foreach($preference as $row){
+                                    foreach($preferences as $row){
                                         echo '<tr>';
                                             echo '<td>'.$row->username.'</td>';
                                             echo '<td>'.$row->cp.'</td>';

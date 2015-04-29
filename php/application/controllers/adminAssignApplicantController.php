@@ -24,8 +24,9 @@
         
         public function getApplicants(){
             
-            $course_id = $_POST['courseToAssign'];
+            $course_name = $_POST['courseToAssign'];
             
+            $course_id = $this->course_model->getCourseByName($course_name);
             //query for the preferences table
            
             //$prefs = $this->course_model->getPreferenceByCourse($course_id);

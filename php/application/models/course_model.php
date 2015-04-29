@@ -57,6 +57,20 @@
             
         }
         
+        public function getCourseByName( $course_name ){
+            $sql = "select * from tasub.course where course_name = '?'";
+            
+            $query = $this->db->query( $sql, array($course_name) );
+        
+            if($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return FALSE; //No courses found
+            }
+            
+        }
+        
+        
         public function createCourse($course_name,$semester,$instructor_id) {
             $sql = 'INSERT into course(course_name, semester, instructor_id) VALUES (?, ?, ?)';
 

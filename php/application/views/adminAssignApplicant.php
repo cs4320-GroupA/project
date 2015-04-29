@@ -37,10 +37,6 @@
 							}
 						?>
                     </select>
-                    <?php 
-                        echo '<input type="hidden" name="course_id" value='.$row->course_id.'>';
-                    ?>
-                
 				</div>				
 			</div>
 			<div class="row">

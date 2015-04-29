@@ -59,13 +59,13 @@
 						<tbody>
 							<?php 
                                 if(isset($applicants)){
-                                    foreach($applicants as $row){
+                                    foreach($applicants as $applicant){
                                         echo '<tr>'; 
                                             echo "<td><input type='checkbox'></td>";
-                                            echo "<td>" . $row->first_name . " " . $row->last_name . "</td>"; 
-                                            echo "<td>" . $row->gpa_float . "</td>";
-                                            echo "<td>" . $row->grade . "</td>";
-                                            echo "<td>" . $row->expected_graduation . "</td>";
+                                            echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
+                                            echo "<td>" . $applicant->gpa_float . "</td>";
+                                            echo "<td>" . $applicant->grade . "</td>";
+                                            echo "<td>" . $applicant->expected_graduation . "</td>";
                                         echo '</tr>';
                                     }
                                 } else {
@@ -94,10 +94,10 @@
 						<tbody>
 							<?php
                                  if(isset($preferences)){ 
-                                    foreach($preferences as $row){
+                                    foreach($preferences as $preference){
                                         echo '<tr>';
-                                            echo '<td>'.$row->username.'</td>';
-                                            echo '<td>'.$row->cp.'</td>';
+                                            echo '<td>'.$preference->username.'</td>';
+                                            echo '<td>'.$preference->cp.'</td>';
                                         echo '</tr>';
                                     }
                                  } else {

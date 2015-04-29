@@ -30,13 +30,13 @@
             $data[preferences] = array('preferences' => $prefs->result());
             
             //query for the applicant pool
-            $data[applicants] = $this->course_model->getCoursesById($course_id);
+            $apps = $this->course_model->getCoursesById($course_id);
             
-            $applicantInfo = array('applicants' => $apps->result());
+            $data[applicants] = array('applicants' => $apps->result());
             
             
             //loading the view using the data
-            $this->load->view('adminAssignApplicant',$applicantInfo,$preferenceInfo);
+            $this->load->view('adminAssignApplicant',$data);
         }
 
 		public function getCourses($course_id){

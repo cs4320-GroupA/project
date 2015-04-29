@@ -26,7 +26,8 @@
 			<div class='row'>
 				<div class="col-md-4">
 					<h3>Course</h3>
-					<select class="form-control" method=post action="<?php echo base_url().'index.php/adminAssignApplicantController/getApplicants/'.$row->course_id; ?>" name = "courseToAssign" required>
+                    <form accept-charset="utf-8"  method=post action="<?php echo base_url().'index.php/adminAssignApplicantController/getApplicants/'.$row->course_id; ?>" />
+					<select class="form-control" name = "courseToAssign" required>
 						<?php
 							foreach($courses as $row){
 								echo "<option>".$row->course_name."</option>";
@@ -68,7 +69,7 @@
                                         echo '</tr>';
                                     }
                                 } else {
-                                    echo 'tr';
+                                    echo '<tr>';
                                         echo "<td><input type='checkbox'></td>";
                                         echo "<td></td>"; 
                                         echo "<td></td>";

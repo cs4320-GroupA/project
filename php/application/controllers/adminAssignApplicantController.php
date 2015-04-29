@@ -37,7 +37,7 @@
             //query for the applicant pool
             //$apps = $this->course_model->getCoursesById($course_id);
             
-            $data['applicants'] = $this->course_model->getCoursesById($course_id);
+            $data['applicants'] = $this->course_model->getCourseById($course_id);
             
             //array('applicants' => $apps->result());
             

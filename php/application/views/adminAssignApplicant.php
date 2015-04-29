@@ -27,13 +27,14 @@
 				<div class="col-md-4">
 					<h3>Course</h3>
                     <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/getApplicants/' ?> />
-					<select class="form-control" name = "courseToAssign" required>
 						<?php
 							foreach($courses as $row){
+            
+					            echo '<select class="form-control" name = "courseToAssign" required>';
 								echo "<option>".$row->course_name."</option>";
+                                echo '</select>';
 							}
 						?>
-					</select>
 				</div>				
 			</div>
 			<div class="row">

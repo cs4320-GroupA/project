@@ -92,7 +92,7 @@
 						</thead>
 						<tbody>
 							<?php
-                                 if(isset($preferenceInfo){ 
+                                 if(isset($preferenceInfo)){ 
                                     foreach($preferenceInfo as $row){
                                         echo '<tr>';
                                             echo '<td>'.$row->username.'</td>';

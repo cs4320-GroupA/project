@@ -31,13 +31,16 @@
 						<?php
 							foreach($courses as $row){
             
-					            echo '';
 								echo "<option>".$row->course_name."</option>";
-                                echo '<input type="hidden" name="course_id" value='.$row->course_id.'>';
+                                //echo '<input type="hidden" name="course_id" value='.$row->course_id.'>';
 
 							}
 						?>
                     </select>
+                    <?php 
+                        echo '<input type="hidden" name="course_id" value='.$row->course_id.'>';
+                    ?>
+                
 				</div>				
 			</div>
 			<div class="row">

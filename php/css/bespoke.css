@@ -22,3 +22,10 @@ ul {
 .navbar-default .navbar-brand {
 	font-family: 'Open Sans', sans-serif;
 }
+
+#thumbnails {   
+    border: 1px solid grey;
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+}

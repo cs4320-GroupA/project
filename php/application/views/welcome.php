@@ -89,47 +89,6 @@
         </div>
       </div>
     </div>
-    <div id="register" class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Register a New Account</h3>
-          </div>
-          <div class="modal-body">
-            <form action="<?php echo base_url(); ?>index.php/login/register" method="POST">
-              <input type = "hidden" name = "action" value = "register">
-              <div class="form-group">
-                <label for="pawprint">Pawprint:</label>
-                <input type="text" class="form-control" id="pawprint" name="pawprint" placeholder="abc123" required>
-              </div>
-              <div class="form-group">
-                <label for="passwordinput">Password:</label>
-                <input type="password" class="form-control" id="passwordinput" placeholder="******" required>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="accountRadio">Account Type:</label>
-                <div class="radio">
-                  <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "APPLICANT" required checked>Applicant</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "INSTRUCTOR" required>Instructor</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="accessCode">Instructor Access Code:</label>
-                <input type="text" class="form-control" name = "accessCode" id="accessCode" placeholder="******">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <label class="control-label" for="signin"></label>
-            <button id="signin" name="signin" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Account</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Stable Register Modal
     <div class="modal fade bs-modal-sm" id="register" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -138,7 +97,7 @@
           </div>
           <div class="modal-body">
             <div class="tab-pane fade active in" id="signin">
-              <form class="form-horizontal" action="<?php //echo base_url(); ?>index.php/login/register" method="POST">
+              <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/login/register" method="POST">
                 <input type = "hidden" name = "action" value = "register">
                 <fieldset>
                   <div class="control-group">
@@ -179,7 +138,6 @@
         </div>
       </div>
     </div>
-    -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
   </body>

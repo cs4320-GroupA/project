@@ -28,7 +28,7 @@
 					<h3>Course</h3>
 					<select class="form-control" name = "courseToAssign" required>
 						<?php
-							foreach($courses as $row){
+							foreach($course_data as $row){
 								echo "<option>".$row->course_name."</option>";
 							}
 						?>
@@ -57,15 +57,25 @@
 						</thead>
 						<tbody>
 							<?php 
-								foreach($studentInfo as $row){
-									echo '<tr>'; 
-										echo "<td><input type='checkbox'></td>";
-										echo "<td>" . $row->first_name . " " . $row->last_name . "</td>"; 
-										echo "<td>" . $row->gpa_float . "</td>";
-										echo "<td>" . $row->grade . "</td>";
-										echo "<td>" . $row->expected_graduation . "</td>";
-									echo '</tr>';
-								}
+                                if($studentInfo != null){
+                                    foreach($studentInfo as $row){
+                                        echo '<tr>'; 
+                                            echo "<td><input type='checkbox'></td>";
+                                            echo "<td>" . $row->first_name . " " . $row->last_name . "</td>"; 
+                                            echo "<td>" . $row->gpa_float . "</td>";
+                                            echo "<td>" . $row->grade . "</td>";
+                                            echo "<td>" . $row->expected_graduation . "</td>";
+                                        echo '</tr>';
+                                    }
+                                } else {
+                                    echo 'tr';
+                                        echo "<td><input type='checkbox'></td>";
+                                        echo "<td></td>"; 
+                                        echo "<td></td>";
+                                        echo "<td></td>";
+                                        echo "<td></td>";
+                                    echo '</tr>';
+                                }
 							?>							
 						</tbody>
 					</table>
@@ -82,10 +92,19 @@
 						</thead>
 						<tbody>
 							<?php
-								echo '<tr>';
-									echo '<td>masyv6</td>';
-									echo '<td>5</td>';
-								echo '</tr>';
+                                 if($studentInfo != null){ 
+                                    foreach($preferenceInfo as $row){
+                                        echo '<tr>';
+                                            echo '<td>'.$row->pawprint.'</td>';
+                                            echo '<td></td>';
+                                        echo '</tr>';
+                                    }
+                                 } else {
+                                     echo '<tr>';
+                                        echo '<td></td>';
+                                        echo '<td></td>';
+                                    echo '</tr>';
+                                 }
 							?>
 						</tbody>
 					</table>

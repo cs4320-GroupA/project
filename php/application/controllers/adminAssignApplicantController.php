@@ -4,12 +4,40 @@
 		public function __construct() 
 		{
         	parent::__construct();
+            
+            
+
+			$this->load->model('course_model');
+			$this->load->model('semester_model');
+			$this->load->model('user_model');
+            
         }
 
 		public function index() 
 		{ 
-			$this->load->view('adminAssignApplicant');
+            $courses = $this->course_model->getCourses();
+            
+            $course_data = array('courses' => $courses->result());
+            
+			$this->load->view('adminAssignApplicant',$course_data);
 		}
+        
+        public function getApplicants($course_id){
+            
+            //query for the preferences table
+            $prefs = $this->course_model->getPreferenceByCourse($course_id);
+            
+            $preferenceInfo = array('preferences' => $prefs->result());
+            
+            //query for the applicant pool
+            $apps = $this->course_model->getCoursesById($course_id);
+            
+            $applicantInfo = array('applicants' => $apps->result());
+            
+            
+            //loading the view using the data
+            $this->load->view('adminAssignApplicant',$applicantInfo,$preferenceInfo);
+        }
 
 		public function getCourses($course_id){
 			$this->load->view('desired_courses_model');

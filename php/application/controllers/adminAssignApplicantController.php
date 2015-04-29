@@ -17,9 +17,9 @@
 		{ 
             $courses = $this->course_model->getCourses();
             
-            $course_data = array('courses' => $courses->result());
+            $data = array('courses' => $courses->result());
             
-			$this->load->view('adminAssignApplicant',$course_data);
+			$this->load->view('adminAssignApplicant',$data);
 		}
         
         public function getApplicants($course_id){
@@ -27,10 +27,10 @@
             //query for the preferences table
             $prefs = $this->course_model->getPreferenceByCourse($course_id);
             
-            $preferenceInfo = array('preferences' => $prefs->result());
+            $data[prefs] = array('preferences' => $prefs->result());
             
             //query for the applicant pool
-            $apps = $this->course_model->getCoursesById($course_id);
+            $data[apps] = $this->course_model->getCoursesById($course_id);
             
             $applicantInfo = array('applicants' => $apps->result());
             

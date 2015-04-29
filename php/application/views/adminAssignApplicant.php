@@ -28,7 +28,7 @@
 					<h3>Course</h3>
 					<select class="form-control" method=post action="<?php echo base_url().'index.php/adminAssignApplicantController/getApplicants/'.$row->course_id; ?>" name = "courseToAssign" required>
 						<?php
-							foreach($course_data as $row){
+							foreach($courses as $row){
 								echo "<option>".$row->course_name."</option>";
 							}
 						?>
@@ -57,8 +57,8 @@
 						</thead>
 						<tbody>
 							<?php 
-                                if(isset($applicantInfo)){
-                                    foreach($applicantInfo as $row){
+                                if(isset($applicants)){
+                                    foreach($applicants as $row){
                                         echo '<tr>'; 
                                             echo "<td><input type='checkbox'></td>";
                                             echo "<td>" . $row->first_name . " " . $row->last_name . "</td>"; 
@@ -92,8 +92,8 @@
 						</thead>
 						<tbody>
 							<?php
-                                 if(isset($preferenceInfo)){ 
-                                    foreach($preferenceInfo as $row){
+                                 if(isset($preferences)){ 
+                                    foreach($preference as $row){
                                         echo '<tr>';
                                             echo '<td>'.$row->username.'</td>';
                                             echo '<td>'.$row->cp.'</td>';

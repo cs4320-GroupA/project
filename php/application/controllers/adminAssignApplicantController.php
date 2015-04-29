@@ -29,12 +29,12 @@
             //query for the preferences table
             $prefs = $this->course_model->getPreferenceByCourse($course_id);
             
-            $data[preferences] = array('preferences' => $prefs->result());
+            $data['preferences'] = array('preferences' => $prefs->result());
             
             //query for the applicant pool
             $apps = $this->course_model->getCoursesById($course_id);
             
-            $data[applicants] = array('applicants' => $apps->result());
+            $data['applicants'] = array('applicants' => $apps->result());
             
             
             //loading the view using the data

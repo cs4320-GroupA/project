@@ -96,7 +96,7 @@
                                     foreach($preferenceInfo as $row){
                                         echo '<tr>';
                                             echo '<td>'.$row->username.'</td>';
-                                            echo '<td>'.$row->cp'</td>';
+                                            echo '<td>'.$row->cp.'</td>';
                                         echo '</tr>';
                                     }
                                  } else {

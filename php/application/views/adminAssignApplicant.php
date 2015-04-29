@@ -57,8 +57,8 @@
 						</thead>
 						<tbody>
 							<?php 
-                                if($studentInfo != null){
-                                    foreach($studentInfo as $row){
+                                if($prefs != null){
+                                    foreach($prefs as $row){
                                         echo '<tr>'; 
                                             echo "<td><input type='checkbox'></td>";
                                             echo "<td>" . $row->first_name . " " . $row->last_name . "</td>"; 
@@ -92,7 +92,7 @@
 						</thead>
 						<tbody>
 							<?php
-                                 if($studentInfo != null){ 
+                                 if(isset($studentInfo){ 
                                     foreach($preferenceInfo as $row){
                                         echo '<tr>';
                                             echo '<td>'.$row->username.'</td>';

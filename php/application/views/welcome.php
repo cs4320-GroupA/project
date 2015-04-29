@@ -21,21 +21,27 @@
       <h2>Welcome to the Mizzou CS/IT Department TA/PLA Application Website</h2>
       <h3>Please log in or register</h3>
       <?php
-      if($this->session->userdata('logged_in')) {
-      if($this->session->userdata('logged_in') == TRUE) {
-      redirect('home', 'refresh');
-      }
-      }
-      if($this->session->userdata('failed_login')) {
-      if($this->session->userdata('failed_login') == TRUE) {
-      echo '<font color=red>Invalid username, access code, and/or password.</font><br />';
-      }
-      }
-      if($this->session->userdata('account_exists')) {
-      if($this->session->userdata('account_exists') == TRUE) {
-      echo '<font color=red>Username already exists.</font><br />';
-      }
-      }
+        if($this->session->userdata('logged_in')) 
+        {
+          if($this->session->userdata('logged_in') == TRUE) 
+          {
+            redirect('home', 'refresh');
+          }
+        }
+        if($this->session->userdata('failed_login')) 
+        {
+          if($this->session->userdata('failed_login') == TRUE) 
+          {
+            echo '<font color=red>Invalid username, access code, and/or password.</font><br />';
+          }
+        }
+        if($this->session->userdata('account_exists')) 
+        {
+          if($this->session->userdata('account_exists') == TRUE) 
+          {
+            echo '<font color=red>Username already exists.</font><br />';
+          }
+        }
       ?>
       <br>
       <button class="btn btn-default btn-lg" href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
@@ -117,6 +123,7 @@
             </form>
           </div>
           <div class="modal-footer">
+            <label class="control-label" for="signin"></label>
             <button id="signin" name="signin" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Account</button>
           </div>
         </div>

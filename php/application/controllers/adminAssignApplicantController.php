@@ -22,7 +22,9 @@
 			$this->load->view('adminAssignApplicant',$data);
 		}
         
-        public function getApplicants($course_id){
+        public function getApplicants(){
+            
+            $course_id = $_POST['courseToAssign'];
             
             //query for the preferences table
             $prefs = $this->course_model->getPreferenceByCourse($course_id);

@@ -23,7 +23,7 @@ ul {
 	font-family: 'Open Sans', sans-serif;
 }
 
-#thumbnails {   
+#thumbnail {   
     border: 2px solid black;
     border-radius: 500px;
     -webkit-border-radius: 500px;

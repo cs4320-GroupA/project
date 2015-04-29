@@ -33,6 +33,8 @@
 					            echo '<select class="form-control" name = "courseToAssign" required>';
 								echo "<option>".$row->course_name."</option>";
                                 echo '</select>';
+                                echo '<input type="hidden" name="course_id" value='.$row->course_id.'>';
+
 							}
 						?>
 				</div>				

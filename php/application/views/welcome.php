@@ -72,7 +72,6 @@
                   <div class="control-group">
                     <label class="control-label" for="signin"></label>
                     <div class="controls">
-                      <button class="btn btn-default" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Close</button>
                       <button id="signin" name="signin" class="btn btn-default"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
                     </div>
                   </div>
@@ -124,7 +123,6 @@
                   <div class="control-group">
                     <label class="control-label" for="signin"></label>
                     <div class="controls">
-                      <button class="btn btn-default" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Close</button>
                       <button id="signin" name="signin" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Account</button>
                     </div>
                   </div>

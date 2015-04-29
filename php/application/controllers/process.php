@@ -1,21 +1,5 @@
 <?php session_start();
 
-	//not sure how to connect to db
-	//but i figured $conn could be the handle for the database connection agent
-	//these scripts were written for a different class, but i ported them over
-
-	/*
-
-		I'm trying to leave as many notes around so that way what I did here doesn't seem archaic and just 'bad'.
-		I figure we can check the session variables on page load, and check if they are empty, and do certain things
-		from there. 
-
-		Generally; if anything needs to be modified or changed, let me know. I can take care of it after my
-		exam tomorrow, I would hate for someone else to have to cover my work that I said I would take care of.
-		Unless someone is truly feeling up to taking care of it, then by all means go for it. 
-
-	*/
-
 	if(!$conn){
 		echo "<h1>There was a problem connecting</h1>"; 
 	}

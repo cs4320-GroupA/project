@@ -139,58 +139,6 @@
         </div>
       </div>
     </div>
-    <!--
-    <div class="modal fade bs-modal-sm" id="register" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3>Register a New Account</h3>
-          </div>
-          <div class="modal-body">
-            <div class="tab-pane fade active in" id="signin">
-              <form class="form-horizontal" action="<?php //echo base_url(); ?>index.php/login/register" method="POST">
-                <input type = "hidden" name = "action" value = "register">
-                <fieldset>
-                  <div class="control-group">
-                    <label class="control-label" for="pawprint">Pawprint:</label>
-                    <div class="controls">
-                      <input id="pawprint" name="pawprint" type="text" placeholder="abc123" class="input-small" required>
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <label class="control-label" for="passwordinput">Password:</label>
-                    <div class="controls">
-                      <input required="" id="passwordinput" name="passwordinput" type="password" placeholder="****" class="input-small">
-                    </div>
-                  </div>
-                  <div class="container">
-                    <label class="control-label" for="accountRadio">Account Type:</label>
-                    <div class="radio">
-                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "APPLICANT" required checked>Applicant</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" id = "accountRadio" name = "accountRadio" value = "INSTRUCTOR" required>Instructor</label>
-                    </div>
-                  </div>
-                  <div class="controls">
-                    <label class="control-label" for="accessCode">Access Code For Instructors Only:</label><br>
-                    <input id="accessCode" name="accessCode" type="text" placeholder="f9hd34ks" class="input-small">
-                  </div>
-                  <div class="control-group">
-                    <label class="control-label" for="signin"></label>
-                    <div class="controls">
-                      <button id="signin" name="signin" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Account</button>
-                    </div>
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
   </body>

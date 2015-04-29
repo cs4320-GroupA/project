@@ -32,18 +32,6 @@
 								echo "<option>".$row->course_name."</option>";
 							}
 						?>
-						<!--
-						<option>a</option>
-						<option>b</option>
-						<option>c</option>
-						<option>d</option>
-						<option>e</option>
-						<option>f</option>
-						<option>g</option>
-						<option>h</option>
-						<option>i</option>
-						<option>j</option>
-						-->
 					</select>
 				</div>				
 			</div>
@@ -68,28 +56,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							<!-- <tr>
-								<td><input type="checkbox"></td>
-								<td>Michael Slaughter</td>
-								<td>3.875</td>
-								<td>A-</td>
-								<td>2016</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox"></td>
-								<td>Jack Boening</td>
-								<td>3.245</td>
-								<td>A+</td>
-								<td>2016</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox"></td>
-								<td>James Landy</td>
-								<td>2.587</td>
-								<td>C+</td>
-								<td>2016</td>
-							</tr> --> 
-
 							<?php 
 								foreach($studentInfo as $row){
 									echo '<tr>'; 
@@ -100,8 +66,7 @@
 										echo "<td>" . $row->expected_graduation . "</td>";
 									echo '</tr>';
 								}
-							?>										
-			
+							?>							
 						</tbody>
 					</table>
 					<button type = "submit" class = "btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Assign Selected Applicants</button>
@@ -122,19 +87,6 @@
 									echo '<td>5</td>';
 								echo '</tr>';
 							?>
-							<!--
-								<td>masyv6</td>
-								<td>5</td>
-							</tr>
-							<tr>
-								<td>ats314</td>
-								<td>4</td>
-							</tr>
-							<tr>
-								<td>pws326</td>
-								<td>1</td>
-							</tr>
-							-->
 						</tbody>
 					</table>
 				</div>

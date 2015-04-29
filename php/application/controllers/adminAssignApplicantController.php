@@ -26,7 +26,9 @@
             
             $course_name = $_POST['courseToAssign'];
             
-            $course_id = $this->course_model->getCourseByName($course_name);
+            $result = $this->course_model->getCourseByName($course_name);
+            
+            $course_id = $result->course_id;
             //query for the preferences table
            
             //$prefs = $this->course_model->getPreferenceByCourse($course_id);

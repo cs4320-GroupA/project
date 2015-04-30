@@ -39,7 +39,7 @@
                     			foreach($preferenced_forms as $row) {
                     				echo '<tr>';
 									echo '<td>'.$row->first_name.' '.$row->last_name.'</td>';
-									echo '<td>'.$row->rank.'</td>';
+									echo '<td>'.$row->preference_number.'</td>';
 									echo '</tr>';
                     			}
                     		}

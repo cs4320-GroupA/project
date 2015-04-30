@@ -243,6 +243,7 @@
 	  					</div>
 	  					<div class="panel-body">
 	    					<?php 
+                        	echo $message;
                         	
                         	if($this->session->userdata('user_type') != 'applicant') {
                            	 	// something goes here

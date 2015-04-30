@@ -30,6 +30,8 @@
             
             $course_name = $_POST['courseToAssign'];
             
+            $course_name = "CS 1050: Joe's Story Time";
+            
             $query = $this->course_model->getCourseByName($course_name);
             
             $result = $query->result();

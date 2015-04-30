@@ -289,14 +289,14 @@
 								*/
 
 								echo'<div class="row">';
-								  echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
+								  echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/quick_add/'.$form_id.'/'.$user_id.'" method="POST">';
 								    echo'<div class="col-md-6">';
 								      echo'<label>Course</label>';
 								      echo '<select class="form-control message_panel" name = "course_for_preference">';
 								        echo '<option selected disabled hidden value=""></option>';
 								        foreach($instructor_courses as $temp)
 								        {
-								        	echo '<option>'.$temp->course_name.'</option>';
+								        	echo '<option value="'.$temp->course_id.'">'.$temp->course_name.'</option>';
 								        }
 								      echo '</select>';
 								    echo'</div>';

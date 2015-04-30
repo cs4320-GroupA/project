@@ -93,7 +93,8 @@
 			$this->load->model('comments_model');
 			//Get the current applicant's form
 			$query = $this->form_model->getForm($user_id, $semester_id);
-
+			$data['form_id'] = $query->row()->form_id;
+			
 			//If an entry for user's application exists for this semester, then auto load for data
 			if($query != FALSE) {
 				//Grab the form data for the user's form

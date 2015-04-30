@@ -43,11 +43,13 @@
 				<div class="col-md-4">
 				<br>
 					<button type = "submit" class="btn btn-default"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select Course</button>
+                    </form>
 				</div>
 			</div>
 			<br><br>
 			<div class='row'>
 				<div class="col-md-6">
+                 <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/assign/' ?> />
 					<h3>Applicant Pool</h3>
 					<table class="table table-hover table-striped">
 						<thead>
@@ -84,6 +86,7 @@
 						</tbody>
 					</table>
 					<button type = "submit" class = "btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Assign Selected Applicants</button>
+                </form>
 				</div>
 				<div class="col-md-6">
 					<h3>Instructor Preferences</h3>

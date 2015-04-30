@@ -19,7 +19,7 @@ class PreferenceByCourseController extends CI_Controller {
             $data['preferenced_forms'] = $query->result();
         }
 
-        $query = $this->desired_courses->getByCourseId($course_id);
+        $query = $this->desired_courses_model->getByCourseId($course_id);
         
         if($query != FALSE) {
             $data['desired_forms'] = $query->result();

@@ -60,72 +60,27 @@
 					<table class="table table-hover table-striped">
                     <thead>
                     	<tr>
-                    		<th>Preference</th>
+                    		<th>Application</th>
                     		<th>Name</th>
-                    		<th>Grade</th>
+                    		<th>GPA</th>
                     	</tr>
                     </thead>
                     <tbody>
 						<tr>
-							<td>
-								<div class="col-md-2">
-									<select class="form-control">
-		                    			<option>1</option>
-		                    			<option>2</option>
-		                    			<option>3</option>
-		                    			<option>4</option>
-		                    			<option>5</option>
-	                    			</select>
-                    			</div>
-							</td>
-							<td>Tim</td>
-							<td>5</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="col-md-2">
-									<select class="form-control">
-		                    			<option>1</option>
-		                    			<option>2</option>
-		                    			<option>3</option>
-		                    			<option>4</option>
-		                    			<option>5</option>
-	                    			</select>
-                    			</div>
-							</td>
-							<td>Nick</td>
-							<td>3</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="col-md-2">
-									<select class="form-control">
-		                    			<option>1</option>
-		                    			<option>2</option>
-		                    			<option>3</option>
-		                    			<option>4</option>
-		                    			<option>5</option>
-	                    			</select>
-                    			</div>
-							</td>
-							<td>Mike</td>
-							<td>1</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="col-md-2">
-									<select class="form-control">
-		                    			<option>1</option>
-		                    			<option>2</option>
-		                    			<option>3</option>
-		                    			<option>4</option>
-		                    			<option>5</option>
-	                    			</select>
-                    			</div>
-							</td>
-							<td>John</td>
-							<td>1</td>
-						</tr>
+						<?php
+  							foreach($applicants as $row) 
+  							{
+								echo '<tr>';
+			    				echo '<td>';
+			    				echo '<form>';
+								echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$row->user_id.'/'.$row->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button> ';
+				    			echo '</td>';
+				    			echo '<td>'.$row->first_name.' '.$row->last_name.'</td>';
+				    			echo '<td>'.$row->gpa.'</td>';
+	               				echo '</tr>';
+	               				echo '</form>';
+               				}
+						?>
 					</tbody>
                     </table>
 				</div>

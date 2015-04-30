@@ -62,18 +62,18 @@
                     <tbody>
 						<tr>
 						<?php
-  							foreach($applicants as $row) 
-  							{
-								echo '<tr>';
-			    				echo '<td>';
-			    				echo '<form>';
-								echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$row->user_id.'/'.$row->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button> ';
-				    			echo '</td>';
-				    			echo '<td>'.$row->first_name.' '.$row->last_name.'</td>';
-				    			echo '<td>'.$row->gpa.'</td>';
-	               				echo '</tr>';
-	               				echo '</form>';
-               				}
+							if(isset($desired_forms)) {
+  								foreach($desired_forms as $row) {
+									echo '<tr>';
+				    				echo '<td>';
+				    				echo '<form>';
+									echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$row->user_id.'/'.$row->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button> ';
+					    			echo '</td>';
+					    			echo '<td>'.$row->first_name.' '.$row->last_name.'</td>';
+					    			echo '<td>'.$row->gpa.'</td>';
+		               				echo '</tr>';
+		               				echo '</form>';
+	               				}
 						?>
 					</tbody>
                     </table>

@@ -16,6 +16,18 @@
             }
         }
 
+        public function getByCourseId($course_Id){
+            $q = 'SELECT * FROM tasub.desired_courses INNER JOIN tasub.form ON tasub.form.form_data = tasub.desired_courses.form_data_id INNER JOIN tasub.form_data ON tasub.form_data.form_data_id = tasub.form.form_data WHERE tasub.desired_courses.course_id = ?';     
+            $result = $this->db->query( $q, array( $course_Id ) );
+            
+            if( $result->num_rows() > 0 ){
+                return $result;
+            }
+            else{
+                return false;
+            }
+            
+        }//  end getPreferenceByCourse
         public function update($id, $grade) {
             $sql = 'UPDATE desired_courses SET grade = ? WHERE desired_course_id = ?';
 

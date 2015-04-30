@@ -24,6 +24,20 @@
                 return FALSE;
             }
         }
+
+        public function getByFormDataID($form_data_id) {
+            $sql = 'SELECT * FROM tasub.form WHERE form_data = ?';
+
+            $query = $this->db->query($sql, array($form_data_id);
+
+            //Return TRUE on success, FALSE on failure
+            if($query->num_rows() > 0) {
+                return $query->row();
+            } else {
+                return FALSE;
+            }
+        }
+
     
     /*
      * getForm() - retrieves all entities for a given form

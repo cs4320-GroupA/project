@@ -243,7 +243,7 @@
 	  					</div>
 	  					<div class="panel-body">
 	    					<?php
-	    					if(isseet($message)) {
+	    					if(isset($message)) {
 	    						echo $message;
 	    					}
 

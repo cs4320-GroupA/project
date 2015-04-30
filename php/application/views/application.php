@@ -283,7 +283,7 @@
 								    echo'</div>';
 								    echo'<div class="col-md-6">';
 								      echo'<label>Preference</label>';
-								      echo '<select class="form-control message_panel">';
+								      echo '<select class="form-control message_panel name="rank">';
 								        echo '<option selected value="1">1</option>';
 								        echo '<option value="2">2</option>';
 								        echo '<option value="3">3</option>';

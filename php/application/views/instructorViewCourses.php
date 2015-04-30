@@ -42,7 +42,7 @@
   				   	foreach ($courses as $row) {
 						echo '<tr>';
 		         		echo '<td>';
-		         		echo'<form action = "'.base_url().'index.php/preferenceByController/index/'.$row->$course_id.'">';
+		         		echo'<form action = "'.base_url().'index.php/preferenceByController/index/'.$row->course_id.'">';
 						echo '<button class="btn btn-default"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
 					   	echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';

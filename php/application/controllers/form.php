@@ -93,12 +93,12 @@
 			$this->load->model('comments_model');
 			//Get the current applicant's form
 			$query = $this->form_model->getForm($user_id, $semester_id);
-			$data['form_id'] = $query->row()->form_id;
+			$form = $query->row();
 			
 			//If an entry for user's application exists for this semester, then auto load for data
 			if($query != FALSE) {
 				//Grab the form data for the user's form
-				$result = $this->form_data_model->getFormDataByID($query->row()->form_data);
+				$result = $this->form_data_model->getFormDataByID($form->form_data);
 				$row = $result->row();
 
 				//Fill array with the form data to pass to view
@@ -132,6 +132,7 @@
 				$result = $this->course_model->getCourses();
 				$data['courses'] = $result->result_array();
 				$data['message_header'] = 'Current Preferences';
+				$data['form_id'] = $form->form_id;
 			}
 			else {
 				redirect('applicantPoolController', 'refresh');

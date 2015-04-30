@@ -286,7 +286,6 @@
 								echo '<option value="5">2</option>';
 								echo '</select>';
 
-								*/
 
 								echo'<div class="row">';
 								  echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/quick_add/'.$form_id.'/'.$user_id.'" method="POST">';

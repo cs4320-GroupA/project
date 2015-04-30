@@ -264,9 +264,8 @@
 	                                    			echo '</td>';
 	                                			}
 	                                		}
-
-	                                	echo '</td>';
 	                           			}
+	                           			echo '</td>';
 	                                }// end foreach
 	                                echo '</table>';
 	                            }// end isset check	

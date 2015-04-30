@@ -242,8 +242,10 @@
 	    					<h3 class="panel-title"><b><?php echo $message_header?></b></h3>
 	  					</div>
 	  					<div class="panel-body">
-	    					<?php 
-                        	echo $message;
+	    					<?php
+	    					if(isseet($message)) {
+	    						echo $message;
+	    					}
 
                         	if($this->session->userdata('user_type') != 'applicant') {
                            	 	// something goes here
@@ -268,7 +270,7 @@
 	                            }// end isset check	
 
 	                        	echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
-	                        	echo '<select class="form-control" name = "course_for_preference">';
+	                        	echo '<select class="form-control message_panel" name = "course_for_preference">';
 								echo '<option selected disabled hidden value=""></option>';
 								
 								foreach($instructor_courses as $temp) {

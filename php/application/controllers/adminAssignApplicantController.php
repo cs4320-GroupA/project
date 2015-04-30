@@ -15,9 +15,12 @@
 
 		public function index() 
 		{ 
-            $courses = $this->course_model->getCourses();
+            //courses = $this->course_model->getCourses();
             
-            $data = array('courses' => $courses->result());
+            //$data = array('courses' => $courses->result());
+            
+            
+            $data['courses'] = $this->course_model->getCourses();
             
 			$this->load->view('adminAssignApplicant',$data);
 		}

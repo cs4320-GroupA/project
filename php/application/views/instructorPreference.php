@@ -67,46 +67,54 @@
                     </thead>
                     <tbody>
 						<tr>
-							<select>
-                    			<option>1</option>
-                    			<option>2</option>
-                    			<option>3</option>
-                    			<option>4</option>
-                    			<option>5</option>
-                    		</select>
+							<td>
+								<select class="form-control">
+	                    			<option>1</option>
+	                    			<option>2</option>
+	                    			<option>3</option>
+	                    			<option>4</option>
+	                    			<option>5</option>
+                    			</select>
+							</td>
 							<td>Tim</td>
 							<td>5</td>
 						</tr>
 						<tr>
-							<select>
-                    			<option>1</option>
-                    			<option>2</option>
-                    			<option>3</option>
-                    			<option>4</option>
-                    			<option>5</option>
-                    		</select>
+							<td>
+								<select class="form-control">
+	                    			<option>1</option>
+	                    			<option>2</option>
+	                    			<option>3</option>
+	                    			<option>4</option>
+	                    			<option>5</option>
+                    			</select>
+							</td>
 							<td>Nick</td>
 							<td>3</td>
 						</tr>
 						<tr>
-							<select>
-                    			<option>1</option>
-                    			<option>2</option>
-                    			<option>3</option>
-                    			<option>4</option>
-                    			<option>5</option>
-                    		</select>
+							<td>
+								<select class="form-control">
+	                    			<option>1</option>
+	                    			<option>2</option>
+	                    			<option>3</option>
+	                    			<option>4</option>
+	                    			<option>5</option>
+                    			</select>
+							</td>
 							<td>Mike</td>
 							<td>1</td>
 						</tr>
 						<tr>
-							<select>
-                    			<option>1</option>
-                    			<option>2</option>
-                    			<option>3</option>
-                    			<option>4</option>
-                    			<option>5</option>
-                    		</select>
+							<td>
+								<select class="form-control">
+	                    			<option>1</option>
+	                    			<option>2</option>
+	                    			<option>3</option>
+	                    			<option>4</option>
+	                    			<option>5</option>
+                    			</select>
+							</td>
 							<td>John</td>
 							<td>1</td>
 						</tr>

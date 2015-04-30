@@ -12,7 +12,7 @@ class PreferenceByCourseController extends CI_Controller {
     public function index($course_id){
         $data['course_id'] = $course_id;
 
-        $query = $this->course_model->getPreferencesByCourse($course_id);
+        $query = $this->course_model->getPreferenceByCourse($course_id);
         $data['preferenced_forms'] = $query->result();
         
         $this->load->view('instructorPreference', $data);

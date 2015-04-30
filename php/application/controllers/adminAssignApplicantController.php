@@ -31,9 +31,10 @@
             
             $query = $this->course_model->getCourseByName($course_name);
             
-            foreach($query->result() as $row){
-                $course_id = $row->course_id;
-            }
+            $result = $query->result();
+            
+            $course_id = $result->course_id;
+            
             //query for the preferences table
            
             //$prefs = $this->course_model->getPreferenceByCourse($course_id);

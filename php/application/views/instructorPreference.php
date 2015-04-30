@@ -31,25 +31,19 @@
                     	<tr>
                     		<th>Name</th>
                     		<th>Preference</th>
-                    		<th>Grade</th>
                     	</tr>
                     </thead>
                     <tbody>
-						<tr>
-							<td>Tim</td>
-							<td>5</td>
-							<td>Senior</td>
-						</tr>
-						<tr>
-							<td>Nick</td>
-							<td>3</td>
-							<td>Senior</td>
-						</tr>
-						<tr>
-							<td>Mike</td>
-							<td>1</td>
-							<td>Senior</td>
-						</tr>
+                    	<?php 
+                    		if(isset($preferenced_forms)) {
+                    			foreach($preferenced_forms as $row) {
+                    				echo '<tr>';
+									echo '<td>'.$row->first_name.' '.$row->last_name.'</td>';
+									echo '<td>'.$row->rank.'</td>';
+									echo '</tr>';
+                    			}
+                    		} else {
+                    	?>
 					</tbody>
                     </table>
 				</div>

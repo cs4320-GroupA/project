@@ -23,7 +23,8 @@ class PreferenceByCourseController extends CI_Controller {
     public function add($student_id, $course_id, $preference_id){
     
         $course_info = $this->course_model->getCourseById( $course_id );
-        
+        $course_info = $course_info->row();
+
         $course_name = $course_info->course_name;
         
         $form_info = $this->form_model->getForm( $student_id, 1 );
@@ -46,6 +47,7 @@ class PreferenceByCourseController extends CI_Controller {
 
     public function quick_add($form_id, $user_id) {
         $course_info = $this->course_model->getCourseById($_POST['course_for_preference']);
+        $course_info = $course_info->row();
         
         $course_name = $course_info->course_name;
         $course_id = $course_info->course_id;
@@ -59,7 +61,7 @@ class PreferenceByCourseController extends CI_Controller {
             $course_name,       //
             $form_id, 
             $semester_id,       //
-            $_POST['course_for_preference']  
+            $_POST['rank']  
         );
         
         $path = base_url().'index.php/viewForm/'.$user_id.'/'.$semester_id;

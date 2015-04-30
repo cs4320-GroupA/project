@@ -217,7 +217,7 @@
 							$(document).ready(function(){
         						$(".container :input").attr("disabled", true);
         						$(".container .comments").attr("disabled", false);
-        						$("#quick_reference").attr("disabled", false);
+        						$(".container .message_panel").attr("disabled", false);
     						});
 						</script>';
 				}	
@@ -232,7 +232,8 @@
 	      <div class="page-header">
 	        <h2>Application</h2>
 	      </div>
-	      <div class = "row">
+		<div class = "container">
+			<div class = "row">
 	      	<div class="col-md-6 col-md-offset-3">
 		        <?php
 		        	if(isset($message_header)) { ?>
@@ -242,47 +243,48 @@
 	  					</div>
 	  					<div class="panel-body">
 	    					<?php 
-                        
-                            // something goes here
-                            //echo $message; 
-                            $current_course = NULL;
-                            if(isset($prefs) and isset($instructor_courses)){
-                                echo '<table>';
+                        	
+                        	if($this->session->userdata('user_type') != 'applicant') {
+                           	 	// something goes here
+	                            //echo $message; 
+	                            $current_course = NULL;
+	                            if(isset($prefs) and isset($instructor_courses)){
+	                                echo '<table>';	
 
-                                foreach($instructor_courses as $p_row){
-                                	if($current_course != $p_row->course_name) {
-                                		$current_course = $p_row->course_name;
-                                		echo '<td>';
-                                    	echo '<tr>'.$p_row->course_name.'</tr>';
-                                	}
-                                	
-                                	echo '<td>';
-                                    echo '<tr>'.$p_row->signature.'</tr>';
-                                    //echo '<tr>'..'</tr>';
-                                    echo '</td>';
-                                }// end foreach
-                                echo '</table>';
-                            }// end isset check
+	                                foreach($instructor_courses as $p_row){
+	                                	if($current_course != $p_row->course_name) {
+	                                		$current_course = $p_row->course_name;
+	                                		echo '<td>';
+	                                    	echo '<tr>'.$p_row->course_name.'</tr>';
+	                                	}
+	                                	
+	                                	echo '<td>';
+	                                    echo '<tr>'.$p_row->signature.'</tr>';
+	                                    //echo '<tr>'..'</tr>';
+	                                    echo '</td>';
+	                                }// end foreach
+	                                echo '</table>';
+	                            }// end isset check	
 
-                        	echo '<form id="quick_reference" name="quick_reference" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
-                        	echo '<select class="form-control" name = "course_for_preference">';
-							echo '<option selected disabled hidden value=""></option>';
-							
-							foreach($instructor_courses as $temp) {
-								echo '<option>'.$temp->course_name.'</option>';
-							}
-							echo '</select>';
+	                        	echo '<form id="quick_reference" name="quick_reference" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
+	                        	echo '<select class="form-control" name = "course_for_preference">';
+								echo '<option selected disabled hidden value=""></option>';
+								
+								foreach($instructor_courses as $temp) {
+									echo '<option>'.$temp->course_name.'</option>';
+								}
+								echo '</select>';	
+                        	}
                            ?>
                        </form>
 	  					</div>
 					</div>
+					<hr>
 		        <?php } ?>
 	        </div>
 	      </div>
-	      <hr>
-		</div>
-		<div class = "container">
-			<?php 
+	    </div>
+			<?php
 				if(isset($editable)) {
 					if($editable == TRUE) {
 						echo '<form class="form-inline" name="form_data" role="form" onsubmit="return validateForm()" action="'.base_url().'index.php/form/editForm" method="POST">';

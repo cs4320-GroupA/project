@@ -44,13 +44,23 @@
 							  'gato' => $row->gato,
 							  'speak_assessment' => $row->speak_assessment,
 							  'onita' => $row->onita,
-							  'message_header' => 'Edit Your Form',
-							  'message' => '<p>Your form has been successfully submitted.<br>To edit your submission changes the values as desired and click Edit Button',
 							  'editable' => TRUE);
+
+				if($this->semester_model->getCurrentSemesterStatus() == 'APPLICATION') {
+					$data['message_header'] = 'Edit Your Form';
+					$data['message'] = '<p>Your form has been successfully submitted.<br>To edit your submission changes the values as desired and click Edit Button</p>';
+				} else if($this->semester_model->getCurrentSemesterStatus() == 'SELECTION') {
+					$data['message_header'] = 'Edit Your Form';
+					$data['message'] = '<p>Your application is under review.</p>';
+				} else if($this->semester_model->getCurrentSemesterStatus() == 'NOTIFICATION'){
+					$data['message_header'] = 'Notification';
+					$data['message'] = '<p>Your application is under review.</p>';
+				}
 
 				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
 				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data);
 				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
+
 			} else {
 				//User has not submitted a form yet, so allow submission
 				$data = array('submittable' => TRUE);			

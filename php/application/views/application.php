@@ -247,24 +247,23 @@
 	    						echo $message;
 	    					}
 
-                        	if($this->session->userdata('user_type') != 'applicant') {
-                           	 	// something goes here
-	                            //echo $message; 
-	                            $current_course = NULL;
-	                            if(isset($prefs) and isset($instructor_courses)){
+                        	if($this->session->userdata('user_type') != 'applicant') {	
+
+	                            if(isset($instructor_courses)){
 	                                echo '<table>';	
 
 	                                foreach($instructor_courses as $p_row){
-	                                	if($current_course != $p_row->course_name) {
-	                                		$current_course = $p_row->course_name;
-	                                		echo '<td>';
-	                                    	echo '<tr>'.$p_row->course_name.'</tr>';
-	                                	}
+	                                    echo '<td>';
+	                                    echo '<tr>'.$p_row->course_name.'</tr>';
 	                                	
-	                                	echo '<td>';
-	                                    echo '<tr>'.$p_row->signature.'</tr>';
-	                                    //echo '<tr>'..'</tr>';
-	                                    echo '</td>';
+	                                	if(isset($prefs)) {
+	          								foreach($prefs as $row) {
+	                                			if($p_row->course_name == $row->course_name) {
+	                                				echo '<td>';
+	                                    			echo '<tr>'.$row->form_id.'</tr>';
+	                                			}
+	                                		}
+	                           			}
 	                                }// end foreach
 	                                echo '</table>';
 	                            }// end isset check	

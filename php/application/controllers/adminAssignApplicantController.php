@@ -15,9 +15,9 @@
 
 		public function index() 
 		{ 
-            //courses = $this->course_model->getCourses();
+            courses = $this->course_model->getCourses();
             
-            //$data = array('courses' => $courses->result());
+            $data = array('courses' => $courses->result());
             
             
             $data['courses'] = $this->course_model->getCourses();
@@ -43,13 +43,17 @@
             //array('preferences' => $prefs->result());
             
             //query for the applicant pool
-            //$apps = $this->course_model->getCoursesById($course_id);
+            $apps = $this->course_model->getCoursesById($course_id);
             
-            $data['applicants'] = $this->course_model->getCourseById($course_id);
+            $data['applicants'] = array('applicants' => $apps->result()); 
+                
+                //$this->course_model->getCourseById($course_id);
             
-            //array('applicants' => $apps->result());
             
-            $data['courses'] = $this->course_model->getCourses();
+            
+            $data['courses'] = 
+                
+                //$this->course_model->getCourses();
             
             
             //loading the view using the data

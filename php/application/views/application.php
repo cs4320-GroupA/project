@@ -244,7 +244,7 @@
 	  					<div class="panel-body">
 	    					<?php 
                         	echo $message;
-                        	
+
                         	if($this->session->userdata('user_type') != 'applicant') {
                            	 	// something goes here
 	                            //echo $message; 
@@ -267,7 +267,7 @@
 	                                echo '</table>';
 	                            }// end isset check	
 
-	                        	echo '<form id="quick_reference" name="quick_reference" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
+	                        	echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
 	                        	echo '<select class="form-control" name = "course_for_preference">';
 								echo '<option selected disabled hidden value=""></option>';
 								

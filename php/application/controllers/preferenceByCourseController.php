@@ -7,7 +7,7 @@ class PreferenceByCourseController extends CI_Controller {
         
         $this->load->model('course_model');
         $this->load->model('semester_model');
-        $this->load->model('form_model');
+        $this->load->model('desired_courses');
     }// end constructor
 
     public function index($course_id){
@@ -22,9 +22,9 @@ class PreferenceByCourseController extends CI_Controller {
         $query = $this->desired_courses->getByCourseId($course_id);
         
         if($query != FALSE) {
-            $data['preferenced_forms'] = $query->result();
+            $data['desired_forms'] = $query->result();
         }
-        
+
         $this->load->view('instructorPreference', $data);
 		//$this->load->view('preferenceByCourse');
 	}// end index

@@ -273,7 +273,14 @@
 	                        	echo '<div class=".col-md-8>"';
 	                        	echo '<select class="form-control message_panel" name = "course_for_preference">';
 								echo '<option selected disabled hidden value=""></option>';
+								
+								foreach($instructor_courses as $temp) {
+									echo '<option>'.$temp->course_name.'</option>';
+								}
+								
+								echo '</select>';
 								echo '</div>"';
+								
 								echo '<div class=".col-md-8>"';
 								echo '<select class="form-control message_panel">';
 								echo '<option selected value="1">1</option>';
@@ -281,11 +288,8 @@
 								echo '<option value="3">2</option>';
 								echo '<option value="4">2</option>';
 								echo '<option value="5">2</option>';
-								echo '</div>"';
-								foreach($instructor_courses as $temp) {
-									echo '<option>'.$temp->course_name.'</option>';
-								}
-								echo '</select>';	
+								echo '</select>';
+								echo '</div>"';	
                         	}
                            ?>
                        </form>

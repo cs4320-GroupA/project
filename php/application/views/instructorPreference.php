@@ -74,6 +74,7 @@
 		               				echo '</tr>';
 		               				echo '</form>';
 	               				}
+	               			}
 						?>
 					</tbody>
                     </table>

@@ -209,13 +209,7 @@
      * input:   $course_id - course to query
      */
         public function getPreferenceByCourse( $course_Id ){
-            $q = 'select f.signature, cp.course_id, c.course_name, u.username 
-                from form f, course_preference cp, course c, user u 
-                where cp.course_id = c.course_id 
-                    and c.instructor_id = u.user_id 
-                    and f.form_id = cp.form_id
-                and cp.course_id = ?';
-            
+            $q = 'SELECT * FROM tasub.course_preferences INNER JOIN tasub.form ON tasub.form.form_id = tasub.course_preferences.form_id INNER JOIN tasub.form_data ON tasub.form_data.form_data_id = tasub.form.form_data WHERE tasub.course_preference.course_id = ?';     
             $result = $this->db->query( $q, array( $course_Id ) );
             
             if( $result->num_rows() > 0 ){

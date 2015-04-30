@@ -42,13 +42,13 @@
   				   	foreach ($courses as $row) {
 						echo '<tr>';
 		         		echo '<td>';
-						//echo '<a href="controllers//instructorViewCoursesController">View</a>';
-						echo '<button class="btn btn-default" a href="controllers//instructorViewCoursesController"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
+		         		echo'<form action = "'.base_url().'index.php/preferenceByController/index/'.$row->$course_id">';
+						echo '<button class="btn btn-default"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
 					   	echo '</td>';
 					    echo '<td>'.$row->course_name.'</td>';
 					    echo '<td>'.$row->semester.'</td>';
 	                    echo '</tr>';
-                        echo "\n\t\t\t";
+	                    echo '</form>';
 				    }
 				   } else {
 				   	echo '<p>You have no courses</p>';

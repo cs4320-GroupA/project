@@ -15,10 +15,6 @@ ul {
 	font-family: 'Oswald', sans-serif;	
 }
 
-.table tbody>tr>td.vert-align{
-    vertical-align: middle;
-}
-
 .btn {
 	font-family: 'Open Sans', sans-serif;
 	margin: 10px;

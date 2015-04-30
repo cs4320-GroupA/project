@@ -15,7 +15,7 @@ ul {
 	font-family: 'Oswald', sans-serif;	
 }
 
-table {
+table, td {
 	vertical-align: middle;
 }
 

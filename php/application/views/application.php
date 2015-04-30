@@ -269,52 +269,22 @@
 	                                echo '</table>';
 	                            }// end isset check	
 
-	                            /*
 	                        	echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
 	                        	echo '<select class="form-control message_panel" name = "course_for_preference">';
-									echo '<option selected disabled hidden value=""></option>';
-									foreach($instructor_courses as $temp) 
-									{
-										echo '<option>'.$temp->course_name.'</option>';
-									}
+								echo '<option selected disabled hidden value=""></option>';
+								
+								foreach($instructor_courses as $temp) {
+									echo '<option value="'.$temp->course_id.'">'.$temp->course_name.'</option>';
+								}
 								echo '</select>';
 								
-								echo '<select class="form-control message_panel">';
+								echo '<select class="form-control message_panel" name = "rank">';
 								echo '<option selected value="1">1</option>';
 								echo '<option value="2">2</option>';
-								echo '<option value="3">3</option>';
-								echo '<option value="4">4</option>';
-								echo '<option value="5">5</option>';
+								echo '<option value="3">2</option>';
+								echo '<option value="4">2</option>';
+								echo '<option value="5">2</option>';
 								echo '</select>';
-								*/
-
-								echo'<div class="row">';
-								  echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
-								    echo'<div class="col-md-6">';
-								      echo'<label>Course</label>';
-								      echo '<select class="form-control message_panel" name = "course_for_preference">';
-								        echo '<option selected disabled hidden value=""></option>';
-								        foreach($instructor_courses as $temp)
-								        {
-								        	echo '<option>'.$temp->course_name.'</option>';
-								        }
-								      echo '</select>';
-								    echo'</div>';
-								    echo'<div class="col-md-6">';
-								      echo'<label>Preference</label>';
-								      echo '<select class="form-control message_panel">';
-								        echo '<option selected value="1">1</option>';
-								        echo '<option value="2">2</option>';
-								        echo '<option value="3">3</option>';
-								        echo '<option value="4">4</option>';
-								        echo '<option value="5">5</option>';
-								      echo '</select>';
-								      echo'<p class="help-block">1 = Lowest, 5 = Highest</p>';
-								    echo'</div>';
-								    echo'<div class="col-md-12">';
-								      echo'<button type="submit" class="btn btn-default message_panel"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
-								    echo'</div>';
-								echo'</div>';
                         	}
                            ?>
                        </form>
@@ -700,7 +670,7 @@
 					</div>
 				</div>
 				<div class = "row">
-					<!--<div class = "col-md-12">-->
+					<div class = "col-md-12">
 						<hr>
 						<p><b>Please note the following</b></p>
 						<div class = "col-md-9">
@@ -739,7 +709,7 @@
 								</label>
 							</div>
 						</div>
-					<!--</div>-->
+					</div>
 				</div>
 				<div class = "row">
 					<div class = "col-md-6">

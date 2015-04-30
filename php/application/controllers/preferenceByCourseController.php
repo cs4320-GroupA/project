@@ -41,7 +41,30 @@ class preferenceByCourse extends CI_Controller {
         redirect('instructorViewCourseController', 'refresh');
         
     }// end add function
-    
+
+    public function quick_add($form_id, $user_id) {
+        $course_info = $this->course_model->getCourseById($_POST['course_for_preference']);
+        
+        $course_name = $course_info->course_name;
+        $course_id = $course_info->course_id;
+        $semester_id = $this->semester_model->getCurrentSemester();
+        $semester_id =$semester_id->row()->semester_id;
+        
+        //$course_info = $this->course_model->getCourseById();
+        
+        $result = $this->course_model->createPreference( 
+            $course_id,         //
+            $course_name,       //
+            $form_id, 
+            $semester_id,       //
+            $_POST['course_for_preference']  
+        );
+        
+        $path = 'viewForm/'.$user_id.'/'.$semester_id;
+        redirect($path, 'refresh');
+        
+    }// end add function
+        
 /*
  * remove() - applicant-course preference to remove
  * input:   $user_id - id of user to remove as preference

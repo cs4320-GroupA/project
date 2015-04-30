@@ -312,7 +312,7 @@
 								      echo'<p class="help-block">1 = Lowest, 5 = Highest</p>';
 								    echo'</div>';
 								    echo'<div class="col-md-12">';
-								      echo'<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
+								      echo'<button type="submit" class="btn btn-default message_panel"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
 								    echo'</div>';
 								echo'</div>';
                         	}

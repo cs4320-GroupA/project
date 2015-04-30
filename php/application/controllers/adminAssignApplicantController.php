@@ -26,9 +26,11 @@
             
             $course_name = $_POST['courseToAssign'];
             
-            $result = $this->course_model->getCourseByName($course_name);
+            $query = $this->course_model->getCourseByName($course_name);
             
-            $course_id = $result->course_id;
+            foreach($query->result() as $row){
+                $course_id = $row->course_id;
+            }
             //query for the preferences table
            
             //$prefs = $this->course_model->getPreferenceByCourse($course_id);
@@ -43,6 +45,8 @@
             $data['applicants'] = $this->course_model->getCourseById($course_id);
             
             //array('applicants' => $apps->result());
+            
+            $data['courses'] = $this->course_model->getCourses();
             
             
             //loading the view using the data

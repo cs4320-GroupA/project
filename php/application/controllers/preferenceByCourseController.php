@@ -61,7 +61,7 @@ class PreferenceByCourseController extends CI_Controller {
             $course_name,       //
             $form_id, 
             $semester_id,       //
-            $_POST['rank'])  
+            $_POST['rank'] 
         );
         
         $path = base_url().'index.php/form/viewForm/'.$user_id.'/'.$semester_id;

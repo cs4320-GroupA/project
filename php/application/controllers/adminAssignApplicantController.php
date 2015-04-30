@@ -38,26 +38,26 @@
             
             //query for the preferences table
            
-            //$prefs = $this->course_model->getPreferenceByCourse($course_id);
+            $prefs = $this->course_model->getPreferenceByCourse($course_id);
             
             //$data['preferences'] = array('preferences' => $prefs->result());
                 
-            $data['preferences'] = $this->course_model->getPreferenceByCourse($course_id);
+            $data['preferences'] = $prefs->result();
             
             //query for the applicant pool
-            //$apps = $this->course_model->getCoursesById($course_id);
+            $apps = $this->course_model->getCoursesById($course_id);
             
             //$data['applicants'] = array('applicants' => $apps->result()); 
             
-            $data['applicants'] = $this->course_model->getCoursesById($course_id);
+            $data['applicants'] = $apps->result();
             
                 //$this->course_model->getCourseById($course_id);
             
-            //$courses = $this->course_model->getCourses();
+            $courses = $this->course_model->getCourses();
             
             //$data['courses'] = array('courses' => $courses->result());
               
-            $data['courses'] = $this->course_model->getCourses();
+            $data['courses'] = $courses->result();
                 //$this->course_model->getCourses();
             
             

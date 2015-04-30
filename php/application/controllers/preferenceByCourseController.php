@@ -11,7 +11,7 @@ class PreferenceByCourseController extends CI_Controller {
 
     public function index(){
         
-        $this->load->view('instructorPreferences');
+        $this->load->view('instructorPreference');
 		//$this->load->view('preferenceByCourse');
 	}// end index
     

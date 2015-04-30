@@ -270,18 +270,14 @@
 	                            }// end isset check	
 
 	                        	echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/add" method="POST">';
-	                        	echo '<div class=".col-md-8>"';
 	                        	echo '<select class="form-control message_panel" name = "course_for_preference">';
 								echo '<option selected disabled hidden value=""></option>';
 								
 								foreach($instructor_courses as $temp) {
 									echo '<option>'.$temp->course_name.'</option>';
 								}
-								
 								echo '</select>';
-								echo '</div>"';
 								
-								echo '<div class=".col-md-8>"';
 								echo '<select class="form-control message_panel">';
 								echo '<option selected value="1">1</option>';
 								echo '<option value="2">2</option>';
@@ -289,7 +285,6 @@
 								echo '<option value="4">2</option>';
 								echo '<option value="5">2</option>';
 								echo '</select>';
-								echo '</div>"';	
                         	}
                            ?>
                        </form>

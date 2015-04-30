@@ -253,19 +253,17 @@
 	                                echo '<table>';	
 
 	                                foreach($instructor_courses as $p_row){
-	                                    echo '<td>';
 	                                    echo '<tr><strong>'.$p_row->course_name.'</strong></tr>';
 	                                	
 	                                	if(isset($prefs)) {
 	          								foreach($prefs as $row) {
 	                                			if($p_row->course_name == $row->course_name) {
-	                                				echo '<td>';
-	                                    			echo '<tr>'.$row->form_id.'</tr>';
-	                                    			echo '</td>';
+	                                				echo '<tr>';
+	                                    			echo '<td>'.$row->form_id.'</td>';
+	                                    			echo '</tr>';
 	                                			}
 	                                		}
 	                           			}
-	                           			echo '</td>';
 	                                }// end foreach
 	                                echo '</table>';
 	                            }// end isset check	

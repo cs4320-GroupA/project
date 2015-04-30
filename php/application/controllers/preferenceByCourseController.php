@@ -6,6 +6,7 @@ class PreferenceByCourseController extends CI_Controller {
         parent::__construct();
         
         $this->load->model('course_model');
+        $this->load->model('semester_model');
     }// end constructor
 
     public function index(){

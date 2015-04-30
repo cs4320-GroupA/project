@@ -42,7 +42,7 @@
 									echo '<td>'.$row->rank.'</td>';
 									echo '</tr>';
                     			}
-                    		} else {
+                    		}
                     	?>
 					</tbody>
                     </table>

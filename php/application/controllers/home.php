@@ -6,7 +6,12 @@
        }
 
 		public function index() {
-			$this->load->view('infopage');
+			$this->load->model('semester_model');
+
+			$data['status_title'] = $this->semester_model->getCurrentSemesterTitle();
+			$data['semester_title'] = $this->semester_model->getCurrentSemesterStatus();
+			
+			$this->load->view('infopage', $data);
 		}
 	}
 ?>

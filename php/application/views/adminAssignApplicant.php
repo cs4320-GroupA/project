@@ -29,7 +29,7 @@
                     <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/getApplicants/' ?> />
                     <select class="form-control" name = "courseToAssign" required>
 						<?php
-							foreach($courses as $row){
+							foreach($data['courses'] as $row){
             
 								echo "<option>".$row->course_name."</option>";
                                 //echo '<input type="hidden" name="course_id" value='.$row->course_id.'>';
@@ -61,8 +61,8 @@
 						</thead>
 						<tbody>
 							<?php 
-                                if(isset($applicants)){
-                                    foreach($applicants as $applicant){
+                                if(isset($data['applicants'])){
+                                    foreach($data['applicants'] as $applicant){
                                         echo '<tr>'; 
                                             echo "<td><input type='checkbox'></td>";
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
@@ -96,8 +96,8 @@
 						</thead>
 						<tbody>
 							<?php
-                                 if(isset($preferences)){ 
-                                    foreach($preferences as $preference){
+                                 if(isset($data['preferences'])){ 
+                                    foreach($data['preferences'] as $preference){
                                         echo '<tr>';
                                             echo '<td>'.$preference->username.'</td>';
                                             echo '<td>'.$preference->cp.'</td>';

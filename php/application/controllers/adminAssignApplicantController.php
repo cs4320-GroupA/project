@@ -19,8 +19,9 @@
             
             //$data['courses'] = array('courses' => $courses->result());
             
+            $courses = $this->course_model->getCourses();
             
-            $data['courses'] = $this->course_model->getCourses();
+            $data['courses'] = $courses->result();
             
 			$this->load->view('adminAssignApplicant',$data);
 		}

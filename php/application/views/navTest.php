@@ -2,11 +2,11 @@
   <div class="container">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-header">
-	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </a>
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
         <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
         </div>
         <div class="navbar-collapse collapse">

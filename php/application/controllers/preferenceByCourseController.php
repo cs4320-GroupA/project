@@ -64,7 +64,6 @@ class preferenceByCourse extends CI_Controller {
         redirect($path, 'refresh');
         
     }// end add function
-        
 /*
  * remove() - applicant-course preference to remove
  * input:   $user_id - id of user to remove as preference

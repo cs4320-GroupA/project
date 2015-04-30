@@ -61,7 +61,7 @@ class preferenceByCourse extends CI_Controller {
             $_POST['course_for_preference']  
         );
         
-        $path = 'viewForm/'.$user_id.'/'.$semester_id;
+        $path = base_url().'index.php/viewForm/'.$user_id.'/'.$semester_id;
         redirect($path, 'refresh');
         
     }// end add function

@@ -30,14 +30,16 @@
             
             $course_name = $_POST['courseToAssign'];
             
-            $course_name = "CS 1050: Joe's Story Time";
-            
             $query = $this->course_model->getCourseByName($course_name);
             
-            $result = $query->result();
             
-            foreach($result as $row){
-                $course_id = $row->course_id;
+            if($query != FALSE){
+                $result = $query->result();
+                foreach($result as $row){
+                    $course_id = $row->course_id;
+                }
+            } else {
+                $course_id = 1;   
             }
             //query for the preferences table
            

@@ -3,8 +3,6 @@
 ### The Project
 Built in MVC as the final project for CS4320: Software Engineering @ University of Missouri-Columbia.
 
-[GitHub](https://github.com/cs4320-GroupA/project)
-
 ### The Technology 
 PHP + MySQL + Red Hat OpenShift + JavaScript + Bootstrap
 

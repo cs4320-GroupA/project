@@ -48,7 +48,7 @@
             $data['preferences'] = $prefs->result();
             
             //query for the applicant pool
-            $apps = $this->course_model->getCoursesById($course_id);
+            $apps = $this->course_model->getCourseById($course_id);
             
             //$data['applicants'] = array('applicants' => $apps->result()); 
             

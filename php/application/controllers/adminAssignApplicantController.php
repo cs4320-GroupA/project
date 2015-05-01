@@ -70,7 +70,7 @@
             $apps = $this->desired_courses_model->getByCourseId($course_id);
             
             
-            if($apps->result() != false)
+            if($apps != false)
                 $data['applicants'] = $apps;
             else
                 $data['applicants'] = null;   

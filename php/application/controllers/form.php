@@ -146,15 +146,11 @@
 			}
 
 			$instructor_courses = $this->course_model->getCoursesByInstructor($this->session->userdata('user_id'));
-			$data['instructor_courses'] = $instructor_courses->result();
+
+			if($instructor_courses != FALSE) {
+				$data['instructor_courses'] = $instructor_courses->result();
+			}
 			
-           $prefs = $this->course_model->getPreferenceByInstructor($this->session->userdata('user_id'));
-            
-            if($prefs != FALSE){
-                $data['prefs'] = $prefs->result();
-            }
-            //$p_data['prefs'] = $prefs->result();  //OR...
-            
 			$this->load->view('application', $data);
 		}
 		public function submitForm() {

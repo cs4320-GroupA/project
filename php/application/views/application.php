@@ -248,26 +248,6 @@
 	    					}
 
                         	if($this->session->userdata('user_type') != 'applicant') {	
-
-	                            if(isset($instructor_courses)){
-	                                echo '<table>';	
-
-	                                foreach($instructor_courses as $p_row){
-	                                    echo '<tr><strong>'.$p_row->course_name.'</strong></tr>';
-	                                	
-	                                	if(isset($prefs)) {
-	          								foreach($prefs as $row) {
-	                                			if($p_row->course_name == $row->course_name) {
-	                                				echo '<tr>';
-	                                    			echo '<td>'.$row->form_id.'</td>';
-	                                    			echo '</tr>';
-	                                			}
-	                                		}
-	                           			}
-	                                }// end foreach
-	                                echo '</table>';
-	                            }// end isset check	
-
 								echo'<div class="row">';
 								  echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/quick_add/'.$form_id.'/'.$user_id.'" method="POST">';
 								    echo'<div class="col-md-6">';

@@ -66,6 +66,7 @@
 			<br>
 			<br>
 			<div class="row">
+				<div class="col-md-12>">
 				<h3>Edit or Remove an Existing Course</h3>
 				<table class="table table-hover table-striped">
 		        <thead>
@@ -96,7 +97,8 @@
 
 			   ?>
 		        </tbody>
-		      </table>				
+		      </table>	
+		      </div>			
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

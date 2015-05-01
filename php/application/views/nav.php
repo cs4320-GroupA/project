@@ -17,7 +17,7 @@
 						if($this->session->userdata('user_type') == 'applicant')
 						{
 							echo "<li><a href='".base_url()."index.php/form'>Application</a></li>";
-							echo "<li><a href='".base_url()."index.php/notificationsController'>Notifications</a></li>"; 
+							echo "<li><a href='".base_url()."index.php/notificationsController'>Notifications</a></li>";
 							//Nav options for instructor
 						}
 						else if($this->session->userdata('user_type') == 'instructor')
@@ -38,12 +38,16 @@
 					else
 					{
 						redirect('login', 'refresh');
-					}	
+					}
 				?>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href='<?php echo base_url(); ?>index.php/login/logout'>Logout <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
 			</ul>
 			</div><!--/.nav-collapse -->
-		</div>
 	</div>
+</div>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

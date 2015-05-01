@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<?php
-			include 'navTest.php';
+			include 'nav.php';
 			echo '<div class="container">';
 				echo '<div class="jumbotron">';
 					echo '<center>';

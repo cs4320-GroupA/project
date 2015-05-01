@@ -31,7 +31,7 @@
 						<?php
 							foreach($courses as $row){
                                 print_r($currentCourse);
-                                if($currentCourse->course_id == $row->course_id)
+                                if($currentCourse[0]->course_id == $row->course_id)
 								    echo "<option selected>".$row->course_name."</option>";
                                 else
 								    echo "<option>".$row->course_name."</option>";

@@ -68,6 +68,7 @@
                                     foreach($applicants as $applicant){
                                         echo '<tr>'; 
                                             echo "<td><input type='checkbox'></td>";
+                                            print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
                                             echo "<td>" . $applicant->gpa_float . "</td>";
                                             echo "<td>" . $applicant->grade . "</td>";

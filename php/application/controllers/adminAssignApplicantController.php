@@ -11,6 +11,7 @@
 			$this->load->model('semester_model');
 			$this->load->model('user_model');
 			$this->load->model('form_model');
+            $this->load->model('desired_courses_model');
             
         }
 
@@ -57,14 +58,22 @@
             //$apps = $this->course_model->getCourseById($course_id);
             
             //$data['applicants'] = array('applicants' => $apps->result()); 
-            $sem = $this->semester_model->getCurrentSemester();
+            //$sem = $this->semester_model->getCurrentSemester();
             
-            $semester = $sem->result();
+            //$semester = $sem->result();
             
             
             //trying to hard code the semester_id real quick
             
-            $data['applicants'] = $this->form_model->getAllBySemesterId(1);
+            //$data['applicants'] = $this->form_model->getAllBySemesterId(1);
+            
+            $apps = $this->desired_courses_model->getByCourseId($course_id);
+            
+            
+            if($apps->result() != false)
+                $data['applicants'] = $apps->result();
+            else
+                $data['applicants'] = null;   
             
                 //$this->course_model->getCourseById($course_id);
             

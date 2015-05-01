@@ -56,8 +56,10 @@
             $sem = $this->semester_model->getCurrentSemester();
             
             $semester = $sem->result();
-
-            $apps =  $this->form_model->getAllBySemesterId($semester->row()->semester_id);
+            
+            
+            //trying to hard code the semester_id real quick
+            $apps =  $this->form_model->getAllBySemesterId(1);
             
             $data['applicants'] = $apps->result();
             

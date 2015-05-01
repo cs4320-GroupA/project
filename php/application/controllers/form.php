@@ -131,7 +131,7 @@
 				$data['semester_id'] = $semester_id;
 				$result = $this->course_model->getCourses();
 				$data['courses'] = $result->result_array();
-				$data['message_header'] = 'Current Preferences';
+				$data['message_header'] = 'Quick Preference';
 				$data['form_id'] = $form->form_id;
 			}
 			else {

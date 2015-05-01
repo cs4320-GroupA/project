@@ -60,9 +60,8 @@
             
             
             //trying to hard code the semester_id real quick
-            $apps =  $this->form_model->getAllBySemesterId(1);
             
-            $data['applicants'] = $apps->result();
+            $data['applicants'] = $this->form_model->getAllBySemesterId(1);
             
                 //$this->course_model->getCourseById($course_id);
             

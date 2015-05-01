@@ -105,6 +105,7 @@
                              if(isset($preferences)){     
                                  if(count($preferences) > 0){ 
                                     foreach($preferences as $preference){
+                                        print_r($preferences);
                                         echo '<tr>';
                                             echo '<td>'.$preference->username.'</td>';
                                             echo '<td>'.$preference->cp.'</td>';

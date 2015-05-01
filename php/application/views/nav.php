@@ -1,14 +1,15 @@
-<div class="navbar navbar-inverse navbar-fixed-top navbar-collapse" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="<?php echo base_url(); ?>index.php/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
 		</div>
-		<div class="collapse navbar-collapse">
+		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<?php
 					//check if 'user_type' is set

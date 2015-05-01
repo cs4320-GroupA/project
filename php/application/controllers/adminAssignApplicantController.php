@@ -41,6 +41,7 @@
                 foreach($result as $row){
                     $course_id = $row->course_id;
                 }
+                $data['currentCourse'] = $result;
             } else {
                 $course_id = 1;   
             }

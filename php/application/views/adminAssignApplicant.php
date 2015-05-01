@@ -30,10 +30,11 @@
                     <select class="form-control" name = "courseToAssign" required>
 						<?php
 							foreach($courses as $row){
-            
-								echo "<option>".$row->course_name."</option>";
-                                //echo '<input type="hidden" name="course_id" value='.$row->course_id.'>';
-
+                                
+                                if($currentCourse->course_id == $row->course_id)
+								    echo "<option selected>".$row->course_name."</option>";
+                                else
+								    echo "<option>".$row->course_name."</option>";
 							}
 						?>
                     </select>

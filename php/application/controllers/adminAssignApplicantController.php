@@ -47,8 +47,11 @@
             $prefs = $this->course_model->getPreferenceByCourse($course_id);
             
             //$data['preferences'] = array('preferences' => $prefs->result());
-                
-            $data['preferences'] = $prefs->result();
+            
+            if($prefs == false)
+                $data['preferences'] = null;
+            else
+                $data['preferences'] = $prefs->result();
             
             //query for the applicant pool
             //$apps = $this->course_model->getCourseById($course_id);

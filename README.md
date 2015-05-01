@@ -1,7 +1,5 @@
 ## TA/PLA Web App##
 
-***
-
 ### The Project
 Built in MVC as the final project for CS4320: Software Engineering @ University of Missouri-Columbia.
 

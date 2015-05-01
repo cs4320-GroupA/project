@@ -25,7 +25,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h3>Add a Course</h3>
+					<h3>Edit Course</h3>
 					<form method="post" accept-charset="utf-8" action="<?php echo base_url().'index.php/adminEditCourseController/edit/'.$course->course_id; ?>" />
 						<div class="form-group">
 							<label for="courseName">Course Name: </label>
@@ -43,7 +43,7 @@
 							    <option>FALL 2018</option>
 							</select>
 						</div>
-						<button type="submit" class="btn btn-default">Finish Editing</button>
+						<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Finish Editing</button>
 					</form>
 				</div>
 			</div>

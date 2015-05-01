@@ -55,7 +55,9 @@
             //$data['applicants'] = array('applicants' => $apps->result()); 
             $semester = $this->semester_model->getCurrentSemester();
 
-            $data['applicants'] = $this->form_model->getAllBySemesterId($semester->row()->semester_id);
+            $apps =  $this->form_model->getAllBySemesterId($semester->row()->semester_id);
+            
+            $data['applicants'] = $apps->result();
             
                 //$this->course_model->getCourseById($course_id);
             

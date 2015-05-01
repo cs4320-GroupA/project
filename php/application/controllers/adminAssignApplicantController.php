@@ -30,10 +30,11 @@
         
         public function getApplicants(){
             
+            //grabbing the course_id by using the selected course name
+            
             $course_name = $_POST['courseToAssign'];
             
             $query = $this->course_model->getCourseByName($course_name);
-            
             
             if($query != FALSE){
                 $result = $query->result();
@@ -43,30 +44,18 @@
             } else {
                 $course_id = 1;   
             }
-            //query for the preferences table
            
+            //INSTRUCTOR PREFRENCES of applicants
             $prefs = $this->course_model->getPreferenceByCourse($course_id);
-            
-            //$data['preferences'] = array('preferences' => $prefs->result());
             
             if($prefs == false)
                 $data['preferences'] = null;
             else
                 $data['preferences'] = $prefs->result();
             
-            //query for the applicant pool
-            //$apps = $this->course_model->getCourseById($course_id);
-            
-            //$data['applicants'] = array('applicants' => $apps->result()); 
-            //$sem = $this->semester_model->getCurrentSemester();
-            
-            //$semester = $sem->result();
             
             
-            //trying to hard code the semester_id real quick
-            
-            //$data['applicants'] = $this->form_model->getAllBySemesterId(1);
-            
+            //APPLICANTS WHO PREFER THIS COURSE
             $apps = $this->desired_courses_model->getByCourseId($course_id);
             
             
@@ -77,12 +66,10 @@
             
                 //$this->course_model->getCourseById($course_id);
             
+            //COURSES
             $courses = $this->course_model->getCourses();
-            
-            //$data['courses'] = array('courses' => $courses->result());
               
             $data['courses'] = $courses->result();
-                //$this->course_model->getCourses();
             
             
             //loading the view using the data

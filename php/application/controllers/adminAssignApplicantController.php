@@ -71,7 +71,7 @@
             
             
             if($apps != false)
-                $data['applicants'] = $apps;
+                $data['applicants'] = $apps->result();
             else
                 $data['applicants'] = null;   
             

@@ -63,7 +63,7 @@
 						</thead>
 						<tbody>
 							<?php 
-                                if($applicants->num_rows() > 0){
+                                if(count($applicants) > 0){
                                     foreach($applicants as $applicant){
                                         echo '<tr>'; 
                                             echo "<td><input type='checkbox'></td>";
@@ -99,7 +99,7 @@
 						</thead>
 						<tbody>
 							<?php
-                                 if($preferences->num_rows() > 0){ 
+                                 if(count($preferences) > 0){ 
                                     foreach($preferences as $preference){
                                         echo '<tr>';
                                             echo '<td>'.$preference->username.'</td>';

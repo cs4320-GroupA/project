@@ -10,6 +10,7 @@
 			$this->load->model('course_model');
 			$this->load->model('semester_model');
 			$this->load->model('user_model');
+			$this->load->model('form_model');
             
         }
 

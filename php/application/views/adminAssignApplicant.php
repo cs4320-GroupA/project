@@ -63,6 +63,7 @@
 						</thead>
 						<tbody>
 							<?php 
+                            if(isset($applicants){
                                 if(count($applicants) > 0){
                                     foreach($applicants as $applicant){
                                         echo '<tr>'; 
@@ -73,15 +74,16 @@
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
                                         echo '</tr>';
                                     }
-                                } else {
-                                    echo '<tr>';
-                                        echo "<td></td>";
-                                        echo "<td></td>"; 
-                                        echo "<td></td>";
-                                        echo "<td></td>";
-                                        echo "<td></td>";
-                                    echo '</tr>';
                                 }
+                            } else {
+                                echo '<tr>';
+                                    echo "<td></td>";
+                                    echo "<td></td>"; 
+                                    echo "<td></td>";
+                                    echo "<td></td>";
+                                    echo "<td></td>";
+                                echo '</tr>';
+                            }
 							?>							
 						</tbody>
 					</table>
@@ -99,6 +101,7 @@
 						</thead>
 						<tbody>
 							<?php
+                             if(isset($preferences){     
                                  if(count($preferences) > 0){ 
                                     foreach($preferences as $preference){
                                         echo '<tr>';
@@ -106,12 +109,13 @@
                                             echo '<td>'.$preference->cp.'</td>';
                                         echo '</tr>';
                                     }
-                                 } else {
-                                     echo '<tr>';
-                                        echo '<td></td>';
-                                        echo '<td></td>';
-                                    echo '</tr>';
                                  }
+                             } else {
+                                 echo '<tr>';
+                                    echo '<td></td>';
+                                    echo '<td></td>';
+                                echo '</tr>';
+                             }
 							?>
 						</tbody>
 					</table>

@@ -34,7 +34,7 @@
 			if($result == TRUE) {
 				redirect('adminModifyCourseController', 'refresh');
 			} else {
-				redirect('adminEditCourseController', 'refresh');
+				redirect('adminModifyCourseController', 'refresh');
 			}
 			
 		}

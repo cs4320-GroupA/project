@@ -107,8 +107,8 @@
                                     foreach($preferences as $preference){
                                         print_r($preferences);
                                         echo '<tr>';
-                                            echo '<td>'.$preference->username.'</td>';
-                                            echo '<td>'.$preference->cp.'</td>';
+                                            echo '<td>'.$preference->first_name.' '.$preference->last_name.'</td>';
+                                            echo '<td>'.$preference->preference_number.'</td>';
                                         echo '</tr>';
                                     }
                                  }

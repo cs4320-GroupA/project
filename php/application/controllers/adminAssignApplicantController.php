@@ -50,11 +50,12 @@
             $data['preferences'] = $prefs->result();
             
             //query for the applicant pool
-            $apps = $this->course_model->getCourseById($course_id);
+            //$apps = $this->course_model->getCourseById($course_id);
             
             //$data['applicants'] = array('applicants' => $apps->result()); 
-            
-            $data['applicants'] = $apps->result();
+            $semester = $this->semester_model->getCurrentSemester();
+
+            $data['applicants'] = $this->form_model->getAllBySemesterId($semester->row()->semester_id);
             
                 //$this->course_model->getCourseById($course_id);
             

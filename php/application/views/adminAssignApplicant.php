@@ -68,9 +68,9 @@
                                     foreach($applicants as $applicant){
                                         echo '<tr>'; 
                                             echo "<td><input type='checkbox'></td>";
-                                            print_r($applicant);
+                                            //print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
-                                            echo "<td>" . $applicant->gpa_float . "</td>";
+                                            echo "<td>" . $applicant->gpa . "</td>";
                                             echo "<td>" . $applicant->grade . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
                                         echo '</tr>';
@@ -105,7 +105,7 @@
                              if(isset($preferences)){     
                                  if(count($preferences) > 0){ 
                                     foreach($preferences as $preference){
-                                        print_r($preferences);
+                                        //print_r($preferences);
                                         echo '<tr>';
                                             echo '<td>'.$preference->first_name.' '.$preference->last_name.'</td>';
                                             echo '<td>'.$preference->preference_number.'</td>';

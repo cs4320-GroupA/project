@@ -63,7 +63,7 @@
 						</thead>
 						<tbody>
 							<?php 
-                            if(isset($applicants){
+                            if(isset($applicants)){
                                 if(count($applicants) > 0){
                                     foreach($applicants as $applicant){
                                         echo '<tr>'; 
@@ -101,7 +101,7 @@
 						</thead>
 						<tbody>
 							<?php
-                             if(isset($preferences){     
+                             if(isset($preferences)){     
                                  if(count($preferences) > 0){ 
                                     foreach($preferences as $preference){
                                         echo '<tr>';

@@ -27,6 +27,7 @@
 				<?php
 					if ($status_title == "APPLICATION")
 					{
+						echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '<div class ="col-md-12">';
 							echo '<p>';
 							echo 'The application timeline is currently in the <b>Application mode</b>. Here, applicants can submit applications to be a TA/PLA for the upcoming semester. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
@@ -38,6 +39,7 @@
 					}
 					else if ($status_title == "SELECTION")
 					{
+						echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '<div class ="col-md-6">';
 							echo '<p>';
 							echo 'The application timeline is currently in the <b>Selection mode</b>. Here, instructors will preference applicants for each of their classes. Upon moving back to the Application mode, applicant submissions are reopened.';
@@ -57,6 +59,7 @@
 					}
 					else if ($status_title == "NOTIFICATION")
 					{
+						echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '<div class ="col-md-6">';
 							echo '<p>';
 							echo 'The application timeline is currently in the <b>Notification mode</b>. Here, instructors will preference applicants for each of their classes. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
@@ -76,6 +79,7 @@
 					}
 					else
 					{
+						echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '<div class ="col-md-4">';
 							echo '<p>';
 							echo 'Move to the Application mode. Here, applicants can submit applications to be a TA/PLA for the upcoming semester. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';

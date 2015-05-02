@@ -48,6 +48,27 @@
 				</div>
 			</div>
 			<br><br>
+			<div class="row">
+			    <h3>Currently Assigned Students</h3>
+			    <table class="table table-hover table-striped">
+			      <thead>
+			        <tr>
+			          <th>Remove</th>
+			          <th>Full Name</th>
+			          <th>GPA</th>
+			          <th>Grad Year</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr>
+			          <td><button class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove</button></td>
+			          <td></td>
+			          <td></td>
+			          <td></td>
+			        </tr>
+			      </tbody>
+			    </table>
+		    </div>
 			<?php if(isset($applicants)) { ?>
 			<div class='row'>
 				<div class="col-md-6">

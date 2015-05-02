@@ -148,7 +148,7 @@
 						    echo'<div class="col-md-6 col-md-offset 2">';
 						      echo'<br>';
 						      echo'<button class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
-						    echo'</di						echo '</div>';v>';
+						    echo '</div>';
 						  echo'</div>';
 						echo'</div>';
 					}

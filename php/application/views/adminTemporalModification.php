@@ -38,6 +38,9 @@
                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/2">Move Forward to Selection <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>';
                             echo "\n<form>";
 						echo '</div>';
+						echo '<div class = "col-md-12">';
+							echo '<h3>Change Semesters</h3>';
+						echo '</div>';
 					}
 					else if ($status_title == "SELECTION")
 					{
@@ -60,6 +63,9 @@
                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/3">Move Forward to Notification <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>';
                             echo "\n</form>";
 						echo '</div>';
+						echo '<div class = "col-md-12">';
+							echo '<h3>Change Semesters</h3>';
+						echo '</div>';
 					}
 					else if ($status_title == "NOTIFICATION")
 					{
@@ -81,6 +87,9 @@
                             echo '<form>';
                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/1"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Move Back to Application</button>';
                             echo '</form>';
+						echo '</div>';
+						echo '<div class = "col-md-12">';
+							echo '<h3>Change Semesters</h3>';
 						echo '</div>';
 					}
 					else
@@ -111,6 +120,9 @@
                             echo '<form>';
                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/3">Move to Notification</button>';
                             echo '</form>';
+						echo '</div>';
+						echo '<div class = "col-md-12">';
+							echo '<h3>Change Semesters</h3>';
 						echo '</div>';
 					}
 				?>				

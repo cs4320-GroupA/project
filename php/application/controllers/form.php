@@ -73,7 +73,7 @@
 			if($this->semester_model->getCurrentSemesterStatus() != 'APPLICATION') {
 				//If it is not the application window then do not allow submissions/edits
 				$data['editable'] = FALSE;
-				$data['submitted'] = FALSE;
+				$data['submittable'] = FALSE;
 				$data['view_only'] = TRUE;
 			}
 

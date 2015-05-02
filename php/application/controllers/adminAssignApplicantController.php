@@ -65,7 +65,7 @@
 
             $query = $this->db->query($sql, array($assigned_id));
 
-            $path = base_url().'index.php/adminAssignApplicantController/viewCourse/'.$result->course_id;
+            $path = base_url().'index.php/adminAssignApplicantController/viewCourse/'.$course_id;
             redirect($path, 'redirect');
         }
 

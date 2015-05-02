@@ -23,6 +23,10 @@ ul {
 	font-family: 'Open Sans', sans-serif;
 }
 
+#info {
+	margin-bottom: 10px;
+}
+
 .navbar-default .navbar-brand {
 	font-family: 'Open Sans', sans-serif;
 }

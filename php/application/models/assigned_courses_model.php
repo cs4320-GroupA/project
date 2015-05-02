@@ -5,7 +5,7 @@
 			parent::__construct();
 		}
 		
-		public function insert($couse_id, $couse_name, $form_id, $semester_id){
+		public function insert($course_id, $course_name, $form_id, $semester_id){
 			$sql = 'INSERT INTO assigned_courses(course_id, course_name, form_id, semester_id) VALUES
 			(?, ?, ?, ?)';
 			

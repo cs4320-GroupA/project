@@ -48,6 +48,7 @@
 				</div>
 			</div>
 			<br><br>
+			<?php if(isset($applicants)) { ?>
 			<div class='row'>
 				<div class="col-md-6">
                  <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/assign/' ?> />
@@ -68,7 +69,7 @@
                                 if(count($applicants) > 0){
                                     foreach($applicants as $applicant){
                                         echo '<tr>'; 
-                                            echo "<td><input type='checkbox'></td>";
+                                            echo "<td><input type='checkbox' name=''></td>";
                                             //print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
                                             echo "<td>" . $applicant->gpa . "</td>";
@@ -124,6 +125,7 @@
 					</table>
 				</div>
 			</div>
+			<?php } ?>
 		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

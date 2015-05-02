@@ -53,7 +53,7 @@ class PreferenceByCourseController extends CI_Controller {
             $result = $this->course_model->editPreference($query->row()->preference_id, $form_id, $_POST['rank']); 
         }
         
-        $path = base_url().'index.php/preferenceByCourseController/'.$course_id;
+        $path = base_url().'index.php/preferenceByCourseController/index/'.$course_id;
         redirect($path, 'refresh');
         
     }// end add function

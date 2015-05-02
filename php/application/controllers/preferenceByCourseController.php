@@ -68,7 +68,7 @@ class PreferenceByCourseController extends CI_Controller {
         $semester_id = $this->semester_model->getCurrentSemester();
         $semester_id =$semester_id->row()->semester_id;
         
-        $query = getPreferenceByCourseAndRank($course_id, $rank);
+        $query = $this->course_model->getPreferenceByCourseAndRank($course_id, $rank);
 
         if($query == FALSE) {
             $result = $this->course_model->createPreference( 

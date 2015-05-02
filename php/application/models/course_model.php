@@ -221,6 +221,27 @@
             
         }//  end getPreferenceByCourse
         
+        public function getPreferenceByCourseAndRank($course_id, $rank) {
+          $sql = 'SELECT * FROM tasub.course_preference WHERE course_id = ? AND preference_number = ?';
+          $query = $this->db->query($sql, array($course_id, $rank);
+
+          if($query->num_rows() > 0) {
+            return $query;
+          } else {
+            return FALSE;
+          }
+        }
+
+        public function editPreference($preference_id, $form_id, $rank) {
+          $sql = 'UPDATE tasub.course_preference SET form_id = ?, preference_number = ? WHERE preference_id = ?';
+          $query = $this->db->query($sql, array($form_id, $rank, $preference_id);
+
+          if($this->db->affected_rows() > 0) {
+            return TRUE;
+          } else {
+            return FALSE;
+          }
+        }
     /*
      * removePreference() - remove a preference between applicant and course
      * input:  $course_id - id of course to remove

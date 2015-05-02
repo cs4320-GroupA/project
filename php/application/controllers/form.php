@@ -164,8 +164,10 @@
 			$this->load->model('semester_model');
 
 			$semester = $this->semester_model->getCurrentSemester();
+			$semester_id = $semester->row()->semester_id;
+
 			//Get the current applicant's form if exists
-			$query = $this->form_model->getForm($this->session->userdata('user_id'), $semester->row()->semester_id);
+			$query = $this->form_model->getForm($this->session->userdata('user_id'), $semester_id);
 
 			//If an entry for user's application exists for this semester, then do not allow resubmission
 			if($query != FALSE) {
@@ -230,7 +232,7 @@
 			$fdata_id = $this->form_data_model->getFormDataID($studentID, $semester);
 
 			//Insert form meta data into database
-			$result = $this->form_model->submitForm($this->session->userdata['semester_id'], $fdata_id, $this->session->userdata['user_id'], $signature, $date);
+			$result = $this->form_model->submitForm($semester_id, $fdata_id, $this->session->userdata['user_id'], $signature, $date);
 			
 			$base_string = 'currently_teaching';
 			$post_string = $base_string.'1';

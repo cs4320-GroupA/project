@@ -27,7 +27,7 @@
 				<?php
 					if ($status_title == "APPLICATION")
 					{
-						echo '<div class = "col-md-12">'
+						echo '<div class = "col-md-12">';
 							echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '</div>';
 						echo '<div class ="col-md-12">';
@@ -41,7 +41,7 @@
 					}
 					else if ($status_title == "SELECTION")
 					{
-						echo '<div class = "col-md-12">'
+						echo '<div class = "col-md-12">';
 							echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '</div>';
 						echo '<div class ="col-md-6">';
@@ -63,7 +63,7 @@
 					}
 					else if ($status_title == "NOTIFICATION")
 					{
-						echo '<div class = "col-md-12">'
+						echo '<div class = "col-md-12">';
 							echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '</div>';
 						echo '<div class ="col-md-6">';
@@ -85,7 +85,7 @@
 					}
 					else
 					{
-						echo '<div class = "col-md-12">'
+						echo '<div class = "col-md-12">';
 							echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '</div>';
 						echo '<div class ="col-md-4">';

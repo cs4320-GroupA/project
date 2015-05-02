@@ -25,17 +25,33 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<?php				
+					<!--
+					<?php
+						/*			
 						if (isset($))
 						{
-							echo'<p>Notifications here! </p>';
+							echo '<p></p>';
+							echo'<table class="table table-hover table-striped">';
+			                    echo'<thead>';
+			                    	echo'<tr>';
+			                    		echo'<th>Course Name</th>';
+			                    		echo'<th>Instructor</th>';
+			                    		echo'<th>Semester</th>';
+			                    	echo'</tr>';
+			                    echo'</thead>';
+			                    echo'<tbody>';
+																		
+								echo'</tbody>';
+		                    echo'</table>';
 						}
 
 						else 
 						{
 							echo'<p>You have no notifications to display</p>';
 						}
+						*/
 					?>
+					-->
 				</div>
 			</div>
 		</div>

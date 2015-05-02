@@ -83,14 +83,15 @@
             else
                 $data['applicants'] = null;   
             
-                //$this->course_model->getCourseById($course_id);
-            
-            $query = $this->assigned_courses_model->getAssignedApplicants($course_id);
+            $semester = $this->semester_model->getCurrentSemester();
+            $semester_id = $query->row()->semester_id;
+
+            $query = $this->assigned_courses_model->getAssignedApplicants($course_id, $semester_id);
 
             if($query != FALSE) {
                 $data['assigned_applicants'] = $query->result();
             }
-            
+
             //COURSES
             $courses = $this->course_model->getCourses();
               

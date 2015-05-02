@@ -19,7 +19,7 @@
 		?>
 		<div class="container">
 			<div class="page-header">
-				<h2>Preferences </h2>
+				<h2><?php echo $course_name; ?></h2>
 			</div>
 		</div>
 		<div class="container">

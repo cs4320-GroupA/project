@@ -11,7 +11,13 @@ class PreferenceByCourseController extends CI_Controller {
     }// end constructor
 
     public function index($course_id){
+        if(!isset($course_id)) {
+            redirect('home', 'refresh');
+        }
+        
         $data['course_id'] = $course_id;
+        $query = $this->course_model->getCourseById($course_id);
+        $data['course_name'] = $query->row()->course_name;
 
         $query = $this->course_model->getPreferenceByCourse($course_id);
 

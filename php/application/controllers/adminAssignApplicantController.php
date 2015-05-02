@@ -84,7 +84,7 @@
                 $data['applicants'] = null;   
             
             $semester = $this->semester_model->getCurrentSemester();
-            $semester_id = $query->row()->semester_id;
+            $semester_id = $semester->row()->semester_id;
 
             $query = $this->assigned_courses_model->getAssignedApplicants($course_id, $semester_id);
 

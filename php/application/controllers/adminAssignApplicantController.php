@@ -12,7 +12,7 @@
 			$this->load->model('user_model');
 			$this->load->model('form_model');
             $this->load->model('desired_courses_model');
-            
+            $this->load->model('assigned_courses_model');
         }
 
 		public function index() 
@@ -28,24 +28,39 @@
 			$this->load->view('adminAssignApplicant',$data);
 		}
         
+        public function assign($course_id) {
+            $query = $this->course_model->getCourseById($course_id);
+            $course_info = $query->row();
+
+            $query = $this->semester_model->getCurrentSemester();
+            $semester_id = $query->row()->semester_id;
+
+            foreach($_POST['applicants'] as $row) {
+                $this->assigned_courses_model->insert($course_id, $course_info->course_name, $row, $semester_id);
+            }
+            
+            $path = base_url().'/index.php/adminAssignApplicantController/viewCourse/'.$result->course_id;
+            redirect($path, 'redirect');
+        }
+
         public function getApplicants(){
             
-            //grabbing the course_id by using the selected course name
-            
+            //grabbing the course_id by using the selected course name            
             $course_name = $_POST['courseToAssign'];
             
             $query = $this->course_model->getCourseByName($course_name);
-            
+
             if($query != FALSE){
-                $result = $query->result();
-                foreach($result as $row){
-                    $course_id = $row->course_id;
-                }
-                $data['currentCourse'] = $result;
+                $result = $query->row();
+
+                $path = base_url().'/index.php/adminAssignApplicantController/viewCourse/'.$result->course_id;
+                redirect($path, 'redirect');
             } else {
-                $course_id = 1;   
+                redirect('adminAssignApplicantController', 'redirect');
             }
-           
+        }
+
+        public function viewCourse($course_id) {
             //INSTRUCTOR PREFRENCES of applicants
             $prefs = $this->course_model->getPreferenceByCourse($course_id);
             

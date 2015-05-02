@@ -28,11 +28,13 @@
 					<h3>Course</h3>
                     <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/getApplicants/' ?> />
                     <select class="form-control" name = "courseToAssign" required>
+                    	<option disabled selected> </option>
 						<?php
 							foreach($courses as $row){
-                                print_r($currentCourse);
-                                if($currentCourse[0]->course_id == $row->course_id)
-								    echo "<option selected>".$row->course_name."</option>";
+								if(isset($currentCourse)) {
+                                	if($currentCourse->course_id == $row->course_id)
+								    	echo "<option selected>".$row->course_name."</option>";
+								}
                                 else
 								    echo "<option>".$row->course_name."</option>";
 							}
@@ -48,10 +50,10 @@
 				</div>
 			</div>
 			<br><br>
-			<?php if(isset($applicants)) { ?>
+			<?php if(isset($currentCourse)) { ?>
 			<div class='row'>
 				<div class="col-md-6">
-                 <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/assign/' ?> />
+                 <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/assign/'.$currentCourse->course_id ?> />
 					<h3>Applicants that Preferenced this Course</h3>
 					<table class="table table-hover table-striped">
 						<thead>
@@ -69,7 +71,7 @@
                                 if(count($applicants) > 0){
                                     foreach($applicants as $applicant){
                                         echo '<tr>'; 
-                                            echo "<td><input type='checkbox' name=''></td>";
+                                            echo "<td><input type='checkbox' name='applicants[]' value='".$applicant->form_id."'></td>";
                                             //print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
                                             echo "<td>" . $applicant->gpa . "</td>";

@@ -25,26 +25,17 @@
 		<div class="container">
 			<div class="row">
 				<?php
-
-                /*
-                 * need to give out different user options based on current semester status
-                 * if:  application - can go to selection (2)
-                 *      selection - can go to application or to notification (1, 3)
-                 *      notification - can go to application or to selection (1, 2)
-                 *      closed - can go to any of the first three (1, 2, 3)
-                 */
 					if ($status_title == "APPLICATION")
 					{
 						echo '<div class ="col-md-12">';
 							echo '<p>';
 							echo 'The application timeline is currently in the <b>Application mode</b>. Here, applicants can submit applications to be a TA/PLA for the upcoming semester. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
 							echo '</p>';
-							//echo '<button type="button" class="btn btn-primary">Move Forward to Selection</button>';
                             echo "\n<form>\n";
                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/2">Move Forward to Selection <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>';
                             echo "\n<form>";
 						echo '</div>';
-					}// end application if
+					}
 					else if ($status_title == "SELECTION")
 					{
 						echo '<div class ="col-md-6">';
@@ -63,7 +54,7 @@
                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/3">Move Forward to Notification <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>';
                             echo "\n</form>";
 						echo '</div>';
-					}// end selection else if
+					}
 					else if ($status_title == "NOTIFICATION")
 					{
 						echo '<div class ="col-md-6">';
@@ -82,14 +73,13 @@
                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/1"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Move Back to Application</button>';
                             echo '</form>';
 						echo '</div>';
-					}// end notification else if
+					}
 					else
 					{
 						echo '<div class ="col-md-4">';
 							echo '<p>';
 							echo 'Move to the Application mode. Here, applicants can submit applications to be a TA/PLA for the upcoming semester. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
 							echo '</p>';
-							//echo '<button type="button" class="btn btn-primary">Move to Application</button>';
                             echo '<form>';
                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/1">Move to Application</button>';
                             echo '</form>';
@@ -106,12 +96,11 @@
 							echo '<p>';
 							echo 'Move to the Notification mode. Here, the applicants are notified of their potential appointment as a TA/PLA of a course.';
 							echo '</p>';
-							//echo '<button type="button" class="btn btn-primary">Move to Notification</button>';
                             echo '<form>';
                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/3">Move to Notification</button>';
                             echo '</form>';
 						echo '</div>';
-					}// end closed else if
+					}
 				?>				
 			</div>
 		</div>

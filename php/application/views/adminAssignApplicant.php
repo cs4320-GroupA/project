@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			<br><br>
-			<?php isset($assined_applicants) { ?>
+			<?php if(isset($assigned_applicants)) { ?>
 			<div class="row">
 			    <h3>Currently Assigned Students</h3>
 			    <table class="table table-hover table-striped">
@@ -70,7 +70,7 @@
 			      <tbody>
 			        <tr>
                     <?php
-                        foreach($assined_applicants as $row){
+                        foreach($assigned_applicants as $row) {
                             echo '<tr>'; 
                             echo '<form>';
                                 echo '<td><button class="btn btn-default" formaction="'.base_url().'index.php/adminAssignApplicantController/remove/'.$row->assigned_id.'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove</button>';

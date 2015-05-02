@@ -32,11 +32,16 @@
 						<?php
 							foreach($courses as $row){
 								if(isset($currentCourse)) {
-                                	if($currentCourse->course_id == $row->course_id)
+                                	if($currentCourse->course_id == $row->course_id) {
 								    	echo "<option selected>".$row->course_name."</option>";
+								    }
+								    else {
+								    	echo "<option>".$row->course_name."</option>"
+									}
 								}
-                                else
+                                else {
 								    echo "<option>".$row->course_name."</option>";
+								}
 							}
 						?>
                     </select>

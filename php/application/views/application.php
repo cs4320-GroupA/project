@@ -290,8 +290,7 @@
 					if($editable == TRUE) {
 						echo '<form class="form-inline" name="form_data" role="form" onsubmit="return validateForm()" action="'.base_url().'index.php/form/editForm" method="POST">';
 					}
-				}
-				if(isset($submittable)) {
+				} else if(isset($submittable)) {
 					if($submittable == TRUE) {
 							echo '<form class="form-inline" name="form_data" role="form" onsubmit="return validateForm()" action="'.base_url().'index.php/form/submitForm" method="POST">';
 					}

@@ -39,7 +39,7 @@
                 $this->assigned_courses_model->insert($course_id, $course_info->course_name, $row, $semester_id);
             }
             
-            $path = base_url().'/index.php/adminAssignApplicantController/viewCourse/'.$result->course_id;
+            $path = base_url().'/index.php/adminAssignApplicantController/viewCourse/'.$course_id;
             redirect($path, 'redirect');
         }
 
@@ -64,7 +64,7 @@
             $query = $this->course_model->getCourseById($course_id);
 
             $data['currentCourse'] = $query->row();
-            
+
             //INSTRUCTOR PREFRENCES of applicants
             $prefs = $this->course_model->getPreferenceByCourse($course_id);
             

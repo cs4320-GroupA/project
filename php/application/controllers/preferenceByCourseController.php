@@ -68,15 +68,19 @@ class PreferenceByCourseController extends CI_Controller {
         $semester_id = $this->semester_model->getCurrentSemester();
         $semester_id =$semester_id->row()->semester_id;
         
-        //$course_info = $this->course_model->getCourseById();
-        
-        $result = $this->course_model->createPreference( 
-            $course_id,         //
-            $course_name,       //
-            $form_id, 
-            $semester_id,       //
-            $_POST['rank'] 
-        );
+        $query = getPreferenceByCourseAndRank($course_id, $rank);
+
+        if($query == FALSE) {
+            $result = $this->course_model->createPreference( 
+                $course_id,         //
+                $course_name,       //
+                $form_id, 
+                $semester_id,       //
+                $_POST['rank'] 
+            );
+        } else {
+            $result = $this->course_model->editPreference($query->row()->preference_id, $form_id, $_POST['rank']); 
+        }
         
         $path = base_url().'index.php/form/viewForm/'.$user_id.'/'.$semester_id;
         redirect($path, 'refresh');

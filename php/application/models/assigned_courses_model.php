@@ -18,7 +18,9 @@
 		}
 
 		public function getAssignedApplicants($course_id, $semester_id) {
-			$sql = 'SELECT * FROM tasub.assigned_courses INNER JOIN tasub.form ON tasub.form.form_id = tasub.assigned_courses.form_id WHERE tasub.assigned_courses.course_id = ? AND tasub.assigned_courses.semester_id = ?';
+			$sql = 'SELECT * FROM tasub.assigned_courses INNER JOIN tasub.form ON tasub.form.form_id = tasub.assigned_courses.form_id 
+														 INNER JOIN tasub.form_data ON tasub.form_data.form_data_id = tasub.form.form_data 
+														 WHERE tasub.assigned_courses.course_id = ? AND tasub.assigned_courses.semester_id = ?';
 
 			$query = $this->db->query($sql, array($course_id, $semester_id));
 

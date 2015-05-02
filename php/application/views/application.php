@@ -233,10 +233,9 @@
 	        <h2>Application</h2>
 	      </div>
 		<div class = "container">
+		<?php if(isset($message_header)) { ?>
 			<div class = "row">
 	      	<div class="col-md-6 col-md-offset-3">
-		        <?php
-		        	if(isset($message_header)) { ?>
 					<div class="panel panel-default">
 	 		 			<div class="panel-heading">
 	    					<h3 class="panel-title"><b><?php echo $message_header; ?></b></h3>
@@ -280,10 +279,10 @@
                        </form>
 	  					</div>
 					</div>
-					<hr>
-		        <?php } ?>
 	        </div>
 	      </div>
+	      <hr>
+	    <?php } ?>
 	    </div>
 			<?php
 				if(isset($editable)) {

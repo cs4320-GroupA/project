@@ -62,12 +62,13 @@
 				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
 
 			} else {
+				//User has not submitted a form yet, so allow submission
+				$data = array('submittable' => TRUE);
+
 				if($this->semester_model->getCurrentSemesterStatus() != 'APPLICATION') {
 					$data['message_header'] = 'Application Submission Closed';
 					$data['message'] = '<p>The time to submit applications has passed</p>';
-				}
-				//User has not submitted a form yet, so allow submission
-				$data = array('submittable' => TRUE);			
+				}	
 			}
 
 			if($this->semester_model->getCurrentSemesterStatus() != 'APPLICATION') {

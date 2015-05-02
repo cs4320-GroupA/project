@@ -55,6 +55,7 @@
 				</div>
 			</div>
 			<br><br>
+			<?php isset($assined_applicants) { ?>
 			<div class="row">
 			    <h3>Currently Assigned Students</h3>
 			    <table class="table table-hover table-striped">
@@ -68,14 +69,23 @@
 			      </thead>
 			      <tbody>
 			        <tr>
-			          <td><button class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove</button></td>
-			          <td></td>
-			          <td></td>
-			          <td></td>
+                    <?php
+                        foreach($assined_applicants as $row){
+                            echo '<tr>'; 
+                            echo '<form>';
+                                echo '<td><button class="btn btn-default" formaction="'.base_url().'index.php/adminAssignApplicantController/remove/'.$row->assigned_id.'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove</button>';
+                                echo "<td>" . $row->first_name . " " . $row->last_name . "</td>"; 
+                                echo "<td>" . $row->gpa . "</td>";
+                                echo "<td>" . $row->expected_graduation . "</td>";
+                            echo '</form>';
+                            echo '</tr>';
+                        }
+			         ?>
 			        </tr>
 			      </tbody>
 			    </table>
 		    </div>
+		   	<?php } ?>
 			<?php if(isset($currentCourse)) { ?>
 			<div class='row'>
 				<div class="col-md-6">

@@ -16,6 +16,18 @@
 				return FALSE; 
 			}
 		}
+
+		public function getAssignedApplicants($course_id, $semester_id) {
+			$sql = 'SELECT * FROM assigned_courses WHERE course_id = ? AND semester_id = ?';
+
+			$query = $this->db->query($sql, array($course_id, $semester_id));
+
+			if($query->num_rows() > 0) {
+				return $query;
+			} else {
+				return FALSE;
+			}
+		}
 	}
 
 

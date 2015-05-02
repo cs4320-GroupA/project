@@ -80,7 +80,7 @@ class PreferenceByCourseController extends CI_Controller {
                 $rank 
             );
         } else {
-            $result = $this->course_model->editPreference($query->row()->preference_id, $form_id, $rank); 
+            $result = $this->course_model->editPreference($query->row()->preference_id, $form_id, $_POST['rank']); 
         }
         
         $path = base_url().'index.php/form/viewForm/'.$user_id.'/'.$semester_id;

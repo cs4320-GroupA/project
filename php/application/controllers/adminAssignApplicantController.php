@@ -60,10 +60,13 @@
             }
         }
 
-        public function remove($assigned_id){
+        public function remove($assigned_id, $course_id){
             $sql = 'DELETE FROM tasub.assigned_courses WHERE assigned_id = ?';
 
             $query = $this->db->query($sql, array($assigned_id));
+
+            $path = base_url().'index.php/adminAssignApplicantController/viewCourse/'.$result->course_id;
+            redirect($path, 'redirect');
         }
 
         public function viewCourse($course_id) {

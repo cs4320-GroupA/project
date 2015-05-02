@@ -23,10 +23,11 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="row">
 				<?php
 					if ($status_title == "APPLICATION")
 					{
+
+						echo '<div class = "row">';echo 'div class = "row">';
 						echo '<div class = "col-md-12">';
 							echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '</div>';
@@ -82,10 +83,11 @@
 						    echo'</div>';
 						  echo'</div>';
 						echo'</div>';
-
+						echo '</div>';
 					}
 					else if ($status_title == "SELECTION")
 					{
+						echo '<div class = "row">';
 						echo '<div class = "col-md-12">';
 							echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '</div>';
@@ -146,12 +148,13 @@
 						    echo'<div class="col-md-6 col-md-offset 2">';
 						      echo'<br>';
 						      echo'<button class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
-						    echo'</div>';
+						    echo'</di						echo '</div>';v>';
 						  echo'</div>';
 						echo'</div>';
 					}
 					else if ($status_title == "NOTIFICATION")
 					{
+						echo '<div class = "row">';
 						echo '<div class = "col-md-12">';
 							echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '</div>';
@@ -215,10 +218,11 @@
 						    echo'</div>';
 						  echo'</div>';
 						echo'</div>';
-
+						echo '</div>';
 					}
 					else
 					{
+						echo '<div class = "row">';
 						echo '<div class = "col-md-12">';
 							echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '</div>';
@@ -290,10 +294,9 @@
 						    echo'</div>';
 						  echo'</div>';
 						echo'</div>';
-
+						echo '</div>';
 					}
-				?>				
-			</div>
+				?>
 		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

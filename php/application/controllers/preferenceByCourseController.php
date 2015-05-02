@@ -28,36 +28,6 @@ class PreferenceByCourseController extends CI_Controller {
         $this->load->view('instructorPreference', $data);
 		//$this->load->view('preferenceByCourse');
 	}// end index
-    
-/*
- * add() - instructor adds applicant as preferred TA/PLA for course
- * input:   $student_id - id of user to add as perference
- *          $course_id - id of course to pair user to course
- */
-    public function add($student_id, $course_id, $preference_id){
-    
-        $course_info = $this->course_model->getCourseById( $course_id );
-        $course_info = $course_info->row();
-
-        $course_name = $course_info->course_name;
-        
-        $form_info = $this->form_model->getForm( $student_id, 1 );
-        
-        $form_id = $form_info->form_id;
-        
-        //$course_info = $this->course_model->getCourseById();
-        
-        $result = $this->course_model->createPreference( 
-            $course_id,         //
-            $course_name,       //
-            $form_id, 
-            $semester_id,       //
-            $preference_number  
-        );
-        
-        redirect('instructorViewCourseController', 'refresh');
-        
-    }// end add function
 
     public function quick_add($form_id, $user_id) {
         $rank = $_POST['rank'];
@@ -83,7 +53,7 @@ class PreferenceByCourseController extends CI_Controller {
             $result = $this->course_model->editPreference($query->row()->preference_id, $form_id, $_POST['rank']); 
         }
         
-        $path = base_url().'index.php/form/viewForm/'.$user_id.'/'.$semester_id;
+        $path = base_url().'index.php/preferenceByCourseController/'.$course_id;
         redirect($path, 'refresh');
         
     }// end add function

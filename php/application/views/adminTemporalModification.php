@@ -26,8 +26,7 @@
 				<?php
 					if ($status_title == "APPLICATION")
 					{
-
-						echo '<div class = "row">';echo 'div class = "row">';
+						echo '<div class = "row">';
 						echo '<div class = "col-md-12">';
 							echo '<h3>Move this Semester\'s Timeline</h3>';
 						echo '</div>';

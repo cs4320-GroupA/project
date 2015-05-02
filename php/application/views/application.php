@@ -247,12 +247,12 @@
 	    						echo $message;
 	    					}
 
-                        	if($this->session->userdata('user_type') != 'applicant') {	
+                        	if($this->session->userdata('user_type') == 'instructor') {	
 								echo'<div class="row">';
 								  echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/quick_add/'.$form_id.'/'.$user_id.'" method="POST">';
 								    echo'<div class="col-md-6">';
 								      echo'<label>Course</label>';
-								      echo '<select class="form-control message_panel" name = "course_for_preference">';
+								      echo '<select class="form-control message_panel" name = "course_for_preference" required>';
 								        echo '<option selected disabled hidden value=""></option>';
 								        foreach($instructor_courses as $temp)
 								        {
@@ -262,7 +262,7 @@
 								    echo'</div>';
 								    echo'<div class="col-md-6">';
 								      echo'<label>Preference</label>';
-								      echo '<select class="form-control message_panel" name="rank">';
+								      echo '<select class="form-control message_panel" name="rank" required>';
 								        echo '<option selected value="1">1</option>';
 								        echo '<option value="2">2</option>';
 								        echo '<option value="3">3</option>';

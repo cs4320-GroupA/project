@@ -131,7 +131,6 @@
 				$data['semester_id'] = $semester_id;
 				$result = $this->course_model->getCourses();
 				$data['courses'] = $result->result_array();
-				$data['message_header'] = 'Quick Preference';
 				$data['form_id'] = $form->form_id;
 			}
 			else {
@@ -145,12 +144,16 @@
 				$data['comments_about_user'] = $result->result();
 			}
 
-			$instructor_courses = $this->course_model->getCoursesByInstructor($this->session->userdata('user_id'));
+			if($this->session->userdata('user_type') == 'instructor') {
+				$instructor_courses = $this->course_model->getCoursesByInstructor($this->session->userdata('user_id'));
+				
+				if($instructor_courses != FALSE) {
+					$data['instructor_courses'] = $instructor_courses->result();
+				}
 
-			if($instructor_courses != FALSE) {
-				$data['instructor_courses'] = $instructor_courses->result();
+				$data['message_header'] = 'Preference';
 			}
-			
+
 			$this->load->view('application', $data);
 		}
 		public function submitForm() {

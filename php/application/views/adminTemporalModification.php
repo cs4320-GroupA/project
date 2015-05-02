@@ -41,6 +41,7 @@
 						echo '</div>';
 						echo'<div class="row">';
 						  echo'<div class="col-md-12">';
+						    echo'<br><br>';
 						    echo'<h3>Change Semester</h3>';
 						  echo'</div>';
 						echo'</div>';
@@ -108,6 +109,7 @@
 						echo '</div>';
 						echo'<div class="row">';
 						  echo'<div class="col-md-12">';
+						    echo'<br><br>';
 						    echo'<h3>Change Semester</h3>';
 						  echo'</div>';
 						echo'</div>';
@@ -175,6 +177,7 @@
 						echo'</div>';
 						echo'<div class="row">';
 						  echo'<div class="col-md-12">';
+						    echo'<br><br>';
 						    echo'<h3>Change Semester</h3>';
 						  echo'</div>';
 						echo'</div>';
@@ -250,6 +253,7 @@
 						echo'</div>';
 						echo'<div class="row">';
 						  echo'<div class="col-md-12">';
+						    echo'<br><br>';
 						    echo'<h3>Change Semester</h3>';
 						  echo'</div>';
 						echo'</div>';

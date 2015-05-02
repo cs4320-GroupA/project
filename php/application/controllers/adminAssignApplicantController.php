@@ -53,7 +53,7 @@
             if($query != FALSE){
                 $result = $query->row();
 
-                $path = base_url().'/index.php/adminAssignApplicantController/viewCourse/'.$result->course_id;
+                $path = base_url().'index.php/adminAssignApplicantController/viewCourse/'.$result->course_id;
                 redirect($path, 'redirect');
             } else {
                 redirect('adminAssignApplicantController', 'redirect');
@@ -61,6 +61,10 @@
         }
 
         public function viewCourse($course_id) {
+            $query = $this->course_model->getCourseById($course_id);
+
+            $data['currentCourse'] = $query->row();
+            
             //INSTRUCTOR PREFRENCES of applicants
             $prefs = $this->course_model->getPreferenceByCourse($course_id);
             

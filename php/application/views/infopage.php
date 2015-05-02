@@ -40,7 +40,7 @@
 				        	echo'<img class="img-circle" width = "140" height = "140" id="thumbnail" src="../../img/codeonpaper.jpg">';
 				            echo'<h3>Notifications</h3>';
 								echo'<p>View any notifications. Note that notifications will only be available when the timeline is in the Notification window. Any courses you are assigned to will be shown here.</p>';
-				            echo '<a class = "btn btn-default" id="info" href="'.base_url().'index.php/notifcationsController">Notifications <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>';
+				            echo '<a class = "btn btn-default" id="info" href="'.base_url().'index.php/notificationsController">Notifications <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>';
 				        echo'</div>';
 				    echo'</div>';
 				echo'</div>';

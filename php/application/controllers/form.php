@@ -229,23 +229,22 @@
                                        						 $other_work, $semester, $graduate_type, $speak_assessment);
 
 			//Grab the user's form_data entry id 
-			$fdata_id = $this->form_data_model->getFormDataID($studentID, $semester);
+			$form_data_id = $this->form_data_model->getFormDataID($studentID, $semester);
 
 			//Insert form meta data into database
-			$result = $this->form_model->submitForm($semester_id, $fdata_id, $this->session->userdata['user_id'], $signature, $date);
+			$result = $this->form_model->submitForm($semester_id, $form_data_id, $this->session->userdata['user_id'], $signature, $date);
 			
 			$base_string = 'currently_teaching';
 			$post_string = $base_string.'1';
 			$counter = 1;
 			
-			while(isset($_POST[$post_string])) {
-				$result = $this->course_model->getCourseByName($_POST[$post_string]);
-
-				$return = $this->currently_teaching_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $fdata_id);
-				if($return == FALSE) {
-					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $fdata_id);
+			for($i = 1; $i <= 4; $i++) {
+				if(isset($_POST[$post_string])) {
+					$result = $this->course_model->getCourseByName($_POST[$post_string]);
+					
+					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
 				}
-				
+
 				$counter++;
 				$post_string = $base_string.strval($counter);
 			}
@@ -254,13 +253,13 @@
 			$post_string = $base_string.'1';
 			$counter = 1;
 			
-			while(isset($_POST[$post_string])) {
-				$result = $this->course_model->getCourseByName($_POST[$post_string]);
-
-				$return = $this->previous_taught_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $fdata_id);
-				if($return == FALSE) {
-					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $fdata_id);
-				} 
+			for($i = 1; $i <= 10; $i++) {
+				if(isset($_POST[$post_string])) {
+					$result = $this->course_model->getCourseByName($_POST[$post_string]);
+					
+					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					}
+				}
 
 				$counter++;
 				$post_string = $base_string.strval($counter);
@@ -272,16 +271,17 @@
 			$grade_string = $base_grade_string.'1';
 			$counter = 1;
 			
-			while(isset($_POST[$post_string])) {
-				$result = $this->course_model->getCourseByName($_POST[$post_string]);
+			for($i = 1; $i <= 8; $i++) {
+				if(isset($_POST[$post_string])) {
+					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
-				$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $fdata_id);
-				if($return == FALSE) {
-					$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $fdata_id, $_POST[$grade_string]);
-				} else {
-					$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
+					if($result != FALSE) {
+						$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $form_data_id);
+						
+						$this->desired_courses_model->update($return->row()->desired_course_id, $_POST[$grade_string]);
+					}
 				}
-				
+
 				$counter++;
 				$post_string = $base_string.strval($counter);
 				$grade_string = $base_grade_string.strval($counter);

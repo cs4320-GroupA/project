@@ -47,14 +47,14 @@
 							  'editable' => TRUE);
 
 				if($this->semester_model->getCurrentSemesterStatus() == 'APPLICATION') {
-					$data['message_header'] = 'Edit Your Form';
-					$data['message'] = '<p>Your form has been successfully submitted.<br>To edit your submission changes the values as desired and click Edit Button</p>';
+					$data['message_header'] = 'Edit Your Application';
+					$data['message'] = '<p>Your application has been successfully submitted.<br>To edit your submission changes the values as desired and click Edit Button</p>';
 				} else if($this->semester_model->getCurrentSemesterStatus() == 'SELECTION') {
-					$data['message_header'] = 'Edit Your Form';
+					$data['message_header'] = 'Application Status';
 					$data['message'] = '<p>Your application is under review.</p>';
 				} else if($this->semester_model->getCurrentSemesterStatus() == 'NOTIFICATION'){
 					$data['message_header'] = 'Notification';
-					$data['message'] = '<p>Your application is under review.</p>';
+					$data['message'] = '<p>Please check your notification page for updates about your assignment.</p>';
 				}
 
 				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);

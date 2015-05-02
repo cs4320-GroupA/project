@@ -36,7 +36,7 @@
 								    	echo "<option selected>".$row->course_name."</option>";
 								    }
 								    else {
-								    	echo "<option>".$row->course_name."</option>"
+								    	echo "<option>".$row->course_name."</option>";
 									}
 								}
                                 else {

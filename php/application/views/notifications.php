@@ -38,23 +38,7 @@
 			                    	echo'</tr>';
 			                    echo'</thead>';
 			                    echo'<tbody>';
-									
-								if(isset($)) 
-								{
-				  				   	foreach ($ as $) 
-				  				   	{
-										echo '<tr>';						         		
-									    echo '<td>'.$row->course_name.'</td>';
-									    echo '<td>'..'</td>';
-									    echo '<td>'.$row->semester.'</td>';
-					                    echo '</tr>';
-								    }
-								} 
-							   	else 
-							   	{
-							   		echo '<p>You have no courses</p>';
-							   	}
-									
+																		
 								echo'</tbody>';
 		                    echo'</table>';
 						}

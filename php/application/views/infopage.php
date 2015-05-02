@@ -30,10 +30,16 @@
 			{
 				echo'<div class="container text-center">';
 			    	echo'<div class="row">';
-				        echo'<div class="col-md-6 col-md-offset-3">';
-				        echo'<img class="img-circle" width = "140" height = "140" id="thumbnail" src="../../img/application.jpg">';
-				             echo'<h3>Application</h3>';
+				        echo'<div class="col-md-6">';
+				        	echo'<img class="img-circle" width = "140" height = "140" id="thumbnail" src="../../img/application.jpg">';
+				            echo'<h3>Application</h3>';
 								echo'<p>Fill out an application to apply to be a Teaching Assistant (for graduate students) or a Peer Learning Assistant (for undergraduate students). TAs and PLAs assist an instructor with the courses they teach. Common responsibilities are grading assignments, teaching lab sections, and holding office hours.</p>';
+				            echo '<a class = "btn btn-default" id="info" href="'.base_url().'index.php/form">Application <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>';
+				        echo'</div>';
+				        echo'<div class="col-md-6">';
+				        	echo'<img class="img-circle" width = "140" height = "140" id="thumbnail" src="../../img/codeonpaper.jpg">';
+				            echo'<h3>Notifications</h3>';
+								echo'<p>View any notifications. Note that notifications will only be available when the timeline is in the Notification window. Any courses you are assigned to will be shown here.</p>';
 				            echo '<a class = "btn btn-default" id="info" href="'.base_url().'index.php/form">Application <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>';
 				        echo'</div>';
 				    echo'</div>';

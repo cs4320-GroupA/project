@@ -153,7 +153,7 @@
 						    echo '<div class="col-md-2">';
 						      echo '<label>New Semester: </label>';
 						    echo '</div>';
-						    echo '<div class="col-md-2">';
+						    echo '<div class="col-md-2 col-md-1-offset">';
 						      echo '<label>Season </label>';
 						    echo '</div>';
 						    echo '<div class="col-md-4">';

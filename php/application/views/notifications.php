@@ -25,11 +25,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<!--
-					<?php
-						/*			
-						if (isset($))
-						{
+					<?php		
+						if (isset($assigned_courses)) {
 							echo '<p></p>';
 							echo'<table class="table table-hover table-striped">';
 			                    echo'<thead>';
@@ -40,18 +37,23 @@
 			                    	echo'</tr>';
 			                    echo'</thead>';
 			                    echo'<tbody>';
-																		
+								
+								foreach($assigned_courses as $row) {
+									echo '<tr>'
+			    					echo '<td>'.$row->course_name.'</td>';
+			    					echo '<td>'.$row->username.'</td>';
+			    					echo '<td>'.$row->semester_title.'</td>';
+								}
+
 								echo'</tbody>';
 		                    echo'</table>';
+						} else if(isset($message)) {
+							echo $message;
+						} else {
+							echo '<p>You have no notifications to display</p>';
 						}
-
-						else 
-						{
-							echo'<p>You have no notifications to display</p>';
-						}
-						*/
 					?>
-					-->
+
 				</div>
 			</div>
 		</div>

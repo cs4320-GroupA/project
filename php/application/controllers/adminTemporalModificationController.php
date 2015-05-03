@@ -19,8 +19,6 @@
      */
         public function set($new_time) {
             
-            // need to load
-            //$this->load->model('temporal_model');
             $this->load->model('semester_model');
             
             // semester to modify (hardcoded 1 for now)
@@ -31,5 +29,9 @@
             redirect('adminTemporalModificationController','refresh');
         }
         
+        public function newSemester() {
+            
+        }
+
 	}// end class
 ?>

@@ -43,6 +43,20 @@
 				return FALSE;
 			}
 		}
+
+		public function getByFormId($form_id, $semester_id) {
+			$sql = 'SELECT * FROM tasub.assigned_courses INNER JOIN tasub.course ON tasub.assigned_courses.course_id = tasub.course.course_id
+														 INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id
+														 WHERE tasub.assigned_courses.form_id = ? AND semester_id = ?';
+
+			$query = $this->db->query($sql, array($form_id, $semester_id));
+
+			if($query->num_rows() > 0) {
+				return $query;
+			} else {
+				return FALSE;
+			}
+		}
 	}
 
 

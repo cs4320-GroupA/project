@@ -4,6 +4,17 @@
             parent::__construct();
         }
 
+        public function createSemester($semester_title) {
+            $sql = 'INSERT INTO tasub.semester(semester_title, status) VALUES (?, SELECT status_id FROM tasub.status WHERE status_title = "APPLICATION")';
+
+            $this->db->query($sql, array($semester_title));
+
+            if($this->db->affected_rows() > 0) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
 /*
  * getCurrentSemester() - returns the current semester window for the website
  * input:

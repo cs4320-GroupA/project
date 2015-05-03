@@ -172,7 +172,7 @@
 						    echo '<div class="col-md-2">';
 						      echo '<label for "newYear">Year</label>';
 						    echo '</div>';
-						    echo '<div class="col-md-4">';
+						    echo '<div class="col-md-2">';
 						      echo '<input type = "text" id = "newYear" name="newYear" class = "form-control" placeholder = "2020" required>';
 						    echo '</div>';
 						    echo '<div class="col-md-6 col-md-offset 2">';

@@ -26,10 +26,10 @@
 				<?php
 						echo '<div class="jumbotron timeline">';
 							echo '<div class = "col-md-6">';
-								echo '<p><strong>Current Window: </strong><muted>HERE FISH</muted></p>';
+								echo '<p><strong>Current Window: </strong>'.$status_title.'</p>';
 							echo '</div>';
 							echo '<div class = "col-md-6">';
-								echo '<p><strong>Current Semester: </strong><muted>HERE FISH</muted></p>';
+								echo '<p><strong>Current Semester: </strong>'.$semester_title.'</p>';
 							echo '</div>';
 						echo '</div>';
 						echo '<div class = "row">';

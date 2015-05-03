@@ -39,10 +39,11 @@
 			                    echo'<tbody>';
 								
 								foreach($assigned_courses as $row) {
-									echo '<tr>'
+									echo '<tr>';
 			    					echo '<td>'.$row->course_name.'</td>';
 			    					echo '<td>'.$row->username.'</td>';
 			    					echo '<td>'.$row->semester_title.'</td>';
+			    					echo '</tr>';
 								}
 
 								echo'</tbody>';

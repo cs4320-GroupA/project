@@ -19,7 +19,7 @@
 				$query = $this->form_model->getForm($this->session->userdata('user_id'), $semester_id);
 
 				if($query != FALSE) {
-					$query = $this->assigned_courses_model->getByFormId($query->row()->form_id);
+					$query = $this->assigned_courses_model->getByFormId($query->row()->form_id, $semester_id);
 
 					if($query != FALSE) {
 						$data['assigned_courses'] = $query->result();

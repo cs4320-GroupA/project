@@ -24,11 +24,11 @@
 		</div>
 		<div class="container">
 				<?php
-						echo '<div class = "row">';
-							echo '<div class = "col-md-12">';
-								echo '<h3>Current Timeline and Semester</h3>';
-								echo '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tristique et felis a interdum. Aenean ac volutpat dui, at pellentesque lectus. Pellentesque venenatis at lacus in eleifend. Morbi posuere porta maximus. Nunc feugiat ligula vitae risus cursus tempor. Nam eu condimentum orci. Aliquam id imperdiet orci. Morbi lacus purus, eleifend a tortor at, rhoncus ornare justo. Vestibulum velit nulla, vestibulum facilisis justo ac, auctor dignissim nisl. Suspendisse dignissim ante at enim dignissim imperdiet. Donec faucibus feugiat molestie.</p>';
-							echo '</div>';
+						echo '<div class="jumbotron">';
+							echo '<center>';
+							echo '<p>Current Window: '.$status_title.'</p>';
+							echo '<p>Current Semester: '.$semester_title.'</p>';
+							echo '</center>';
 						echo '</div>';
 						echo '<div class = "row">';
 							echo '<div class = "col-md-12">';
@@ -117,7 +117,6 @@
 
 					echo'<div class="row">';
 						  echo'<div class="col-md-12">';
-						    echo'<br><br>';
 						    echo'<h3>Change Semester</h3>';
 						  echo'</div>';
 					echo'</div>';

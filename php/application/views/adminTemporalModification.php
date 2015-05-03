@@ -38,51 +38,7 @@
 	                            echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/2">Move Forward to Selection <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>';
 	                            echo "\n<form>";
 							echo '</div>';
-						echo '</div>';
-						echo'<div class="row">';
-						  echo'<div class="col-md-12">';
-						    echo'<br><br>';
-						    echo'<h3>Change Semester</h3>';
-						  echo'</div>';
-						echo'</div>';
-						echo'<div class="row">';
-						  echo'<div class="col-md-6">';
-						    echo'<div class="col-md-2">';
-						      echo'<label>Select Semester: </label>';
-						    echo'</div>';
-						    echo'<div class="col-md-10">';
-						      echo'<label>Semester</label>';
-						      echo'<select class = "form-control">';
-						        echo'<option></option>';
-						    	echo'</select>';
-						    echo'</div>';
-						    echo'<div class="col-md-6 col-md-offset-2">';
-						      echo'<br>';
-						      echo'<button class="btn btn-default"> <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
-						    echo'</div>';
-						  echo'</div>';
-						  echo'<div class="col-md-6">';
-						    echo'<div class="col-md-2">';
-						      echo'<label>Add New Semester: </label>';
-						    echo'</div>';
-						    echo'<div class="col-md-5">';
-						      echo'<label>Semester Season</label>';
-						      echo'<select class = "form-control">';
-						        echo'<option></option>';
-						        echo'<option>FALL</option>';
-						        echo'<option>SPRING</option>';
-						    	echo'</select>';
-						    echo'</div>';
-						    echo'<div class="col-md-5">';
-						      echo'<label>Semester Year</label>';
-						      echo'<input type = "text" class = "form-control" placeholder = "2020">';
-						    echo'</div>';
-						    echo'<div class="col-md-6 col-md-offset 2">';
-						      echo'<br>';
-						      echo'<button class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
-						    echo'</div>';
-						  echo'</div>';
-						echo'</div>';				
+						echo '</div>';		
 					}
 					else if ($status_title == "SELECTION")
 					{
@@ -106,51 +62,7 @@
 	                            echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/3">Move Forward to Notification <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>';
 	                            echo "\n</form>";
 							echo '</div>';
-						echo '</div>';
-						echo'<div class="row">';
-						  echo'<div class="col-md-12">';
-						    echo'<br><br>';
-						    echo'<h3>Change Semester</h3>';
-						  echo'</div>';
-						echo'</div>';
-						echo'<div class="row">';
-						  echo'<div class="col-md-6">';
-						    echo'<div class="col-md-2">';
-						      echo'<label>Select Semester: </label>';
-						    echo'</div>';
-						    echo'<div class="col-md-10">';
-						      echo'<label>Semester</label>';
-						      echo'<select class = "form-control">';
-						        echo'<option></option>';
-						    	echo'</select>';
-						    echo'</div>';
-						    echo'<div class="col-md-6 col-md-offset-2">';
-						      echo'<br>';
-						      echo'<button class="btn btn-default"> <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
-						    echo'</div>';
-						  echo'</div>';
-						  echo'<div class="col-md-6">';
-						    echo'<div class="col-md-2">';
-						      echo'<label>Add New Semester: </label>';
-						    echo'</div>';
-						    echo'<div class="col-md-5">';
-						      echo'<label>Semester Season</label>';
-						      echo'<select class = "form-control">';
-						        echo'<option></option>';
-						        echo'<option>FALL</option>';
-						        echo'<option>SPRING</option>';
-						    	echo'</select>';
-						    echo'</div>';
-						    echo'<div class="col-md-5">';
-						      echo'<label>Semester Year</label>';
-						      echo'<input type = "text" class = "form-control" placeholder = "2020">';
-						    echo'</div>';
-						    echo'<div class="col-md-6 col-md-offset 2">';
-						      echo'<br>';
-						      echo'<button class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
-						    echo'</div>';
-						  echo'</div>';
-						echo'</div>';						
+						echo '</div>';					
 					}
 					else if ($status_title == "NOTIFICATION")
 					{
@@ -174,50 +86,6 @@
 	                            echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/1"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Move Back to Application</button>';
 	                            echo '</form>';
 							echo '</div>';	
-						echo'</div>';
-						echo'<div class="row">';
-						  echo'<div class="col-md-12">';
-						    echo'<br><br>';
-						    echo'<h3>Change Semester</h3>';
-						  echo'</div>';
-						echo'</div>';
-						echo'<div class="row">';
-						  echo'<div class="col-md-6">';
-						    echo'<div class="col-md-2">';
-						      echo'<label>Select Semester: </label>';
-						    echo'</div>';
-						    echo'<div class="col-md-10">';
-						      echo'<label>Semester</label>';
-						      echo'<select class = "form-control">';
-						        echo'<option></option>';
-						    	echo'</select>';
-						    echo'</div>';
-						    echo'<div class="col-md-6 col-md-offset-2">';
-						      echo'<br>';
-						      echo'<button class="btn btn-default"> <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
-						    echo'</div>';
-						  echo'</div>';
-						  echo'<div class="col-md-6">';
-						    echo'<div class="col-md-2">';
-						      echo'<label>Add New Semester: </label>';
-						    echo'</div>';
-						    echo'<div class="col-md-5">';
-						      echo'<label>Semester Season</label>';
-						      echo'<select class = "form-control">';
-						        echo'<option></option>';
-						        echo'<option>FALL</option>';
-						        echo'<option>SPRING</option>';
-						    	echo'</select>';
-						    echo'</div>';
-						    echo'<div class="col-md-5">';
-						      echo'<label>Semester Year</label>';
-						      echo'<input type = "text" class = "form-control" placeholder = "2020">';
-						    echo'</div>';
-						    echo'<div class="col-md-6 col-md-offset 2">';
-						      echo'<br>';
-						      echo'<button class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
-						    echo'</div>';
-						  echo'</div>';
 						echo'</div>';
 					}
 					else
@@ -251,7 +119,9 @@
 	                            echo '</form>';
 							echo '</div>';
 						echo'</div>';
-						echo'<div class="row">';
+					}
+
+					echo'<div class="row">';
 						  echo'<div class="col-md-12">';
 						    echo'<br><br>';
 						    echo'<h3>Change Semester</h3>';
@@ -259,43 +129,53 @@
 						echo'</div>';
 						echo'<div class="row">';
 						  echo'<div class="col-md-6">';
+						  echo '<form class="form-inline" name="changeSemester" action="'.base_url().'index.php/adminTemporalModification/changeSemester" method="POST">';
 						    echo'<div class="col-md-2">';
 						      echo'<label>Select Semester: </label>';
 						    echo'</div>';
 						    echo'<div class="col-md-10">';
 						      echo'<label>Semester</label>';
-						      echo'<select class = "form-control">';
-						        echo'<option></option>';
+						      echo'<select class = "form-control" name="changeTo" required>';
+						        echo'<option disabled hidden selected></option>';
+
+						       	if(isset($semesters)) {
+						       		foreach($semesters as $row) {
+						       			echo'<option value="'.$row->semester_id.'">'.$row->semester_title.'</option>';
+						       		}
+						       	}
+
 						    	echo'</select>';
-						    echo'</div>';
-						    echo'<div class="col-md-6 col-md-offset-2">';
-						      echo'<br>';
-						      echo'<button class="btn btn-default"> <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
-						    echo'</div>';
-						  echo'</div>';
-						  echo'<div class="col-md-6">';
-						    echo'<div class="col-md-2">';
-						      echo'<label>Add New Semester: </label>';
-						    echo'</div>';
-						    echo'<div class="col-md-5">';
-						      echo'<label>Semester Season</label>';
-						      echo'<select class = "form-control">';
-						        echo'<option></option>';
-						        echo'<option>FALL</option>';
-						        echo'<option>SPRING</option>';
-						    	echo'</select>';
-						    echo'</div>';
-						    echo'<div class="col-md-5">';
-						      echo'<label>Semester Year</label>';
-						      echo'<input type = "text" class = "form-control" placeholder = "2020">';
-						    echo'</div>';
-						    echo'<div class="col-md-6 col-md-offset 2">';
-						      echo'<br>';
-						      echo'<button class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
-						    echo'</div>';
-						  echo'</div>';
-						echo'</div>';
-					}
+						    echo '</div>';
+						    echo '<div class="col-md-6 col-md-offset-2">';
+						      echo '<br>';
+						      echo '<button type="submit" class="btn btn-default"> <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
+						    echo '</div>';
+						    echo '</form>';
+						  echo '</div>';
+						  echo '<div class="col-md-6">';
+						  echo '<form class="form-inline" name="newSemester" action="'.base_url().'index.php/adminTemporalModification/newSemester" method="POST">';
+						    echo '<div class="col-md-2">';
+						      echo '<label>Add New Semester: </label>';
+						    echo '</div>';
+						    echo '<div class="col-md-5">';
+						      echo '<label>Semester Season</label>';
+						      echo '<select name="newTitle" class = "form-control" required>';
+						        echo '<option disabled hidden selected></option>';
+						        echo '<option>FALL</option>';
+						        echo '<option>SPRING</option>';
+						    	echo '</select>';
+						    echo '</div>';
+						    echo '<div class="col-md-5">';
+						      echo '<label>Semester Year</label>';
+						      echo '<input type = "text" name="newYear" class = "form-control" placeholder = "2020" required>';
+						    echo '</div>';
+						    echo '<div class="col-md-6 col-md-offset 2">';
+						      echo '<br>';
+						      echo '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
+						    echo '</div>';
+						  echo '</div>';
+						  echo '</form>';
+						echo '</div>';		
 				?>
 		</div>
 		

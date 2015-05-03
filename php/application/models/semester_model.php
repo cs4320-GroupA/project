@@ -5,12 +5,45 @@
         }
 
         public function createSemester($semester_title) {
-            $sql = 'INSERT INTO tasub.semester(semester_title, status) VALUES (?, SELECT status_id FROM tasub.status WHERE status_title = "APPLICATION")';
+            $sql = 'INSERT INTO tasub.semester(semester_title, status) VALUES (?, (SELECT status_id FROM tasub.status WHERE status_title = "APPLICATION"))';
 
             $this->db->query($sql, array($semester_title));
 
             if($this->db->affected_rows() > 0) {
                 return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+
+        public function changeSemester($new_semester_id) {
+            $closed_sql = 'UPDATE tasub.semester SET status_id = (SELECT status_id FROM tasub.status WHERE status_title = "CLOSED") WHERE semester_id = ?';
+            $open_sql = 'UPDATE tasub.semester SET status_id = (SELECT status_id FROM tasub.status WHERE status_title = "NOTIFICATION") WHERE semester_id = ?';
+            $current_semester = getCurrentSemester();
+
+            $query = $this->db->query($closed_sql, array($current_semester->row()->semester_id));
+            
+            if($this->db->affected_rows() > 0) {
+                $query = $this->db->query($open_sql, array($new_semester_id));
+
+                if($this->db->affected_rows() > 0) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
+
+            } else {
+                return FALSE;
+            }
+        }
+
+        public function getAll() {
+            $sql = 'SELECT * FROM tasub.semester';
+
+            $query = $this->db->query($sql);
+
+            if($query->num_rows() > 0) {
+                return $query;
             } else {
                 return FALSE;
             }

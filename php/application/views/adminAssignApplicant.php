@@ -30,6 +30,7 @@
                     <select class="form-control" name = "courseToAssign" required>
                     	<option disabled selected> </option>
 						<?php
+						if(isset($courses)) {
 							foreach($courses as $row){
 								if(isset($currentCourse)) {
                                 	if($currentCourse->course_id == $row->course_id) {
@@ -43,6 +44,7 @@
 								    echo "<option>".$row->course_name."</option>";
 								}
 							}
+						}
 						?>
                     </select>
 				</div>				

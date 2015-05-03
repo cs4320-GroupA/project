@@ -49,6 +49,7 @@
 						    	foreach($semesters as $row) {
 						    		echo'<option>'.$row->semester_title.'</option>';
 						    	}
+						    }
 						?>
 		              </select>
 		            </div>

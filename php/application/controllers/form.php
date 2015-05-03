@@ -99,12 +99,14 @@
 			$this->load->model('previous_taught_model');
 			$this->load->model('desired_courses_model');
 			$this->load->model('comments_model');
+			$this->load->model('semester_model');
+
 			//Get the current applicant's form
 			$query = $this->form_model->getForm($user_id, $semester_id);
-			$form = $query->row();
 			
 			//If an entry for user's application exists for this semester, then auto load for data
 			if($query != FALSE) {
+				$form = $query->row();
 				//Grab the form data for the user's form
 				$result = $this->form_data_model->getFormDataByID($form->form_data);
 				$row = $result->row();

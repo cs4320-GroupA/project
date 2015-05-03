@@ -161,7 +161,7 @@
 						      echo '<label>Add New Semester: </label>';
 						    echo '</div>';
 						    echo '<div class="col-md-1">';
-						      echo '<label for = "newTitle">Season</label>';
+						      echo '<label for = "newTitle">Season </label>';
 						    echo '</div>';
 						    echo '<div class="col-md-2">';
 						      echo '<select id = "newTitle" name="newTitle" class = "form-control" required>';
@@ -171,9 +171,9 @@
 						    	echo '</select>';
 						    echo '</div>';
 						    echo '<div class="col-md-1">';
-						      echo '<label for "newYear">Year</label>';
+						      echo '<label for "newYear">Year </label>';
 						    echo '</div>';
-						    echo '<div class="col-md-2">';
+						    echo '<div class="col-md-1">';
 						      echo '<input type = "text" id = "newYear" name="newYear" class = "form-control" placeholder = "2020" required>';
 						    echo '</div>';
 						    echo '<div class="col-md-6">';

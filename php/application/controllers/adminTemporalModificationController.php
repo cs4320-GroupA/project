@@ -46,7 +46,7 @@
         }
 
         public function changeSemester() {
-            if(!isset($_POST['changeTo']) {
+            if(!isset($_POST['changeTo'])) {
                 redirect('adminTemporalModificationController','refresh');
             }
 

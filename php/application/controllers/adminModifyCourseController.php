@@ -17,7 +17,15 @@
 			if($courses != FALSE) {
 				$data = array('courses' => $courses->result());
 			}
-			
+
+			$semesters = $this->semester_model->getALL();
+            
+            if($semesters != FALSE) {
+                $data['semesters'] = $semesters->result();
+            } else {
+            	$data = NULL; // SHOULD NEVER be reached
+            }
+
 			$this->load->view('adminModifyCourse', $data);
 		}
 

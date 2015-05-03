@@ -78,7 +78,7 @@
 				$data['view_only'] = TRUE;
 			}
 
-			$result = $this->course_model->getCourses();
+			$result = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
 			$data['courses'] = $result->result_array();
 			//Load view with array
 			$this->load->view('application', $data);
@@ -134,7 +134,7 @@
 				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
 				$data['user_id'] = $user_id;
 				$data['semester_id'] = $semester_id;
-				$result = $this->course_model->getCourses();
+				$result = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
 				$data['courses'] = $result->result_array();
 				$data['form_id'] = $form->form_id;
 			}

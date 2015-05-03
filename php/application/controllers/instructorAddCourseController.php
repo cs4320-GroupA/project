@@ -7,8 +7,9 @@
 
 		public function index() {
 			$this->load->model('course_model');
+			$this->load->model('semester_model');
 			
-			$result = $this->course_model->getCourses();
+			$result = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
 			$data['courses'] = $result->result_array();
 
 			$this->load->view('instructorAddCourse', $data);

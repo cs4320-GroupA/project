@@ -10,7 +10,8 @@
 		public function index(){ 
 
             $data['status_title'] = $this->semester_model->getCurrentSemesterStatus();
-
+            $data['semester_title'] = $this->semester_model->getCurrentSemesterTitle();
+            
             $semesters = $this->semester_model->getAll();
             if($semesters != FALSE) {
                 $data['semesters'] = $semesters->result();

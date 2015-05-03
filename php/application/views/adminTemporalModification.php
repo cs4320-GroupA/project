@@ -133,9 +133,11 @@
 						    echo'<div class="col-md-2">';
 						      echo'<label>Select Semester: </label>';
 						    echo'</div>';
-						    echo'<div class="col-md-10">';
-						      echo'<label>Semester</label>';
-						      echo'<select class = "form-control" name="changeTo" required>';
+						    echo'<div class="col-md-2">';
+						      echo'<label for="changeTo">Semester</label>';
+						    echo '</div>';
+						    echo '<div class = "col-md-8">';
+						      echo'<select class = "form-control" id = "changeTo" name="changeTo" required>';
 						        echo'<option disabled hidden selected></option>';
 
 						       	if(isset($semesters)) {

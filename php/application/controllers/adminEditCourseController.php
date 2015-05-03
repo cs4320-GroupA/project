@@ -16,18 +16,18 @@
 
 			$data = array('course' => $course->row());
 
+			$semesters = $this->semester_model->getAll();
+            if($semesters != FALSE) {
+                $data['semesters'] = $semesters->result();
+            }
+
 			$this->load->view('adminEditCourse',$data);
-			
-		
 		}
 
-		public function edit($course_id){
-			
-
+		public function edit($course_id){	
 			$course_id = htmlspecialchars($course_id);						
-    			$course_name = htmlspecialchars($_POST['course_name']);
-    			$semester = htmlspecialchars($_POST['semester']);
-			//$instructor_id = htmlspecialchars($_POST['instructor_id']);
+    		$course_name = htmlspecialchars($_POST['course_name']);
+    		$semester = htmlspecialchars($_POST['semester']);
 
 			$result = $this->course_model->editCourse($course_id,$course_name,$semester);
 

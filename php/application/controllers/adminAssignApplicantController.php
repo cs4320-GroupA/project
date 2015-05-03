@@ -36,7 +36,9 @@
             $semester_id = $query->row()->semester_id;
 
             foreach($_POST['applicants'] as $row) {
-                $this->assigned_courses_model->insert($course_id, $course_info->course_name, $row, $semester_id);
+                if(!$this->assigned_courses_model->checkForEntry($course_id, $course_info->course_name, $row, $semester_id)) {
+                    $this->assigned_courses_model->insert($course_id, $course_info->course_name, $row, $semester_id);
+                }
             }
             
             $path = base_url().'/index.php/adminAssignApplicantController/viewCourse/'.$course_id;

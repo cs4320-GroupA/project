@@ -38,7 +38,7 @@
                 redirect('adminTemporalModificationController','refresh');
             }
 
-            $semester_title = htmlspecialchars($_POST['newTitle'])).' '.htmlspecialchars($_POST['newYear']);
+            $semester_title = htmlspecialchars($_POST['newTitle']).' '.htmlspecialchars($_POST['newYear']);
 
             $this->semester_model->createSemester($semester_title);
 

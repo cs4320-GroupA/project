@@ -126,7 +126,7 @@
 						    echo'<br><br>';
 						    echo'<h3>Change Semester</h3>';
 						  echo'</div>';
-						echo'</div>';
+					echo'</div>';
 						echo'<div class="row">';
 						  echo'<div class="col-md-6">';
 						  echo '<form class="form-inline" name="changeSemester" action="'.base_url().'index.php/adminTemporalModification/changeSemester" method="POST">';
@@ -136,7 +136,7 @@
 						    echo'<div class="col-md-10">';
 						      echo'<label>Semester</label>';
 						      echo'<select class = "form-control" name="changeTo" required>';
-						        echo'<option disabled selected></option>';
+						        echo'<option disabled hidden selected></option>';
 
 						       	if(isset($semesters)) {
 						       		foreach($semesters as $row) {
@@ -160,7 +160,7 @@
 						    echo '<div class="col-md-5">';
 						      echo '<label>Semester Season</label>';
 						      echo '<select name="newTitle" class = "form-control" required>';
-						        echo '<option disabled selected></option>';
+						        echo '<option disabled hidden selected></option>';
 						        echo '<option>FALL</option>';
 						        echo '<option>SPRING</option>';
 						    	echo '</select>';
@@ -175,7 +175,8 @@
 						    echo '</div>';
 						  echo '</div>';
 						  echo '</form>';
-						echo '</div>';		
+						echo '</div>';
+					echo '</div>';		
 				?>
 		</div>
 		

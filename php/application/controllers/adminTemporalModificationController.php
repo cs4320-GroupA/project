@@ -50,7 +50,7 @@
                 redirect('adminTemporalModificationController','refresh');
             }
 
-            $this->semester_model->changeSemester(htmlspecialchars($_POST['newYear']));
+            $this->semester_model->changeSemester(htmlspecialchars($_POST['changeTo']));
 
             redirect('adminTemporalModificationController','refresh');
         }

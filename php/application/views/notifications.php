@@ -27,7 +27,7 @@
 				<div class="col-md-12">
 					<?php		
 						if (isset($assigned_courses)) {
-							echo '<h3>Your course assignment</h3>';
+							echo '<div class="page-header"><h2>Your assigned courses</h2></div>';
 							echo'<table class="table table-hover table-striped">';
 			                    echo'<thead>';
 			                    	echo'<tr>';

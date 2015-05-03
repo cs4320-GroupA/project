@@ -150,6 +150,7 @@
 						    echo '</div>';
 						    echo '<div class="col-md-6">';
 						      echo '<br>';
+						      echo '<br>';
 						      echo '<button type="submit" class="btn btn-default"> <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
 						    echo '</div>';
 						    echo '</form>';
@@ -159,8 +160,8 @@
 						    echo '<div class="col-md-2">';
 						      echo '<label>Add New Semester: </label>';
 						    echo '</div>';
-						    echo '<div class="col-md-2">';
-						      echo '<label for = "newTitle">Season</label>';
+						    echo '<div class="col-md-1">';
+						      echo '<label for = "newTitle">Season </label>';
 						    echo '</div>';
 						    echo '<div class="col-md-2">';
 						      echo '<select id = "newTitle" name="newTitle" class = "form-control" required>';
@@ -169,13 +170,14 @@
 						        echo '<option>SPRING</option>';
 						    	echo '</select>';
 						    echo '</div>';
-						    echo '<div class="col-md-2">';
-						      echo '<label for "newYear">Year</label>';
+						    echo '<div class="col-md-1">';
+						      echo '<label for "newYear">Year </label>';
 						    echo '</div>';
-						    echo '<div class="col-md-2">';
+						    echo '<div class="col-md-1">';
 						      echo '<input type = "text" id = "newYear" name="newYear" class = "form-control" placeholder = "2020" required>';
 						    echo '</div>';
 						    echo '<div class="col-md-6">';
+						      echo '<br>';
 						      echo '<br>';
 						      echo '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
 						    echo '</div>';

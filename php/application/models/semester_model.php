@@ -19,7 +19,7 @@
         public function changeSemester($new_semester_id) {
             $closed_sql = 'UPDATE tasub.semester SET status_id = (SELECT status_id FROM tasub.status WHERE status_title = "CLOSED") WHERE semester_id = ?';
             $open_sql = 'UPDATE tasub.semester SET status_id = (SELECT status_id FROM tasub.status WHERE status_title = "NOTIFICATION") WHERE semester_id = ?';
-            $current_semester = getCurrentSemester();
+            $current_semester = $this->getCurrentSemester();
 
             $query = $this->db->query($closed_sql, array($current_semester->row()->semester_id));
             

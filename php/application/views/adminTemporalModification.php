@@ -136,7 +136,7 @@
 						    echo'<div class="col-md-10">';
 						      echo'<label>Semester</label>';
 						      echo'<select class = "form-control" name="changeTo" required>';
-						        echo'<option disabled hidden selected></option>';
+						        echo'<option disabled selected></option>';
 
 						       	if(isset($semesters)) {
 						       		foreach($semesters as $row) {
@@ -160,7 +160,7 @@
 						    echo '<div class="col-md-5">';
 						      echo '<label>Semester Season</label>';
 						      echo '<select name="newTitle" class = "form-control" required>';
-						        echo '<option disabled hidden selected></option>';
+						        echo '<option disabled selected></option>';
 						        echo '<option>FALL</option>';
 						        echo '<option>SPRING</option>';
 						    	echo '</select>';

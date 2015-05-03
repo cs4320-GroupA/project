@@ -149,9 +149,7 @@
 						    	echo'</select>';
 						    echo '</div>';
 						    echo '<div class="col-md-12">';
-						      echo '<br>';
-						      echo '<br>';
-						      echo '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
+						      echo '<button type="submit" id = "timelineBtn" class="btn btn-default"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
 						    echo '</div>';
 						    echo '</form>';
 						  echo '</div>';
@@ -177,9 +175,7 @@
 						      echo '<input type = "text" name="newYear" class = "form-control" placeholder = "2020" required>';
 						    echo '</div>';
 						    echo '<div class="col-md-12">';
-						      echo '<br>';
-						      echo '<br>';
-						      echo '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
+						      echo '<button type="submit" id = "timelineBtn" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';
 						    echo '</div>';
 						  echo '</div>';
 						  echo '</form>';

@@ -148,10 +148,10 @@
 
 						    	echo'</select>';
 						    echo '</div>';
-						    echo '<div class="col-md-6">';
+						    echo '<div class="col-md-12">';
 						      echo '<br>';
 						      echo '<br>';
-						      echo '<button type="submit" class="btn btn-default"> <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
+						      echo '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select</button>';
 						    echo '</div>';
 						    echo '</form>';
 						  echo '</div>';

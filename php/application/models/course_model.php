@@ -28,10 +28,10 @@
 	   }
 	}
         
-        public function getCoursesByInstructor($user_id) {
-            $sql = 'SELECT * from tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id WHERE tasub.course.instructor_id = ?';
+        public function getCoursesByInstructor($user_id, $semester) {
+            $sql = 'SELECT * from tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id WHERE tasub.course.instructor_id = ? AND tasub.course.semester = ?';
             
-            $query = $this->db->query($sql, array($user_id));
+            $query = $this->db->query($sql, array($user_id, $semester));
 
             if($query->num_rows() > 0) {
                 return $query;

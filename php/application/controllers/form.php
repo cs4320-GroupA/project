@@ -159,7 +159,7 @@
 			}
 
 			if($this->session->userdata('user_type') == 'instructor') {
-				$instructor_courses = $this->course_model->getCoursesByInstructor($this->session->userdata('user_id'));
+				$instructor_courses = $this->course_model->getCoursesByInstructor($this->session->userdata('user_id'), $this->semester_model->getCurrentSemesterTitle());
 				
 				if($instructor_courses != FALSE) {
 					$data['instructor_courses'] = $instructor_courses->result();

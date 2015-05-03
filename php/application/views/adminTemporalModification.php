@@ -156,7 +156,7 @@
 						  echo '<div class="col-md-6">';
 						  echo '<form class="form-inline" name="newSemester" action="'.base_url().'index.php/adminTemporalModificationController/newSemester" method="POST">';
 						    echo '<div class="col-md-2">';
-						      echo '<label>Add New Semester: </label>';
+						      echo '<label>New Semester: </label>';
 						    echo '</div>';
 						    echo '<div class="col-md-2">';
 						      echo '<label>Season </label>';

@@ -42,7 +42,7 @@
 									echo '<tr>';
 			    					echo '<td>'.$row->course_name.'</td>';
 			    					echo '<td>'.$row->username.'</td>';
-			    					echo '<td>'.$row->semester_title.'</td>';
+			    					echo '<td>'.$row->semester.'</td>';
 			    					echo '</tr>';
 								}
 

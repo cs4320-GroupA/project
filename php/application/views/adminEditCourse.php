@@ -34,13 +34,13 @@
 						<div class="form-group">
 							<label for="semester">Semester: </label>
 							<select name="semester" class="form-control">
-							    <option>FALL 2015</option>
-							    <option>SPRING 2016</option>
-							    <option>FALL 2016</option>
-							    <option>SPRING 2017</option>
-							    <option>FALL 2017</option>
-							    <option>SPRING 2018</option>
-							    <option>FALL 2018</option>
+					  		<?php
+					  			if(isset($semesters)) {
+						    		foreach($semesters as $row) {
+						    		echo'<option value="'.$row->semester_title.'">'.$row->semester_title.'</option>';
+						    	}
+						    }
+							?>
 							</select>
 						</div>
 						<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Finish Editing</button>

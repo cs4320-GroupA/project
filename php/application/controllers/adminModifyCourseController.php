@@ -12,7 +12,7 @@
 
 		public function index() 
 		{ 
-			$courses = $this->course_model->getCourses();
+			$courses = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
 
 			$data = array('courses' => $courses->result());
 

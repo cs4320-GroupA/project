@@ -15,13 +15,8 @@
             $this->load->model('assigned_courses_model');
         }
 
-		public function index() 
-		{ 
-            //$courses = $this->course_model->getCourses();
-            
-            //$data['courses'] = array('courses' => $courses->result());
-            
-            $courses = $this->course_model->getCourses();
+		public function index() { 
+            $courses = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
             
             $data['courses'] = $courses->result();
             
@@ -104,13 +99,13 @@
             }
 
             //COURSES
-            $courses = $this->course_model->getCourses();
+            $courses = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
               
             $data['courses'] = $courses->result();
             
             
             //loading the view using the data
-            $this->load->view('adminAssignApplicant',$data);
+            $this->load->view('adminAssignApplicant', $data);
         }
 	}
 ?>

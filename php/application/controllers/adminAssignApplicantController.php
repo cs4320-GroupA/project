@@ -102,8 +102,10 @@
 
             //COURSES
             $courses = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
-              
-            $data['courses'] = $courses->result();
+            
+            if($courses != FALSE) {
+                $data['courses'] = $courses->result();
+            }
             
             
             //loading the view using the data

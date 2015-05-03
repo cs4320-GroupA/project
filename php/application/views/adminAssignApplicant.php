@@ -28,8 +28,9 @@
 					<h3>Course</h3>
                     <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/getApplicants/' ?> />
                     <select class="form-control" name = "courseToAssign" required>
-                    	<option disabled selected> </option>
+                    	<option disabled selected hidden></option>
 						<?php
+						if(isset($courses)) {
 							foreach($courses as $row){
 								if(isset($currentCourse)) {
                                 	if($currentCourse->course_id == $row->course_id) {
@@ -43,6 +44,7 @@
 								    echo "<option>".$row->course_name."</option>";
 								}
 							}
+						}
 						?>
                     </select>
 				</div>				

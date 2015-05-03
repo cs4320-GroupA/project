@@ -5,8 +5,6 @@
 		{
         	parent::__construct();
             
-            
-
 			$this->load->model('course_model');
 			$this->load->model('semester_model');
 			$this->load->model('user_model');
@@ -18,7 +16,11 @@
 		public function index() { 
             $courses = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
             
-            $data['courses'] = $courses->result();
+            if($courses != FALSE) {
+                $data['courses'] = $courses->result();
+            } else {
+                $data = NULL;
+            }
             
 			$this->load->view('adminAssignApplicant',$data);
 		}

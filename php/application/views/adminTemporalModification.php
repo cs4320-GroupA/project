@@ -166,7 +166,7 @@
 						    echo '<div class="col-md-1">';
 						      echo '<label>Year </label>';
 						    echo '</div>';
-						    echo '<div class="col-md-3">';
+						    echo '<div class="col-md-2">';
 						      echo '<input type = "text" name="newYear" class = "form-control" placeholder = "2020" required>';
 						    echo '</div>';
 						    echo '<div class="col-md-12">';

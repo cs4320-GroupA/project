@@ -129,7 +129,7 @@
 					echo'</div>';
 						echo'<div class="row">';
 						  echo'<div class="col-md-6">';
-						  echo '<form class="form-inline" name="changeSemester" action="'.base_url().'index.php/adminTemporalModification/changeSemester" method="POST">';
+						  echo '<form class="form-inline" name="changeSemester" action="'.base_url().'index.php/adminTemporalModificationController/changeSemester" method="POST">';
 						    echo'<div class="col-md-2">';
 						      echo'<label>Select Semester: </label>';
 						    echo'</div>';
@@ -153,7 +153,7 @@
 						    echo '</form>';
 						  echo '</div>';
 						  echo '<div class="col-md-6">';
-						  echo '<form class="form-inline" name="newSemester" action="'.base_url().'index.php/adminTemporalModification/newSemester" method="POST">';
+						  echo '<form class="form-inline" name="newSemester" action="'.base_url().'index.php/adminTemporalModificationController/newSemester" method="POST">';
 						    echo '<div class="col-md-2">';
 						      echo '<label>Add New Semester: </label>';
 						    echo '</div>';
@@ -175,8 +175,7 @@
 						    echo '</div>';
 						  echo '</div>';
 						  echo '</form>';
-						echo '</div>';
-					echo '</div>';		
+						echo '</div>';	
 				?>
 		</div>
 		

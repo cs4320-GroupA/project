@@ -42,7 +42,7 @@
 								echo '</p>';
 	                            echo "\n<form>\n";
 	                            echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminTemporalModificationController/set/2">Move Forward to Selection <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>';
-	                            echo "\n<form>";
+	                            echo "\n</form>";
 							echo '</div>';
 						echo '</div>';		
 					}

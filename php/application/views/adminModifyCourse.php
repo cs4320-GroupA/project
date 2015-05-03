@@ -47,7 +47,7 @@
 					  <?php
 					  		if(isset($semesters)) {
 						    	foreach($semesters as $row) {
-						    		echo'<option>'.$row->semester_title.'</option>';
+						    		echo'<option value="'.$row->semester_title.'">'.$row->semester_title.'</option>';
 						    	}
 						    }
 						?>

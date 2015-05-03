@@ -19,7 +19,7 @@
 		}
 
 		public function checkForEntry($course_id, $course_name, $form_id, $semester_id){
-			$sql = 'SELECT * FROM tasub.assigned_courses WHERE course_id = ? AND course_name = ? AND form_id = ? AMD semester_id =?';
+			$sql = 'SELECT * FROM tasub.assigned_courses WHERE course_id = ? AND course_name = ? AND form_id = ? AND semester_id =?';
 			
 			$query = $this->db->query($sql, array($course_id, $course_name, $form_id, $semester_id));
 

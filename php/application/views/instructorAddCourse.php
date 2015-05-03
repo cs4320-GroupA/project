@@ -34,6 +34,7 @@
 		    	</thead>
 		    	<tbody>
 					<?php
+					if(isset($courses)) {
   						foreach($courses as $row) {
 							echo '<tr>';
 		    				echo '<td>';
@@ -47,6 +48,7 @@
                				echo '</tr>';
                				echo '</form>';
                			}
+               		}
 					?>
 				</tbody>
 		    </table>				

@@ -10,7 +10,12 @@
 			$this->load->model('semester_model');
 			
 			$result = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
-			$data['courses'] = $result->result_array();
+
+			if($result != FALSE) {
+				$data['courses'] = $result->result_array();
+			} else {
+				$data = NULL;
+			}
 
 			$this->load->view('instructorAddCourse', $data);
 		}

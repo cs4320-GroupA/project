@@ -514,6 +514,7 @@
 							<select id="courses" class="form-control" name = "currently_teaching1">
 								<option selected disabled hidden value=""></option>
 								<?php
+								if(isset($courses)) {
 									foreach($courses as $temp) {
 										if(isset($first_current)) {
 											if($first_current == $temp['course_name']) {
@@ -526,6 +527,7 @@
 											echo '<option>'.$temp['course_name'].'</option>';
 										}
 									}
+								}
 								?>
 							</select>
 							<input type="button" class="btn btn-default" onclick="addCurrentlyRow(this.form);" value="Add row"/>
@@ -541,6 +543,7 @@
 							<select class="form-control" name = "previously_taught1">
 								<option selected disabled hidden value=""></option>
 								<?php
+								if(isset($courses)) {
 									foreach($courses as $temp) {
 										if(isset($first_previous)) {
 											if($first_previous == $temp['course_name']) {
@@ -553,6 +556,7 @@
 											echo '<option>'.$temp['course_name'].'</option>';
 										}
 									}
+								}
 								?>
 							</select>
 							<input type="button" class="btn btn-default" onclick="addPreviouslyRow(this.form);" value="Add row"/>
@@ -568,6 +572,7 @@
 							<select class="form-control" name = "desired_courses1">
 								<option selected disabled hidden value=""></option>
 								<?php
+								if(isset($courses)) {
 									foreach($courses as $temp) {
 										if(isset($first_desired)) {
 											if($first_desired == $temp['course_name']) {
@@ -580,6 +585,7 @@
 											echo '<option>'.$temp['course_name'].'</option>';
 										}
 									}
+								}
 								?>
 							</select>
 							<select class="form-control" name = "gradeReceived1">

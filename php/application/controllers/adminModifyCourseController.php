@@ -14,8 +14,10 @@
 		{ 
 			$courses = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
 
-			$data = array('courses' => $courses->result());
-
+			if($courses != FALSE) {
+				$data = array('courses' => $courses->result());
+			}
+			
 			$this->load->view('adminModifyCourse', $data);
 		}
 

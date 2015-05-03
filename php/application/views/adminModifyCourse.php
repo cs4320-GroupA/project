@@ -75,20 +75,21 @@
 		        </thead>
 		        <tbody>
 		          <?php
-		            foreach($courses as $row)
-		            {
-		              echo '<tr>';
-		              echo '<td>';
-		              echo '<form>';
-		              echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminEditCourseController/index/'.$row->course_id.'/"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</button> ';
-		              echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove</button> ';
-		              echo '</td>';
-		              echo '<td>'.$row->course_name.'</td>';
-		              echo '<td>'.$row->semester.'</td>';
-		              echo '<td>'.$row->username.'</td>';
-		              echo '</tr>';
-		              echo '</form>';
-		            };
+		          	if(isset($courses)) {
+		            	foreach($courses as $row) {
+		              		echo '<tr>';
+			              	echo '<td>';
+			              	echo '<form>';
+			              	echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminEditCourseController/index/'.$row->course_id.'/"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</button> ';
+			              	echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/adminModifyCourseController/remove/'.$row->course_id.'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove</button> ';
+			              	echo '</td>';
+			              	echo '<td>'.$row->course_name.'</td>';
+			              	echo '<td>'.$row->semester.'</td>';
+			              	echo '<td>'.$row->username.'</td>';
+			              	echo '</tr>';
+			              	echo '</form>';
+			            }
+			        }
 		         ?>
 		        </tbody>
 		      </table>

@@ -7,7 +7,7 @@
         public function getCourses($semester) {
             $sql = 'SELECT * FROM tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id WHERE semester = ? ORDER BY tasub.course.course_name';
 
-            $query = $this->db->query($sql);
+            $query = $this->db->query($sql, array($semester));
             
             if($query->num_rows() > 0){
                 return $query;

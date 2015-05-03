@@ -134,10 +134,10 @@
 						      echo'<label>Select Semester: </label>';
 						    echo'</div>';
 						    echo'<div class="col-md-2">';
-						      echo'<label for="changeTo">Semester</label>';
+						      echo'<label>Semester</label>';
 						    echo '</div>';
 						    echo '<div class = "col-md-8">';
-						      echo'<select class = "form-control" id = "changeTo" name="changeTo" required>';
+						      echo'<select class = "form-control" name="changeTo" required>';
 						        echo'<option disabled hidden selected></option>';
 
 						       	if(isset($semesters)) {
@@ -160,23 +160,23 @@
 						    echo '<div class="col-md-2">';
 						      echo '<label>Add New Semester: </label>';
 						    echo '</div>';
-						    echo '<div class="col-md-1">';
-						      echo '<label for = "newTitle">Season </label>';
-						    echo '</div>';
 						    echo '<div class="col-md-2">';
-						      echo '<select id = "newTitle" name="newTitle" class = "form-control" required>';
+						      echo '<label>Season </label>';
+						    echo '</div>';
+						    echo '<div class="col-md-4">';
+						      echo '<select name="newTitle" class = "form-control" required>';
 						        echo '<option disabled hidden selected></option>';
 						        echo '<option>FALL</option>';
 						        echo '<option>SPRING</option>';
 						    	echo '</select>';
 						    echo '</div>';
 						    echo '<div class="col-md-1">';
-						      echo '<label for "newYear">Year </label>';
+						      echo '<label>Year </label>';
 						    echo '</div>';
-						    echo '<div class="col-md-1">';
-						      echo '<input type = "text" id = "newYear" name="newYear" class = "form-control" placeholder = "2020" required>';
+						    echo '<div class="col-md-3">';
+						      echo '<input type = "text" name="newYear" class = "form-control" placeholder = "2020" required>';
 						    echo '</div>';
-						    echo '<div class="col-md-6">';
+						    echo '<div class="col-md-12">';
 						      echo '<br>';
 						      echo '<br>';
 						      echo '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>';

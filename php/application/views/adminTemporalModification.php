@@ -24,7 +24,7 @@
 		</div>
 		<div class="container">
 				<?php
-						echo '<div class="jumbotron">';
+						echo '<div class="jumbotron timeline">';
 							echo '<center>';
 							echo '<p>Current Window: '.$status_title.'</p>';
 							echo '<p>Current Semester: '.$semester_title.'</p>';

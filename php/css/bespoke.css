@@ -35,3 +35,6 @@ ul {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.timeline {
+	max-height: 100px;
+}

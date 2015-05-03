@@ -12,7 +12,7 @@
             $data['status_title'] = $this->semester_model->getCurrentSemesterStatus();
 
             $semesters = $this->semester_model->getALL();
-            if($semester != FALSE) {
+            if($semesters != FALSE) {
                 $data['semesters'] = $semesters->result();
             }
 

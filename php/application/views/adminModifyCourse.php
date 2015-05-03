@@ -26,7 +26,7 @@
 		  <div class="row">
 		    <div class="col-md-12">
 		      <h3>Add a Course</h3>
-		      <?php echo '<form name="newCourse" action="'.base_url().'index.php/adminModifyCOurseController/add" method="POST">'; ?>
+		      <?php echo '<form name="newCourse" action="'.base_url().'index.php/adminModifyCourseController/add" method="POST">'; ?>
 		        <div class="form-group">
 		          <div class="row">
 		            <div class="col-md-2">

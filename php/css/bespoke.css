@@ -27,6 +27,10 @@ ul {
 	margin-bottom: 10px;
 }
 
+#timelineBtn {
+	margin-top: 10px;
+}
+
 .navbar-default .navbar-brand {
 	font-family: 'Open Sans', sans-serif;
 }

@@ -25,10 +25,12 @@
 		<div class="container">
 				<?php
 						echo '<div class="jumbotron timeline">';
-							echo '<center>';
-							echo '<p>Current Window: '.$status_title.'</p>';
-							echo '<p>Current Semester: '.$semester_title.'</p>';
-							echo '</center>';
+							echo '<div class = "col-md-6">';
+								echo '<p><strong>Current Window: </strong></p>';
+							echo '</div>';
+							echo '<div class = "col-md-6">';
+								echo '<p><strong>Current Semester: </strong></p>';
+							echo '</div>';
 						echo '</div>';
 						echo '<div class = "row">';
 							echo '<div class = "col-md-12">';

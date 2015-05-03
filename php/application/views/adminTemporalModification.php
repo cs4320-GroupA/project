@@ -24,12 +24,18 @@
 		</div>
 		<div class="container">
 				<?php
-					if ($status_title == "APPLICATION")
-					{
+						echo '<div class = "row">';
+							echo '<div class = "col-md-12">';
+								echo '<h3>Current Timeline and Semester</h3>';
+								echo '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tristique et felis a interdum. Aenean ac volutpat dui, at pellentesque lectus. Pellentesque venenatis at lacus in eleifend. Morbi posuere porta maximus. Nunc feugiat ligula vitae risus cursus tempor. Nam eu condimentum orci. Aliquam id imperdiet orci. Morbi lacus purus, eleifend a tortor at, rhoncus ornare justo. Vestibulum velit nulla, vestibulum facilisis justo ac, auctor dignissim nisl. Suspendisse dignissim ante at enim dignissim imperdiet. Donec faucibus feugiat molestie.</p>';
+							echo '</div>';
+						echo '</div>';
 						echo '<div class = "row">';
 							echo '<div class = "col-md-12">';
 								echo '<h3>Move this Semester\'s Timeline</h3>';
 							echo '</div>';
+					if ($status_title == "APPLICATION")
+					{
 							echo '<div class ="col-md-12">';
 								echo '<p>';
 								echo 'The application timeline is currently in the <b>Application mode</b>. Here, applicants can submit applications to be a TA/PLA for the upcoming semester. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
@@ -42,10 +48,6 @@
 					}
 					else if ($status_title == "SELECTION")
 					{
-						echo '<div class = "row">';
-							echo '<div class = "col-md-12">';
-								echo '<h3>Move this Semester\'s Timeline</h3>';
-							echo '</div>';
 							echo '<div class ="col-md-6">';
 								echo '<p>';
 								echo 'The application timeline is currently in the <b>Selection mode</b>. Here, instructors will preference applicants for each of their classes. Upon moving back to the Application mode, applicant submissions are reopened.';
@@ -66,10 +68,6 @@
 					}
 					else if ($status_title == "NOTIFICATION")
 					{
-						echo '<div class = "row">';
-							echo '<div class = "col-md-12">';
-								echo '<h3>Move this Semester\'s Timeline</h3>';
-							echo '</div>';
 							echo '<div class ="col-md-6">';
 								echo '<p>';
 								echo 'The application timeline is currently in the <b>Notification mode</b>. Here, instructors will preference applicants for each of their classes. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';
@@ -90,10 +88,6 @@
 					}
 					else
 					{
-						echo '<div class = "row">';
-							echo '<div class = "col-md-12">';
-								echo '<h3>Move this Semester\'s Timeline</h3>';
-							echo '</div>';
 							echo '<div class ="col-md-4">';
 								echo '<p>';
 								echo 'Move to the Application mode. Here, applicants can submit applications to be a TA/PLA for the upcoming semester. Upon moving the application to the Selection mode, no applications will be allowed to be submitted and instructors will begin to be able to preference applicants.';

@@ -18,7 +18,7 @@
 				$data = array('courses' => $courses->result());
 			}
 
-			$semesters = $this->semester_model->getALL();
+			$semesters = $this->semester_model->getAll();
             
             if($semesters != FALSE) {
                 $data['semesters'] = $semesters->result();

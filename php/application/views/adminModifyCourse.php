@@ -26,14 +26,14 @@
 		  <div class="row">
 		    <div class="col-md-12">
 		      <h3>Add a Course</h3>
-		      <form method="post" accept-charset="utf-8">
+		      <?php echo '<form class="form-inline" name="newCourse" action="'.base_url().'index.php/adminModifyCOurseController/add" method="POST">'; ?>
 		        <div class="form-group">
 		          <div class="row">
 		            <div class="col-md-2">
 		              <label for="courseName">Course Name </label>
 		            </div>
 		            <div class="col-md-6">
-		              <input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS 4320: Software Engineering">
+		              <input type="text" class="form-control" name="courseName" id="courseName" placeholder="CS 4320: Software Engineering" required>
 		            </div>
 		          </div>
 		        </div>
@@ -43,7 +43,7 @@
 		              <label for="semester">Semester </label>
 		            </div>
 		            <div class="col-md-6">
-		              <select name="semester" class="form-control">
+		              <select name="semester" class="form-control" required>
 					  <?php
 					  		if(isset($semesters)) {
 						    	foreach($semesters as $row) {

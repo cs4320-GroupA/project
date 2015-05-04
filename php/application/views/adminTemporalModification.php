@@ -25,7 +25,7 @@
 		<div class="container">
 				<?php
 						echo '<div class = "row">';
-							echo '<div class="jumbotron timeline">';
+							echo '<div class="jumbotron" id = "timeline">';
 								echo '<div class = "col-md-6">';
 									echo '<p><strong>Current Window: </strong>'.$status_title.'</p>';
 								echo '</div>';
@@ -123,10 +123,10 @@
 							echo '</div>';
 						echo'</div>';
 					}
-					echo'<div class="row">';
-						  echo'<div class="col-md-12">';
-						    echo'<h3>Change Semester</h3>';
-						  echo'</div>';
+					echo'<div class="row" id = "chgSem">';
+						echo'<div class="col-md-12">';
+					    	echo'<h3>Change Semester</h3>';
+					  	echo'</div>';
 					echo'</div>';
 					echo'<div class="row">';
 						echo'<div class="col-md-6">';

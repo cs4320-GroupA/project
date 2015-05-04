@@ -3,24 +3,12 @@ body {
 	padding-bottom: 50px;
 }
 
-p, li, td, tr, th, label {
-	font-family: 'Open Sans', sans-serif;
-}
-
-h3, h4, h5, h6 {
+p, li, td, tr, th, label, ul, .btn, h3, h4, h5, h6 {
 	font-family: 'Open Sans', sans-serif;
 }
 
 h2 {
 	font-family: 'Oswald', sans-serif;
-}
-
-ul {
-	font-family: 'Open Sans', sans-serif;	
-}
-
-.btn {
-	font-family: 'Open Sans', sans-serif;
 }
 
 #info {
@@ -35,6 +23,11 @@ ul {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.timeline {
-	max-height: 200px;
+#chgSem {
+	margin-top: 10px;
 }
+
+.jumbotron {
+		max-height: 200px;
+}
+

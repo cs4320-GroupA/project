@@ -134,10 +134,8 @@
 						    echo'<div class="col-md-2">';
 						    	echo'<label>Select Semester: </label>';
 						    echo'</div>';
-						    echo'<div class="col-md-2">';
-						    	echo'<label>Semester</label>';
-						    echo '</div>';
 						    echo '<div class = "col-md-8">';
+						    	echo'<label>Semester</label>';
 						    	echo'<select class = "form-control" name="changeTo" required>';
 						        echo'<option disabled hidden selected></option>';
 
@@ -159,20 +157,16 @@
 						    echo '<div class="col-md-2">';
 						    	echo '<label>New Semester: </label>';
 						    echo '</div>';
-						    echo '<div class="col-md-2 col-md-1-offset">';
-						    	echo '<label>Season </label>';
-						    echo '</div>';
 						    echo '<div class="col-md-4">';
-						      echo '<select name="newTitle" class = "form-control" required>';
-						        echo '<option disabled hidden selected></option>';
-						        echo '<option>FALL</option>';
-						        echo '<option>SPRING</option>';
+						    	echo '<label>Season </label>';
+						      	echo '<select name="newTitle" class = "form-control" required>';
+							        echo '<option disabled hidden selected></option>';
+							        echo '<option>FALL</option>';
+							        echo '<option>SPRING</option>';
 						    	echo '</select>';
 						    echo '</div>';
-						    echo '<div class="col-md-1">';
-						    	echo '<label>Year </label>';
-						    echo '</div>';
 						    echo '<div class="col-md-2">';
+						    	echo '<label>Year </label>';
 						    	echo '<input type = "text" name="newYear" class = "form-control" placeholder = "2020" required>';
 						    echo '</div>';
 						    echo '<div class="col-md-12">';

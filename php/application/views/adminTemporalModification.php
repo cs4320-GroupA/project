@@ -25,7 +25,7 @@
 		<div class="container">
 				<?php
 						echo '<div class = "row">';
-							echo '<div class="jumbotron" id = "timeline">';
+							echo '<div class="jumbotron" id = "timelineJumbo">';
 								echo '<div class = "col-md-6">';
 									echo '<p><strong>Current Window: </strong>'.$status_title.'</p>';
 								echo '</div>';

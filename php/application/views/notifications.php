@@ -51,12 +51,15 @@
 			                    echo'</table>';
 		                    echo'</div>';
 						} else if(isset($message)) {
-							echo $message;
+							echo '<div class="col-md-12">';
+								echo $message;
+							echo '</div>';
 						} else {
-							echo '<p>You have no notifications to display</p>';
+							echo '<div class="col-md-12">';
+								echo '<p>You have no notifications to display</p>';
+							echo '</div>';
 						}
 					?>
-
 				</div>
 			</div>
 		</div>

@@ -30,26 +30,26 @@
 							echo '<div class="col-md-12">';
 								echo'<h2>Your assigned courses</h2>';
 							echo'</div>';
-							echo'<table class="table table-hover table-striped">';
-			                    echo'<thead>';
-			                    	echo'<tr>';
-			                    		echo'<th>Course Name</th>';
-			                    		echo'<th>Instructor</th>';
-			                    		echo'<th>Semester</th>';
-			                    	echo'</tr>';
-			                    echo'</thead>';
-			                    echo'<tbody>';
-								
-								foreach($assigned_courses as $row) {
-									echo '<tr>';
-			    					echo '<td>'.$row->course_name.'</td>';
-			    					echo '<td>'.$row->username.'</td>';
-			    					echo '<td>'.$row->semester.'</td>';
-			    					echo '</tr>';
-								}
-
-								echo'</tbody>';
-		                    echo'</table>';
+							echo '<div class="col-md-12">';
+								echo'<table class="table table-hover table-striped">';
+				                    echo'<thead>';
+				                    	echo'<tr>';
+				                    		echo'<th>Course Name</th>';
+				                    		echo'<th>Instructor</th>';
+				                    		echo'<th>Semester</th>';
+				                    	echo'</tr>';
+				                    echo'</thead>';
+				                    echo'<tbody>';									
+									foreach($assigned_courses as $row) {
+										echo '<tr>';
+				    					echo '<td>'.$row->course_name.'</td>';
+				    					echo '<td>'.$row->username.'</td>';
+				    					echo '<td>'.$row->semester.'</td>';
+				    					echo '</tr>';
+									}
+									echo'</tbody>';
+			                    echo'</table>';
+		                    echo'</div>';
 						} else if(isset($message)) {
 							echo $message;
 						} else {

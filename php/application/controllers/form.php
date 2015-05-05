@@ -58,8 +58,19 @@
 				}
 
 				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
+				if($data['previous'] == FALSE) {
+					$data['previous'] = NULL;
+				}
+
 				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data);
+				if($data['current'] == FALSE) {
+					$data['current'] = NULL;
+				}
+
 				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
+				if($data['desired'] == FALSE) {
+					$data['desired'] = NULL;
+				}
 
 			} else {
 				//User has not submitted a form yet, so allow submission
@@ -272,7 +283,9 @@
 				if(isset($_POST[$post_string])) {
 					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 					
-					$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					if($result != FALSE) {
+						$this->currently_teaching_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					}
 				}
 
 				$counter++;
@@ -287,7 +300,9 @@
 				if(isset($_POST[$post_string])) {
 					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 					
-					$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					if($result != FALSE) {
+						$this->previous_taught_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id);
+					}
 				}
 
 				$counter++;

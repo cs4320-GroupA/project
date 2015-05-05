@@ -16,7 +16,7 @@
             
             //$selected_semester = $_POST['semester_pool'];
             
-            if($isset($_POST['semester_pool'])){
+            if(isset($_POST['semester_pool'])){
                 $selected_semester = $_POST['semester_pool'];
             }else{
                 $selected_semester = $this->semester_model->getCurrentSemesterTitle();

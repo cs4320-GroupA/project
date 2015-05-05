@@ -219,25 +219,25 @@
 			}
 
 			//Grab the required fields from form, and set specific fields to NULL
-			$asstType = htmlspecialchars($_POST['radioTAPLA']); 
-			$fname = htmlspecialchars($_POST['fname']);
-			$lname = htmlspecialchars($_POST['lname']);
-			$studentID = htmlspecialchars($_POST['idNumber']);
-			$gpa = htmlspecialchars($_POST['gpa']);
-			$expected_grad = htmlspecialchars($_POST['gradYear']);
-			$phone = htmlspecialchars($_POST['phoneNumber']);
-			$email = htmlspecialchars($_POST['mizzouEmail']);
-			$signature = htmlspecialchars($_POST['signature']);
-			$gato = htmlspecialchars($_POST['gatoRadio']);
+			$asstType = trim(htmlspecialchars($_POST['radioTAPLA'])); 
+			$fname = trim(htmlspecialchars($_POST['fname']));
+			$lname = trim(htmlspecialchars($_POST['lname']));
+			$studentID = trim(htmlspecialchars($_POST['idNumber']));
+			$gpa = trim(htmlspecialchars($_POST['gpa']));
+			$expected_grad = trim(htmlspecialchars($_POST['gradYear']));
+			$phone = trim(htmlspecialchars($_POST['phoneNumber']));
+			$email = trim(htmlspecialchars($_POST['mizzouEmail']));
+			$signature = trim(htmlspecialchars($_POST['signature']));
+			$gato = trim(htmlspecialchars($_POST['gatoRadio']));
 			$semester = $this->semester_model->getCurrentSemesterTitle();
-			$date = htmlspecialchars($_POST['date']);
+			$date = trim(htmlspecialchars($_POST['date']));
 			$department = NULL;
 			$grade = NULL;
 			$advisor = NULL;
 			$speakOPTscore = NULL;
 			$lastTestDate = NULL;
-			$speak_assessment = htmlspecialchars($_POST['speakRadio']);
-			$onita = htmlspecialchars($_POST['onitaRadio']);
+			$speak_assessment = trim(htmlspecialchars($_POST['speakRadio']));
+			$onita = trim(htmlspecialchars($_POST['onitaRadio']));
 			$other_work = NULL;
 			$graduate_type = NULL;
 
@@ -354,25 +354,25 @@
 			} 
 
 			//Grab the required fields from form, and set specific fields to NULL
-			$asstType = htmlspecialchars($_POST['radioTAPLA']); 
-			$fname = htmlspecialchars($_POST['fname']);
-			$lname = htmlspecialchars($_POST['lname']);
-			$studentID = htmlspecialchars($_POST['idNumber']);
-			$gpa = htmlspecialchars($_POST['gpa']);
-			$expected_grad = htmlspecialchars($_POST['gradYear']);
-			$phone = htmlspecialchars($_POST['phoneNumber']);
-			$email = htmlspecialchars($_POST['mizzouEmail']);
-			$signature = htmlspecialchars($_POST['signature']);
-			$gato = htmlspecialchars($_POST['gatoRadio']);
+			$asstType = trim(htmlspecialchars($_POST['radioTAPLA'])); 
+			$fname = trim(htmlspecialchars($_POST['fname']));
+			$lname = trim(htmlspecialchars($_POST['lname']));
+			$studentID = trim(htmlspecialchars($_POST['idNumber']));
+			$gpa = trim(htmlspecialchars($_POST['gpa']));
+			$expected_grad = trim(htmlspecialchars($_POST['gradYear']));
+			$phone = trim(htmlspecialchars($_POST['phoneNumber']));
+			$email = trim(htmlspecialchars($_POST['mizzouEmail']));
+			$signature = trim(htmlspecialchars($_POST['signature']));
+			$gato = trim(htmlspecialchars($_POST['gatoRadio']));
 			$semester = $this->semester_model->getCurrentSemesterTitle();
-			$date = htmlspecialchars($_POST['date']);
+			$date = trim(htmlspecialchars($_POST['date']));
 			$department = NULL;
 			$grade = NULL;
 			$advisor = NULL;
 			$speakOPTscore = NULL;
 			$lastTestDate = NULL;
-			$speak_assessment = htmlspecialchars($_POST['speakRadio']);
-			$onita = htmlspecialchars($_POST['onitaRadio']);
+			$speak_assessment = trim(htmlspecialchars($_POST['speakRadio']));
+			$onita = trim(htmlspecialchars($_POST['onitaRadio']));
 			$other_work = NULL;
 			$graduate_type = NULL;
 

@@ -36,7 +36,7 @@
         
             //Return TRUE on success, FALSE on failure
             if($this->db->affected_rows() == 1) {
-                $sql = 'SELECT form_data_id FROM tasub.form_data WHERE first_name = ? AND last_name = ?
+                $sql = 'SELECT * FROM tasub.form_data WHERE first_name = ? AND last_name = ?
                                                                  AND mizzou_email = ? AND student_id = ? 
                                                                  AND assistant_type = ? AND semester = ? 
                                                                  AND expected_graduation = ? AND grade = ?     

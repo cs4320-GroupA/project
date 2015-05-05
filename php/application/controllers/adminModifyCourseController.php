@@ -13,11 +13,16 @@
 		public function index() 
 		{ 
             
-            if(isset($_POST('semester_pool')){
-                $selected_semester = $_POST('semester_pool');
-            }else{
+            
+            $selected_semester = $_POST('semester_pool');
+            
+            if($seleted_semester==NULL){
                 $selected_semester = $this->semester_model->getCurrentSemesterTitle();
             }
+            
+            /*else{
+                $selected_semester = $this->semester_model->getCurrentSemesterTitle();
+            }*/
                
             $data['selected_semester'] = $selected_semester;
             

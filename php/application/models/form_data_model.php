@@ -35,7 +35,7 @@
                                                                        $other_work, $gato, $speak_assessment, $onita));
         
             //Return TRUE on success, FALSE on failure
-            if($this->db->affected_rows() == 1) {
+            if($this->db->affected_rows() > 0) {
                 $sql = 'SELECT * FROM tasub.form_data WHERE first_name = ? AND last_name = ?
                                                                  AND mizzou_email = ? AND student_id = ? 
                                                                  AND assistant_type = ? AND semester = ? 

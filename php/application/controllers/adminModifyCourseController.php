@@ -12,7 +12,8 @@
 
 		public function index() 
 		{ 
-			$courses = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
+			$courses = $this->course_model->getAllCourses();
+            //$this->semester_model->getCurrentSemesterTitle()
 
 			if($courses != FALSE) {
 				$data = array('courses' => $courses->result());

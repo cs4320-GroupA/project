@@ -15,6 +15,19 @@
                 return FALSE; //No courses found
             }
         }
+        
+        
+        public function getAllCourses(){
+            $sql = 'SELECT * FROM tasub.course INNER JOIN tasub.user ON tasub.course.instructor_id = tasub.user.user_id ORDER BY tasub.course.course_name';
+
+            $query = $this->db->query($sql, array($semester));
+            
+            if($query->num_rows() > 0){
+                return $query;
+            } else{
+                return FALSE; //No courses found
+            }
+        }
 
 	public function removeCourse($course_id) {
 		$sql = 'DELETE FROM course WHERE course_id = ?'; 

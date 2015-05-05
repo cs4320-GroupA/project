@@ -36,7 +36,7 @@
         
             //Return TRUE on success, FALSE on failure
             if($this->db->affected_rows() > 0) {
-                $sql = 'SELECT * FROM tasub.form_data WHERE first_name = ? AND last_name = ? AND mizzou_email = ? AND student_id = ? AND assistant_type = ? AND semester = ?)';
+                $sql = 'SELECT * FROM tasub.form_data WHERE first_name = ? AND last_name = ? AND mizzou_email = ? AND student_id = ? AND assistant_type = ? AND semester = ?';
 
                 $query = $this->db->query($sql, array($fname, $lname, $email, $studentID, $asstType, $semester));
 

@@ -64,6 +64,38 @@
 		    </div>
 		    <div class="col-md-12">
 		      <h3>Edit or Remove an Existing Course</h3>
+                <div class="col-md-12">
+		      <h3>Add a Course</h3>
+		      <?php echo '<form name="select_semester" action="'.base_url().'index.php/adminModifyCourseController" method="POST">'; ?>
+		        <div class="form-group">
+		          <div class="row">
+		            <div class="col-md-2">
+		              <label for="semester">Semester </label>
+		            </div>
+		            <div class="col-md-6">
+		              <select name="semester_pool" class="form-control" required>
+					  <?php
+					  		if(isset($semesters)) {
+						    	foreach($semesters as $row) {
+                                    if($selected_semester == $row->semester_title){
+						    	     	echo'<option selected value="'.$row->semester_title.'">'.$row->semester_title.'</option>';   
+                                    } else {
+                                        echo'<option value="'.$row->semester_title.'">'.$row->semester_title.'</option>';
+                                    }
+						    	}
+						    }
+						?>
+		              </select>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="row">
+		          <div class="col-md-6 col-md-offset-2">
+		            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Select</button>
+		          </div>
+		        </div>
+		      </form>
+		    </div>
 		      <table class="table table-hover table-striped">
 		        <thead>
 		          <tr>

@@ -12,12 +12,23 @@
 
 		public function index() 
 		{ 
-			$courses = $this->course_model->getAllCourses();
+            
+            if(isset($_POST('semester_pool')){
+                $selected_semester = $_POST('semester_pool');
+            }else{
+                $selected_semester = $this->semester_model->getCurrentSemesterTitle();
+            }
+               
+            $data['selected_semester'] = $selected_semester;
+            
+			$courses = $this->course_model->getCourses($selected_semester);
             //$this->semester_model->getCurrentSemesterTitle()
 
 			if($courses != FALSE) {
 				$data = array('courses' => $courses->result());
-			}
+			} else {
+                $data['courses'] = NULL;
+            }
 
 			$semesters = $this->semester_model->getAll();
             

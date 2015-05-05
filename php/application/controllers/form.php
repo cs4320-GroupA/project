@@ -255,7 +255,7 @@
 			$post_string = $base_string.'1';
 			$counter = 1;
 			
-			for($i = 1; $i <= 4; $i++) {
+			for($i = 1; $i <= 3; $i++) {
 				if(isset($_POST[$post_string])) {
 					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 					
@@ -389,7 +389,7 @@
 			$post_string = $base_string.'1';
 			$counter = 1;
 			
-			for($i = 1; $i <= 4; $i++) {
+			for($i = 1; $i <= 3; $i++) {
 				if(isset($_POST[$post_string])) {
 					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 

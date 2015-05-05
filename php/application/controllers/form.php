@@ -135,8 +135,20 @@
 							  'view_only' => TRUE);
 
 				$data['previous'] = $this->previous_taught_model->getAll($query->row()->form_data);
+				if($data['previous'] == FALSE) {
+					$data['previous'] = NULL;
+				}
+
 				$data['current'] = $this->currently_teaching_model->getAll($query->row()->form_data);
+				if($data['current'] == FALSE) {
+					$data['current'] = NULL;
+				}
+
 				$data['desired'] = $this->desired_courses_model->getAll($query->row()->form_data);
+				if($data['desired'] == FALSE) {
+					$data['desired'] = NULL;
+				}
+				
 				$data['user_id'] = $user_id;
 				$data['semester_id'] = $semester_id;
 				$result = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());

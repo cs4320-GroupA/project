@@ -236,7 +236,7 @@
 
 			//Check if speak sore is inputed
 			if("" != trim($_POST['speakOPT'])) {
-				$speakOPTscore = htmlspecialchars($_POST['speakRadio']);
+				$speakOPTscore = intval(htmlspecialchars($_POST['SPEAK_OPT_score']));
 				$lastTestDate = htmlspecialchars($_POST['lastTestDate']);
 			} 
 
@@ -370,7 +370,7 @@
 
 			//Check if speak sore is inputed
 			if("" != trim($_POST['speakOPT'])) {
-				$speakOPTscore = htmlspecialchars($_POST['speakRadio']);
+				$speakOPTscore = intval(htmlspecialchars($_POST['speakOPT']));
 				$lastTestDate = htmlspecialchars($_POST['lastTestDate']);
 			} 
 

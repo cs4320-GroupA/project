@@ -95,10 +95,10 @@
 			              </select>
 			            </div>
 			            <div class="col-md-2">
-			            	<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Select</button>
+			            	<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Select Semester</button>
 			          	</div>
 		      		</form>
-		        	</div> <!--CLOSE ROW-->  
+		        	</div>  
 		    	</div>
 		      <table class="table table-hover table-striped">
 		        <thead>

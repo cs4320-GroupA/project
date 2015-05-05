@@ -70,7 +70,7 @@
 		        <div class="form-group">
 		          <div class="row">
 		            <div class="col-md-2">
-		              <label for="semester">Semester </label>
+		              <label for="semester">Selected Semester </label>
 		            </div>
 		            <div class="col-md-6">
 		              <select name="semester_pool" class="form-control" required>
@@ -78,6 +78,7 @@
 					  		if(isset($semesters)) {
 						    	foreach($semesters as $row) {
                                     if($selected_semester == $row->semester_title){
+                                        print_r($selected_semester);
 						    	     	echo'<option selected value="'.$row->semester_title.'">'.$row->semester_title.'</option>';   
                                     } else {
                                         echo'<option value="'.$row->semester_title.'">'.$row->semester_title.'</option>';

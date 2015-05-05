@@ -51,7 +51,7 @@
                                              $speakOPTscore, $department, $advisor, $gpa, $phone, $lastTestDate, $graduate_type, 
                                              $other_work, $gato, $speak_assessment, $onita));
 
-                if($query->num_rows() > 0) {
+                if($query->num_row() > 0) {
                     return $query->row()->form_data_id;
                 } else {
                     return FALSE;

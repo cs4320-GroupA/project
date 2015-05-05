@@ -292,8 +292,6 @@
 					$result = $this->course_model->getCourseByName($_POST[$post_string]);
 
 					if($result != FALSE) {
-						$return = $this->desired_courses_model->checkForEntry($result->row()->course_id, $result->row()->course_name, $form_data_id);
-						
 						$this->desired_courses_model->insert($result->row()->course_id, $result->row()->course_name, $form_data_id, $_POST[$grade_string]);
 					}
 				}

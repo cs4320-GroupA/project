@@ -252,13 +252,14 @@
 				$lastTestDate = htmlspecialchars($_POST['lastTestDate']);
 			} 
 
-			//Insert form data into the database
-			$result = $this->form_data_model->submitFormData($asstType, $fname, $lname, $email, $studentID, $gpa, $expected_grad, $phone, 
+			//Insert form data into the database, and grab the user's form_data entry id 
+			$form_data_id = $this->form_data_model->submitFormData($asstType, $fname, $lname, $email, $studentID, $gpa, $expected_grad, $phone, 
                                        						 $gato, $department, $grade, $advisor, $speakOPTscore, $lastTestDate, $onita, 
                                        						 $other_work, $semester, $graduate_type, $speak_assessment);
 
-			//Grab the user's form_data entry id 
-			$form_data_id = $this->form_data_model->getFormDataID($studentID, $semester);
+			if($form_data_id == FALSE) {
+				redirect('form', 'refresh');
+			}
 
 			//Insert form meta data into database
 			$result = $this->form_model->submitForm($semester_id, $form_data_id, $this->session->userdata['user_id'], $signature, $date);

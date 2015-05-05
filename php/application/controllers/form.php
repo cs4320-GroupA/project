@@ -409,21 +409,23 @@
 			$query = $this->currently_teaching_model->getAll($form_data_id);
 			$safe = FALSE;
 			
-			foreach ($query as $row) {
-				for($i = 1; $i < $counter; $i++) {
-					$post_string = $base_string.strval($i);
-					
-					if(isset($_POST[$post_string])) {
-						if($row->course_name == $_POST[$post_string]) {
-							$safe = TRUE;
+			if($query != FALSE) {
+				foreach ($query as $row) {
+					for($i = 1; $i < $counter; $i++) {
+						$post_string = $base_string.strval($i);
+						
+						if(isset($_POST[$post_string])) {
+							if($row->course_name == $_POST[$post_string]) {
+								$safe = TRUE;
+							}
 						}
 					}
-				}
-				if($safe == FALSE) {
-					$this->currently_teaching_model->delete($row->currently_teaching_id, $row->course_id, $row->course_name, $form_data_id);
-				}
+					if($safe == FALSE) {
+						$this->currently_teaching_model->delete($row->currently_teaching_id, $row->course_id, $row->course_name, $form_data_id);
+					}	
 
-				$safe = FALSE;
+					$safe = FALSE;
+				}
 			}
 
 			$base_string = 'previously_taught';
@@ -450,21 +452,23 @@
 			$query = $this->previous_taught_model->getAll($form_data_id);
 			$safe = FALSE;
 			
-			foreach ($query as $row) {
-				for($i = 1; $i < $counter; $i++) {
-					$post_string = $base_string.strval($i);
-					
-					if(isset($_POST[$post_string])) {
-						if($row->course_name == $_POST[$post_string]) {
-							$safe = TRUE;
+			if($query != FALSE) {
+				foreach ($query as $row) {
+					for($i = 1; $i < $counter; $i++) {
+						$post_string = $base_string.strval($i);
+						
+						if(isset($_POST[$post_string])) {
+							if($row->course_name == $_POST[$post_string]) {
+								$safe = TRUE;
+							}
 						}
 					}
-				}
-				if($safe == FALSE) {
-					$this->previous_taught_model->delete($row->previous_taught_id, $row->course_id, $row->course_name, $form_data_id);
-				}
+					if($safe == FALSE) {
+						$this->previous_taught_model->delete($row->previous_taught_id, $row->course_id, $row->course_name, $form_data_id);
+					}	
 
-				$safe = FALSE;
+					$safe = FALSE;
+				}
 			}
 
 			$base_string = 'desired_courses';
@@ -496,23 +500,24 @@
 			$query = $this->desired_courses_model->getAll($form_data_id);
 			$safe = FALSE;
 			
-			foreach ($query as $row) {
-				for($i = 1; $i < $counter; $i++) {
-					$post_string = $base_string.strval($i);
-					
-					if(isset($_POST[$post_string])) {
-						if($row->course_name == $_POST[$post_string]) {
-							$safe = TRUE;
+			if($query != FALSE) {
+				foreach ($query as $row) {
+					for($i = 1; $i < $counter; $i++) {
+						$post_string = $base_string.strval($i);
+						
+						if(isset($_POST[$post_string])) {
+							if($row->course_name == $_POST[$post_string]) {
+								$safe = TRUE;
+							}
 						}
 					}
-				}
-				if($safe == FALSE) {
-					$this->desired_courses_model->delete($row->desired_course_id, $row->course_id, $row->course_name, $form_data_id);
-				}
+					if($safe == FALSE) {
+						$this->desired_courses_model->delete($row->desired_course_id, $row->course_id, $row->course_name, $form_data_id);
+					}	
 
-				$safe = FALSE;
-			}
-
+					$safe = FALSE;
+				}
+			}	
 			//Redirect to form
 			redirect('form', 'refresh');
 		}

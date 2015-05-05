@@ -78,7 +78,9 @@
 					  		if(isset($semesters)) {
 						    	foreach($semesters as $row) {
                                     if(isset($selected_semester)){
+                                        print_r($selected_semester);
                                         if($selected_semester->sem == $row->semester_title){
+                                            
                                             echo'<option selected value="'.$row->semester_title.'">'.$row->semester_title.'</option>';   
                                         } else {
                                             echo'<option value="'.$row->semester_title.'">'.$row->semester_title.'</option>';

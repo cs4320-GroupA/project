@@ -77,11 +77,14 @@
 					  <?php
 					  		if(isset($semesters)) {
 						    	foreach($semesters as $row) {
-                                    if($selected_semester == $row->semester_title){
-                                        print_r($selected_semester);
-						    	     	echo'<option selected value="'.$row->semester_title.'">'.$row->semester_title.'</option>';   
+                                    if(isset($selected_semester)){
+                                        if($selected_semester->sem == $row->semester_title){
+                                            echo'<option selected value="'.$row->semester_title.'">'.$row->semester_title.'</option>';   
+                                        } else {
+                                            echo'<option value="'.$row->semester_title.'">'.$row->semester_title.'</option>';
+                                        }
                                     } else {
-                                        echo'<option value="'.$row->semester_title.'">'.$row->semester_title.'</option>';
+                                            echo'<option value="'.$row->semester_title.'">'.$row->semester_title.'</option>';
                                     }
 						    	}
 						    }

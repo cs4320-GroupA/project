@@ -22,13 +22,13 @@
                 $selected_semester = $this->semester_model->getCurrentSemesterTitle();
             }
                
-            $data['selected_semester'] = $selected_semester;
+            $data['selected_semester'] = array('sem' => $selected_semester):
             
 			$courses = $this->course_model->getCourses($selected_semester);
             //$this->semester_model->getCurrentSemesterTitle()
 
 			if($courses != FALSE) {
-				$data = array('courses' => $courses->result());
+				$data['courses']= $courses->result();
 			} else {
                 $data['courses'] = NULL;
             }

@@ -157,7 +157,7 @@
 						    echo '<div class="col-md-2">';
 						    	echo '<label>New Semester: </label>';
 						    echo '</div>';
-						    echo '<div class="col-md-4">';
+						    echo '<div class="col-md-2">';
 						    	echo '<label>Season</label>';
 						      	echo '<select name="newTitle" class = "form-control" required>';
 							        echo '<option disabled hidden selected></option>';

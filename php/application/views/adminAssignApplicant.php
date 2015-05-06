@@ -83,7 +83,9 @@
 			    <table class="table table-hover table-striped">
 			      <thead>
 			        <tr>
+			        <?php if(isset($assignable)) { ?>
 			          <th>Remove</th>
+			        <?php } ?>
 			          <th>Full Name</th>
 			          <th>GPA</th>
 			          <th>Grad Year</th>
@@ -95,7 +97,9 @@
                         foreach($assigned_applicants as $row) {
                             echo '<tr>'; 
                             echo '<form>';
+                            if(isset($assignable)) {
                                 echo '<td><button class="btn btn-default" formaction="'.base_url().'index.php/adminAssignApplicantController/remove/'.$row->assigned_id.'/'.$currentCourse->course_id.'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove</button>';
+                            }
                                 echo "<td>" . $row->first_name . " " . $row->last_name . "</td>"; 
                                 echo "<td>" . $row->gpa . "</td>";
                                 echo "<td>" . $row->expected_graduation . "</td>";

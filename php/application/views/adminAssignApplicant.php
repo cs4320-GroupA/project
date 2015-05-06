@@ -40,6 +40,7 @@
 	    			</div>
 	    	</div>
 	    	</div>
+	    <?php
 	    	}
 	    ?>
 			<div class='row'>
@@ -125,9 +126,9 @@
 						</thead>
 						<tbody>
 							<?php 
-                            if(isset($applicants)){
+                            if(isset($applicants)) {
                                 if(count($applicants) > 0){
-                                    foreach($applicants as $applicant){
+                                    foreach($applicants as $applicant) {
                                         echo '<tr>'; 
                                         	echo '<form>';
                                             echo "<td><input type='checkbox' name='applicants[]' value='".$applicant->form_id."'></td>";

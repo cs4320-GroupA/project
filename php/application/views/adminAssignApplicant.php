@@ -138,8 +138,9 @@
 					<table class="table table-hover table-striped">
 						<thead>
 							<tr>
+								<th>Preference</th>
 								<th>Full Name</th>
-								<th>Instructor Preference</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -147,10 +148,10 @@
                              if(isset($preferences)){     
                                  if(count($preferences) > 0){ 
                                     foreach($preferences as $preference){
-                                        //print_r($preferences);
                                         echo '<tr>';
+                                        	echo '<td>'.$preference->preference_number.'</td>';
                                             echo '<td>'.$preference->first_name.' '.$preference->last_name.'</td>';
-                                            echo '<td>'.$preference->preference_number.'</td>';
+                                            echo '<td><form><button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$row->preference_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button></td>'
                                         echo '</tr>';
                                     }
                                  }

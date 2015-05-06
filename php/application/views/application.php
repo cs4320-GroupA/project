@@ -46,13 +46,20 @@
     				}
     			}
 
+    			if(document.forms["form_data"]["desired_courses1"].value != "" || document.forms["form_data"]["desired_courses1"].value == null) {
+    				if(document.forms["form_data"]["gradeReceived1"].value == "" || document.forms["form_data"]["gradeReceived1"].value == null) {
+    					alert("A grade for desired course must be entered!");
+    					return false;
+    				}
+    			}
+    			
     			return true;
     		}
 
     		function addCurrentlyRow(form) {
     			currently_count++;
     			if(currently_count < currently_max_fields) {
-    				var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-default" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
+    				var new_row = '<p id="currently_row'+currently_count+'"><select class="form-control" name = "currently_teaching'+currently_count+'" required>'+getCourses()+'</select> <input type="button" class="btn btn-default" onclick="removeCurrentlyRow('+currently_count+');" value="Remove"></p>';
     				$('.currently_wrapper').append(new_row);
     			} else {
     				currently_count--;
@@ -67,7 +74,7 @@
     		function addPreviouslyRow(form) {
     			previously_count++;
     			if(previously_count <= previous_max_fields) {
-    				var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'">'+getCourses()+'</select> <input type="button" class="btn btn-default" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
+    				var new_row = '<p id="previously_row'+previously_count+'"><select class="form-control" name = "previously_taught'+previously_count+'" required>'+getCourses()+'</select> <input type="button" class="btn btn-default" onclick="removePreviouslyRow('+previously_count+');" value="Remove"></p>';
     				$('.previously_wrapper').append(new_row);
     			} else {
 					previously_count--;
@@ -82,8 +89,8 @@
     		function addDesiredRow(form) {
     			desired_count++;
     			if(desired_count <= desired_max_fields) {
-    				var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'">'+getCourses()+'</select> ';
-    				new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'"> \
+    				var new_row = '<p id="desired_row'+desired_count+'"><select class="form-control" name = "desired_courses'+desired_count+'" required>'+getCourses()+'</select> ';
+    				new_row += ' <select class="form-control" name = "gradeReceived'+desired_count+'" required> \
     								<option selected disabled hidden value=""></option> \
 									<option>A+</option> \
 									<option>A</option> \

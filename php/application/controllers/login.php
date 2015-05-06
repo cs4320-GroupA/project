@@ -36,6 +36,26 @@
 					'logged_in' => TRUE,
 					'failed_login' => FALSE
 				);
+				
+				if($this->semester_model->getCurrentSemesterStatus() == 'NOTIFICATION') {
+					if($newSession['user_type'] == 'applicant') {
+						$query = $this->form_model->getForm($user_id, $semester_id);
+						
+						if($query != FALSE) {
+							$newSession['assigned_count'] = $this->assigned_courses_model->getCountByFormID($query->row()->form_id);
+
+							if($newSession['assigned_count'] == FALSE) {
+								$newSession['assigned_count'] = NULL;
+							}
+						}
+					} else if($newSession['user_type'] == 'instructor') {
+						$query = $this->assigned_courses_model->getCountByInstructorID($newSession['user_id']);
+
+						if($query != FALSE) {
+							$newSession['assigned_count'] = $query;
+						}
+					}
+				}
 
 				$this->session->set_userdata($newSession);
 

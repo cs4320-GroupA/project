@@ -275,7 +275,7 @@
 								    if(isset($preferenceable)) {
 								      echo'<button type="submit" class="btn btn-default message_panel"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
 								    } else {
-								    	echo'<button type="submit" class="btn btn-default message_panel"><span class="glyphicon glyphicon-plus" aria-hidden="true" disabled></span> Add Preference</button>';
+								    	echo'<button type="submit" class="btn btn-default message_panel" disabled><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
 								    }
 
 								    echo'</div>';

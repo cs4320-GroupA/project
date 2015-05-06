@@ -65,13 +65,8 @@ class PreferenceByCourseController extends CI_Controller {
     }// end add function
 /*
  * remove() - applicant-course preference to remove
- * input:   $user_id - id of user to remove as preference
- *          $course_id - id of course
  */
-    public function remove($course_id, $preference_id){
-        // load course_model
-        $this->load->model('course_model');
-        
+    public function remove($course_id, $preference_id){        
         //$course_info = $this->course_model->getCourseById();
         
         $result = $this->course_model->removePreferenceById($preference_id);;

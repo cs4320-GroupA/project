@@ -283,7 +283,7 @@
      * removePreference() - remove a preference between applicant and course using preference id
      * input:  $preference_id
      */
-        public function removePreferenceByyId( $preference_id ){
+        public function removePreferenceById( $preference_id ){
             $q = 'delete from course_preference where preference_id = ?';
 
             $result = $this->db->query( $q, array( $preference_id ));

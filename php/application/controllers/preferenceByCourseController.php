@@ -68,19 +68,13 @@ class PreferenceByCourseController extends CI_Controller {
  * input:   $user_id - id of user to remove as preference
  *          $course_id - id of course
  */
-    public function remove(){
+    public function remove($course_id, $preference_id){
         // load course_model
         $this->load->model('course_model');
         
         //$course_info = $this->course_model->getCourseById();
         
-        $result = $this->Course_model->removePreference( 
-            $course_id, 
-            $course_name, 
-            $form_id, 
-            $semester_id, 
-            $preference_number 
-        );
+        $result = $this->course_model->removePreferenceById($preference_id);;
         
         redirect('instructorViewCourseController', 'refresh');
     }// end remove function

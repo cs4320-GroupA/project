@@ -247,10 +247,10 @@
 	    					}
 
                         	if($this->session->userdata('user_type') == 'instructor') {	
-								echo'<div class="row">';
+								echo '<div class="row">';
 								  echo '<form class="message_panel" name="message_panel" action="'.base_url().'index.php/preferenceByCourseController/quick_add/'.$form_id.'/'.$user_id.'" method="POST">';
-								    echo'<div class="col-md-6">';
-								      echo'<label>Course</label>';
+								    echo '<div class="col-md-6">';
+								      echo '<label>Course</label>';
 								      echo '<select class="form-control message_panel" name = "course_for_preference" required>';
 								        echo '<option selected disabled hidden value=""></option>';
 								        foreach($instructor_courses as $temp)
@@ -258,8 +258,8 @@
 								        	echo '<option value="'.$temp->course_id.'">'.$temp->course_name.'</option>';
 								        }
 								      echo '</select>';
-								    echo'</div>';
-								    echo'<div class="col-md-6">';
+								    echo '</div>';
+								    echo '<div class="col-md-6">';
 								      echo'<label>Preference</label>';
 								      echo '<select class="form-control message_panel" name="rank" required>';
 								        echo '<option selected value="1">1</option>';
@@ -268,14 +268,14 @@
 								        echo '<option value="4">4</option>';
 								        echo '<option value="5">5</option>';
 								      echo '</select>';
-								      echo'<p class="help-block">1 = First Preference, 5 = Last Preference</p>';
-								    echo'</div>';
-								    echo'<div class="col-md-12">';
+								      echo '<p class="help-block">1 = First Preference, 5 = Last Preference</p>';
+								    echo '</div>';
+								    echo '<div class="col-md-12">';
 
 								    if(isset($preferenceable)) {
-								      echo'<button type="submit" class="btn btn-default message_panel"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
+								      echo '<button type="submit" class="btn btn-default message_panel"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
 								    } else {
-								    	echo'<button type="button" class="btn btn-default message_panel" disabled><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
+								    	echo '<button type="button" class="btn btn-default message_panel" disabled><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
 								    }
 
 								    echo'</div>';

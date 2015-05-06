@@ -41,7 +41,7 @@
 				
 				if($this->semester_model->getCurrentSemesterStatus() == 'NOTIFICATION') {
 					$semester = $this->semester_model->getCurrentSemester();
-					$semester_id = $semester;
+					$semester_id = $semester->row()->semester_id;
 
 					if($newSession['user_type'] == 'applicant') {
 						$query = $this->form_model->getForm($newSession['user_id'], $semester_id);

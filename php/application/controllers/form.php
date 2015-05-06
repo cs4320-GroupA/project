@@ -190,7 +190,7 @@
 
 				$data['message_header'] = 'Preference';
 
-				if($this->semester_model->getCurrentSemesterStatus() == 'NOTIFICATION') {
+				if($this->semester_model->getCurrentSemesterStatus() != 'NOTIFICATION') {
 					$data['preferenceable'] = TRUE;
 				}
 			}

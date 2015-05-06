@@ -137,11 +137,7 @@
                                             echo "<td>" . $applicant->gpa . "</td>";
                                             echo "<td>" . $applicant->grade . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
-                                            
-                                            if(isset($assignable)) {
-                                            	echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
-                                        	}
-                                        	
+                                            echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
                                         	echo '</form>';
                                         echo '</tr>';
                                     }
@@ -158,7 +154,9 @@
 							?>							
 						</tbody>
 					</table>
-					<button type = "submit" class = "btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Assign Selected Applicants</button>
+					<?php if(isset($assignable)) { ?>
+						<button type = "submit" class = "btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Assign Selected Applicants</button>
+                	<?php } ?>
                 </form>
 				</div>
 				<div class="col-md-6">

@@ -165,7 +165,7 @@
 							        echo '<option>SPRING</option>';
 						    	echo '</select>';
 						    echo '</div>';
-						    echo '<div class="col-md-2">';
+						    echo '<div class="col-md-2 col-md-offset-2">';
 						    	echo '<label>Year</label>';
 						    	echo '<input type = "text" name="newYear" class = "form-control" placeholder = "2020" required>';
 						    echo '</div>';

@@ -61,7 +61,7 @@
 		public function getCountByFormID($form_id, $semester_id) {
 			$sql = 'SELECT * FROM tasub.assigned_courses WHERE form_id = ? AND semester_id = ?';
 
-			$query = $this->db->query($sql, array($form_id));
+			$query = $this->db->query($sql, array($form_id, $semester_id));
 
 			if($query->num_rows() > 0) {
 				return $query->num_rows();
@@ -73,7 +73,7 @@
 		public function getCountByInstructorID($user_id, $semester_id) {
 			$sql = 'SELECT * FROM tasub.course INNER JOIN tasub.assigned_courses ON tasub.course.course_id = tasub.assigned_courses.course_id WHERE instructor_id = ? AND semester_id = ?';
 
-			$query = $this->db->query($sql, array($user_id));
+			$query = $this->db->query($sql, array($user_id, $semester_id));
 
 			if($query->num_rows() > 0) {
 				return $query->num_rows();

@@ -127,6 +127,12 @@
                 $data['courses'] = $courses->result();
             }
             
+            if($this->semester_model->getCurrentSemesterStatus() == 'SELECTION') {
+                $data['assignable'] = TRUE;
+            } else {
+                $data['message_header'] = 'Incorrect Window';
+                $data['message'] = '<p>You can only assign applicants in the selection window</p>';
+            }
             
             //loading the view using the data
             $this->load->view('adminAssignApplicant', $data);

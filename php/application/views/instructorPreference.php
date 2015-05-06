@@ -25,6 +25,7 @@
 		<div class="container">
 		<?php if(isset($assigned_applicants)) { ?>
 			<div class="row">
+				<div class="col-md-12">
 			    <h3>Currently Assigned Students</h3>
 			    <table class="table table-hover table-striped">
 			      <thead>
@@ -52,6 +53,7 @@
 			        </tr>
 			      </tbody>
 			    </table>
+			    </div>
 		    </div>
 		   	<?php } ?>
 			<div class="row">

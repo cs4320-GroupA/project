@@ -101,6 +101,7 @@
 								<th>GPA</th>
 								<th>Course Grade</th>
 								<th>Grad Year</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -109,12 +110,15 @@
                                 if(count($applicants) > 0){
                                     foreach($applicants as $applicant){
                                         echo '<tr>'; 
+                                        	echo '<form>';
                                             echo "<td><input type='checkbox' name='applicants[]' value='".$applicant->form_id."'></td>";
                                             //print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
                                             echo "<td>" . $applicant->gpa . "</td>";
                                             echo "<td>" . $applicant->grade . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
+                                            echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicants->user_id.'/'.$applicants->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
+                                        	echo '</form>';
                                         echo '</tr>';
                                     }
                                 }
@@ -153,7 +157,7 @@
                                         	echo '<td>'.$preference->preference_number.'</td>';
                                             echo '<td>'.$preference->first_name.' '.$preference->last_name.'</td>';
                                             echo '<td>';
-                                            echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$preference->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button>';
+                                            echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$preference->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button> ';
                                         	echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$preference->user_id.'/'.$preference->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
                                         	echo '</td>';
                                         echo '</tr>';

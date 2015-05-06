@@ -183,7 +183,7 @@
      * input:   $instruct_Id - instructor to query
      */
         public function getPreferenceByInstructor($instruct_Id){
-            $q = 'SELECT * FROM tasub.course_preference INNER JOIN tasub.course ON tasub.course_preference.course_id = tasub.course.course_id WHERE tasub.course.instructor_id = ?';
+            $q = 'SELECT * FROM tasub.course_preference INNER JOIN tasub.course ON tasub.course_preference.course_id = tasub.course.course_id WHERE tasub.course.instructor_id = ? ORDER BY tasub.course_preference.preference_number';
             $result = $this->db->query( $q, array($instruct_Id) );
             
             if($result->num_rows() > 0) {

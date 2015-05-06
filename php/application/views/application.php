@@ -268,7 +268,7 @@
 								        echo '<option value="4">4</option>';
 								        echo '<option value="5">5</option>';
 								      echo '</select>';
-								      echo'<p class="help-block">1 = Lowest, 5 = Highest</p>';
+								      echo'<p class="help-block">1 = First Preference, 5 = Last Preference</p>';
 								    echo'</div>';
 								    echo'<div class="col-md-12">';
 								      echo'<button type="submit" class="btn btn-default message_panel"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
@@ -667,7 +667,7 @@
 					<div class = "col-md-12">
 						<hr>
 						<p><b>Please note the following</b></p>
-						<div class = "col-md-9">
+						<div class = "col-md-6">
 							<li>New TAs, ITAs, and PLAs who have received an appointment, are required to participate in the GATO (Graduate Assistant Teaching Orientation), which is offered just prior to the start of fall and winter terms. (You do not need to attend more than once.)</li><br>
 						</div>
 						<div class = "col-md-3">
@@ -707,10 +707,7 @@
 				</div>
 				<div class = "row">
 					<div class = "col-md-6">
-						<li>Please list the courses that you'd like to be a TA for</li>
-						<br>
-						<li>Per CS Dept. policy, GTA's must not exceed half-time total employment within the University system including, but not limited to, the CS Department
-						</li>
+						<li>Per CS Dept. policy, GTA's must not exceed half-time total employment within the University system including, but not limited to, the CS Department</li>
 					</div>
 				</div>
 				<div class = "row">
@@ -755,6 +752,21 @@
 								?>
 							</label>
 						</div>
+						<div class = "radio">
+							<label class="radio-inline">
+								<?php
+									if(isset($speak_assessment)) {
+										if($speak_assessment == 'N/A') {
+											echo '<input type="radio" name="speakRadio" value = "N/A" checked> N/A';
+										} else {
+											echo '<input type="radio" name="speakRadio" value = "N/A"> N/A';
+										}
+									} else {
+										echo '<input type="radio" name="speakRadio" value = "N/A"> N/A';
+									}
+								?>
+							</label>
+						</div>
 					</div>
 				</div>
 				<div class = "row">
@@ -789,6 +801,21 @@
 										}
 									} else {
 										echo '<input type="radio" name="onitaRadio" value = "notMet"> Will Attend August/January Session';
+									}
+								?>
+							</label>
+						</div>
+						<div class = "radio">
+							<label class="radio-inline">
+								<?php
+									if(isset($onita)) {
+										if($onita == 'N/A') {
+											echo '<input type="radio" name="onitaRadio" value = "N/A" checked> N/A';
+										} else {
+											echo '<input type="radio" name="onitaRadio" value = "N/A"> N/A';
+										}
+									} else {
+										echo '<input type="radio" name="onitaRadio" value = "N/A"> N/A';
 									}
 								?>
 							</label>
@@ -878,8 +905,13 @@
 			            <option>3</option>
 			            <option>4</option>
 			            <option>5</option>
+			            <option>6</option>
+			            <option>7</option>
+			            <option>8</option>
+			            <option>9</option>
+			            <option>10</option>   
 			          </select>
-			          <p class="help-block">1 = Lowest, 5 = Highest</p>
+			          <p class="help-block">1 = Lowest, 10 = Highest</p>
 			        </div>
 			      </div>
 			      <div class="row">

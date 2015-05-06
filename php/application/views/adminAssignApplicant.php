@@ -117,7 +117,7 @@
                                             echo "<td>" . $applicant->gpa . "</td>";
                                             echo "<td>" . $applicant->grade . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
-                                            echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicants->user_id.'/'.$applicants->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
+                                            echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
                                         	echo '</form>';
                                         echo '</tr>';
                                     }

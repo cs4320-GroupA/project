@@ -189,6 +189,10 @@
 				}
 
 				$data['message_header'] = 'Preference';
+
+				if($this->semester_model->getCurrentSemesterStatus() == 'NOTIFICATION') {
+					$data['preferenceable'] = TRUE;
+				}
 			}
 
 			$this->load->view('application', $data);

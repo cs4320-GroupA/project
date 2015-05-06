@@ -271,7 +271,13 @@
 								      echo'<p class="help-block">1 = First Preference, 5 = Last Preference</p>';
 								    echo'</div>';
 								    echo'<div class="col-md-12">';
+
+								    if(isset($preferenceable)) {
 								      echo'<button type="submit" class="btn btn-default message_panel"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Preference</button>';
+								    } else {
+								    	echo'<button type="submit" class="btn btn-default message_panel"><span class="glyphicon glyphicon-plus" aria-hidden="true" disabled></span> Add Preference</button>';
+								    }
+
 								    echo'</div>';
 								echo'</div>';
                         	}

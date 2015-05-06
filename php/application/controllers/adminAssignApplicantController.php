@@ -22,7 +22,7 @@
                 $data = NULL;
             }
             
-            if($this->semester_model->getCurrentSemesterStatus() != 'SELECTION') {
+            if($this->semester_model->getCurrentSemesterStatus() == 'SELECTION') {
                 $data['assignable'] = TRUE;
             } else {
                 $data['message_header'] = 'Incorrect Window';

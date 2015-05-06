@@ -112,7 +112,7 @@
 			<div class='row'>
 				<div class="col-md-6">
                  <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/assign/'.$currentCourse->course_id ?> />
-					<?php if(isset($applicants)) { echo '<h3>Applicants that Preferenced this Course</h3>'; }
+					<?php if(!isset($applicant_pool)) { echo '<h3>Applicants that Preferenced this Course</h3>'; }
 						  else if(isset($applicant_pool)) { echo '<h3>Applicant Pool</h3>'; }
 					?>
 					<table class="table table-hover table-striped">

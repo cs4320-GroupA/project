@@ -70,7 +70,7 @@
 			}
 		}
 
-		public function getCountByFormID($user_id) {
+		public function getCountByInstructorID($user_id) {
 			$sql = 'SELECT * FROM tasub.course INNER JOIN tasub.assigned_courses ON tasub.course.course_id = tasub.assigned_courses.course_id WHERE instructor_id = ?';
 
 			$query = $this->db->query($sql, array($user_id));

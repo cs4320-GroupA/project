@@ -76,7 +76,9 @@ class PreferenceByCourseController extends CI_Controller {
         
         $result = $this->course_model->removePreferenceById($preference_id);;
         
-        redirect('instructorViewCourseController', 'refresh');
+        $path = 'preferenceByCourseController/index/'.$course_id;
+
+        redirect($path, 'refresh');
     }// end remove function
     
     

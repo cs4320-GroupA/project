@@ -86,7 +86,8 @@
             $query = $this->course_model->getCourseById($course_id);
 
             $data['currentCourse'] = $query->row();
-
+            $data['course_id'] = $course_id;
+            
             //INSTRUCTOR PREFRENCES of applicants
             $prefs = $this->course_model->getPreferenceByCourse($course_id);
             

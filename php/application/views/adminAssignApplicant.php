@@ -151,7 +151,7 @@
                                         echo '<tr>';
                                         	echo '<td>'.$preference->preference_number.'</td>';
                                             echo '<td>'.$preference->first_name.' '.$preference->last_name.'</td>';
-                                            echo '<td><form><button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$row->preference_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button></td>';
+                                            echo '<td><form><button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$preference->preference_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button></td>';
                                         echo '</tr>';
                                     }
                                  }

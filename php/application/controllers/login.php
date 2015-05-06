@@ -47,7 +47,7 @@
 						$query = $this->form_model->getForm($newSession['user_id'], $semester_id);
 						
 						if($query != FALSE) {
-							$newSession['assigned_count'] = $this->assigned_courses_model->getCountByFormID($query->row()->form_id);
+							$newSession['assigned_count'] = $this->assigned_courses_model->getCountByFormID($query->row()->form_id, $semester_id);
 
 							if($newSession['assigned_count'] == FALSE) {
 								$newSession['assigned_count'] = NULL;

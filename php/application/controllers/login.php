@@ -15,7 +15,7 @@
 			$this->load->model('semester_model');
 			$this->load->model('status_model');
 			$this->load->model('form_model');
-			$this->load->model('assigned_coursed_model');
+			$this->load->model('assigned_courses_model');
 
 			$username = htmlspecialchars($_POST['pawprint']); 
 			

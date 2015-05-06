@@ -194,7 +194,7 @@
 					$data['preferenceable'] = TRUE;
 				} else {
 					$data['message_header'] = 'Message';
-					$data['message'] = '<p>Cannot preference after selection window has passed</p>'
+					$data['message'] = '<p>Cannot preference after selection window has passed</p>';
 				}
 			}
 

@@ -15,7 +15,7 @@ create table user(
     username varchar(20) not null,
     password varchar(50) not null,
     salt varchar(30) not null,
-    account_type varchar(15) references account_type(account_type_id),
+    account_type int references account_type(account_type_id),
     primary key(user_id)
 ) character set 'utf8';
 

@@ -112,7 +112,9 @@
 			<div class='row'>
 				<div class="col-md-6">
                  <form accept-charset="utf-8"  method=post action=<?php echo base_url().'index.php/adminAssignApplicantController/assign/'.$currentCourse->course_id ?> />
-					<h3>Applicants that Preferenced this Course</h3>
+					<?php if(isset($applicants)) { echo '<h3>Applicants that Preferenced this Course</h3>'; }
+						  else if(isset($applicant_pool)) { echo '<h3>Applicant Pool</h3>'; }
+					?>
 					<table class="table table-hover table-striped">
 						<thead>
 							<tr>
@@ -142,6 +144,20 @@
                                         echo '</tr>';
                                     }
                                 }
+                            } else if(isset($applicant_pool)) {
+                                    foreach($applicant_pool as $applicant) {
+                                        echo '<tr>'; 
+                                        	echo '<form>';
+                                            echo "<td><input type='checkbox' name='applicants[]' value='".$applicant->form_id."'></td>";
+                                            //print_r($applicant);
+                                            echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
+                                            echo "<td>" . $applicant->gpa . "</td>";
+                                            echo "<td>" . $applicant->grade . "</td>";
+                                            echo "<td>" . $applicant->expected_graduation . "</td>";
+                                            echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
+                                        	echo '</form>';
+                                        echo '</tr>';
+                                    }
                             } else {
                                 echo '<tr>';
                                     echo "<td></td>";
@@ -186,6 +202,7 @@
                                         	
                                         	echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$preference->user_id.'/'.$preference->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
                                         	echo '</td>';
+                                        	echo '</form>';
                                         echo '</tr>';
                                     }
                                  }

@@ -106,10 +106,12 @@
             //APPLICANTS WHO PREFER THIS COURSE
             $apps = $this->desired_courses_model->getByCourseId($course_id);
             
-            if($apps != false)
+            if($apps != FALSE) {
                 $data['applicants'] = $apps->result();
-            else
-                $data['applicants'] = null;   
+            }
+            else {
+                $data['applicants'] = null;
+            }   
             
             $semester = $this->semester_model->getCurrentSemester();
             $semester_id = $semester->row()->semester_id;
@@ -125,6 +127,11 @@
             
             if($courses != FALSE) {
                 $data['courses'] = $courses->result();
+            }
+            
+            if($data['applicants'] == null) {
+                $data['message_header'] = 'No Applicants have preferred this Course';
+                $data['message'] = '<p>Because no applicants have preferred this course, the applicant pool is displayed instead</p>';
             }
             
             if($this->semester_model->getCurrentSemesterStatus() == 'SELECTION') {

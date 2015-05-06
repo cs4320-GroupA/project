@@ -666,9 +666,9 @@
 				<div class = "row">
 					<div class = "col-md-12">
 						<hr>
-						<p><b>Please note the following</b></p>
+						<p><b>Please note the following:</b></p>
 						<div class = "col-md-9">
-							<li>New TAs, ITAs, and PLAs who have received an appointment, are required to participate in the GATO (Graduate Assistant Teaching Orientation), which is offered just prior to the start of fall and winter terms. (You do not need to attend more than once.)</li><br>
+							<li>New TAs, ITAs, and PLAs who have received an appointment, are required to participate in the GATO (Graduate Assistant Teaching Orientation), which is offered just prior to the start of fall and winter terms. (You do not need to attend more than once.)</li>
 						</div>
 						<div class = "col-md-3">
 							<div class = "radio">

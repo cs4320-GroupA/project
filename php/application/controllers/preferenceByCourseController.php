@@ -15,6 +15,10 @@ class PreferenceByCourseController extends CI_Controller {
         if(!isset($course_id)) {
             redirect('home', 'refresh');
         }
+
+        if($this->session->userdata('user_type') != 'instructor') {
+                redirect('home', 'refresh');
+        }
         
         $data['course_id'] = $course_id;
         $query = $this->course_model->getCourseById($course_id);

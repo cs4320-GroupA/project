@@ -7,8 +7,11 @@
         }// end constructor
 
     // load adminTemporalModification as default
-		public function index(){ 
-
+		public function index() { 
+            if($this->session->userdata('user_type') != 'admin') {
+                redirect('home', 'refresh');
+            }
+            
             $data['status_title'] = $this->semester_model->getCurrentSemesterStatus();
             $data['semester_title'] = $this->semester_model->getCurrentSemesterTitle();
             

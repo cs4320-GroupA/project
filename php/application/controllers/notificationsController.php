@@ -10,6 +10,10 @@
        }
 
 		public function index() {
+			if($this->session->userdata('user_type') != 'applicant') {
+				redirect('home', 'refresh');
+			}
+
 			if($this->semester_model->getCurrentSemesterStatus() != 'NOTIFICATION') {
 				$data['message'] = '<p>Applications are still being evaluated</p>';
 			} else {

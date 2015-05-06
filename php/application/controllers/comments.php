@@ -6,6 +6,10 @@
         }
 
         public function add($about_id, $semester_id) {
+            if($this->session->userdata('user_type') == 'applicant') {
+                redirect('home', 'refresh');
+            }
+            
         	$this->load->model('comments_model');
         	
         	$this->comments_model->insert($about_id, $this->session->userdata['user_id'], $this->session->userdata['pawprint'], intval($_POST['score']), $_POST['description']);

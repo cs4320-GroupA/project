@@ -201,6 +201,10 @@
 			$this->load->view('application', $data);
 		}
 		public function submitForm() {
+			if($this->session->userdata('user_type') != 'applicant') {
+				redirect('home', 'refresh');
+			}
+			
 			//Load form data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');
@@ -337,6 +341,10 @@
 		}
 
 		public function editForm() {
+			if($this->session->userdata('user_type') != 'applicant') {
+				redirect('home', 'refresh');
+			}
+			
 			//Load form data and form models
 			$this->load->model('form_data_model');
 			$this->load->model('form_model');

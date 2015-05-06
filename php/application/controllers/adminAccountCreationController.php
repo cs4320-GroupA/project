@@ -9,7 +9,11 @@
         }
 
 		public function index() 
-		{ 
+		{
+			if($this->session->userdata('user_type') != 'admin') {
+				redirect('home', 'refresh');
+			}
+			
 			$this->load->view('adminAccountCreation');
 		}
 

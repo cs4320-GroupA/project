@@ -11,6 +11,9 @@
 
 		public function index($course_id) 
 		{ 
+			if($this->session->userdata('user_type') != 'admin') {
+				redirect('home', 'refresh');
+			}
 			
 			$course = $this->course_model->getCourseById($course_id);
 

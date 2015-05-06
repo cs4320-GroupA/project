@@ -7,6 +7,10 @@ class applicantPoolController extends CI_Controller {
     }// end constructor
     
     public function index(){
+      if($this->session->userdata('user_type') == 'applicant') {
+        redirect('home', 'refresh');
+      }
+      
        $this->load->model('form_model');
        $this->load->model('form_data_model');
        $this->load->model('semester_model');

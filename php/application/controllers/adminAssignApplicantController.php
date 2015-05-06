@@ -14,6 +14,10 @@
         }
 
 		public function index() { 
+            if($this->session->userdata('user_type') != 'admin') {
+                redirect('home', 'refresh');
+            }
+            
             $courses = $this->course_model->getCourses($this->semester_model->getCurrentSemesterTitle());
             
             if($courses != FALSE) {
@@ -90,6 +94,10 @@
         }
 
         public function viewCourse($course_id) {
+            if($this->session->userdata('user_type') != 'admin') {
+                redirect('home', 'refresh');
+            }
+            
             $query = $this->course_model->getCourseById($course_id);
 
             $data['currentCourse'] = $query->row();

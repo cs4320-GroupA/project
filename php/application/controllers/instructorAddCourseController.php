@@ -6,6 +6,10 @@
        }
 
 		public function index() {
+			if($this->session->userdata('user_type') != 'instructor') {
+				redirect('home', 'refresh');
+			}
+
 			$this->load->model('course_model');
 			$this->load->model('semester_model');
 			

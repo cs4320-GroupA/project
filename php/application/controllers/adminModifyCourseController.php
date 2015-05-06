@@ -12,9 +12,9 @@
 
 		public function index() 
 		{ 
-            
-            
-            //$selected_semester = $_POST['semester_pool'];
+            if($this->session->userdata('user_type') != 'admin') {
+				redirect('home', 'refresh');
+			}
             
             if(isset($_POST['semester_pool'])){
                 $selected_semester = $_POST['semester_pool'];
@@ -64,9 +64,7 @@
 				redirect('adminModifyCourseController', 'refresh');
 			} else {
 				redirect('adminModifyCourseController', 'refresh');
-			}
-
-    			
+			}	
 
 		}
 

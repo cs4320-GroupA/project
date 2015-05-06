@@ -130,7 +130,7 @@
             }
             
             if($data['applicants'] == null) {
-                $data['message_header'] = 'No Applicants have preferred this Course';
+                $data['message_header'] = 'No Applicants Have Preferred This Course';
                 $data['message'] = '<p>Because no applicants have preferred this course, the applicant pool is displayed instead</p>';
                 
                 $data['applicant_pool'] = $this->form_model->getAllBySemesterId($semester_id);

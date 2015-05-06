@@ -13,23 +13,28 @@
 			<ul class="nav navbar-nav">
 				<?php
 					//check if 'user_type' is set
-					if($this->session->userdata('user_type'))
-					{
-						if($this->session->userdata('user_type') == 'applicant')
-						{
+					if($this->session->userdata('user_type')) {
+						if($this->session->userdata('user_type') == 'applicant') {
 							echo "<li><a href='".base_url()."index.php/form'>Application</a></li>";
-							echo "<li><a href='".base_url()."index.php/notificationsController'>Notifications</a></li>";
-							//Nav options for instructor
+
+							if($this->session->userdata('assigned_count')) {
+								echo "<li><a href='".base_url()."index.php/notificationsController'>Notifications <span class=\"badge\">".$this->session->userdata('assigned_count')."</span></a></li>";
+							} else {
+								echo "<li><a href='".base_url()."index.php/notificationsController'>Notifications</a></li>";
+							}
 						}
-						else if($this->session->userdata('user_type') == 'instructor')
-						{
+						else if($this->session->userdata('user_type') == 'instructor') {
 							echo "<li><a href='".base_url()."index.php/instructorAddCourseController'>Add Courses</a></li>";
-							echo "<li><a href='".base_url()."index.php/instructorViewCoursesController'>Your Courses</a></li>";
+							
+							if($this->session->userdata('assigned_count')) {
+								echo "<li><a href='".base_url()."index.php/instructorViewCoursesController'>Your Courses <span class=\"badge\">".$this->session->userdata('assigned_count')."</span></a></li>";
+							} else {
+								echo "<li><a href='".base_url()."index.php/instructorViewCoursesController'>Your Courses</a></li>";
+							}
+
 							echo "<li><a href='".base_url()."index.php/applicantPoolController'>Applicant Pool</a></li>";
-							//Nav options for admin
 						}
-						else if($this->session->userdata('user_type') == 'admin')
-						{
+						else if($this->session->userdata('user_type') == 'admin') {
 							echo "<li><a href='".base_url()."index.php/adminModifyCourseController'>Modify Course</a></li>";
 							echo "<li><a href='".base_url()."index.php/adminAssignApplicantController'>Assign Applicants</a></li>";
 							echo "<li><a href='".base_url()."index.php/adminAccountCreationController'>Account Creation</a></li>";

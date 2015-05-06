@@ -40,7 +40,7 @@
                     				echo '<tr>';
                     				echo '<td>'.$row->preference_number.'</td>';
 									echo '<td>'.$row->first_name.' '.$row->last_name.'</td>';
-									echo '<td><form><button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'/index.php/preferenceByCourseController/'.$course_id.'/'.$row->preference_id.'"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Remove</button></td>';
+									echo '<td><form><button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'/index.php/preferenceByCourseController/'.$course_id.'/'.$row->preference_id.'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove</button></td>';
 									echo '</tr>';
                     			}
                     		}

@@ -8,6 +8,7 @@ class PreferenceByCourseController extends CI_Controller {
         $this->load->model('course_model');
         $this->load->model('semester_model');
         $this->load->model('desired_courses_model');
+        $this->load->model('assigned_courses_model');
     }// end constructor
 
     public function index($course_id){
@@ -31,6 +32,17 @@ class PreferenceByCourseController extends CI_Controller {
             $data['desired_forms'] = $query->result();
         }
 
+        if($this->semester_model->getCurrentSemesterStatus() == 'NOTIFICATION') {
+            $semester = $this->semester_model->getCurrentSemester();
+            $semester_id = $semester->row()->semester_id;
+
+            $query = $this->assigned_courses_model->getAssignedApplicants($course_id, $semester_id);
+
+            if($query != FALSE) {
+                $data['assigned_applicants'] = $query->result();
+            }
+        }
+        
         $this->load->view('instructorPreference', $data);
 		//$this->load->view('preferenceByCourse');
 	}// end index

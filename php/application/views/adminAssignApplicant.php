@@ -22,7 +22,25 @@
 				<h2>Assign Applicants</h2>
 			</div>
 		</div>
-		<div class="container">	
+		<div class="container">
+		<?php if(isset($message_header)) { ?>
+			<div class = "row">
+	      	<div class="col-md-6 col-md-offset-3">
+					<div class="panel panel-default">
+	 		 			<div class="panel-heading">
+	    					<h3 class="panel-title"><b><?php echo $message_header; ?></b></h3>
+	  					</div>
+	  					<div class="panel-body">
+	    					<?php
+	    					if(isset($message)) {
+	    						echo $message;
+	    					}
+	    				?>
+	    				</div>
+	    			</div>
+	    	</div>
+	    	</div>
+	    ?>
 			<div class='row'>
 				<div class="col-md-4">
 					<h3>Course</h3>
@@ -117,7 +135,11 @@
                                             echo "<td>" . $applicant->gpa . "</td>";
                                             echo "<td>" . $applicant->grade . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
-                                            echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
+                                            
+                                            if(isset($assignable)) {
+                                            	echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
+                                        	}
+                                        	
                                         	echo '</form>';
                                         echo '</tr>';
                                     }
@@ -157,7 +179,11 @@
                                         	echo '<td>'.$preference->preference_number.'</td>';
                                             echo '<td>'.$preference->first_name.' '.$preference->last_name.'</td>';
                                             echo '<td>';
-                                            echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$preference->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button> ';
+                                            
+                                            if(isset($assignable)) {
+                                            	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$preference->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button> ';
+                                        	}
+                                        	
                                         	echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$preference->user_id.'/'.$preference->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
                                         	echo '</td>';
                                         echo '</tr>';

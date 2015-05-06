@@ -22,6 +22,13 @@
                 $data = NULL;
             }
             
+            if($this->semester_model->getCurrentSemesterStatus() != 'SELECTION') {
+                $data['assignable'] = TRUE;
+            } else {
+                $data['message_header'] = 'Incorrect Window';
+                $data['message'] = '<p>You can only assign applicants in the selection window</p>';
+            }
+
 			$this->load->view('adminAssignApplicant',$data);
 		}
         

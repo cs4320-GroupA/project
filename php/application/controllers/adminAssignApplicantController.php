@@ -132,13 +132,21 @@
             if($data['applicants'] == null) {
                 $data['message_header'] = 'No Applicants have preferred this Course';
                 $data['message'] = '<p>Because no applicants have preferred this course, the applicant pool is displayed instead</p>';
+                
+                $data['applicant_pool'] = $this->form_model->getAllBySemesterId($semester_id);
+
+                if($data['applicant_pool'] == FALSE) {
+                    $data['applicant_pool'] = NULL;
+                }
             }
-            
+
             if($this->semester_model->getCurrentSemesterStatus() == 'SELECTION') {
                 $data['assignable'] = TRUE;
             } else {
                 $data['message_header'] = 'Incorrect Window';
                 $data['message'] = '<p>You can only assign applicants in the selection window</p>';
+
+                $data['applicant_pool'] = NULL;
             }
             
             //loading the view using the data

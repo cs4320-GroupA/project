@@ -58,12 +58,13 @@
 		   	<?php } ?>
 			<div class="row">
 				<div class="col-md-12">
-					<h3>Current Preferenced Students</h3>
+					<h3>Currently Preferenced Students</h3>
 					<table class="table table-hover table-striped">
                     <thead>
                     	<tr>
                     		<th>Preference</th>
                     		<th>Name</th>
+                    		<th>Action</th>
                     	</tr>
                     </thead>
                     <tbody>

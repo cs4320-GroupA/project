@@ -141,7 +141,7 @@
                                             echo '<td>';
 
                                             if(isset($assignable)) {
-                                            	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button>';
+                                            	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Assign</button> ';
                                         	}
 
                                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
@@ -159,7 +159,7 @@
                                             echo '<td>';
 
                                             if(isset($assignable)) {
-                                            	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button>';
+                                            	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Assign</button> ';
                                         	}
 
                                             echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
@@ -202,7 +202,7 @@
                                             echo '<td>';
                                             
                                             if(isset($assignable)) {
-                                            	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$preference->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button> ';
+                                            	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$preference->form_id.'"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Assign</button> ';
                                         	}
                                         	
                                         	echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$preference->user_id.'/'.$preference->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';

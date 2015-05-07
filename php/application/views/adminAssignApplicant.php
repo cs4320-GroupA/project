@@ -125,7 +125,6 @@
 								<th>Assign</th>
 								<th>Full Name</th>
 								<th>GPA</th>
-								<th>Grad Year</th>
 								<th>Action</th>
 							</tr>
 						</thead>

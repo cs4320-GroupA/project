@@ -151,8 +151,7 @@
                                 }
                             } else if(isset($applicant_pool)) {
                                     foreach($applicant_pool as $applicant) {
-                                        echo '<tr>'; 
-                                            echo '<td><button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button></tr>';
+                                        echo '<tr>';
                                             //print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
                                             echo "<td>" . $applicant->gpa . "</td>";

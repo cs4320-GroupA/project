@@ -892,7 +892,7 @@
 			      <br>
 			      <form name="comment_box" action="<?php echo base_url().'index.php/comments/add/'.$user_id.'/'.$semester_id; ?>" method="POST">
 			        <div class="col-md-2">
-			          <label for="description" class="col-sm-2 control-label">Admin Pawprint</label>
+			          <label for="description" class="col-sm-2 control-label">Comment</label>
 			        </div>
 			        <div class="col-md-10">
 			          <textarea class="form-control comments" rows = "6" id="description" name = "description" placeholder="Things to note about this applicant...." required></textarea>

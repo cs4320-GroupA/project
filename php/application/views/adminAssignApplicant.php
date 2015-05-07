@@ -125,7 +125,6 @@
 								<th>Assign</th>
 								<th>Full Name</th>
 								<th>GPA</th>
-								<th>Course Grade</th>
 								<th>Grad Year</th>
 								<th>Action</th>
 							</tr>
@@ -136,12 +135,15 @@
                                 if(count($applicants) > 0){
                                     foreach($applicants as $applicant) {
                                         echo '<tr>'; 
-                                            echo "<td><input type='checkbox' name='applicants[]' value='".$applicant->form_id."'></td>";
                                             //print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
                                             echo "<td>" . $applicant->gpa . "</td>";
-                                            echo "<td>" . $applicant->grade . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
+
+                                            if(isset($assignable)) {
+                                            	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button>';
+                                        	}
+
                                             echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
                                         echo '</tr>';
                                     }
@@ -149,12 +151,17 @@
                             } else if(isset($applicant_pool)) {
                                     foreach($applicant_pool as $applicant) {
                                         echo '<tr>'; 
-                                            echo "<td><input type='checkbox' name='applicants[]' value='".$applicant->form_id."'></td>";
+                                            echo '<td><button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button></tr>';
                                             //print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
                                             echo "<td>" . $applicant->gpa . "</td>";
-                                            echo "<td>" . $applicant->grade . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
+
+
+                                            if(isset($assignable)) {
+                                            	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button>';
+                                        	}
+
                                             echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
                                         echo '</tr>';
                                     }
@@ -170,9 +177,6 @@
 							?>							
 						</tbody>
 					</table>
-					<?php if(isset($assignable)) { ?>
-						<button type = "submit" class = "btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Assign Selected Applicants</button>
-                	<?php } ?>
                 </form>
 				</div>
 				<div class="col-md-6">

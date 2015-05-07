@@ -136,7 +136,7 @@
                                         echo '<tr>'; 
                                             //print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
-                                            echo "<td>" . $applicant->gpa . "</td>";
+                                            echo "<td>" . number_format($applicant->gpa, 3) . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
                                             echo '<td>';
 
@@ -154,7 +154,7 @@
                                         echo '<tr>';
                                             //print_r($applicant);
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
-                                            echo "<td>" . $applicant->gpa . "</td>";
+                                            echo "<td>" . number_format($applicant->gpa, 3) . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
                                             echo '<td>';
 

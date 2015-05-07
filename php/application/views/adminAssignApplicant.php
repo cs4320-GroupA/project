@@ -139,12 +139,14 @@
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
                                             echo "<td>" . $applicant->gpa . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
+                                            echo '<td>';
 
                                             if(isset($assignable)) {
                                             	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button>';
                                         	}
 
-                                            echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
+                                            echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
+                                        	echo '</td>';
                                         echo '</tr>';
                                     }
                                 }
@@ -156,13 +158,14 @@
                                             echo "<td>" . $applicant->first_name . " " . $applicant->last_name . "</td>"; 
                                             echo "<td>" . $applicant->gpa . "</td>";
                                             echo "<td>" . $applicant->expected_graduation . "</td>";
-
+                                            echo '<td>';
 
                                             if(isset($assignable)) {
                                             	echo '<button type="submit" class="btn btn-default message_panel" formaction="'.base_url().'index.php/adminAssignApplicantController/quick_assign/'.$course_id.'/'.$applicant->form_id.'"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Assign</button>';
                                         	}
 
-                                            echo '<td><button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button></td>';
+                                            echo '<button type="submit" class="btn btn-default" formaction="'.base_url().'index.php/form/viewForm/'.$applicant->user_id.'/'.$applicant->semester_id.'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> View</button>';
+                                            echo '</td>';
                                         echo '</tr>';
                                     }
                             } else {

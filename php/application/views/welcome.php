@@ -124,7 +124,7 @@
                   </div>
                   <div class="controls">
                     <label class="control-label" for="accessCode">Access Code For Instructors Only:</label><br>
-                    <input class="form-control" id="accessCode" name="accessCode" type="text" placeholder="f9hd34ks">
+                    <input class="form-control" id="accessCode" name="accessCode" type="password" placeholder="f9hd34ks">
                   </div>
                   <div class="control-group">
                     <label class="control-label" for="signin"></label>

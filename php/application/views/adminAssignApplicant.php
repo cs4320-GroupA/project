@@ -122,7 +122,6 @@
 					<table class="table table-hover table-striped">
 						<thead>
 							<tr>
-								<th>Assign</th>
 								<th>Full Name</th>
 								<th>GPA</th>
 								<th>Action</th>
